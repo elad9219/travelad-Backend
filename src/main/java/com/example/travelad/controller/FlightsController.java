@@ -58,10 +58,6 @@ public class FlightsController {
         }
     }
 
-
-
-
-
     @GetMapping("/flights")
     public ResponseEntity<?> flights(@RequestParam String origin,
                                      @RequestParam String destination,
@@ -76,8 +72,10 @@ public class FlightsController {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No flights found for the given parameters.");
             }
 
+            // Map the flight offers to your DTOs
             List<FlightOfferDto> flightOfferDtos = Arrays.stream(flightOffers)
                     .map(offer -> {
+                        // Extract the segments
                         List<FlightSegmentDto> segments = Arrays.stream(offer.getItineraries())
                                 .flatMap(itinerary -> Arrays.stream(itinerary.getSegments()))
                                 .map(segment -> new FlightSegmentDto(
@@ -87,7 +85,15 @@ public class FlightsController {
                                         segment.getArrival().getAt()))
                                 .collect(Collectors.toList());
 
-                        return new FlightOfferDto(segments, offer.getPrice().getTotal());
+                        // Convert the price to double (from String)
+                        double totalPrice;
+                        try {
+                            totalPrice = Double.parseDouble(offer.getPrice().getTotal());
+                        } catch (NumberFormatException e) {
+                            totalPrice = 0.0; // Handle invalid price format gracefully
+                        }
+
+                        return new FlightOfferDto(segments, totalPrice);
                     })
                     .collect(Collectors.toList());
 
