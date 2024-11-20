@@ -18,11 +18,11 @@ import java.util.stream.Collectors;
 @RestController
 public class FlightsController {
 
-    private final FlightsService amadeusConnect;
+    private final FlightsService flightsService;
 
     // Constructor injection
-    public FlightsController(FlightsService amadeusConnect) {
-        this.amadeusConnect = amadeusConnect;
+    public FlightsController(FlightsService flightsService) {
+        this.flightsService = flightsService;
     }
 
     // Endpoint to search for locations
@@ -30,7 +30,7 @@ public class FlightsController {
     public ResponseEntity<?> locations(@RequestParam(required = true) String keyword) {
         try {
             // Call the Amadeus API to get locations
-            Location[] locations = amadeusConnect.location(keyword);
+            Location[] locations = flightsService.location(keyword);
 
             // Check if there are any locations returned
             if (locations == null || locations.length == 0) {
@@ -66,7 +66,7 @@ public class FlightsController {
                                      @RequestParam(required = false) String returnDate) {
         try {
             // Call the Amadeus API to get flight offers
-            FlightOfferSearch[] flightOffers = amadeusConnect.flights(origin, destination, departDate, adults, returnDate);
+            FlightOfferSearch[] flightOffers = flightsService.flights(origin, destination, departDate, adults, returnDate);
 
             if (flightOffers == null || flightOffers.length == 0) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No flights found for the given parameters.");

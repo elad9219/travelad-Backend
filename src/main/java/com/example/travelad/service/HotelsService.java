@@ -1,42 +1,45 @@
 package com.example.travelad.service;
 
-import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
+import com.amadeus.Amadeus;
+import com.amadeus.Params;
+import com.amadeus.exceptions.ResponseException;
+import com.amadeus.resources.Hotel;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.util.UriComponentsBuilder;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.PostConstruct;
 
 @Service
 public class HotelsService {
 
-    private final String apiUrl = "https://test.api.amadeus.com/v2/shopping/hotels/by-destination";
-    private final String apiKey;  // Store your API key here
+    private static final Logger logger = LoggerFactory.getLogger(HotelsService.class);
 
-    private final RestTemplate restTemplate;
+    private Amadeus amadeus;
 
-    public HotelsService(@Value("${amadeus.api.key}") String apiKey, RestTemplate restTemplate) {
-        this.apiKey = apiKey;
-        this.restTemplate = restTemplate;
+    @Value("${amadeus.api.key}")
+    private String apiKey;
+
+    @Value("${amadeus.api.secret}")
+    private String apiSecret;
+
+    @PostConstruct
+    public void init() {
+        this.amadeus = Amadeus.builder(apiKey, apiSecret).build();
     }
 
-    // Search hotels by city code
-    public String searchHotelsByCity(String cityCode, Integer radius, String radiusUnit,
-                                     String chainCodes, String amenities, String ratings) {
+    public Hotel[] searchHotelsByCity(String cityCode) throws ResponseException {
+        try {
+            logger.info("Fetching hotels for cityCode: {}", cityCode);
 
-        // Build the API request URL
-        UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromHttpUrl(apiUrl)
-                .queryParam("cityCode", cityCode)
-                .queryParam("apikey", apiKey);
+            return amadeus.referenceData.locations.hotels.byCity.get(
+                    Params.with("cityCode", cityCode)
+            );
 
-        if (radius != null) uriBuilder.queryParam("radius", radius);
-        if (radiusUnit != null) uriBuilder.queryParam("radiusUnit", radiusUnit);
-        if (chainCodes != null) uriBuilder.queryParam("chainCodes", chainCodes);
-        if (amenities != null) uriBuilder.queryParam("amenities", amenities);
-        if (ratings != null) uriBuilder.queryParam("ratings", ratings);
-
-        // Make the GET request and get the response as a string
-        ResponseEntity<String> response = restTemplate.getForEntity(uriBuilder.toUriString(), String.class);
-
-        return response.getBody();  // Return the raw JSON response
+        } catch (ResponseException e) {
+            logger.error("Error fetching hotels by city: {}", e.getMessage());
+            throw e;
+        }
     }
 }

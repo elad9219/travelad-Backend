@@ -1,30 +1,50 @@
 package com.example.travelad.controller;
 
+import com.amadeus.exceptions.ResponseException;
+import com.amadeus.resources.Hotel;
+import com.amadeus.resources.Location;
+import com.example.travelad.beans.HotelDto;
 import com.example.travelad.service.HotelsService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/api/hotels")
+@RequestMapping("/hotels")
 public class HotelsController {
 
-    @Autowired
-    private HotelsService hotelsService;
+    private final HotelsService hotelsService;
 
-    // Search hotels by city code
-    @GetMapping("/search/by-city")
-    public ResponseEntity<String> searchHotelsByCity(
-            @RequestParam String cityCode,
-            @RequestParam(required = false) Integer radius,
-            @RequestParam(required = false) String radiusUnit,
-            @RequestParam(required = false) String chainCodes,
-            @RequestParam(required = false) String amenities,
-            @RequestParam(required = false) String ratings) {
+    public HotelsController(HotelsService hotelsService) {
+        this.hotelsService = hotelsService;
+    }
 
-        // Call service to fetch hotel data
-        String hotelsData = hotelsService.searchHotelsByCity(cityCode, radius, radiusUnit, chainCodes, amenities, ratings);
+    @GetMapping("/by-city")
+    public ResponseEntity<?> getHotelsByCity(@RequestParam String cityCode) {
+        try {
+            Hotel[] locations = hotelsService.searchHotelsByCity(cityCode);
 
-        return ResponseEntity.ok(hotelsData);  // Return raw JSON response from Amadeus
+            if (locations == null || locations.length == 0) {
+                return ResponseEntity.notFound().build();
+            }
+
+            List<HotelDto> hotels = Arrays.stream(locations)
+                    .map(location -> new HotelDto(
+                            location.getName(),
+                            cityCode,
+                            "Unknown",
+                            "N/A",
+                            "Amadeus"
+                    ))
+                    .collect(Collectors.toList());
+
+            return ResponseEntity.ok(hotels);
+
+        } catch (ResponseException e) {
+            return ResponseEntity.internalServerError().body("Error fetching hotels: " + e.getMessage());
+        }
     }
 }
