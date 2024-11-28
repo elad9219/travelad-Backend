@@ -55,4 +55,3 @@ public class HotelDto {
         this.vendor = vendor;
     }
 }
-
