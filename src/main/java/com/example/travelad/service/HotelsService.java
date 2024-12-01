@@ -46,22 +46,23 @@ public class HotelsService {
         }
     }
 
-    // Method to search hotel offers
-    public HotelOfferSearch[] searchHotelOffers(String hotelIds, String checkInDate, String checkOutDate, int adults) throws ResponseException {
-        try {
-            logger.info("Fetching hotel offers for hotelIds: {}", hotelIds);
+    // Modify the method to handle optional parameters
+    public HotelOfferSearch[] searchHotelOffers(String hotelIds, String checkInDate, String checkOutDate, Integer adults) throws ResponseException {
+        Params params = Params.with("hotelIds", hotelIds);
 
-            return amadeus.shopping.hotelOffersSearch.get(
-                    Params.with("hotelIds", hotelIds)
-                            .and("checkInDate", checkInDate)
-                            .and("checkOutDate", checkOutDate)
-                            .and("adults", adults)
-            );
-
-        } catch (ResponseException e) {
-            logger.error("Error fetching hotel offers: {}", e.getMessage());
-            throw e;
+        if (checkInDate != null && !checkInDate.isEmpty()) {
+            params.and("checkInDate", checkInDate);
         }
+        if (checkOutDate != null && !checkOutDate.isEmpty()) {
+            params.and("checkOutDate", checkOutDate);
+        }
+        if (adults != null) {
+            params.and("adults", adults);
+        }
+
+        logger.info("Fetching hotel offers for hotelIds: {}, checkInDate: {}, checkOutDate: {}, adults: {}",
+                hotelIds, checkInDate, checkOutDate, adults);
+        return amadeus.shopping.hotelOffersSearch.get(params);
     }
 }
 

@@ -24,10 +24,14 @@ public class HotelsController {
         this.hotelsService = hotelsService;
     }
 
-
+    // Endpoint to get hotels by city code
     @GetMapping("/by-city")
     public ResponseEntity<?> getHotelsByCity(@RequestParam String cityCode) {
         try {
+            if (cityCode == null || cityCode.isEmpty()) {
+                return ResponseEntity.badRequest().body("City code is required.");
+            }
+
             Hotel[] locations = hotelsService.searchHotelsByCity(cityCode);
 
             if (locations == null || locations.length == 0) {
@@ -53,14 +57,19 @@ public class HotelsController {
 
 
 
+    // Endpoint to get hotel offers
     @GetMapping("/offers")
-    public ResponseEntity<?> t(
+    public ResponseEntity<?> getHotelOffers(
             @RequestParam String hotelIds,
-            @RequestParam String checkInDate,
-            @RequestParam String checkOutDate,
-            @RequestParam int adults
+            @RequestParam(required = false) String checkInDate,
+            @RequestParam(required = false) String checkOutDate,
+            @RequestParam(required = false) Integer adults
     ) {
         try {
+            if (hotelIds == null || hotelIds.isEmpty()) {
+                return ResponseEntity.badRequest().body("Hotel IDs are required.");
+            }
+
             HotelOfferSearch[] hotelOffers = hotelsService.searchHotelOffers(hotelIds, checkInDate, checkOutDate, adults);
 
             if (hotelOffers == null || hotelOffers.length == 0) {
@@ -96,6 +105,4 @@ public class HotelsController {
             return ResponseEntity.internalServerError().body("Error fetching hotel offers: " + e.getMessage());
         }
     }
-
 }
-
