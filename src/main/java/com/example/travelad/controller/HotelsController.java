@@ -3,11 +3,12 @@ package com.example.travelad.controller;
 import com.amadeus.exceptions.ResponseException;
 import com.amadeus.resources.HotelOfferSearch;
 import com.example.travelad.beans.HotelDto;
+import com.example.travelad.beans.HotelOffersDto;
+import com.example.travelad.beans.RoomDto;
 import com.example.travelad.service.HotelsService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.amadeus.resources.Hotel;
-
 
 import java.util.Arrays;
 import java.util.List;
@@ -36,10 +37,9 @@ public class HotelsController {
             List<HotelDto> hotels = Arrays.stream(locations)
                     .map(location -> new HotelDto(
                             location.getName(),
-                            cityCode,
-                            "Unknown",
-                            "N/A",
-                            "Amadeus"
+                            location.getHotelId(),
+                            location.getIataCode(),
+                            location.getAddress().getCountryCode()
                     ))
                     .collect(Collectors.toList());
 
@@ -53,9 +53,8 @@ public class HotelsController {
 
 
 
-
     @GetMapping("/offers")
-    public ResponseEntity<?> getHotelOffers(
+    public ResponseEntity<?> t(
             @RequestParam String hotelIds,
             @RequestParam String checkInDate,
             @RequestParam String checkOutDate,
@@ -68,14 +67,27 @@ public class HotelsController {
                 return ResponseEntity.notFound().build();
             }
 
-            List<HotelDto> hotels = Arrays.stream(hotelOffers)
-                    .map(offer -> new HotelDto(
-                            offer.getHotel().getName(),
-                            offer.getHotel().getCityCode(),
-                            offer.getHotel().getChainCode(),
-                            offer.getOffers()[0].getPrice().getTotal(),
-                            offer.getOffers()[0].getRateCode()
-                    ))
+            List<HotelOffersDto> hotels = Arrays.stream(hotelOffers)
+                    .map(offer -> {
+                        HotelOfferSearch.RoomDetails roomDetails = offer.getOffers()[0].getRoom();
+
+                        RoomDto room = new RoomDto(
+                                roomDetails.getTypeEstimated().getBedType(),
+                                roomDetails.getTypeEstimated().getBeds(),
+                                roomDetails.getDescription().getText()
+                        );
+
+                        return new HotelOffersDto(
+                                offer.getHotel().getName(),
+                                offer.getHotel().getCityCode(),
+                                offer.getOffers()[0].getPrice().getCurrency(),
+                                offer.getOffers()[0].getPrice().getBase(),
+                                offer.getOffers()[0].getPrice().getTotal(),
+                                offer.getOffers()[0].getCheckInDate(),
+                                offer.getOffers()[0].getCheckOutDate(),
+                                room
+                        );
+                    })
                     .collect(Collectors.toList());
 
             return ResponseEntity.ok(hotels);
@@ -84,4 +96,6 @@ public class HotelsController {
             return ResponseEntity.internalServerError().body("Error fetching hotel offers: " + e.getMessage());
         }
     }
+
 }
+

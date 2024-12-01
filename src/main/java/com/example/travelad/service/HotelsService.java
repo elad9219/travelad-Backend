@@ -31,7 +31,7 @@ public class HotelsService {
         this.amadeus = Amadeus.builder(apiKey, apiSecret).build();
     }
 
-
+    // Method to search hotels by city code
     public Hotel[] searchHotelsByCity(String cityCode) throws ResponseException {
         try {
             logger.info("Fetching hotels for cityCode: {}", cityCode);
@@ -46,9 +46,7 @@ public class HotelsService {
         }
     }
 
-
-
-
+    // Method to search hotel offers
     public HotelOfferSearch[] searchHotelOffers(String hotelIds, String checkInDate, String checkOutDate, int adults) throws ResponseException {
         try {
             logger.info("Fetching hotel offers for hotelIds: {}", hotelIds);
@@ -66,3 +64,4 @@ public class HotelsService {
         }
     }
 }
+

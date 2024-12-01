@@ -1,0 +1,38 @@
+package com.example.travelad.beans;
+
+public class RoomDto {
+    private String bedType;
+    private int beds;
+    private String description;
+
+    public RoomDto(String bedType, int beds, String description) {
+        this.bedType = bedType;
+        this.beds = beds;
+        this.description = description;
+    }
+
+    // Getters and setters
+    public String getBedType() {
+        return bedType;
+    }
+
+    public void setBedType(String bedType) {
+        this.bedType = bedType;
+    }
+
+    public int getBeds() {
+        return beds;
+    }
+
+    public void setBeds(int beds) {
+        this.beds = beds;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+}

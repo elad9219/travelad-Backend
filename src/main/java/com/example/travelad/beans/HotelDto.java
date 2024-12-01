@@ -2,17 +2,15 @@ package com.example.travelad.beans;
 
 public class HotelDto {
     private String name;
-    private String city;
-    private String country;
-    private String price; // Changed to String to align with Amadeus 10.0.0
-    private String vendor;
+    private String hotelId;
+    private String iataCode;
+    private String countryCode;
 
-    public HotelDto(String name, String city, String country, String price, String vendor) {
+    public HotelDto(String name, String hotelId, String iataCode, String countryCode) {
         this.name = name;
-        this.city = city;
-        this.country = country;
-        this.price = price;
-        this.vendor = vendor;
+        this.hotelId = hotelId;
+        this.iataCode = iataCode;
+        this.countryCode = countryCode;
     }
 
     public String getName() {
@@ -23,35 +21,36 @@ public class HotelDto {
         this.name = name;
     }
 
-    public String getCity() {
-        return city;
+    public String getHotelId() {
+        return hotelId;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setHotelId(String hotelId) {
+        this.hotelId = hotelId;
     }
 
-    public String getCountry() {
-        return country;
+    public String getIataCode() {
+        return iataCode;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setIataCode(String iataCode) {
+        this.iataCode = iataCode;
     }
 
-    public String getPrice() {
-        return price;
+    public String getCountryCode() {
+        return countryCode;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
-    }
-
-    public String getVendor() {
-        return vendor;
-    }
-
-    public void setVendor(String vendor) {
-        this.vendor = vendor;
+    public void setCountryCode(String countryCode) {
+        this.countryCode = countryCode;
     }
 }
+
+
+
+
+
+
+
+
+
