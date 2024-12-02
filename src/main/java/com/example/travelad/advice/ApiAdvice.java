@@ -24,5 +24,4 @@ public class ApiAdvice {
     public ErrorDetail handleGeneralError(Exception ex) {
         return new ErrorDetail("General Error", ex.getMessage());
     }
-
 }

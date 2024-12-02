@@ -5,6 +5,8 @@ import com.amadeus.resources.HotelOfferSearch;
 import com.example.travelad.beans.HotelDto;
 import com.example.travelad.beans.HotelOffersDto;
 import com.example.travelad.beans.RoomDto;
+import com.example.travelad.exceptions.ExternalApiException;
+import com.example.travelad.exceptions.InvalidInputException;
 import com.example.travelad.service.HotelsService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -66,17 +68,7 @@ public class HotelsController {
             @RequestParam(required = false) Integer adults
     ) {
         try {
-            if (hotelIds == null || hotelIds.isEmpty()) {
-                return ResponseEntity.badRequest().body("Hotel IDs are required.");
-            }
-
-            HotelOfferSearch[] hotelOffers = hotelsService.searchHotelOffers(hotelIds, checkInDate, checkOutDate, adults);
-
-            if (hotelOffers == null || hotelOffers.length == 0) {
-                return ResponseEntity.notFound().build();
-            }
-
-            List<HotelOffersDto> hotels = Arrays.stream(hotelOffers)
+            List<HotelOffersDto> hotels = Arrays.stream(hotelsService.searchHotelOffers(hotelIds, checkInDate, checkOutDate, adults))
                     .map(offer -> {
                         HotelOfferSearch.RoomDetails roomDetails = offer.getOffers()[0].getRoom();
 
@@ -101,8 +93,12 @@ public class HotelsController {
 
             return ResponseEntity.ok(hotels);
 
-        } catch (ResponseException e) {
-            return ResponseEntity.internalServerError().body("Error fetching hotel offers: " + e.getMessage());
+        } catch (InvalidInputException e) {
+            throw e; // Caught by GlobalExceptionHandler
+        } catch (ExternalApiException e) {
+            throw e; // Caught by GlobalExceptionHandler
+        } catch (Exception e) {
+            throw new RuntimeException("Unexpected error occurred while processing hotel offers.", e);
         }
     }
 }
