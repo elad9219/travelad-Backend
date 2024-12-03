@@ -1,29 +1,24 @@
 package com.example.travelad.controller;
 
+import com.example.travelad.beans.GeoapifyPlaceDto;
 import com.example.travelad.service.GeoapifyService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
-@RequestMapping("/places")
 public class GeoapifyController {
 
     private final GeoapifyService geoapifyService;
 
-    @Autowired
     public GeoapifyController(GeoapifyService geoapifyService) {
         this.geoapifyService = geoapifyService;
     }
 
-    @GetMapping
-    public ResponseEntity<?> getPlaces(@RequestParam String city) {
-        try {
-            String places = geoapifyService.findAttractionsByCity(city);
-            return ResponseEntity.ok(places);
-        } catch (Exception e) {
-            return ResponseEntity.internalServerError()
-                    .body("Error fetching places: " + e.getMessage());
-        }
+    @GetMapping("/api/geoapify/places")
+    public List<GeoapifyPlaceDto> getPlaces(@RequestParam String city) {
+        return geoapifyService.searchPlacesByCity(city);
     }
 }
