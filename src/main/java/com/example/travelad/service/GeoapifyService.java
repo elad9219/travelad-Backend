@@ -43,22 +43,31 @@ public class GeoapifyService {
             logger.info("Fetching coordinates for city: {}", cityName);
 
             String geocodingResponse = restTemplate.getForObject(geocodingRequestUrl, String.class);
-            JSONObject geocodingJson = new JSONObject(geocodingResponse);
+            if (geocodingResponse == null) {
+                throw new RuntimeException("No response from Geoapify Geocoding API");
+            }
 
-            // Extract coordinates
-            JSONObject cityLocation = geocodingJson.getJSONArray("features").getJSONObject(0).getJSONObject("geometry");
+            JSONObject geocodingJson = new JSONObject(geocodingResponse);
+            JSONArray features = geocodingJson.optJSONArray("features");
+            if (features == null || features.isEmpty()) {
+                throw new RuntimeException("No features found for city: " + cityName);
+            }
+
+            JSONObject cityLocation = features.getJSONObject(0).getJSONObject("geometry");
             String lon = cityLocation.getJSONArray("coordinates").get(0).toString();
             String lat = cityLocation.getJSONArray("coordinates").get(1).toString();
 
-            // Step 2: Find attractions using coordinates, with localization set to English
+            // Step 2: Fetch attractions
             String attractionsRequestUrl = String.format("%s?categories=tourism.sights&filter=circle:%s,%s,5000&apiKey=%s&lang=en",
                     placesUrl, lon, lat, apiKey);
             logger.info("Fetching attractions near city coordinates: {}, {}", lon, lat);
 
             String attractionsResponse = restTemplate.getForObject(attractionsRequestUrl, String.class);
-            JSONObject attractionsJson = new JSONObject(attractionsResponse);
+            if (attractionsResponse == null) {
+                throw new RuntimeException("No response from Geoapify Places API");
+            }
 
-            // Step 3: Parse attractions and return the list of GeoapifyPlaceDto
+            JSONObject attractionsJson = new JSONObject(attractionsResponse);
             return parseAttractions(attractionsJson);
         } catch (Exception e) {
             logger.error("Error fetching attractions for city: {}: {}", cityName, e.getMessage());
@@ -73,31 +82,37 @@ public class GeoapifyService {
         for (int i = 0; i < features.length(); i++) {
             JSONObject feature = features.getJSONObject(i);
             JSONObject properties = feature.getJSONObject("properties");
-            JSONObject geometry = feature.getJSONObject("geometry");
 
-            // Extract additional details
+            // Extract phone from contact if available
+            String phone = properties.optJSONObject("contact") != null
+                    ? properties.getJSONObject("contact").optString("phone", "No phone number available")
+                    : "No phone number available";
+
+            // Get the English name if available, otherwise fall back to local name
+            String name = properties.optJSONObject("name_international") != null
+                    ? properties.getJSONObject("name_international").optString("en", properties.optString("name", "Unknown Name"))
+                    : properties.optString("name", "Unknown Name");
+
+            // Extract other optional properties
             String street = properties.optString("address_line2", "No address available");
-            String postcode = properties.optString("postcode", "No postcode available");
-            String phone = properties.optString("phone", "No phone number available");
             String website = properties.optString("website", "No website available");
             String opening_hours = properties.optString("opening_hours", "No opening hours available");
 
-
-
+            // Create the place DTO with the name being either English or local
             GeoapifyPlaceDto place = new GeoapifyPlaceDto(
-                    properties.optString("name", "Unknown Place"),
+                    name,  // Use the correct name here
                     properties.optString("city", "Unknown City"),
                     properties.optString("country", "Unknown Country"),
                     properties.optString("description", "No description available")
             );
 
-            // Add more details to the place
+            // Set additional details to the place object
             place.setAddress(street);
-            place.setPostcode(postcode);
             place.setPhone(phone);
             place.setWebsite(website);
             place.setOpening_hours(opening_hours);
 
+            // Add place to the list
             places.add(place);
         }
 

@@ -1,12 +1,12 @@
 package com.example.travelad.beans;
 
+
 public class GeoapifyPlaceDto {
     private String name;
     private String city;
     private String country;
     private String description;
     private String address;
-    private String postcode;
     private String phone;
     private String website;
     private String opening_hours;
@@ -25,14 +25,6 @@ public class GeoapifyPlaceDto {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public String getPostcode() {
-        return postcode;
-    }
-
-    public void setPostcode(String postcode) {
-        this.postcode = postcode;
     }
 
     public String getPhone() {
