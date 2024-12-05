@@ -1,6 +1,9 @@
 package com.example.travelad.beans;
 
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class GeoapifyPlaceDto {
     private String name;
     private String city;

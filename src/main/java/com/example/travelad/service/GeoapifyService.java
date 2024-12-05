@@ -83,39 +83,37 @@ public class GeoapifyService {
             JSONObject feature = features.getJSONObject(i);
             JSONObject properties = feature.getJSONObject("properties");
 
-            // Extract phone from contact if available
             String phone = properties.optJSONObject("contact") != null
-                    ? properties.getJSONObject("contact").optString("phone", "No phone number available")
-                    : "No phone number available";
+                    ? properties.getJSONObject("contact").optString("phone", null)
+                    : null;
 
-            // Get the English name if available, otherwise fall back to local name
             String name = properties.optJSONObject("name_international") != null
-                    ? properties.getJSONObject("name_international").optString("en", properties.optString("name", "Unknown Name"))
-                    : properties.optString("name", "Unknown Name");
+                    ? properties.getJSONObject("name_international").optString("en", properties.optString("name", null))
+                    : properties.optString("name", null);
 
-            // Extract other optional properties
-            String street = properties.optString("address_line2", "No address available");
-            String website = properties.optString("website", "No website available");
-            String opening_hours = properties.optString("opening_hours", "No opening hours available");
+            String street = properties.optString("formatted", null);
+            String website = properties.optString("website", null);
+            String openingHours = properties.optString("opening_hours", null);
 
-            // Create the place DTO with the name being either English or local
+            String description = properties.optString("description", null);
+            if ("No description available".equalsIgnoreCase(description)) {
+                description = null;
+            }
+
             GeoapifyPlaceDto place = new GeoapifyPlaceDto(
-                    name,  // Use the correct name here
-                    properties.optString("city", "Unknown City"),
-                    properties.optString("country", "Unknown Country"),
-                    properties.optString("description", "No description available")
+                    name,
+                    properties.optString("city", null),
+                    properties.optString("country", null),
+                    description
             );
 
-            // Set additional details to the place object
             place.setAddress(street);
             place.setPhone(phone);
             place.setWebsite(website);
-            place.setOpening_hours(opening_hours);
+            place.setOpening_hours(openingHours);
 
-            // Add place to the list
             places.add(place);
         }
-
         return places;
     }
 }
