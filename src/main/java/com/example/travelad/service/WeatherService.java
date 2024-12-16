@@ -1,6 +1,6 @@
 package com.example.travelad.service;
 
-import com.example.travelad.beans.WeatherDto;
+import com.example.travelad.dto.WeatherDto;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;

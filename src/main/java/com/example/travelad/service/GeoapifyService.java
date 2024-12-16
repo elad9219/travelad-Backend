@@ -1,6 +1,8 @@
 package com.example.travelad.service;
 
-import com.example.travelad.beans.GeoapifyPlaceDto;
+import com.example.travelad.beans.Attraction;
+import com.example.travelad.dto.GeoapifyPlaceDto;
+import com.example.travelad.repositories.AttractionRepository;
 import kong.unirest.json.JSONArray;
 import kong.unirest.json.JSONObject;
 import org.slf4j.Logger;
@@ -12,6 +14,7 @@ import org.springframework.web.client.RestTemplate;
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class GeoapifyService {
@@ -19,6 +22,7 @@ public class GeoapifyService {
     private static final Logger logger = LoggerFactory.getLogger(GeoapifyService.class);
 
     private final RestTemplate restTemplate;
+    private final AttractionRepository attractionRepository;
 
     @Value("${geoapify.api.key}")
     private String apiKey;
@@ -26,8 +30,9 @@ public class GeoapifyService {
     private String geocodingUrl;
     private String placesUrl;
 
-    public GeoapifyService(RestTemplate restTemplate) {
+    public GeoapifyService(RestTemplate restTemplate, AttractionRepository attractionRepository) {
         this.restTemplate = restTemplate;
+        this.attractionRepository = attractionRepository;
     }
 
     @PostConstruct
@@ -36,84 +41,91 @@ public class GeoapifyService {
         placesUrl = "https://api.geoapify.com/v2/places";
     }
 
-    public List<GeoapifyPlaceDto> searchPlacesByCity(String cityName) {
-        try {
-            // Step 1: Get city coordinates
-            String geocodingRequestUrl = String.format("%s?text=%s&apiKey=%s", geocodingUrl, cityName, apiKey);
-            logger.info("Fetching coordinates for city: {}", cityName);
-
-            String geocodingResponse = restTemplate.getForObject(geocodingRequestUrl, String.class);
-            if (geocodingResponse == null) {
-                throw new RuntimeException("No response from Geoapify Geocoding API");
-            }
-
-            JSONObject geocodingJson = new JSONObject(geocodingResponse);
-            JSONArray features = geocodingJson.optJSONArray("features");
-            if (features == null || features.isEmpty()) {
-                throw new RuntimeException("No features found for city: " + cityName);
-            }
-
-            JSONObject cityLocation = features.getJSONObject(0).getJSONObject("geometry");
-            String lon = cityLocation.getJSONArray("coordinates").get(0).toString();
-            String lat = cityLocation.getJSONArray("coordinates").get(1).toString();
-
-            // Step 2: Fetch attractions
-            String attractionsRequestUrl = String.format("%s?categories=tourism.sights&filter=circle:%s,%s,5000&apiKey=%s&lang=en",
-                    placesUrl, lon, lat, apiKey);
-            logger.info("Fetching attractions near city coordinates: {}, {}", lon, lat);
-
-            String attractionsResponse = restTemplate.getForObject(attractionsRequestUrl, String.class);
-            if (attractionsResponse == null) {
-                throw new RuntimeException("No response from Geoapify Places API");
-            }
-
-            JSONObject attractionsJson = new JSONObject(attractionsResponse);
-            return parseAttractions(attractionsJson);
-        } catch (Exception e) {
-            logger.error("Error fetching attractions for city: {}: {}", cityName, e.getMessage());
-            throw new RuntimeException("Error fetching attractions", e);
+    public List<Attraction> searchPlacesByCity(String cityName) {
+        // Check database for cached attractions
+        List<Attraction> cachedAttractions = attractionRepository.findByCityIgnoreCase(cityName);
+        if (!cachedAttractions.isEmpty()) {
+            logger.info("Returning cached attractions for city: {}", cityName);
+            return cachedAttractions;
         }
+
+        logger.info("Fetching from Geoapify API for city: {}", cityName);
+        List<GeoapifyPlaceDto> geoapifyPlaces = fetchPlacesFromGeoapify(cityName);
+
+        // Map Geoapify places to Attraction entities, filter existing, and save new attractions
+        List<Attraction> newAttractions = geoapifyPlaces.stream()
+                .map(this::mapToAttraction)
+                .filter(attraction -> !attractionRepository.findByNameAndCityIgnoreCase(attraction.getName(), attraction.getCity()).isPresent())
+                .map(attractionRepository::save)
+                .collect(Collectors.toList());
+
+        logger.info("Saved {} new attractions for city: {}", newAttractions.size(), cityName);
+        return newAttractions;
     }
 
-    private List<GeoapifyPlaceDto> parseAttractions(JSONObject attractionsJson) {
+    private List<GeoapifyPlaceDto> fetchPlacesFromGeoapify(String cityName) {
+        String geocodingRequestUrl = String.format("%s?text=%s&apiKey=%s", geocodingUrl, cityName, apiKey);
+        String geocodingResponse = restTemplate.getForObject(geocodingRequestUrl, String.class);
+
+        JSONObject geocodingJson = new JSONObject(geocodingResponse);
+        JSONArray features = geocodingJson.getJSONArray("features");
+        if (features.isEmpty()) {
+            throw new RuntimeException("City not found in Geoapify geocoding API");
+        }
+
+        JSONObject geometry = features.getJSONObject(0).getJSONObject("geometry");
+        String lon = geometry.getJSONArray("coordinates").get(0).toString();
+        String lat = geometry.getJSONArray("coordinates").get(1).toString();
+
+        String placesRequestUrl = String.format("%s?categories=tourism.sights&filter=circle:%s,%s,5000&apiKey=%s&lang=en",
+                placesUrl, lon, lat, apiKey);
+        String placesResponse = restTemplate.getForObject(placesRequestUrl, String.class);
+
+        return parsePlaces(new JSONObject(placesResponse));
+    }
+
+    private List<GeoapifyPlaceDto> parsePlaces(JSONObject placesJson) {
         List<GeoapifyPlaceDto> places = new ArrayList<>();
-        JSONArray features = attractionsJson.getJSONArray("features");
+        JSONArray features = placesJson.getJSONArray("features");
 
         for (int i = 0; i < features.length(); i++) {
-            JSONObject feature = features.getJSONObject(i);
-            JSONObject properties = feature.getJSONObject("properties");
+            JSONObject properties = features.getJSONObject(i).getJSONObject("properties");
 
-            String phone = properties.optJSONObject("contact") != null
-                    ? properties.getJSONObject("contact").optString("phone", null)
-                    : null;
-
+            // Extract the name, prioritizing the international name if available
             String name = properties.optJSONObject("name_international") != null
                     ? properties.getJSONObject("name_international").optString("en", properties.optString("name", null))
                     : properties.optString("name", null);
 
-            String street = properties.optString("formatted", null);
-            String website = properties.optString("website", null);
-            String openingHours = properties.optString("opening_hours", null);
-
-            String description = properties.optString("description", null);
-            if ("No description available".equalsIgnoreCase(description)) {
-                description = null;
-            }
-
             GeoapifyPlaceDto place = new GeoapifyPlaceDto(
-                    name,
+                    name, // Use the extracted international name
                     properties.optString("city", null),
                     properties.optString("country", null),
-                    description
+                    properties.optString("description", null)
             );
 
-            place.setAddress(street);
-            place.setPhone(phone);
-            place.setWebsite(website);
-            place.setOpening_hours(openingHours);
+            place.setAddress(properties.optString("formatted", null));
+            place.setPhone(properties.optJSONObject("contact") != null
+                    ? properties.getJSONObject("contact").optString("phone", null)
+                    : null);
+            place.setWebsite(properties.optString("website", null));
+            place.setOpening_hours(properties.optString("opening_hours", null));
 
             places.add(place);
         }
         return places;
+    }
+
+
+    private Attraction mapToAttraction(GeoapifyPlaceDto placeDto) {
+        Attraction attraction = new Attraction();
+        attraction.setName(placeDto.getName());
+        attraction.setCity(placeDto.getCity());
+        attraction.setCountry(placeDto.getCountry());
+        attraction.setDescription(placeDto.getDescription());
+        attraction.setAddress(placeDto.getAddress());
+        attraction.setPhone(placeDto.getPhone());
+        attraction.setWebsite(placeDto.getWebsite());
+        attraction.setOpeningHours(placeDto.getOpening_hours());
+        return attraction;
     }
 }

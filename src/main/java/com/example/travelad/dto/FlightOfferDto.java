@@ -1,4 +1,4 @@
-package com.example.travelad.beans;
+package com.example.travelad.dto;
 
 import java.util.List;
 

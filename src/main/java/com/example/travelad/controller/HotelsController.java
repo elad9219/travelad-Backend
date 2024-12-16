@@ -2,9 +2,9 @@ package com.example.travelad.controller;
 
 import com.amadeus.exceptions.ResponseException;
 import com.amadeus.resources.HotelOfferSearch;
-import com.example.travelad.beans.HotelDto;
-import com.example.travelad.beans.HotelOffersDto;
-import com.example.travelad.beans.RoomDto;
+import com.example.travelad.dto.HotelDto;
+import com.example.travelad.dto.HotelOffersDto;
+import com.example.travelad.dto.RoomDto;
 import com.example.travelad.exceptions.ExternalApiException;
 import com.example.travelad.exceptions.InvalidInputException;
 import com.example.travelad.service.HotelsService;

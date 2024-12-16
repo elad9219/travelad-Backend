@@ -1,6 +1,6 @@
 package com.example.travelad.controller;
 
-import com.example.travelad.beans.GeoapifyPlaceDto;
+import com.example.travelad.beans.Attraction;
 import com.example.travelad.service.GeoapifyService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,7 +18,7 @@ public class GeoapifyController {
     }
 
     @GetMapping("/api/geoapify/places")
-    public List<GeoapifyPlaceDto> getPlaces(@RequestParam String city) {
-        return geoapifyService.searchPlacesByCity(city);
+    public List<Attraction> getPlaces(@RequestParam String city) {
+        return geoapifyService.searchPlacesByCity(city);  // This will call the method from the service
     }
 }
