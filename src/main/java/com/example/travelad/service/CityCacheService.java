@@ -5,6 +5,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CityCacheService {
@@ -14,20 +15,41 @@ public class CityCacheService {
 
     private static final String CITY_KEY = "city_names";
 
+    // Get all cities in the cache
+    public Object getCities() {
+        List<String> cities = redisTemplate.opsForList().range(CITY_KEY, 0, -1).stream()
+                .distinct()  // Removes duplicates
+                .collect(Collectors.toList()); // Collect into a list
 
-    public List<String> getCities() {
-        return redisTemplate.opsForList().range(CITY_KEY, 0, -1); // Retrieve all city names
+        if (cities == null || cities.isEmpty()) {
+            return "No cities in the list"; // Custom message when no cities are found
+        }
+        return cities; // Return the list of cities
     }
 
-    public void addCity(String city) {
-        redisTemplate.opsForList().leftPush(CITY_KEY, city); // Add the city to the start of the list
+    // Add a city to the cache if it's not already present
+    public String addCity(String city) {
+        // Check if the city is already in the list
+        if (!redisTemplate.opsForList().range(CITY_KEY, 0, -1).contains(city)) {
+            redisTemplate.opsForList().leftPush(CITY_KEY, city); // Add city to the cache
+            return "City '" + city + "' added successfully";
+        }
+        return "City '" + city + "' already exists in the cache";
     }
 
-    public void removeCity(String city) {
-        redisTemplate.opsForList().remove(CITY_KEY, 1, city); // Remove a single occurrence of the city
+    // Remove a specific city from the cache
+    public String removeCity(String city) {
+        List<String> cities = redisTemplate.opsForList().range(CITY_KEY, 0, -1);
+        if (cities != null && cities.contains(city)) {
+            redisTemplate.opsForList().remove(CITY_KEY, 1, city); // Remove the city from the cache
+            return "City '" + city + "' removed successfully";
+        }
+        return "City '" + city + "' not found in the cache";
     }
 
-    public void clearCities() {
+    // Clear all cities from the cache and return a success message
+    public String clearCities() {
         redisTemplate.delete(CITY_KEY); // Remove the key and all associated values
+        return "All cities cleared successfully";
     }
 }
