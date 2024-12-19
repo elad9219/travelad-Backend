@@ -4,7 +4,7 @@ package com.example.travelad.dto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
-public class GeoapifyPlaceDto {
+public class AttractionDto {
     private String name;
     private String city;
     private String country;
@@ -14,7 +14,7 @@ public class GeoapifyPlaceDto {
     private String website;
     private String opening_hours;
 
-    public GeoapifyPlaceDto(String name, String city, String country, String description) {
+    public AttractionDto(String name, String city, String country, String description) {
         this.name = name;
         this.city = city;
         this.country = country;

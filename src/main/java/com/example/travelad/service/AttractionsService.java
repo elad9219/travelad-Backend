@@ -1,7 +1,7 @@
 package com.example.travelad.service;
 
 import com.example.travelad.beans.Attraction;
-import com.example.travelad.dto.GeoapifyPlaceDto;
+import com.example.travelad.dto.AttractionDto;
 import com.example.travelad.repositories.AttractionRepository;
 import kong.unirest.json.JSONArray;
 import kong.unirest.json.JSONObject;
@@ -17,9 +17,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class GeoapifyService {
+public class AttractionsService {
 
-    private static final Logger logger = LoggerFactory.getLogger(GeoapifyService.class);
+    private static final Logger logger = LoggerFactory.getLogger(AttractionsService.class);
 
     private final RestTemplate restTemplate;
     private final AttractionRepository attractionRepository;
@@ -30,7 +30,7 @@ public class GeoapifyService {
     private String geocodingUrl;
     private String placesUrl;
 
-    public GeoapifyService(RestTemplate restTemplate, AttractionRepository attractionRepository) {
+    public AttractionsService(RestTemplate restTemplate, AttractionRepository attractionRepository) {
         this.restTemplate = restTemplate;
         this.attractionRepository = attractionRepository;
     }
@@ -50,7 +50,7 @@ public class GeoapifyService {
         }
 
         logger.info("Fetching from Geoapify API for city: {}", cityName);
-        List<GeoapifyPlaceDto> geoapifyPlaces = fetchPlacesFromGeoapify(cityName);
+        List<AttractionDto> geoapifyPlaces = fetchPlacesFromGeoapify(cityName);
 
         // Map Geoapify places to Attraction entities, filter existing, and save new attractions
         List<Attraction> newAttractions = geoapifyPlaces.stream()
@@ -63,7 +63,7 @@ public class GeoapifyService {
         return newAttractions;
     }
 
-    private List<GeoapifyPlaceDto> fetchPlacesFromGeoapify(String cityName) {
+    private List<AttractionDto> fetchPlacesFromGeoapify(String cityName) {
         String geocodingRequestUrl = String.format("%s?text=%s&apiKey=%s", geocodingUrl, cityName, apiKey);
         String geocodingResponse = restTemplate.getForObject(geocodingRequestUrl, String.class);
 
@@ -84,8 +84,8 @@ public class GeoapifyService {
         return parsePlaces(new JSONObject(placesResponse));
     }
 
-    private List<GeoapifyPlaceDto> parsePlaces(JSONObject placesJson) {
-        List<GeoapifyPlaceDto> places = new ArrayList<>();
+    private List<AttractionDto> parsePlaces(JSONObject placesJson) {
+        List<AttractionDto> places = new ArrayList<>();
         JSONArray features = placesJson.getJSONArray("features");
 
         for (int i = 0; i < features.length(); i++) {
@@ -96,7 +96,7 @@ public class GeoapifyService {
                     ? properties.getJSONObject("name_international").optString("en", properties.optString("name", null))
                     : properties.optString("name", null);
 
-            GeoapifyPlaceDto place = new GeoapifyPlaceDto(
+            AttractionDto place = new AttractionDto(
                     name, // Use the extracted international name
                     properties.optString("city", null),
                     properties.optString("country", null),
@@ -116,7 +116,7 @@ public class GeoapifyService {
     }
 
 
-    private Attraction mapToAttraction(GeoapifyPlaceDto placeDto) {
+    private Attraction mapToAttraction(AttractionDto placeDto) {
         Attraction attraction = new Attraction();
         attraction.setName(placeDto.getName());
         attraction.setCity(placeDto.getCity());

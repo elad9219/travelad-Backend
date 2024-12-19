@@ -1,7 +1,7 @@
 package com.example.travelad.controller;
 
 import com.example.travelad.beans.Attraction;
-import com.example.travelad.service.GeoapifyService;
+import com.example.travelad.service.AttractionsService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,16 +9,16 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class GeoapifyController {
+public class AttractionsController {
 
-    private final GeoapifyService geoapifyService;
+    private final AttractionsService attractionsService;
 
-    public GeoapifyController(GeoapifyService geoapifyService) {
-        this.geoapifyService = geoapifyService;
+    public AttractionsController(AttractionsService attractionsService) {
+        this.attractionsService = attractionsService;
     }
 
     @GetMapping("/api/geoapify/places")
     public List<Attraction> getPlaces(@RequestParam String city) {
-        return geoapifyService.searchPlacesByCity(city);  // This will call the method from the service
+        return attractionsService.searchPlacesByCity(city);  // This will call the method from the service
     }
 }
