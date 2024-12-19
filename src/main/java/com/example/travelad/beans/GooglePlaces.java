@@ -22,6 +22,7 @@ public class GooglePlaces {
     private String address;
     private Double latitude;
     private Double longitude;
+    @Column(length = 1000)
     private String icon;
 
     @Column(updatable = false)

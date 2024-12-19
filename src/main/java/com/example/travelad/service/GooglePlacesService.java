@@ -51,36 +51,35 @@ public class GooglePlacesService {
             GooglePlaces place;
             if (existingPlace.isPresent()) {
                 place = existingPlace.get();
-                place.setName(result.optString("name"));
-                place.setAddress(result.optString("formatted_address"));
-                place.setLatitude(result.getJSONObject("geometry").getJSONObject("location").getDouble("lat"));
-                place.setLongitude(result.getJSONObject("geometry").getJSONObject("location").getDouble("lng"));
-                place.setIcon(result.optString("icon"));
-                place.setCity(cityName);
-                googlePlacesRepository.save(place);  // Save updated place
             } else {
                 place = new GooglePlaces();
                 place.setPlaceId(placeId);
-                place.setName(result.optString("name"));
-                place.setAddress(result.optString("formatted_address"));
-                place.setLatitude(result.getJSONObject("geometry").getJSONObject("location").getDouble("lat"));
-                place.setLongitude(result.getJSONObject("geometry").getJSONObject("location").getDouble("lng"));
-                place.setIcon(result.optString("icon"));
-                place.setCity(cityName);
-                googlePlacesRepository.save(place);  // Save new place
             }
 
-            // Fetch and set place image if available (optional)
+            // Update fields for both new and existing records
+            place.setName(result.optString("name"));
+            place.setAddress(result.optString("formatted_address"));
+            place.setLatitude(result.getJSONObject("geometry").getJSONObject("location").getDouble("lat"));
+            place.setLongitude(result.getJSONObject("geometry").getJSONObject("location").getDouble("lng"));
+            place.setCity(cityName);
+
+            // Always update the icon field with the photo URL if available
             if (result.has("photos")) {
                 JSONObject photo = result.getJSONArray("photos").getJSONObject(0);
                 String photoReference = photo.getString("photo_reference");
                 String photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference="
                         + photoReference + "&key=" + apiKey;
-                place.setIcon(photoUrl); // Set photo URL or handle accordingly
+                if (photoUrl.length() <= 1000) {
+                    place.setIcon(photoUrl);
+                } else {
+                    place.setIcon(result.optString("icon")); // Fallback to generic icon if too long
+                }
             }
 
+            googlePlacesRepository.save(place);
             places.add(place);
         });
         return places;
     }
+
 }
