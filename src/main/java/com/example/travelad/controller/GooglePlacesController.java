@@ -20,7 +20,8 @@ public class GooglePlacesController {
     }
 
     @GetMapping("/api/places/search")
-    public List<GooglePlaces> searchOrFetchPlace(@RequestParam String city) {
-        return googlePlacesService.searchPlacesByCity(city);
+    public GooglePlaces searchOrFetchPlace(@RequestParam String city) {
+        return googlePlacesService.searchPlaceByCity(city);
     }
+
 }

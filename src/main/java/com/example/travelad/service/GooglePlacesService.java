@@ -24,11 +24,11 @@ public class GooglePlacesService {
         this.googlePlacesRepository = googlePlacesRepository;
     }
 
-    public List<GooglePlaces> searchPlacesByCity(String cityName) {
+    public GooglePlaces searchPlaceByCity(String cityName) {
         // Check if city attractions are already cached in the database
         List<GooglePlaces> cachedPlaces = googlePlacesRepository.findByCityIgnoreCase(cityName);
         if (!cachedPlaces.isEmpty()) {
-            return cachedPlaces;
+            return cachedPlaces.get(0); // Return the first cached place
         }
 
         // If not, fetch places from Google Places API
@@ -37,49 +37,51 @@ public class GooglePlacesService {
 
         // Parse API response
         JSONObject responseJson = new JSONObject(response);
-        return parsePlaces(responseJson, cityName);
+
+        // Get the first result and save it
+        if (responseJson.has("results") && responseJson.getJSONArray("results").length() > 0) {
+            JSONObject firstResult = responseJson.getJSONArray("results").getJSONObject(0);
+            return savePlaceFromApiResponse(firstResult, cityName);
+        }
+
+        return null; // No result found
     }
 
-    private List<GooglePlaces> parsePlaces(JSONObject responseJson, String cityName) {
-        List<GooglePlaces> places = new ArrayList<>();
-        responseJson.getJSONArray("results").forEach(resultObj -> {
-            JSONObject result = (JSONObject) resultObj;
-            String placeId = result.getString("place_id");
+    private GooglePlaces savePlaceFromApiResponse(JSONObject result, String cityName) {
+        String placeId = result.getString("place_id");
 
-            // Check if the placeId already exists in the database
-            Optional<GooglePlaces> existingPlace = googlePlacesRepository.findByPlaceId(placeId);
-            GooglePlaces place;
-            if (existingPlace.isPresent()) {
-                place = existingPlace.get();
+        // Check if the placeId already exists in the database
+        Optional<GooglePlaces> existingPlace = googlePlacesRepository.findByPlaceId(placeId);
+        GooglePlaces place;
+        if (existingPlace.isPresent()) {
+            place = existingPlace.get();
+        } else {
+            place = new GooglePlaces();
+            place.setPlaceId(placeId);
+        }
+
+        // Update fields for both new and existing records
+        place.setName(result.optString("name"));
+        place.setAddress(result.optString("formatted_address"));
+        place.setLatitude(result.getJSONObject("geometry").getJSONObject("location").getDouble("lat"));
+        place.setLongitude(result.getJSONObject("geometry").getJSONObject("location").getDouble("lng"));
+        place.setCity(cityName);
+
+        // Always update the icon field with the photo URL if available
+        if (result.has("photos")) {
+            JSONObject photo = result.getJSONArray("photos").getJSONObject(0);
+            String photoReference = photo.getString("photo_reference");
+            String photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference="
+                    + photoReference + "&key=" + apiKey;
+            if (photoUrl.length() <= 1000) {
+                place.setIcon(photoUrl);
             } else {
-                place = new GooglePlaces();
-                place.setPlaceId(placeId);
+                place.setIcon(result.optString("icon")); // Fallback to generic icon if too long
             }
+        }
 
-            // Update fields for both new and existing records
-            place.setName(result.optString("name"));
-            place.setAddress(result.optString("formatted_address"));
-            place.setLatitude(result.getJSONObject("geometry").getJSONObject("location").getDouble("lat"));
-            place.setLongitude(result.getJSONObject("geometry").getJSONObject("location").getDouble("lng"));
-            place.setCity(cityName);
-
-            // Always update the icon field with the photo URL if available
-            if (result.has("photos")) {
-                JSONObject photo = result.getJSONArray("photos").getJSONObject(0);
-                String photoReference = photo.getString("photo_reference");
-                String photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference="
-                        + photoReference + "&key=" + apiKey;
-                if (photoUrl.length() <= 1000) {
-                    place.setIcon(photoUrl);
-                } else {
-                    place.setIcon(result.optString("icon")); // Fallback to generic icon if too long
-                }
-            }
-
-            googlePlacesRepository.save(place);
-            places.add(place);
-        });
-        return places;
+        googlePlacesRepository.save(place);
+        return place;
     }
 
 }
