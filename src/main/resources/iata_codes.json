@@ -1,0 +1,6237 @@
+[
+  {
+    "IATA CODES": "Aalborg",
+    "FIELD2": "AAL",
+    "FIELD3": "AAL"
+  },
+  {
+    "IATA CODES": "Aarhus",
+    "FIELD2": "AAR",
+    "FIELD3": "AAR"
+  },
+  {
+    "IATA CODES": "Abadan",
+    "FIELD2": "ABD",
+    "FIELD3": "ABD"
+  },
+  {
+    "IATA CODES": "Abakan",
+    "FIELD2": "ABA",
+    "FIELD3": "ABA"
+  },
+  {
+    "IATA CODES": "Aberdeen",
+    "FIELD2": "ABR",
+    "FIELD3": "ABR"
+  },
+  {
+    "IATA CODES": "Aberdeen",
+    "FIELD2": "ABZ",
+    "FIELD3": "ABZ"
+  },
+  {
+    "IATA CODES": "Abha",
+    "FIELD2": "AHB",
+    "FIELD3": "AHB"
+  },
+  {
+    "IATA CODES": "Abu Dhabi",
+    "FIELD2": "AUH",
+    "FIELD3": "AUH"
+  },
+  {
+    "IATA CODES": "Abidjan",
+    "FIELD2": "ABJ",
+    "FIELD3": "ABJ"
+  },
+  {
+    "IATA CODES": "Abilene",
+    "FIELD2": "ABI",
+    "FIELD3": "ABI"
+  },
+  {
+    "IATA CODES": "Abuja",
+    "FIELD2": "ABV",
+    "FIELD3": "ABV"
+  },
+  {
+    "IATA CODES": "Acapulco",
+    "FIELD2": "ACA",
+    "FIELD3": "ACA"
+  },
+  {
+    "IATA CODES": "Acarigua",
+    "FIELD2": "AGV",
+    "FIELD3": "AGV"
+  },
+  {
+    "IATA CODES": "Accra",
+    "FIELD2": "ACC",
+    "FIELD3": "ACC"
+  },
+  {
+    "IATA CODES": "Adak Island",
+    "FIELD2": "ADK",
+    "FIELD3": "ADK"
+  },
+  {
+    "IATA CODES": "Adana",
+    "FIELD2": "ADA",
+    "FIELD3": "ADA"
+  },
+  {
+    "IATA CODES": "Addis Ababa",
+    "FIELD2": "ADD",
+    "FIELD3": "ADD"
+  },
+  {
+    "IATA CODES": "Adelaide",
+    "FIELD2": "ADL",
+    "FIELD3": "ADL"
+  },
+  {
+    "IATA CODES": "Aden",
+    "FIELD2": "ADE",
+    "FIELD3": "ADE"
+  },
+  {
+    "IATA CODES": "Adler",
+    "FIELD2": "AER",
+    "FIELD3": "AER"
+  },
+  {
+    "IATA CODES": "Agadir",
+    "FIELD2": "AGA",
+    "FIELD3": "AGA"
+  },
+  {
+    "IATA CODES": "Aguascaliente",
+    "FIELD2": "AGU",
+    "FIELD3": "AGU"
+  },
+  {
+    "IATA CODES": "Ahmedabad",
+    "FIELD2": "AMD",
+    "FIELD3": "AMD"
+  },
+  {
+    "IATA CODES": "Ajaccio",
+    "FIELD2": "AJA",
+    "FIELD3": "AJA"
+  },
+  {
+    "IATA CODES": "Akiachak",
+    "FIELD2": "KKI",
+    "FIELD3": "KKI"
+  },
+  {
+    "IATA CODES": "Akiak",
+    "FIELD2": "AKI",
+    "FIELD3": "AKI"
+  },
+  {
+    "IATA CODES": "Akita",
+    "FIELD2": "AXT",
+    "FIELD3": "AXT"
+  },
+  {
+    "IATA CODES": "Akron/Canton",
+    "FIELD2": "CAK",
+    "FIELD3": "CAK"
+  },
+  {
+    "IATA CODES": "Al -Baha",
+    "FIELD2": "ABT",
+    "FIELD3": "ABT"
+  },
+  {
+    "IATA CODES": "Al -Fujairah",
+    "FIELD2": "FJR",
+    "FIELD3": "FJR"
+  },
+  {
+    "IATA CODES": "Albany",
+    "FIELD2": "ABY",
+    "FIELD3": "ABY"
+  },
+  {
+    "IATA CODES": "Albany",
+    "FIELD2": "ALB",
+    "FIELD3": "ALB"
+  },
+  {
+    "IATA CODES": "Albert Bay",
+    "FIELD2": "YAL",
+    "FIELD3": "YAL"
+  },
+  {
+    "IATA CODES": "Albuquerque",
+    "FIELD2": "ABQ",
+    "FIELD3": "ABQ"
+  },
+  {
+    "IATA CODES": "Aleandroupolis",
+    "FIELD2": "AXD",
+    "FIELD3": "AXD"
+  },
+  {
+    "IATA CODES": "Aleppo",
+    "FIELD2": "ALP",
+    "FIELD3": "ALP"
+  },
+  {
+    "IATA CODES": "Alexandria",
+    "FIELD2": "ESF",
+    "FIELD3": "ESF"
+  },
+  {
+    "IATA CODES": "Algiers",
+    "FIELD2": "ALG",
+    "FIELD3": "ALG"
+  },
+  {
+    "IATA CODES": "Alicante",
+    "FIELD2": "ALC",
+    "FIELD3": "ALC"
+  },
+  {
+    "IATA CODES": "Allakaket",
+    "FIELD2": "AET",
+    "FIELD3": "AET"
+  },
+  {
+    "IATA CODES": "Allentown",
+    "FIELD2": "ABE",
+    "FIELD3": "ABE"
+  },
+  {
+    "IATA CODES": "Alma Ata",
+    "FIELD2": "ALA",
+    "FIELD3": "ALA"
+  },
+  {
+    "IATA CODES": "Alor Setar",
+    "FIELD2": "AOR",
+    "FIELD3": "AOR"
+  },
+  {
+    "IATA CODES": "Altoona",
+    "FIELD2": "AOO",
+    "FIELD3": "AOO"
+  },
+  {
+    "IATA CODES": "Amarillo",
+    "FIELD2": "AMA",
+    "FIELD3": "AMA"
+  },
+  {
+    "IATA CODES": "Amchitka",
+    "FIELD2": "AHT",
+    "FIELD3": "AHT"
+  },
+  {
+    "IATA CODES": "Amman",
+    "FIELD2": "AMM",
+    "FIELD3": "AMM"
+  },
+  {
+    "IATA CODES": "Amritsar",
+    "FIELD2": "ATQ",
+    "FIELD3": "ATQ"
+  },
+  {
+    "IATA CODES": "Amsterdam",
+    "FIELD2": "AMS",
+    "FIELD3": "AMS"
+  },
+  {
+    "IATA CODES": "Amsterdam, Schiphol Airport",
+    "FIELD2": "AMS",
+    "FIELD3": "SPL"
+  },
+  {
+    "IATA CODES": "Baghdad, Al Muthana",
+    "FIELD2": "BGW",
+    "FIELD3": "BGW"
+  },
+  {
+    "IATA CODES": "Baghdad, Saddam International",
+    "FIELD2": "BGW",
+    "FIELD3": "SDA"
+  },
+  {
+    "IATA CODES": "Bahrain",
+    "FIELD2": "BAH",
+    "FIELD3": "BAH"
+  },
+  {
+    "IATA CODES": "Bakersfield",
+    "FIELD2": "BFL",
+    "FIELD3": "BFL"
+  },
+  {
+    "IATA CODES": "Bali Island, Denpasar",
+    "FIELD2": "DPS",
+    "FIELD3": "DPS"
+  },
+  {
+    "IATA CODES": "Balmaceda",
+    "FIELD2": "BBA",
+    "FIELD3": "BBA"
+  },
+  {
+    "IATA CODES": "Baltimore",
+    "FIELD2": "BWI",
+    "FIELD3": "BWI"
+  },
+  {
+    "IATA CODES": "Baltimore, Gl. Martin",
+    "FIELD2": "BWI",
+    "FIELD3": "MTN"
+  },
+  {
+    "IATA CODES": "Bamako",
+    "FIELD2": "BKO",
+    "FIELD3": "BKO"
+  },
+  {
+    "IATA CODES": "Bandar Abbas",
+    "FIELD2": "BND",
+    "FIELD3": "BND"
+  },
+  {
+    "IATA CODES": "Bandar Seri   Bagawan",
+    "FIELD2": "BWN",
+    "FIELD3": "BWN"
+  },
+  {
+    "IATA CODES": "Bangalore",
+    "FIELD2": "BLR",
+    "FIELD3": "BLR"
+  },
+  {
+    "IATA CODES": "Bangkok",
+    "FIELD2": "BKK",
+    "FIELD3": "BKK"
+  },
+  {
+    "IATA CODES": "Bangor",
+    "FIELD2": "BGR",
+    "FIELD3": "BGR"
+  },
+  {
+    "IATA CODES": "Bangui",
+    "FIELD2": "BGF",
+    "FIELD3": "BGF"
+  },
+  {
+    "IATA CODES": "Banjul",
+    "FIELD2": "BJL",
+    "FIELD3": "BJL"
+  },
+  {
+    "IATA CODES": "Baotou",
+    "FIELD2": "BAV",
+    "FIELD3": "BAV"
+  },
+  {
+    "IATA CODES": "Barbados",
+    "FIELD2": "BGI",
+    "FIELD3": "BGI"
+  },
+  {
+    "IATA CODES": "Barcelona",
+    "FIELD2": "BCN",
+    "FIELD3": "BCN"
+  },
+  {
+    "IATA CODES": "Barcelona",
+    "FIELD2": "BLA",
+    "FIELD3": "BLA"
+  },
+  {
+    "IATA CODES": "Bardufoss",
+    "FIELD2": "BDU",
+    "FIELD3": "BDU"
+  },
+  {
+    "IATA CODES": "Bari",
+    "FIELD2": "BRI",
+    "FIELD3": "BRI"
+  },
+  {
+    "IATA CODES": "Barinas",
+    "FIELD2": "BNS",
+    "FIELD3": "BNS"
+  },
+  {
+    "IATA CODES": "Barquisimeto",
+    "FIELD2": "BRM",
+    "FIELD3": "BRM"
+  },
+  {
+    "IATA CODES": "Barranquilla",
+    "FIELD2": "BAQ",
+    "FIELD3": "BAQ"
+  },
+  {
+    "IATA CODES": "Barrow",
+    "FIELD2": "BRW",
+    "FIELD3": "BRW"
+  },
+  {
+    "IATA CODES": "Basle",
+    "FIELD2": "BSL",
+    "FIELD3": "BSL"
+  },
+  {
+    "IATA CODES": "Basra",
+    "FIELD2": "BSR",
+    "FIELD3": "BSR"
+  },
+  {
+    "IATA CODES": "Bastia",
+    "FIELD2": "BIA",
+    "FIELD3": "BIA"
+  },
+  {
+    "IATA CODES": "Bastia, Biak",
+    "FIELD2": "BIA",
+    "FIELD3": "BIK"
+  },
+  {
+    "IATA CODES": "Baton Rouge",
+    "FIELD2": "BTR",
+    "FIELD3": "BTR"
+  },
+  {
+    "IATA CODES": "Battle Creek",
+    "FIELD2": "BTL",
+    "FIELD3": "BTL"
+  },
+  {
+    "IATA CODES": "Bay City/Saginaw",
+    "FIELD2": "MBS",
+    "FIELD3": "MBS"
+  },
+  {
+    "IATA CODES": "Beaumont",
+    "FIELD2": "BPT",
+    "FIELD3": "BPT"
+  },
+  {
+    "IATA CODES": "Beaver",
+    "FIELD2": "WBQ",
+    "FIELD3": "WBQ"
+  },
+  {
+    "IATA CODES": "Beef Island, Tortola",
+    "FIELD2": "EIS",
+    "FIELD3": "EIS"
+  },
+  {
+    "IATA CODES": "Beijing",
+    "FIELD2": "BJS",
+    "FIELD3": "BJS"
+  },
+  {
+    "IATA CODES": "Beijing",
+    "FIELD2": "BJS",
+    "FIELD3": "PEK"
+  },
+  {
+    "IATA CODES": "Beijing, Nanyuan Airport",
+    "FIELD2": "BJS",
+    "FIELD3": "NAY"
+  },
+  {
+    "IATA CODES": "Beira",
+    "FIELD2": "BEW",
+    "FIELD3": "BEW"
+  },
+  {
+    "IATA CODES": "Beirut",
+    "FIELD2": "BEY",
+    "FIELD3": "BEY"
+  },
+  {
+    "IATA CODES": "Belem",
+    "FIELD2": "BEL",
+    "FIELD3": "BEL"
+  },
+  {
+    "IATA CODES": "Belfast",
+    "FIELD2": "BFS",
+    "FIELD3": "BFS"
+  },
+  {
+    "IATA CODES": "Belfast, Belfast City",
+    "FIELD2": "BFS",
+    "FIELD3": "BHD"
+  },
+  {
+    "IATA CODES": "Belgrade",
+    "FIELD2": "BEG",
+    "FIELD3": "BEG"
+  },
+  {
+    "IATA CODES": "Belize",
+    "FIELD2": "BZE",
+    "FIELD3": "BZE"
+  },
+  {
+    "IATA CODES": "Belize, Municipal",
+    "FIELD2": "BZE",
+    "FIELD3": "TZA"
+  },
+  {
+    "IATA CODES": "Bellingham",
+    "FIELD2": "BLI",
+    "FIELD3": "BLI"
+  },
+  {
+    "IATA CODES": "Belo Horizonte",
+    "FIELD2": "BHZ",
+    "FIELD3": "BHZ"
+  },
+  {
+    "IATA CODES": "Benghazi",
+    "FIELD2": "BEN",
+    "FIELD3": "BEN"
+  },
+  {
+    "IATA CODES": "Bergen",
+    "FIELD2": "BGO",
+    "FIELD3": "BGO"
+  },
+  {
+    "IATA CODES": "Berlin",
+    "FIELD2": "BER",
+    "FIELD3": "BER"
+  },
+  {
+    "IATA CODES": "Berlin, Schonefeld",
+    "FIELD2": "SXF",
+    "FIELD3": "SXF"
+  },
+  {
+    "IATA CODES": "Berlin, Tegel",
+    "FIELD2": "BER",
+    "FIELD3": "TXL"
+  },
+  {
+    "IATA CODES": "Berlin, Tempelhof",
+    "FIELD2": "BER",
+    "FIELD3": "THF"
+  },
+  {
+    "IATA CODES": "Bermuda",
+    "FIELD2": "BDA",
+    "FIELD3": "BDA"
+  },
+  {
+    "IATA CODES": "Bern",
+    "FIELD2": "BRN",
+    "FIELD3": "BRN"
+  },
+  {
+    "IATA CODES": "Bethel",
+    "FIELD2": "BET",
+    "FIELD3": "BET"
+  },
+  {
+    "IATA CODES": "Bettles",
+    "FIELD2": "BTT",
+    "FIELD3": "BTT"
+  },
+  {
+    "IATA CODES": "Cairns",
+    "FIELD2": "CNS",
+    "FIELD3": "CNS"
+  },
+  {
+    "IATA CODES": "Cairo",
+    "FIELD2": "CAI",
+    "FIELD3": "CAI"
+  },
+  {
+    "IATA CODES": "Cajamarca",
+    "FIELD2": "CJA",
+    "FIELD3": "CJA"
+  },
+  {
+    "IATA CODES": "Calama",
+    "FIELD2": "CJC",
+    "FIELD3": "CJC"
+  },
+  {
+    "IATA CODES": "Calcutta",
+    "FIELD2": "CCU",
+    "FIELD3": "CCU"
+  },
+  {
+    "IATA CODES": "Calgary",
+    "FIELD2": "YYC",
+    "FIELD3": "YYC"
+  },
+  {
+    "IATA CODES": "Cali",
+    "FIELD2": "CLO",
+    "FIELD3": "CLO"
+  },
+  {
+    "IATA CODES": "Calicut",
+    "FIELD2": "CCJ",
+    "FIELD3": "CCJ"
+  },
+  {
+    "IATA CODES": "Calvi",
+    "FIELD2": "CLY",
+    "FIELD3": "CLY"
+  },
+  {
+    "IATA CODES": "Cambridge Bay",
+    "FIELD2": "YCB",
+    "FIELD3": "YCB"
+  },
+  {
+    "IATA CODES": "Campo Grande",
+    "FIELD2": "CGR",
+    "FIELD3": "CGR"
+  },
+  {
+    "IATA CODES": "Canaima",
+    "FIELD2": "CAJ",
+    "FIELD3": "CAJ"
+  },
+  {
+    "IATA CODES": "Cancun",
+    "FIELD2": "CUN",
+    "FIELD3": "CUN"
+  },
+  {
+    "IATA CODES": "Cape Girardeau",
+    "FIELD2": "CGI",
+    "FIELD3": "CGI"
+  },
+  {
+    "IATA CODES": "Cape Town",
+    "FIELD2": "CPT",
+    "FIELD3": "CPT"
+  },
+  {
+    "IATA CODES": "Caracas",
+    "FIELD2": "CCS",
+    "FIELD3": "CCS"
+  },
+  {
+    "IATA CODES": "Cardiff",
+    "FIELD2": "CWL",
+    "FIELD3": "CWL"
+  },
+  {
+    "IATA CODES": "Carlsbad",
+    "FIELD2": "CNM",
+    "FIELD3": "CNM"
+  },
+  {
+    "IATA CODES": "Cartagena",
+    "FIELD2": "CTG",
+    "FIELD3": "CTG"
+  },
+  {
+    "IATA CODES": "Carupano",
+    "FIELD2": "CUP",
+    "FIELD3": "CUP"
+  },
+  {
+    "IATA CODES": "Casablanca",
+    "FIELD2": "CAS",
+    "FIELD3": "AAA"
+  },
+  {
+    "IATA CODES": "Casablanca, Mohamed V",
+    "FIELD2": "CAS",
+    "FIELD3": "CMN"
+  },
+  {
+    "IATA CODES": "Casablanca, Anfa",
+    "FIELD2": "CAS",
+    "FIELD3": "CAS"
+  },
+  {
+    "IATA CODES": "Casper",
+    "FIELD2": "CPR",
+    "FIELD3": "CPR"
+  },
+  {
+    "IATA CODES": "Catania",
+    "FIELD2": "CTA",
+    "FIELD3": "CTA"
+  },
+  {
+    "IATA CODES": "Cayenne",
+    "FIELD2": "CAY",
+    "FIELD3": "CAY"
+  },
+  {
+    "IATA CODES": "Cebu",
+    "FIELD2": "CEB",
+    "FIELD3": "CEB"
+  },
+  {
+    "IATA CODES": "Cedar City",
+    "FIELD2": "CDC",
+    "FIELD3": "CDC"
+  },
+  {
+    "IATA CODES": "Cedar Rapids / Iowa City",
+    "FIELD2": "CID",
+    "FIELD3": "CID"
+  },
+  {
+    "IATA CODES": "Chachapoyas",
+    "FIELD2": "CHH",
+    "FIELD3": "CHH"
+  },
+  {
+    "IATA CODES": "Chalkyits",
+    "FIELD2": "CIK",
+    "FIELD3": "CIK"
+  },
+  {
+    "IATA CODES": "Champaign",
+    "FIELD2": "CMI",
+    "FIELD3": "CMI"
+  },
+  {
+    "IATA CODES": "Changchun",
+    "FIELD2": "CGQ",
+    "FIELD3": "CGQ"
+  },
+  {
+    "IATA CODES": "Changsha",
+    "FIELD2": "CSX",
+    "FIELD3": "CSX"
+  },
+  {
+    "IATA CODES": "Charleston",
+    "FIELD2": "CHS",
+    "FIELD3": "CHS"
+  },
+  {
+    "IATA CODES": "Charlotte",
+    "FIELD2": "CLT",
+    "FIELD3": "CLT"
+  },
+  {
+    "IATA CODES": "Chattanooga",
+    "FIELD2": "CHA",
+    "FIELD3": "CHA"
+  },
+  {
+    "IATA CODES": "Chefornak",
+    "FIELD2": "CYF",
+    "FIELD3": "CYF"
+  },
+  {
+    "IATA CODES": "Cheju",
+    "FIELD2": "CJU",
+    "FIELD3": "CJU"
+  },
+  {
+    "IATA CODES": "Chengdu",
+    "FIELD2": "CTU",
+    "FIELD3": "CTU"
+  },
+  {
+    "IATA CODES": "Chetumal",
+    "FIELD2": "CTM",
+    "FIELD3": "CTM"
+  },
+  {
+    "IATA CODES": "Chevak",
+    "FIELD2": "VAK",
+    "FIELD3": "VAK"
+  },
+  {
+    "IATA CODES": "Chiang Mai",
+    "FIELD2": "CNX",
+    "FIELD3": "CNX"
+  },
+  {
+    "IATA CODES": "Chicago",
+    "FIELD2": "CHI",
+    "FIELD3": "CHI"
+  },
+  {
+    "IATA CODES": "Chicago, Merill C. Meigs",
+    "FIELD2": "CHI",
+    "FIELD3": "CGX"
+  },
+  {
+    "IATA CODES": "Chicago, Midway",
+    "FIELD2": "CHI",
+    "FIELD3": "MDW"
+  },
+  {
+    "IATA CODES": "Chicago, O’Hare",
+    "FIELD2": "CHI",
+    "FIELD3": "ORD"
+  },
+  {
+    "IATA CODES": "Chichenitza",
+    "FIELD2": "CZA",
+    "FIELD3": "CZA"
+  },
+  {
+    "IATA CODES": "Chiclayo",
+    "FIELD2": "CIX",
+    "FIELD3": "CIX"
+  },
+  {
+    "IATA CODES": "Chico",
+    "FIELD2": "CIC",
+    "FIELD3": "CIC"
+  },
+  {
+    "IATA CODES": "Chignik",
+    "FIELD2": "KCL",
+    "FIELD3": "KCL"
+  },
+  {
+    "IATA CODES": "Chihuahua",
+    "FIELD2": "CUU",
+    "FIELD3": "CUU"
+  },
+  {
+    "IATA CODES": "Chisholm",
+    "FIELD2": "HIB",
+    "FIELD3": "HIB"
+  },
+  {
+    "IATA CODES": "Chittagong",
+    "FIELD2": "CGP",
+    "FIELD3": "CGP"
+  },
+  {
+    "IATA CODES": "Dakar",
+    "FIELD2": "DKR",
+    "FIELD3": "DKR"
+  },
+  {
+    "IATA CODES": "Dalaman",
+    "FIELD2": "DLM",
+    "FIELD3": "DLM"
+  },
+  {
+    "IATA CODES": "Dalian",
+    "FIELD2": "DLC",
+    "FIELD3": "DLC"
+  },
+  {
+    "IATA CODES": "Dallas/Ft. Worth",
+    "FIELD2": "DFW",
+    "FIELD3": "DFW"
+  },
+  {
+    "IATA CODES": "Dallas, Love Field",
+    "FIELD2": "DAL",
+    "FIELD3": "DAL"
+  },
+  {
+    "IATA CODES": "Damascus",
+    "FIELD2": "DAM",
+    "FIELD3": "DAM"
+  },
+  {
+    "IATA CODES": "Danville",
+    "FIELD2": "DNV",
+    "FIELD3": "DNV"
+  },
+  {
+    "IATA CODES": "Dar Es Salaam",
+    "FIELD2": "DAR",
+    "FIELD3": "DAR"
+  },
+  {
+    "IATA CODES": "Darwin",
+    "FIELD2": "DRW",
+    "FIELD3": "DRW"
+  },
+  {
+    "IATA CODES": "Davao",
+    "FIELD2": "DVO",
+    "FIELD3": "DVO"
+  },
+  {
+    "IATA CODES": "Dayton",
+    "FIELD2": "DAY",
+    "FIELD3": "DAY"
+  },
+  {
+    "IATA CODES": "Daytona Beach",
+    "FIELD2": "DAB",
+    "FIELD3": "DAB"
+  },
+  {
+    "IATA CODES": "Decatur",
+    "FIELD2": "DEC",
+    "FIELD3": "DEC"
+  },
+  {
+    "IATA CODES": "Deer Lake",
+    "FIELD2": "YDF",
+    "FIELD3": "YDF"
+  },
+  {
+    "IATA CODES": "Delhi",
+    "FIELD2": "DEL",
+    "FIELD3": "DEL"
+  },
+  {
+    "IATA CODES": "Delta",
+    "FIELD2": "DTA",
+    "FIELD3": "DTA"
+  },
+  {
+    "IATA CODES": "Denver",
+    "FIELD2": "DEN",
+    "FIELD3": "DEN"
+  },
+  {
+    "IATA CODES": "Des Moines",
+    "FIELD2": "DSM",
+    "FIELD3": "DSM"
+  },
+  {
+    "IATA CODES": "Detroit",
+    "FIELD2": "DTT",
+    "FIELD3": "DTT"
+  },
+  {
+    "IATA CODES": "Detroit",
+    "FIELD2": "DTT",
+    "FIELD3": "DTW"
+  },
+  {
+    "IATA CODES": "Detroit City",
+    "FIELD2": "DTT",
+    "FIELD3": "DET"
+  },
+  {
+    "IATA CODES": "Detroit, Willow Run",
+    "FIELD2": "DTT",
+    "FIELD3": "YIP"
+  },
+  {
+    "IATA CODES": "Dhahran",
+    "FIELD2": "DHA",
+    "FIELD3": "DHA"
+  },
+  {
+    "IATA CODES": "East London",
+    "FIELD2": "ELS",
+    "FIELD3": "ELS"
+  },
+  {
+    "IATA CODES": "East Midlands",
+    "FIELD2": "EMA",
+    "FIELD3": "EMA"
+  },
+  {
+    "IATA CODES": "Easter Island",
+    "FIELD2": "IPC",
+    "FIELD3": "IPC"
+  },
+  {
+    "IATA CODES": "Edinburgh",
+    "FIELD2": "EDI",
+    "FIELD3": "EDI"
+  },
+  {
+    "IATA CODES": "Edmonton",
+    "FIELD2": "YEA",
+    "FIELD3": "YEA"
+  },
+  {
+    "IATA CODES": "Edmonton,  Albert Int’l",
+    "FIELD2": "YEA",
+    "FIELD3": "YEG"
+  },
+  {
+    "IATA CODES": "Edmonton, Municipal",
+    "FIELD2": "YEA",
+    "FIELD3": "YXD"
+  },
+  {
+    "IATA CODES": "Edmonton, Namao Field",
+    "FIELD2": "YEA",
+    "FIELD3": "YED"
+  },
+  {
+    "IATA CODES": "Eek",
+    "FIELD2": "EEK",
+    "FIELD3": "EEK"
+  },
+  {
+    "IATA CODES": "Eglin Afb/Valparaiso",
+    "FIELD2": "VPS",
+    "FIELD3": "VPS"
+  },
+  {
+    "IATA CODES": "Eindhoven",
+    "FIELD2": "EIN",
+    "FIELD3": "EIN"
+  },
+  {
+    "IATA CODES": "El Paso",
+    "FIELD2": "ELP",
+    "FIELD3": "ELP"
+  },
+  {
+    "IATA CODES": "El Salvador",
+    "FIELD2": "ESR",
+    "FIELD3": "ESR"
+  },
+  {
+    "IATA CODES": "Elat",
+    "FIELD2": "ETH",
+    "FIELD3": "ETH"
+  },
+  {
+    "IATA CODES": "Elko",
+    "FIELD2": "EKO",
+    "FIELD3": "EKO"
+  },
+  {
+    "IATA CODES": "Ely",
+    "FIELD2": "ELY",
+    "FIELD3": "ELY"
+  },
+  {
+    "IATA CODES": "Fairbanks",
+    "FIELD2": "FAI",
+    "FIELD3": "FAI"
+  },
+  {
+    "IATA CODES": "Fall River,   New Bedford",
+    "FIELD2": "EWB",
+    "FIELD3": "EWB"
+  },
+  {
+    "IATA CODES": "False Pass",
+    "FIELD2": "KFP",
+    "FIELD3": "KFP"
+  },
+  {
+    "IATA CODES": "Fargo",
+    "FIELD2": "FAR",
+    "FIELD3": "FAR"
+  },
+  {
+    "IATA CODES": "Faro",
+    "FIELD2": "FAO",
+    "FIELD3": "FAO"
+  },
+  {
+    "IATA CODES": "Fayetteville",
+    "FIELD2": "FAY",
+    "FIELD3": "FAY"
+  },
+  {
+    "IATA CODES": "Fayetteville",
+    "FIELD2": "FYV",
+    "FIELD3": "FYV"
+  },
+  {
+    "IATA CODES": "Fez",
+    "FIELD2": "FEZ",
+    "FIELD3": "FEZ"
+  },
+  {
+    "IATA CODES": "Fillmore",
+    "FIELD2": "FIL",
+    "FIELD3": "FIL"
+  },
+  {
+    "IATA CODES": "Flagstaff",
+    "FIELD2": "FLG",
+    "FIELD3": "FLG"
+  },
+  {
+    "IATA CODES": "Flint",
+    "FIELD2": "FNT",
+    "FIELD3": "FNT"
+  },
+  {
+    "IATA CODES": "Florence",
+    "FIELD2": "FLR",
+    "FIELD3": "FLR"
+  },
+  {
+    "IATA CODES": "Florence",
+    "FIELD2": "MSL",
+    "FIELD3": "MSL"
+  },
+  {
+    "IATA CODES": "Flores",
+    "FIELD2": "FRS",
+    "FIELD3": "FRS"
+  },
+  {
+    "IATA CODES": "Fort Chima",
+    "FIELD2": "YVP",
+    "FIELD3": "YVP"
+  },
+  {
+    "IATA CODES": "Fort  Myers",
+    "FIELD2": "FMY",
+    "FIELD3": "FMY"
+  },
+  {
+    "IATA CODES": "Fort Nelson",
+    "FIELD2": "YYE",
+    "FIELD3": "YYE"
+  },
+  {
+    "IATA CODES": "Fort St. John",
+    "FIELD2": "YXJ",
+    "FIELD3": "YXJ"
+  },
+  {
+    "IATA CODES": "Fortaleza",
+    "FIELD2": "FOR",
+    "FIELD3": "FOR"
+  },
+  {
+    "IATA CODES": "Gainesvile",
+    "FIELD2": "GNV",
+    "FIELD3": "GNV"
+  },
+  {
+    "IATA CODES": "Galena",
+    "FIELD2": "GAL",
+    "FIELD3": "GAL"
+  },
+  {
+    "IATA CODES": "Garoua",
+    "FIELD2": "GOU",
+    "FIELD3": "GOU"
+  },
+  {
+    "IATA CODES": "Gassim",
+    "FIELD2": "ELQ",
+    "FIELD3": "ELQ"
+  },
+  {
+    "IATA CODES": "Gauhati",
+    "FIELD2": "GAU",
+    "FIELD3": "GAU"
+  },
+  {
+    "IATA CODES": "Gemena",
+    "FIELD2": "GMA",
+    "FIELD3": "GMA"
+  },
+  {
+    "IATA CODES": "Geneva",
+    "FIELD2": "GVA",
+    "FIELD3": "GVA"
+  },
+  {
+    "IATA CODES": "Genoa",
+    "FIELD2": "GOA",
+    "FIELD3": "GOA"
+  },
+  {
+    "IATA CODES": "Gladewater, Longview",
+    "FIELD2": "GGG",
+    "FIELD3": "GGG"
+  },
+  {
+    "IATA CODES": "Glasgow",
+    "FIELD2": "GLA",
+    "FIELD3": "GLA"
+  },
+  {
+    "IATA CODES": "Glasgow, Prestwick",
+    "FIELD2": "GLA",
+    "FIELD3": "PIK"
+  },
+  {
+    "IATA CODES": "Goma",
+    "FIELD2": "GOM",
+    "FIELD3": "GOM"
+  },
+  {
+    "IATA CODES": "Goodnew Bay",
+    "FIELD2": "GNU",
+    "FIELD3": "GNU"
+  },
+  {
+    "IATA CODES": "Goose Bay",
+    "FIELD2": "YYR",
+    "FIELD3": "YYR"
+  },
+  {
+    "IATA CODES": "Goroka",
+    "FIELD2": "GKA",
+    "FIELD3": "GKA"
+  },
+  {
+    "IATA CODES": "Gothenburg",
+    "FIELD2": "GOT",
+    "FIELD3": "GOT"
+  },
+  {
+    "IATA CODES": "Gran Canaria",
+    "FIELD2": "LPA",
+    "FIELD3": "LPA"
+  },
+  {
+    "IATA CODES": "Grand Cayman",
+    "FIELD2": "GCM",
+    "FIELD3": "GCM"
+  },
+  {
+    "IATA CODES": "Grand Fork",
+    "FIELD2": "GFK",
+    "FIELD3": "GFK"
+  },
+  {
+    "IATA CODES": "Grand Rapids",
+    "FIELD2": "GRR",
+    "FIELD3": "GRR"
+  },
+  {
+    "IATA CODES": "Grand Turk",
+    "FIELD2": "GDT",
+    "FIELD3": "GDT"
+  },
+  {
+    "IATA CODES": "Grande Prairie",
+    "FIELD2": "YQU",
+    "FIELD3": "YQU"
+  },
+  {
+    "IATA CODES": "Grayling",
+    "FIELD2": "KGX",
+    "FIELD3": "KGX"
+  },
+  {
+    "IATA CODES": "Graz",
+    "FIELD2": "GRZ",
+    "FIELD3": "GRZ"
+  },
+  {
+    "IATA CODES": "Hagen",
+    "FIELD2": "HAG",
+    "FIELD3": "HAG"
+  },
+  {
+    "IATA CODES": "Haikou",
+    "FIELD2": "HAK",
+    "FIELD3": "HAK"
+  },
+  {
+    "IATA CODES": "Hail",
+    "FIELD2": "HAS",
+    "FIELD3": "HAS"
+  },
+  {
+    "IATA CODES": "Hakodate",
+    "FIELD2": "HKD",
+    "FIELD3": "HKD"
+  },
+  {
+    "IATA CODES": "Halifax",
+    "FIELD2": "YHZ",
+    "FIELD3": "YHZ"
+  },
+  {
+    "IATA CODES": "Hall Beach",
+    "FIELD2": "YUX",
+    "FIELD3": "YUX"
+  },
+  {
+    "IATA CODES": "Hamburg",
+    "FIELD2": "HAM",
+    "FIELD3": "HAM"
+  },
+  {
+    "IATA CODES": "Hamilton",
+    "FIELD2": "YHM",
+    "FIELD3": "YHM"
+  },
+  {
+    "IATA CODES": "Hampton / Williamsburg",
+    "FIELD2": "PHF",
+    "FIELD3": "PHF"
+  },
+  {
+    "IATA CODES": "Hangzhou",
+    "FIELD2": "HGH",
+    "FIELD3": "HGH"
+  },
+  {
+    "IATA CODES": "Hanoi",
+    "FIELD2": "HAN",
+    "FIELD3": "HAN"
+  },
+  {
+    "IATA CODES": "Hanover",
+    "FIELD2": "HAJ",
+    "FIELD3": "HAJ"
+  },
+  {
+    "IATA CODES": "Harare",
+    "FIELD2": "HRE",
+    "FIELD3": "HRE"
+  },
+  {
+    "IATA CODES": "Harbin",
+    "FIELD2": "HRB",
+    "FIELD3": "HRB"
+  },
+  {
+    "IATA CODES": "Harlingen",
+    "FIELD2": "HRL",
+    "FIELD3": "HRL"
+  },
+  {
+    "IATA CODES": "Harrisburg",
+    "FIELD2": "HAR",
+    "FIELD3": "HAR"
+  },
+  {
+    "IATA CODES": "Hartford",
+    "FIELD2": "HFD",
+    "FIELD3": "HFD"
+  },
+  {
+    "IATA CODES": "Hartford, Barnes",
+    "FIELD2": "HFD",
+    "FIELD3": "BNH"
+  },
+  {
+    "IATA CODES": "Hartford, Bradford",
+    "FIELD2": "HFD",
+    "FIELD3": "BDL"
+  },
+  {
+    "IATA CODES": "Hat Yai",
+    "FIELD2": "HDY",
+    "FIELD3": "HDY"
+  },
+  {
+    "IATA CODES": "Haugesund",
+    "FIELD2": "HAU",
+    "FIELD3": "HAU"
+  },
+  {
+    "IATA CODES": "Havana",
+    "FIELD2": "HAV",
+    "FIELD3": "HAV"
+  },
+  {
+    "IATA CODES": "Hay River",
+    "FIELD2": "YHY",
+    "FIELD3": "YHY"
+  },
+  {
+    "IATA CODES": "Hefei",
+    "FIELD2": "HFE",
+    "FIELD3": "HFE"
+  },
+  {
+    "IATA CODES": "Helena",
+    "FIELD2": "HLN",
+    "FIELD3": "HLN"
+  },
+  {
+    "IATA CODES": "Helsingborg",
+    "FIELD2": "AGH",
+    "FIELD3": "AGH"
+  },
+  {
+    "IATA CODES": "Helsinki",
+    "FIELD2": "HEL",
+    "FIELD3": "HEL"
+  },
+  {
+    "IATA CODES": "Heraklion",
+    "FIELD2": "HER",
+    "FIELD3": "HER"
+  },
+  {
+    "IATA CODES": "Hermosillo",
+    "FIELD2": "HMO",
+    "FIELD3": "HMO"
+  },
+  {
+    "IATA CODES": "Iguassu Falls",
+    "FIELD2": "IGU",
+    "FIELD3": "IGU"
+  },
+  {
+    "IATA CODES": "Iliamna",
+    "FIELD2": "ILI",
+    "FIELD3": "ILI"
+  },
+  {
+    "IATA CODES": "Indianapolis",
+    "FIELD2": "IND",
+    "FIELD3": "IND"
+  },
+  {
+    "IATA CODES": "Innsbruck",
+    "FIELD2": "INN",
+    "FIELD3": "INN"
+  },
+  {
+    "IATA CODES": "Inuvik",
+    "FIELD2": "YEV",
+    "FIELD3": "YEV"
+  },
+  {
+    "IATA CODES": "Ipoh",
+    "FIELD2": "IPH",
+    "FIELD3": "IPH"
+  },
+  {
+    "IATA CODES": "Iqaluit",
+    "FIELD2": "YFB",
+    "FIELD3": "YFB"
+  },
+  {
+    "IATA CODES": "Iquique",
+    "FIELD2": "IQQ",
+    "FIELD3": "IQQ"
+  },
+  {
+    "IATA CODES": "Iron Mountain",
+    "FIELD2": "IMT",
+    "FIELD3": "IMT"
+  },
+  {
+    "IATA CODES": "Isfahan",
+    "FIELD2": "IFN",
+    "FIELD3": "IFN"
+  },
+  {
+    "IATA CODES": "Isiro",
+    "FIELD2": "IRP",
+    "FIELD3": "IRP"
+  },
+  {
+    "IATA CODES": "Islamabad",
+    "FIELD2": "ISB",
+    "FIELD3": "ISB"
+  },
+  {
+    "IATA CODES": "Isles of Scil, St. Mary’s",
+    "FIELD2": "ISC",
+    "FIELD3": "ISC"
+  },
+  {
+    "IATA CODES": "Isles of Scil, Tresco",
+    "FIELD2": "ISC",
+    "FIELD3": "TSO"
+  },
+  {
+    "IATA CODES": "Jackson",
+    "FIELD2": "JAC",
+    "FIELD3": "JAC"
+  },
+  {
+    "IATA CODES": "Jackson",
+    "FIELD2": "JAN",
+    "FIELD3": "JAN"
+  },
+  {
+    "IATA CODES": "Jacksonville",
+    "FIELD2": "JAX",
+    "FIELD3": "JAX"
+  },
+  {
+    "IATA CODES": "Jaipur",
+    "FIELD2": "JAI",
+    "FIELD3": "JAI"
+  },
+  {
+    "IATA CODES": "Jakarta",
+    "FIELD2": "JKT",
+    "FIELD3": "CGK"
+  },
+  {
+    "IATA CODES": "Jakarta",
+    "FIELD2": "JKT",
+    "FIELD3": "JKT"
+  },
+  {
+    "IATA CODES": "Jakarta, Halim Perdana Kusuma",
+    "FIELD2": "JKT",
+    "FIELD3": "HLP"
+  },
+  {
+    "IATA CODES": "Janesville",
+    "FIELD2": "JVL",
+    "FIELD3": "JVL"
+  },
+  {
+    "IATA CODES": "Jeddah",
+    "FIELD2": "JED",
+    "FIELD3": "JED"
+  },
+  {
+    "IATA CODES": "Jersey",
+    "FIELD2": "JER",
+    "FIELD3": "JER"
+  },
+  {
+    "IATA CODES": "Kabul",
+    "FIELD2": "KBL",
+    "FIELD3": "KBL"
+  },
+  {
+    "IATA CODES": "Kaduna",
+    "FIELD2": "KAD",
+    "FIELD3": "KAD"
+  },
+  {
+    "IATA CODES": "Kagoshima",
+    "FIELD2": "KOJ",
+    "FIELD3": "KOJ"
+  },
+  {
+    "IATA CODES": "Kahului",
+    "FIELD2": "OGG",
+    "FIELD3": "OGG"
+  },
+  {
+    "IATA CODES": "Kailua",
+    "FIELD2": "KOA",
+    "FIELD3": "KOA"
+  },
+  {
+    "IATA CODES": "Kalamazoo",
+    "FIELD2": "AZO",
+    "FIELD3": "AZO"
+  },
+  {
+    "IATA CODES": "Kalispell",
+    "FIELD2": "FCA",
+    "FIELD3": "FCA"
+  },
+  {
+    "IATA CODES": "Kalskag",
+    "FIELD2": "KLG",
+    "FIELD3": "KLG"
+  },
+  {
+    "IATA CODES": "Kaltag",
+    "FIELD2": "KAL",
+    "FIELD3": "KAL"
+  },
+  {
+    "IATA CODES": "Kanab",
+    "FIELD2": "KNB",
+    "FIELD3": "KNB"
+  },
+  {
+    "IATA CODES": "Kananga",
+    "FIELD2": "KGA",
+    "FIELD3": "KGA"
+  },
+  {
+    "IATA CODES": "Kano",
+    "FIELD2": "KAN",
+    "FIELD3": "KAN"
+  },
+  {
+    "IATA CODES": "Kansas City",
+    "FIELD2": "MKC",
+    "FIELD3": "MKC"
+  },
+  {
+    "IATA CODES": "Kansas City, International",
+    "FIELD2": "MKC",
+    "FIELD3": "MCI"
+  },
+  {
+    "IATA CODES": "Kaohsiung",
+    "FIELD2": "KHH",
+    "FIELD3": "KHH"
+  },
+  {
+    "IATA CODES": "Karachi",
+    "FIELD2": "KHI",
+    "FIELD3": "KHI"
+  },
+  {
+    "IATA CODES": "Karaganda",
+    "FIELD2": "KGF",
+    "FIELD3": "KGF"
+  },
+  {
+    "IATA CODES": "Karup",
+    "FIELD2": "KRP",
+    "FIELD3": "KRP"
+  },
+  {
+    "IATA CODES": "Kasigluk",
+    "FIELD2": "KUK",
+    "FIELD3": "KUK"
+  },
+  {
+    "IATA CODES": "Kassel",
+    "FIELD2": "KSF",
+    "FIELD3": "KSF"
+  },
+  {
+    "IATA CODES": "Kathmandu",
+    "FIELD2": "KTM",
+    "FIELD3": "KTM"
+  },
+  {
+    "IATA CODES": "Kauai Is",
+    "FIELD2": "LIH",
+    "FIELD3": "LIH"
+  },
+  {
+    "IATA CODES": "Kenai",
+    "FIELD2": "ENA",
+    "FIELD3": "ENA"
+  },
+  {
+    "IATA CODES": "Kerman",
+    "FIELD2": "KER",
+    "FIELD3": "KER"
+  },
+  {
+    "IATA CODES": "Ketchikan",
+    "FIELD2": "KTN",
+    "FIELD3": "KTN"
+  },
+  {
+    "IATA CODES": "Khabarovsk",
+    "FIELD2": "KHV",
+    "FIELD3": "KHV"
+  },
+  {
+    "IATA CODES": "Kiev",
+    "FIELD2": "IEV",
+    "FIELD3": "IEV"
+  },
+  {
+    "IATA CODES": "Kiev, Borispol",
+    "FIELD2": "IEV",
+    "FIELD3": "KBP"
+  },
+  {
+    "IATA CODES": "Kigali",
+    "FIELD2": "KGL",
+    "FIELD3": "KGL"
+  },
+  {
+    "IATA CODES": "Kilimanjaro",
+    "FIELD2": "JRO",
+    "FIELD3": "JRO"
+  },
+  {
+    "IATA CODES": "Killeen",
+    "FIELD2": "ILE",
+    "FIELD3": "ILE"
+  },
+  {
+    "IATA CODES": "Kimberley",
+    "FIELD2": "KIM",
+    "FIELD3": "KIM"
+  },
+  {
+    "IATA CODES": "Kindu",
+    "FIELD2": "KND",
+    "FIELD3": "KND"
+  },
+  {
+    "IATA CODES": "La Ceiba",
+    "FIELD2": "LCE",
+    "FIELD3": "LCE"
+  },
+  {
+    "IATA CODES": "La Crosse",
+    "FIELD2": "LSE",
+    "FIELD3": "LSE"
+  },
+  {
+    "IATA CODES": "La Grande",
+    "FIELD2": "YGL",
+    "FIELD3": "YGL"
+  },
+  {
+    "IATA CODES": "La Paz",
+    "FIELD2": "LPB",
+    "FIELD3": "LPB"
+  },
+  {
+    "IATA CODES": "La Paz Mex",
+    "FIELD2": "LAP",
+    "FIELD3": "LAP"
+  },
+  {
+    "IATA CODES": "Labuan",
+    "FIELD2": "LBU",
+    "FIELD3": "LBU"
+  },
+  {
+    "IATA CODES": "Lae",
+    "FIELD2": "LAE",
+    "FIELD3": "LAE"
+  },
+  {
+    "IATA CODES": "Lafayette",
+    "FIELD2": "LFT",
+    "FIELD3": "LFT"
+  },
+  {
+    "IATA CODES": "Lagos",
+    "FIELD2": "LOS",
+    "FIELD3": "LOS"
+  },
+  {
+    "IATA CODES": "Laguna Beach / Sant Ana",
+    "FIELD2": "SNA",
+    "FIELD3": "SNA"
+  },
+  {
+    "IATA CODES": "Lahad Datu",
+    "FIELD2": "LDU",
+    "FIELD3": "LDU"
+  },
+  {
+    "IATA CODES": "Lahore",
+    "FIELD2": "LHE",
+    "FIELD3": "LHE"
+  },
+  {
+    "IATA CODES": "Lake Charles",
+    "FIELD2": "LCH",
+    "FIELD3": "LCH"
+  },
+  {
+    "IATA CODES": "Lanai City",
+    "FIELD2": "LNY",
+    "FIELD3": "LNY"
+  },
+  {
+    "IATA CODES": "Langkawi",
+    "FIELD2": "LGK",
+    "FIELD3": "LGK"
+  },
+  {
+    "IATA CODES": "Lansing",
+    "FIELD2": "LAN",
+    "FIELD3": "LAN"
+  },
+  {
+    "IATA CODES": "Lanzhou",
+    "FIELD2": "LHW",
+    "FIELD3": "LHW"
+  },
+  {
+    "IATA CODES": "Laredo",
+    "FIELD2": "LRD",
+    "FIELD3": "LRD"
+  },
+  {
+    "IATA CODES": "Larnaca",
+    "FIELD2": "LCA",
+    "FIELD3": "LCA"
+  },
+  {
+    "IATA CODES": "Las Piedras",
+    "FIELD2": "LSP",
+    "FIELD3": "LSP"
+  },
+  {
+    "IATA CODES": "Las Vegas",
+    "FIELD2": "LAS",
+    "FIELD3": "LAS"
+  },
+  {
+    "IATA CODES": "Las  Vegas, North Air Terminal",
+    "FIELD2": "LAS",
+    "FIELD3": "VGT"
+  },
+  {
+    "IATA CODES": "Launceston",
+    "FIELD2": "LST",
+    "FIELD3": "LST"
+  },
+  {
+    "IATA CODES": "Lawton",
+    "FIELD2": "LAW",
+    "FIELD3": "LAW"
+  },
+  {
+    "IATA CODES": "Le Havre",
+    "FIELD2": "LEH",
+    "FIELD3": "LEH"
+  },
+  {
+    "IATA CODES": "Leeds",
+    "FIELD2": "LBA",
+    "FIELD3": "LBA"
+  },
+  {
+    "IATA CODES": "Leinster",
+    "FIELD2": "LER",
+    "FIELD3": "LER"
+  },
+  {
+    "IATA CODES": "Leipzig",
+    "FIELD2": "LEJ",
+    "FIELD3": "LEJ"
+  },
+  {
+    "IATA CODES": "Lethbridge",
+    "FIELD2": "YQL",
+    "FIELD3": "YQL"
+  },
+  {
+    "IATA CODES": "Lhasa",
+    "FIELD2": "LXA",
+    "FIELD3": "LXA"
+  },
+  {
+    "IATA CODES": "Libreville",
+    "FIELD2": "LBV",
+    "FIELD3": "LBV"
+  },
+  {
+    "IATA CODES": "Liege",
+    "FIELD2": "LGG",
+    "FIELD3": "LGG"
+  },
+  {
+    "IATA CODES": "Lille",
+    "FIELD2": "LIL",
+    "FIELD3": "LIL"
+  },
+  {
+    "IATA CODES": "Lilongwe",
+    "FIELD2": "LLW",
+    "FIELD3": "LLW"
+  },
+  {
+    "IATA CODES": "Lima",
+    "FIELD2": "LIM",
+    "FIELD3": "LIM"
+  },
+  {
+    "IATA CODES": "Limoges",
+    "FIELD2": "LIG",
+    "FIELD3": "LIG"
+  },
+  {
+    "IATA CODES": "Lincoln",
+    "FIELD2": "LNK",
+    "FIELD3": "LNK"
+  },
+  {
+    "IATA CODES": "Linz",
+    "FIELD2": "LNZ",
+    "FIELD3": "LNZ"
+  },
+  {
+    "IATA CODES": "Maastricht",
+    "FIELD2": "MST",
+    "FIELD3": "MST"
+  },
+  {
+    "IATA CODES": "Macon",
+    "FIELD2": "MCN",
+    "FIELD3": "MCN"
+  },
+  {
+    "IATA CODES": "Madison",
+    "FIELD2": "MSN",
+    "FIELD3": "MSN"
+  },
+  {
+    "IATA CODES": "Madras",
+    "FIELD2": "MAA",
+    "FIELD3": "MAA"
+  },
+  {
+    "IATA CODES": "Madrid",
+    "FIELD2": "MAD",
+    "FIELD3": "MAD"
+  },
+  {
+    "IATA CODES": "Magadan",
+    "FIELD2": "GDX",
+    "FIELD3": "GDX"
+  },
+  {
+    "IATA CODES": "Mahe Island",
+    "FIELD2": "SEZ",
+    "FIELD3": "SEZ"
+  },
+  {
+    "IATA CODES": "Maiduguri",
+    "FIELD2": "MIU",
+    "FIELD3": "MIU"
+  },
+  {
+    "IATA CODES": "Majuro",
+    "FIELD2": "MAJ",
+    "FIELD3": "MAJ"
+  },
+  {
+    "IATA CODES": "Malaga",
+    "FIELD2": "AGP",
+    "FIELD3": "AGP"
+  },
+  {
+    "IATA CODES": "Male",
+    "FIELD2": "MLE",
+    "FIELD3": "MLE"
+  },
+  {
+    "IATA CODES": "Malmo",
+    "FIELD2": "MMA",
+    "FIELD3": "MMA"
+  },
+  {
+    "IATA CODES": "Malongo",
+    "FIELD2": "MAL",
+    "FIELD3": "MAL"
+  },
+  {
+    "IATA CODES": "Malta",
+    "FIELD2": "MLA",
+    "FIELD3": "MLA"
+  },
+  {
+    "IATA CODES": "Manado",
+    "FIELD2": "MDC",
+    "FIELD3": "MDC"
+  },
+  {
+    "IATA CODES": "Managua",
+    "FIELD2": "MGA",
+    "FIELD3": "MGA"
+  },
+  {
+    "IATA CODES": "Manaus",
+    "FIELD2": "MAO",
+    "FIELD3": "MAO"
+  },
+  {
+    "IATA CODES": "Manchester",
+    "FIELD2": "MAN",
+    "FIELD3": "MAN"
+  },
+  {
+    "IATA CODES": "Manchester",
+    "FIELD2": "MHT",
+    "FIELD3": "MHT"
+  },
+  {
+    "IATA CODES": "Manila",
+    "FIELD2": "MNL",
+    "FIELD3": "MNL"
+  },
+  {
+    "IATA CODES": "Manzanillo",
+    "FIELD2": "ZLO",
+    "FIELD3": "ZLO"
+  },
+  {
+    "IATA CODES": "Maputo",
+    "FIELD2": "MPM",
+    "FIELD3": "MPM"
+  },
+  {
+    "IATA CODES": "Maracaibo",
+    "FIELD2": "MAR",
+    "FIELD3": "MAR"
+  },
+  {
+    "IATA CODES": "Maribor",
+    "FIELD2": "MBX",
+    "FIELD3": "MBX"
+  },
+  {
+    "IATA CODES": "Marietta, Parkersburg",
+    "FIELD2": "PKB",
+    "FIELD3": "PKB"
+  },
+  {
+    "IATA CODES": "Marion",
+    "FIELD2": "MWA",
+    "FIELD3": "MWA"
+  },
+  {
+    "IATA CODES": "Marquette",
+    "FIELD2": "MQT",
+    "FIELD3": "MQT"
+  },
+  {
+    "IATA CODES": "Marrakech",
+    "FIELD2": "RAK",
+    "FIELD3": "RAK"
+  },
+  {
+    "IATA CODES": "Marseille",
+    "FIELD2": "MRS",
+    "FIELD3": "MRS"
+  },
+  {
+    "IATA CODES": "Marshall",
+    "FIELD2": "MLL",
+    "FIELD3": "MLL"
+  },
+  {
+    "IATA CODES": "Martha’s Vineyard",
+    "FIELD2": "MVY",
+    "FIELD3": "MVY"
+  },
+  {
+    "IATA CODES": "Mashad",
+    "FIELD2": "MHD",
+    "FIELD3": "MHD"
+  },
+  {
+    "IATA CODES": "Matamoros",
+    "FIELD2": "MAM",
+    "FIELD3": "MAM"
+  },
+  {
+    "IATA CODES": "Matsuyama",
+    "FIELD2": "MYJ",
+    "FIELD3": "MYJ"
+  },
+  {
+    "IATA CODES": "Maturin",
+    "FIELD2": "MUN",
+    "FIELD3": "MUN"
+  },
+  {
+    "IATA CODES": "Mauritius",
+    "FIELD2": "MRU",
+    "FIELD3": "MRU"
+  },
+  {
+    "IATA CODES": "Mayaguez",
+    "FIELD2": "MAZ",
+    "FIELD3": "MAZ"
+  },
+  {
+    "IATA CODES": "Mazatlan",
+    "FIELD2": "MZT",
+    "FIELD3": "MZT"
+  },
+  {
+    "IATA CODES": "Mbandaka",
+    "FIELD2": "MDK",
+    "FIELD3": "MDK"
+  },
+  {
+    "IATA CODES": "Mbuji Mayi",
+    "FIELD2": "MJM",
+    "FIELD3": "MJM"
+  },
+  {
+    "IATA CODES": "Mc Allen",
+    "FIELD2": "MFE",
+    "FIELD3": "MFE"
+  },
+  {
+    "IATA CODES": "Mc Grath",
+    "FIELD2": "MCG",
+    "FIELD3": "MCG"
+  },
+  {
+    "IATA CODES": "Medan",
+    "FIELD2": "MES",
+    "FIELD3": "MES"
+  },
+  {
+    "IATA CODES": "Medellin",
+    "FIELD2": "MDE",
+    "FIELD3": "MDE"
+  },
+  {
+    "IATA CODES": "Medford",
+    "FIELD2": "MFR",
+    "FIELD3": "MFR"
+  },
+  {
+    "IATA CODES": "Medina",
+    "FIELD2": "MED",
+    "FIELD3": "MED"
+  },
+  {
+    "IATA CODES": "Meekatharp",
+    "FIELD2": "MKR",
+    "FIELD3": "MKR"
+  },
+  {
+    "IATA CODES": "Mekoryuk",
+    "FIELD2": "MYU",
+    "FIELD3": "MYU"
+  },
+  {
+    "IATA CODES": "Melbourne",
+    "FIELD2": "MEL",
+    "FIELD3": "MEL"
+  },
+  {
+    "IATA CODES": "Melbourne",
+    "FIELD2": "MLB",
+    "FIELD3": "MLB"
+  },
+  {
+    "IATA CODES": "Melbourne, City Heliport",
+    "FIELD2": "MEL",
+    "FIELD3": "KAH"
+  },
+  {
+    "IATA CODES": "Melbourne, Essendon",
+    "FIELD2": "MEL",
+    "FIELD3": "MEB"
+  },
+  {
+    "IATA CODES": "Memphis",
+    "FIELD2": "MEM",
+    "FIELD3": "MEM"
+  },
+  {
+    "IATA CODES": "Mendoza",
+    "FIELD2": "MDZ",
+    "FIELD3": "MDZ"
+  },
+  {
+    "IATA CODES": "Merida",
+    "FIELD2": "MID",
+    "FIELD3": "MID"
+  },
+  {
+    "IATA CODES": "Merida",
+    "FIELD2": "MRD",
+    "FIELD3": "MRD"
+  },
+  {
+    "IATA CODES": "Meridian",
+    "FIELD2": "MEI",
+    "FIELD3": "MEI"
+  },
+  {
+    "IATA CODES": "Mexico City",
+    "FIELD2": "MEX",
+    "FIELD3": "MEX"
+  },
+  {
+    "IATA CODES": "N’djamena",
+    "FIELD2": "NDJ",
+    "FIELD3": "NDJ"
+  },
+  {
+    "IATA CODES": "Nadi",
+    "FIELD2": "NAN",
+    "FIELD3": "NAN"
+  },
+  {
+    "IATA CODES": "Nagasaki",
+    "FIELD2": "NGS",
+    "FIELD3": "NGS"
+  },
+  {
+    "IATA CODES": "Nagoya",
+    "FIELD2": "NGO",
+    "FIELD3": "NGO"
+  },
+  {
+    "IATA CODES": "Nairobi",
+    "FIELD2": "NBO",
+    "FIELD3": "NBO"
+  },
+  {
+    "IATA CODES": "Nairobi",
+    "FIELD2": "NBO",
+    "FIELD3": "WIL"
+  },
+  {
+    "IATA CODES": "Nanchang",
+    "FIELD2": "KHN",
+    "FIELD3": "KHN"
+  },
+  {
+    "IATA CODES": "Nancy",
+    "FIELD2": "ENC",
+    "FIELD3": "ENC"
+  },
+  {
+    "IATA CODES": "Nanisivik",
+    "FIELD2": "YSR",
+    "FIELD3": "YSR"
+  },
+  {
+    "IATA CODES": "Nanjing",
+    "FIELD2": "NKG",
+    "FIELD3": "NKG"
+  },
+  {
+    "IATA CODES": "Nanning",
+    "FIELD2": "NNG",
+    "FIELD3": "NNG"
+  },
+  {
+    "IATA CODES": "Nantes",
+    "FIELD2": "NTE",
+    "FIELD3": "NTE"
+  },
+  {
+    "IATA CODES": "Nantucket",
+    "FIELD2": "ACK",
+    "FIELD3": "ACK"
+  },
+  {
+    "IATA CODES": "Napakiak",
+    "FIELD2": "WNA",
+    "FIELD3": "WNA"
+  },
+  {
+    "IATA CODES": "Napaskiak",
+    "FIELD2": "PKA",
+    "FIELD3": "PKA"
+  },
+  {
+    "IATA CODES": "Naples",
+    "FIELD2": "APF",
+    "FIELD3": "APF"
+  },
+  {
+    "IATA CODES": "Naples",
+    "FIELD2": "NAP",
+    "FIELD3": "NAP"
+  },
+  {
+    "IATA CODES": "Nashville",
+    "FIELD2": "BNA",
+    "FIELD3": "BNA"
+  },
+  {
+    "IATA CODES": "Nassau",
+    "FIELD2": "NAS",
+    "FIELD3": "NAS"
+  },
+  {
+    "IATA CODES": "Natal",
+    "FIELD2": "NAT",
+    "FIELD3": "NAT"
+  },
+  {
+    "IATA CODES": "Neuchatel",
+    "FIELD2": "NEU",
+    "FIELD3": "NEU"
+  },
+  {
+    "IATA CODES": "New Bern",
+    "FIELD2": "EWN",
+    "FIELD3": "EWN"
+  },
+  {
+    "IATA CODES": "New Orleans",
+    "FIELD2": "MSY",
+    "FIELD3": "MSY"
+  },
+  {
+    "IATA CODES": "New York",
+    "FIELD2": "NYC",
+    "FIELD3": "NYC"
+  },
+  {
+    "IATA CODES": "New York, John F. Kennedy",
+    "FIELD2": "NYC",
+    "FIELD3": "JFK"
+  },
+  {
+    "IATA CODES": "Orebro",
+    "FIELD2": "ORB",
+    "FIELD3": "ORB"
+  },
+  {
+    "IATA CODES": "Orlando",
+    "FIELD2": "ORL",
+    "FIELD3": "MCO"
+  },
+  {
+    "IATA CODES": "Osaka",
+    "FIELD2": "OSA",
+    "FIELD3": "OSA"
+  },
+  {
+    "IATA CODES": "Osaka, Itami",
+    "FIELD2": "OSA",
+    "FIELD3": "ITM"
+  },
+  {
+    "IATA CODES": "Pago Pago",
+    "FIELD2": "PPG",
+    "FIELD3": "PPG"
+  },
+  {
+    "IATA CODES": "Palembang",
+    "FIELD2": "PLM",
+    "FIELD3": "PLM"
+  },
+  {
+    "IATA CODES": "Palermo",
+    "FIELD2": "PMO",
+    "FIELD3": "PMO"
+  },
+  {
+    "IATA CODES": "Palm Springs",
+    "FIELD2": "PSP",
+    "FIELD3": "PSP"
+  },
+  {
+    "IATA CODES": "Palma de Mallorca",
+    "FIELD2": "PMI",
+    "FIELD3": "PMI"
+  },
+  {
+    "IATA CODES": "Panama City",
+    "FIELD2": "PFN",
+    "FIELD3": "PFN"
+  },
+  {
+    "IATA CODES": "Panama City",
+    "FIELD2": "PTY",
+    "FIELD3": "PTY"
+  },
+  {
+    "IATA CODES": "Panama City, Paitilla",
+    "FIELD2": "PTY",
+    "FIELD3": "PAC"
+  },
+  {
+    "IATA CODES": "Papeete",
+    "FIELD2": "PPT",
+    "FIELD3": "PPT"
+  },
+  {
+    "IATA CODES": "Paphos",
+    "FIELD2": "PFO",
+    "FIELD3": "PFO"
+  },
+  {
+    "IATA CODES": "Paramaribo",
+    "FIELD2": "PBM",
+    "FIELD3": "PBM"
+  },
+  {
+    "IATA CODES": "Paramaribo, Zorg En Hoop",
+    "FIELD2": "PBM",
+    "FIELD3": "ORG"
+  },
+  {
+    "IATA CODES": "Paris",
+    "FIELD2": "PAR",
+    "FIELD3": "PAR"
+  },
+  {
+    "IATA CODES": "Paris, Charles de Gaulle",
+    "FIELD2": "PAR",
+    "FIELD3": "CDG"
+  },
+  {
+    "IATA CODES": "Paris, Le Bourget",
+    "FIELD2": "PAR",
+    "FIELD3": "LBG"
+  },
+  {
+    "IATA CODES": "Paris, Orly",
+    "FIELD2": "PAR",
+    "FIELD3": "ORY"
+  },
+  {
+    "IATA CODES": "Pasco",
+    "FIELD2": "PSC",
+    "FIELD3": "PSC"
+  },
+  {
+    "IATA CODES": "Pau",
+    "FIELD2": "PUF",
+    "FIELD3": "PUF"
+  },
+  {
+    "IATA CODES": "Penang",
+    "FIELD2": "PEN",
+    "FIELD3": "PEN"
+  },
+  {
+    "IATA CODES": "Pensacola",
+    "FIELD2": "PNS",
+    "FIELD3": "PNS"
+  },
+  {
+    "IATA CODES": "Peoria",
+    "FIELD2": "PIA",
+    "FIELD3": "PIA"
+  },
+  {
+    "IATA CODES": "Pereira",
+    "FIELD2": "PEI",
+    "FIELD3": "PEI"
+  },
+  {
+    "IATA CODES": "Perpignan",
+    "FIELD2": "PGF",
+    "FIELD3": "PGF"
+  },
+  {
+    "IATA CODES": "Perryville",
+    "FIELD2": "KPV",
+    "FIELD3": "KPV"
+  },
+  {
+    "IATA CODES": "Perth",
+    "FIELD2": "PER",
+    "FIELD3": "PER"
+  },
+  {
+    "IATA CODES": "Pescara",
+    "FIELD2": "PSR",
+    "FIELD3": "PSR"
+  },
+  {
+    "IATA CODES": "Peshawar",
+    "FIELD2": "PEW",
+    "FIELD3": "PEW"
+  },
+  {
+    "IATA CODES": "Petersburg",
+    "FIELD2": "PSG",
+    "FIELD3": "PSG"
+  },
+  {
+    "IATA CODES": "Philadelphia",
+    "FIELD2": "PHL",
+    "FIELD3": "PHL"
+  },
+  {
+    "IATA CODES": "Philadelphia, North",
+    "FIELD2": "PHL",
+    "FIELD3": "PNE"
+  },
+  {
+    "IATA CODES": "Phnom Penh",
+    "FIELD2": "PNH",
+    "FIELD3": "PNH"
+  },
+  {
+    "IATA CODES": "Phoenix",
+    "FIELD2": "PHX",
+    "FIELD3": "PHX"
+  },
+  {
+    "IATA CODES": "Phoenix, Scottsdale Municipal",
+    "FIELD2": "PHX",
+    "FIELD3": "SCF"
+  },
+  {
+    "IATA CODES": "Phuket",
+    "FIELD2": "HKT",
+    "FIELD3": "HKT"
+  },
+  {
+    "IATA CODES": "Pierre",
+    "FIELD2": "PIR",
+    "FIELD3": "PIR"
+  },
+  {
+    "IATA CODES": "Pisa",
+    "FIELD2": "PSA",
+    "FIELD3": "PSA"
+  },
+  {
+    "IATA CODES": "Pittsburgh",
+    "FIELD2": "PIT",
+    "FIELD3": "PIT"
+  },
+  {
+    "IATA CODES": "Piura",
+    "FIELD2": "PIU",
+    "FIELD3": "PIU"
+  },
+  {
+    "IATA CODES": "Platinum",
+    "FIELD2": "PTU",
+    "FIELD3": "PTU"
+  },
+  {
+    "IATA CODES": "Plymouth",
+    "FIELD2": "PYM",
+    "FIELD3": "PYM"
+  },
+  {
+    "IATA CODES": "Pocatello",
+    "FIELD2": "PIH",
+    "FIELD3": "PIH"
+  },
+  {
+    "IATA CODES": "Pohnpei",
+    "FIELD2": "PNI",
+    "FIELD3": "PNI"
+  },
+  {
+    "IATA CODES": "Point à Pitre",
+    "FIELD2": "PTP",
+    "FIELD3": "PTP"
+  },
+  {
+    "IATA CODES": "Pointe Noire",
+    "FIELD2": "PNR",
+    "FIELD3": "PNR"
+  },
+  {
+    "IATA CODES": "Qingdao",
+    "FIELD2": "TAO",
+    "FIELD3": "TAO"
+  },
+  {
+    "IATA CODES": "Quebec",
+    "FIELD2": "YQB",
+    "FIELD3": "YQB"
+  },
+  {
+    "IATA CODES": "Quetta",
+    "FIELD2": "UET",
+    "FIELD3": "UET"
+  },
+  {
+    "IATA CODES": "Rabat",
+    "FIELD2": "RBA",
+    "FIELD3": "RBA"
+  },
+  {
+    "IATA CODES": "Rabaul",
+    "FIELD2": "RAB",
+    "FIELD3": "RAB"
+  },
+  {
+    "IATA CODES": "Raleigh/Durham",
+    "FIELD2": "RDU",
+    "FIELD3": "RDU"
+  },
+  {
+    "IATA CODES": "Rangoon/Yangon",
+    "FIELD2": "RGN",
+    "FIELD3": "RGN"
+  },
+  {
+    "IATA CODES": "Rapid City",
+    "FIELD2": "RAP",
+    "FIELD3": "RAP"
+  },
+  {
+    "IATA CODES": "Rarotonga",
+    "FIELD2": "RAR",
+    "FIELD3": "RAR"
+  },
+  {
+    "IATA CODES": "Recife",
+    "FIELD2": "REC",
+    "FIELD3": "REC"
+  },
+  {
+    "IATA CODES": "Red Devil",
+    "FIELD2": "RDV",
+    "FIELD3": "RDV"
+  },
+  {
+    "IATA CODES": "Redding",
+    "FIELD2": "RDD",
+    "FIELD3": "RDD"
+  },
+  {
+    "IATA CODES": "Regina",
+    "FIELD2": "YQR",
+    "FIELD3": "YQR"
+  },
+  {
+    "IATA CODES": "Reno",
+    "FIELD2": "RNO",
+    "FIELD3": "RNO"
+  },
+  {
+    "IATA CODES": "Resolute",
+    "FIELD2": "YRB",
+    "FIELD3": "YRB"
+  },
+  {
+    "IATA CODES": "Reykjavik",
+    "FIELD2": "REK",
+    "FIELD3": "REK"
+  },
+  {
+    "IATA CODES": "Richmond",
+    "FIELD2": "RIC",
+    "FIELD3": "RIC"
+  },
+  {
+    "IATA CODES": "Riga",
+    "FIELD2": "RIX",
+    "FIELD3": "RIX"
+  },
+  {
+    "IATA CODES": "Riga, Skulte",
+    "FIELD2": "RIX",
+    "FIELD3": "RSC"
+  },
+  {
+    "IATA CODES": "Rimini",
+    "FIELD2": "RMI",
+    "FIELD3": "RMI"
+  },
+  {
+    "IATA CODES": "Rio de Janeiro",
+    "FIELD2": "RIO",
+    "FIELD3": "RIO"
+  },
+  {
+    "IATA CODES": "Rio de Janeiro, Internacional",
+    "FIELD2": "RIO",
+    "FIELD3": "GIG"
+  },
+  {
+    "IATA CODES": "Rio de Janeiro, Santos Dumont",
+    "FIELD2": "RIO",
+    "FIELD3": "SDU"
+  },
+  {
+    "IATA CODES": "Rio Gallegos",
+    "FIELD2": "RGL",
+    "FIELD3": "RGL"
+  },
+  {
+    "IATA CODES": "Rioja",
+    "FIELD2": "RIJ",
+    "FIELD3": "RIJ"
+  },
+  {
+    "IATA CODES": "Riyadh",
+    "FIELD2": "RUH",
+    "FIELD3": "RUH"
+  },
+  {
+    "IATA CODES": "Saarbruecken",
+    "FIELD2": "SCN",
+    "FIELD3": "SCN"
+  },
+  {
+    "IATA CODES": "Sacramento",
+    "FIELD2": "SAC",
+    "FIELD3": "SMF"
+  },
+  {
+    "IATA CODES": "Saipan",
+    "FIELD2": "SPN",
+    "FIELD3": "SPN"
+  },
+  {
+    "IATA CODES": "Sal",
+    "FIELD2": "SID",
+    "FIELD3": "SID"
+  },
+  {
+    "IATA CODES": "Salt Lake City",
+    "FIELD2": "SLC",
+    "FIELD3": "SLC"
+  },
+  {
+    "IATA CODES": "Saltillo",
+    "FIELD2": "SLW",
+    "FIELD3": "SLW"
+  },
+  {
+    "IATA CODES": "Salvador",
+    "FIELD2": "SSA",
+    "FIELD3": "SSA"
+  },
+  {
+    "IATA CODES": "Salzburg",
+    "FIELD2": "SZG",
+    "FIELD3": "SZG"
+  },
+  {
+    "IATA CODES": "San Andres Island",
+    "FIELD2": "ADZ",
+    "FIELD3": "ADZ"
+  },
+  {
+    "IATA CODES": "San Angelo",
+    "FIELD2": "SJT",
+    "FIELD3": "SJT"
+  },
+  {
+    "IATA CODES": "San Antonio",
+    "FIELD2": "SAT",
+    "FIELD3": "SAT"
+  },
+  {
+    "IATA CODES": "San Antonio",
+    "FIELD2": "SVZ",
+    "FIELD3": "SVZ"
+  },
+  {
+    "IATA CODES": "San Diego",
+    "FIELD2": "SAN",
+    "FIELD3": "SAN"
+  },
+  {
+    "IATA CODES": "San Francisco",
+    "FIELD2": "SFO",
+    "FIELD3": "SFO"
+  },
+  {
+    "IATA CODES": "San Francisco, Embarkadero",
+    "FIELD2": "SFO",
+    "FIELD3": "EMB"
+  },
+  {
+    "IATA CODES": "San Jose",
+    "FIELD2": "SJC",
+    "FIELD3": "SJC"
+  },
+  {
+    "IATA CODES": "San Jose",
+    "FIELD2": "SJO",
+    "FIELD3": "SJO"
+  },
+  {
+    "IATA CODES": "San Jose, Los Cabos",
+    "FIELD2": "SJD",
+    "FIELD3": "SJD"
+  },
+  {
+    "IATA CODES": "San Juan",
+    "FIELD2": "SJU",
+    "FIELD3": "SJU"
+  },
+  {
+    "IATA CODES": "San Juan, Isla Grande",
+    "FIELD2": "SJU",
+    "FIELD3": "SIG"
+  },
+  {
+    "IATA CODES": "San Luis Potosi",
+    "FIELD2": "SLP",
+    "FIELD3": "SLP"
+  },
+  {
+    "IATA CODES": "San Pedro Sula",
+    "FIELD2": "SAP",
+    "FIELD3": "SAP"
+  },
+  {
+    "IATA CODES": "San Salvador",
+    "FIELD2": "SAL",
+    "FIELD3": "SAL"
+  },
+  {
+    "IATA CODES": "San Tome",
+    "FIELD2": "SOM",
+    "FIELD3": "SOM"
+  },
+  {
+    "IATA CODES": "Sanaa",
+    "FIELD2": "SAH",
+    "FIELD3": "SAH"
+  },
+  {
+    "IATA CODES": "Sand Point",
+    "FIELD2": "SDP",
+    "FIELD3": "SDP"
+  },
+  {
+    "IATA CODES": "Sandakan",
+    "FIELD2": "SDK",
+    "FIELD3": "SDK"
+  },
+  {
+    "IATA CODES": "Santa Barbara",
+    "FIELD2": "SBA",
+    "FIELD3": "SBA"
+  },
+  {
+    "IATA CODES": "Santa Cruz",
+    "FIELD2": "SRZ",
+    "FIELD3": "SRZ"
+  },
+  {
+    "IATA CODES": "Santa Cruz",
+    "FIELD2": "SRZ",
+    "FIELD3": "VVI"
+  },
+  {
+    "IATA CODES": "Santa Maria",
+    "FIELD2": "SMX",
+    "FIELD3": "SMX"
+  },
+  {
+    "IATA CODES": "Santiago",
+    "FIELD2": "SCL",
+    "FIELD3": "SCL"
+  },
+  {
+    "IATA CODES": "Santiago de Compostela",
+    "FIELD2": "SCQ",
+    "FIELD3": "SCQ"
+  },
+  {
+    "IATA CODES": "Santo Domingo",
+    "FIELD2": "SDQ",
+    "FIELD3": "SDQ"
+  },
+  {
+    "IATA CODES": "Santo Domingo",
+    "FIELD2": "STD",
+    "FIELD3": "STD"
+  },
+  {
+    "IATA CODES": "Sanya",
+    "FIELD2": "SYX",
+    "FIELD3": "SYX"
+  },
+  {
+    "IATA CODES": "Sao Luiz",
+    "FIELD2": "SLZ",
+    "FIELD3": "SLZ"
+  },
+  {
+    "IATA CODES": "Sao Paulo",
+    "FIELD2": "SAO",
+    "FIELD3": "SAO"
+  },
+  {
+    "IATA CODES": "Sao Paulo, Congonhas",
+    "FIELD2": "SAO",
+    "FIELD3": "CGH"
+  },
+  {
+    "IATA CODES": "Sao Paulo, Guarulhos",
+    "FIELD2": "SAO",
+    "FIELD3": "GRU"
+  },
+  {
+    "IATA CODES": "Sao Paulo, Viracopos",
+    "FIELD2": "SAO",
+    "FIELD3": "VCP"
+  },
+  {
+    "IATA CODES": "Sao Tome Island",
+    "FIELD2": "TMS",
+    "FIELD3": "TMS"
+  },
+  {
+    "IATA CODES": "Sapporo",
+    "FIELD2": "SPK",
+    "FIELD3": "SPK"
+  },
+  {
+    "IATA CODES": "Sapporo, Chitose",
+    "FIELD2": "SPK",
+    "FIELD3": "CTS"
+  },
+  {
+    "IATA CODES": "Sapporo, Okadama",
+    "FIELD2": "SPK",
+    "FIELD3": "OKD"
+  },
+  {
+    "IATA CODES": "Sarasota/ Bradenton",
+    "FIELD2": "SRQ",
+    "FIELD3": "SRQ"
+  },
+  {
+    "IATA CODES": "Sault  Ste. Marie",
+    "FIELD2": "YAM",
+    "FIELD3": "YAM"
+  },
+  {
+    "IATA CODES": "Savannah",
+    "FIELD2": "SAV",
+    "FIELD3": "SAV"
+  },
+  {
+    "IATA CODES": "Scammon Bay",
+    "FIELD2": "SCM",
+    "FIELD3": "SCM"
+  },
+  {
+    "IATA CODES": "Scranton, Wilkes   -Barre",
+    "FIELD2": "AVP",
+    "FIELD3": "AVP"
+  },
+  {
+    "IATA CODES": "Seattle",
+    "FIELD2": "SEA",
+    "FIELD3": "SEA"
+  },
+  {
+    "IATA CODES": "Sedona",
+    "FIELD2": "SDX",
+    "FIELD3": "SDX"
+  },
+  {
+    "IATA CODES": "Seldovia",
+    "FIELD2": "SOV",
+    "FIELD3": "SOV"
+  },
+  {
+    "IATA CODES": "Sendai",
+    "FIELD2": "SDJ",
+    "FIELD3": "SDJ"
+  },
+  {
+    "IATA CODES": "Seoul",
+    "FIELD2": "SEL",
+    "FIELD3": "SEL"
+  },
+  {
+    "IATA CODES": "Sepulot",
+    "FIELD2": "SPE",
+    "FIELD3": "SPE"
+  },
+  {
+    "IATA CODES": "Seville",
+    "FIELD2": "SVQ",
+    "FIELD3": "SVQ"
+  },
+  {
+    "IATA CODES": "Seward",
+    "FIELD2": "SWD",
+    "FIELD3": "SWD"
+  },
+  {
+    "IATA CODES": "Shageluk",
+    "FIELD2": "SHX",
+    "FIELD3": "SHX"
+  },
+  {
+    "IATA CODES": "Shanghai",
+    "FIELD2": "SHA",
+    "FIELD3": "SHA"
+  },
+  {
+    "IATA CODES": "Tabriz",
+    "FIELD2": "TBZ",
+    "FIELD3": "TBZ"
+  },
+  {
+    "IATA CODES": "Tabuk",
+    "FIELD2": "TUU",
+    "FIELD3": "TUU"
+  },
+  {
+    "IATA CODES": "Tacna",
+    "FIELD2": "TCQ",
+    "FIELD3": "TCQ"
+  },
+  {
+    "IATA CODES": "Taegu, Korea",
+    "FIELD2": "TAE",
+    "FIELD3": "TAE"
+  },
+  {
+    "IATA CODES": "Taichung",
+    "FIELD2": "TXG",
+    "FIELD3": "TXG"
+  },
+  {
+    "IATA CODES": "Taif",
+    "FIELD2": "TIF",
+    "FIELD3": "TIF"
+  },
+  {
+    "IATA CODES": "Taipei",
+    "FIELD2": "TPE",
+    "FIELD3": "TPE"
+  },
+  {
+    "IATA CODES": "Taipei, Shung Shan",
+    "FIELD2": "TPE",
+    "FIELD3": "TSA"
+  },
+  {
+    "IATA CODES": "Taiyuan",
+    "FIELD2": "TYN",
+    "FIELD3": "TYN"
+  },
+  {
+    "IATA CODES": "Takamatsu",
+    "FIELD2": "TAK",
+    "FIELD3": "TAK"
+  },
+  {
+    "IATA CODES": "Talara",
+    "FIELD2": "TYL",
+    "FIELD3": "TYL"
+  },
+  {
+    "IATA CODES": "Tallahassee",
+    "FIELD2": "TLH",
+    "FIELD3": "TLH"
+  },
+  {
+    "IATA CODES": "Tallinn",
+    "FIELD2": "TLL",
+    "FIELD3": "TLL"
+  },
+  {
+    "IATA CODES": "Tamanrasset",
+    "FIELD2": "TMR",
+    "FIELD3": "TMR"
+  },
+  {
+    "IATA CODES": "Tampa",
+    "FIELD2": "TPA",
+    "FIELD3": "TPA"
+  },
+  {
+    "IATA CODES": "Tampere",
+    "FIELD2": "TMP",
+    "FIELD3": "TMP"
+  },
+  {
+    "IATA CODES": "Tanana",
+    "FIELD2": "TAL",
+    "FIELD3": "TAL"
+  },
+  {
+    "IATA CODES": "Tangier",
+    "FIELD2": "TNG",
+    "FIELD3": "TNG"
+  },
+  {
+    "IATA CODES": "Tarapoto",
+    "FIELD2": "TPP",
+    "FIELD3": "TPP"
+  },
+  {
+    "IATA CODES": "Tashkent",
+    "FIELD2": "TAS",
+    "FIELD3": "TAS"
+  },
+  {
+    "IATA CODES": "Tawau",
+    "FIELD2": "TWU",
+    "FIELD3": "TWU"
+  },
+  {
+    "IATA CODES": "Teesside",
+    "FIELD2": "MME",
+    "FIELD3": "MME"
+  },
+  {
+    "IATA CODES": "Tegucigalpa",
+    "FIELD2": "TGU",
+    "FIELD3": "TGU"
+  },
+  {
+    "IATA CODES": "Tehran",
+    "FIELD2": "THR",
+    "FIELD3": "THR"
+  },
+  {
+    "IATA CODES": "Tel Aviv Yafo, Sde Dov",
+    "FIELD2": "TLV",
+    "FIELD3": "SDV"
+  },
+  {
+    "IATA CODES": "Tel Aviv Yafo, Tel Aviv",
+    "FIELD2": "TLV",
+    "FIELD3": "TLV"
+  },
+  {
+    "IATA CODES": "Temuco",
+    "FIELD2": "ZCO",
+    "FIELD3": "ZCO"
+  },
+  {
+    "IATA CODES": "Tenerife",
+    "FIELD2": "TCI",
+    "FIELD3": "TCI"
+  },
+  {
+    "IATA CODES": "Tenerife, Norte Los Rodeos",
+    "FIELD2": "TCI",
+    "FIELD3": "TFN"
+  },
+  {
+    "IATA CODES": "Tenerife, Sur Reine Sofia",
+    "FIELD2": "TCI",
+    "FIELD3": "TFS"
+  },
+  {
+    "IATA CODES": "Terceira",
+    "FIELD2": "TER",
+    "FIELD3": "TER"
+  },
+  {
+    "IATA CODES": "Terrace",
+    "FIELD2": "YXT",
+    "FIELD3": "YXT"
+  },
+  {
+    "IATA CODES": "Texarkana",
+    "FIELD2": "TXK",
+    "FIELD3": "TXK"
+  },
+  {
+    "IATA CODES": "Thessaloniki",
+    "FIELD2": "SKG",
+    "FIELD3": "SKG"
+  },
+  {
+    "IATA CODES": "Thunder Bay",
+    "FIELD2": "YQT",
+    "FIELD3": "YQT"
+  },
+  {
+    "IATA CODES": "Tianjin",
+    "FIELD2": "TSN",
+    "FIELD3": "TSN"
+  },
+  {
+    "IATA CODES": "Tijuana",
+    "FIELD2": "TIJ",
+    "FIELD3": "TIJ"
+  },
+  {
+    "IATA CODES": "Timisoara",
+    "FIELD2": "TSR",
+    "FIELD3": "TSR"
+  },
+  {
+    "IATA CODES": "Tingo Maria",
+    "FIELD2": "TGI",
+    "FIELD3": "TGI"
+  },
+  {
+    "IATA CODES": "Ube",
+    "FIELD2": "UBJ",
+    "FIELD3": "UBJ"
+  },
+  {
+    "IATA CODES": "Ukiah",
+    "FIELD2": "UKI",
+    "FIELD3": "UKI"
+  },
+  {
+    "IATA CODES": "Ulan Bator",
+    "FIELD2": "ULN",
+    "FIELD3": "ULN"
+  },
+  {
+    "IATA CODES": "Vaasa",
+    "FIELD2": "VAA",
+    "FIELD3": "VAA"
+  },
+  {
+    "IATA CODES": "Valdosta",
+    "FIELD2": "VLD",
+    "FIELD3": "VLD"
+  },
+  {
+    "IATA CODES": "Valencia",
+    "FIELD2": "VLC",
+    "FIELD3": "VLC"
+  },
+  {
+    "IATA CODES": "Valencia",
+    "FIELD2": "VLN",
+    "FIELD3": "VLN"
+  },
+  {
+    "IATA CODES": "Valera",
+    "FIELD2": "VLV",
+    "FIELD3": "VLV"
+  },
+  {
+    "IATA CODES": "Valladolid",
+    "FIELD2": "VLL",
+    "FIELD3": "VLL"
+  },
+  {
+    "IATA CODES": "Vancouver",
+    "FIELD2": "YVR",
+    "FIELD3": "YVR"
+  },
+  {
+    "IATA CODES": "Vasteras",
+    "FIELD2": "VST",
+    "FIELD3": "VST"
+  },
+  {
+    "IATA CODES": "Vaxjo",
+    "FIELD2": "VXO",
+    "FIELD3": "VXO"
+  },
+  {
+    "IATA CODES": "Venetie",
+    "FIELD2": "VEE",
+    "FIELD3": "VEE"
+  },
+  {
+    "IATA CODES": "Venice",
+    "FIELD2": "VCE",
+    "FIELD3": "VCE"
+  },
+  {
+    "IATA CODES": "Venice,   Treviso",
+    "FIELD2": "VCE",
+    "FIELD3": "TSF"
+  },
+  {
+    "IATA CODES": "Wabush",
+    "FIELD2": "YWK",
+    "FIELD3": "YWK"
+  },
+  {
+    "IATA CODES": "Waco",
+    "FIELD2": "ACT",
+    "FIELD3": "ACT"
+  },
+  {
+    "IATA CODES": "Warsaw",
+    "FIELD2": "WAW",
+    "FIELD3": "WAW"
+  },
+  {
+    "IATA CODES": "Washington",
+    "FIELD2": "WAS",
+    "FIELD3": "WAS"
+  },
+  {
+    "IATA CODES": "Washington, Dulles International",
+    "FIELD2": "WAS",
+    "FIELD3": "IAD"
+  },
+  {
+    "IATA CODES": "Washington, National",
+    "FIELD2": "WAS",
+    "FIELD3": "DCA"
+  },
+  {
+    "IATA CODES": "Watson Lake",
+    "FIELD2": "YQH",
+    "FIELD3": "YQH"
+  },
+  {
+    "IATA CODES": "Wausau",
+    "FIELD2": "AUW",
+    "FIELD3": "AUW"
+  },
+  {
+    "IATA CODES": "Wellington",
+    "FIELD2": "WLG",
+    "FIELD3": "WLG"
+  },
+  {
+    "IATA CODES": "Wenatchee",
+    "FIELD2": "EAT",
+    "FIELD3": "EAT"
+  },
+  {
+    "IATA CODES": "West Palm Beach",
+    "FIELD2": "PBI",
+    "FIELD3": "PBI"
+  },
+  {
+    "IATA CODES": "Westchester",
+    "FIELD2": "HPN",
+    "FIELD3": "HPN"
+  },
+  {
+    "IATA CODES": "Xiamen",
+    "FIELD2": "XMN",
+    "FIELD3": "XMN"
+  },
+  {
+    "IATA CODES": "Yakima",
+    "FIELD2": "YKM",
+    "FIELD3": "YKM"
+  },
+  {
+    "IATA CODES": "Yakutat",
+    "FIELD2": "YAK",
+    "FIELD3": "YAK"
+  },
+  {
+    "IATA CODES": "Yamagata",
+    "FIELD2": "GAJ",
+    "FIELD3": "GAJ"
+  },
+  {
+    "IATA CODES": "Yantai",
+    "FIELD2": "YNT",
+    "FIELD3": "YNT"
+  },
+  {
+    "IATA CODES": "Yap Caroline Island",
+    "FIELD2": "YAP",
+    "FIELD3": "YAP"
+  },
+  {
+    "IATA CODES": "Zacatecas",
+    "FIELD2": "ZCL",
+    "FIELD3": "ZCL"
+  },
+  {
+    "IATA CODES": "Zagreb",
+    "FIELD2": "ZAG",
+    "FIELD3": "ZAG"
+  },
+  {
+    "IATA CODES": "Zahedan",
+    "FIELD2": "ZAH",
+    "FIELD3": "ZAH"
+  },
+  {
+    "IATA CODES": "Zanzibar",
+    "FIELD2": "ZNZ",
+    "FIELD3": "ZNZ"
+  },
+  {
+    "IATA CODES": "Zaragoza                                         ZAZ",
+    "FIELD2": "",
+    "FIELD3": "ZAZ"
+  },
+  {
+    "IATA CODES": "Anchorage",
+    "FIELD2": "ANC",
+    "FIELD3": "ANC"
+  },
+  {
+    "IATA CODES": "Anchorage,   Merrill Field",
+    "FIELD2": "ANC",
+    "FIELD3": "MRI"
+  },
+  {
+    "IATA CODES": "Ancona",
+    "FIELD2": "AOI",
+    "FIELD3": "AOI"
+  },
+  {
+    "IATA CODES": "Andahuaylas",
+    "FIELD2": "ANS",
+    "FIELD3": "ANS"
+  },
+  {
+    "IATA CODES": "Anguilla",
+    "FIELD2": "AZA",
+    "FIELD3": "AZA"
+  },
+  {
+    "IATA CODES": "Aniak",
+    "FIELD2": "ANI",
+    "FIELD3": "ANI"
+  },
+  {
+    "IATA CODES": "Ankang",
+    "FIELD2": "AKA",
+    "FIELD3": "AKA"
+  },
+  {
+    "IATA CODES": "Ankara",
+    "FIELD2": "ANK",
+    "FIELD3": "ANK"
+  },
+  {
+    "IATA CODES": "Ankara, Esenboga",
+    "FIELD2": "ANK",
+    "FIELD3": "ESB"
+  },
+  {
+    "IATA CODES": "Annecy",
+    "FIELD2": "NCY",
+    "FIELD3": "NCY"
+  },
+  {
+    "IATA CODES": "Antalya",
+    "FIELD2": "AYT",
+    "FIELD3": "AYT"
+  },
+  {
+    "IATA CODES": "Antananarivo",
+    "FIELD2": "TNR",
+    "FIELD3": "TNR"
+  },
+  {
+    "IATA CODES": "Antigua",
+    "FIELD2": "ANU",
+    "FIELD3": "ANU"
+  },
+  {
+    "IATA CODES": "Antofagasta",
+    "FIELD2": "ANF",
+    "FIELD3": "ANF"
+  },
+  {
+    "IATA CODES": "Antwerp",
+    "FIELD2": "ANR",
+    "FIELD3": "ANR"
+  },
+  {
+    "IATA CODES": "Anvik",
+    "FIELD2": "ANV",
+    "FIELD3": "ANV"
+  },
+  {
+    "IATA CODES": "Aomori",
+    "FIELD2": "AOJ",
+    "FIELD3": "AOJ"
+  },
+  {
+    "IATA CODES": "Apia",
+    "FIELD2": "APW",
+    "FIELD3": "APW"
+  },
+  {
+    "IATA CODES": "Appleton",
+    "FIELD2": "ATW",
+    "FIELD3": "ATW"
+  },
+  {
+    "IATA CODES": "Aqaba",
+    "FIELD2": "AQJ",
+    "FIELD3": "AQJ"
+  },
+  {
+    "IATA CODES": "Arcata, Eureka",
+    "FIELD2": "ACV",
+    "FIELD3": "ACV"
+  },
+  {
+    "IATA CODES": "Arctic Village",
+    "FIELD2": "ARC",
+    "FIELD3": "ARC"
+  },
+  {
+    "IATA CODES": "Arecibo",
+    "FIELD2": "ARE",
+    "FIELD3": "ARE"
+  },
+  {
+    "IATA CODES": "Arequipa",
+    "FIELD2": "AQP",
+    "FIELD3": "AQP"
+  },
+  {
+    "IATA CODES": "Arica",
+    "FIELD2": "ARI",
+    "FIELD3": "ARI"
+  },
+  {
+    "IATA CODES": "Aruba",
+    "FIELD2": "AUA",
+    "FIELD3": "AUA"
+  },
+  {
+    "IATA CODES": "Ascension",
+    "FIELD2": "ASC",
+    "FIELD3": "ASC"
+  },
+  {
+    "IATA CODES": "Asheville",
+    "FIELD2": "AVL",
+    "FIELD3": "AVL"
+  },
+  {
+    "IATA CODES": "Ashikawa",
+    "FIELD2": "AKJ",
+    "FIELD3": "AKJ"
+  },
+  {
+    "IATA CODES": "Ashland, Huntington",
+    "FIELD2": "HTS",
+    "FIELD3": "HTS"
+  },
+  {
+    "IATA CODES": "Asmara",
+    "FIELD2": "ASM",
+    "FIELD3": "ASM"
+  },
+  {
+    "IATA CODES": "Asturias",
+    "FIELD2": "OVD",
+    "FIELD3": "OVD"
+  },
+  {
+    "IATA CODES": "Asuncion",
+    "FIELD2": "ASU",
+    "FIELD3": "ASU"
+  },
+  {
+    "IATA CODES": "Aswan",
+    "FIELD2": "ASW",
+    "FIELD3": "ASW"
+  },
+  {
+    "IATA CODES": "Athens",
+    "FIELD2": "ATH",
+    "FIELD3": "ATH"
+  },
+  {
+    "IATA CODES": "Atlanta",
+    "FIELD2": "ATL",
+    "FIELD3": "ATL"
+  },
+  {
+    "IATA CODES": "Atlanta, Beaver Ruin",
+    "FIELD2": "ATL",
+    "FIELD3": "JAO"
+  },
+  {
+    "IATA CODES": "Atlanta, Perimeter",
+    "FIELD2": "ATL",
+    "FIELD3": "JAJ"
+  },
+  {
+    "IATA CODES": "Atlantic City",
+    "FIELD2": "AIY",
+    "FIELD3": "AIY"
+  },
+  {
+    "IATA CODES": "Atlantic City, Pomona Field",
+    "FIELD2": "AIY",
+    "FIELD3": "ACY"
+  },
+  {
+    "IATA CODES": "Atmautluak",
+    "FIELD2": "ATT",
+    "FIELD3": "ATT"
+  },
+  {
+    "IATA CODES": "Auckland",
+    "FIELD2": "AKL",
+    "FIELD3": "AKL"
+  },
+  {
+    "IATA CODES": "Augusta",
+    "FIELD2": "AGS",
+    "FIELD3": "AGS"
+  },
+  {
+    "IATA CODES": "Austin",
+    "FIELD2": "AUS",
+    "FIELD3": "AUS"
+  },
+  {
+    "IATA CODES": "Ayacucho",
+    "FIELD2": "AYP",
+    "FIELD3": "AYP"
+  },
+  {
+    "IATA CODES": "Biak",
+    "FIELD2": "BIK",
+    "FIELD3": "BIK"
+  },
+  {
+    "IATA CODES": "Biarritz",
+    "FIELD2": "BIQ",
+    "FIELD3": "BIQ"
+  },
+  {
+    "IATA CODES": "Bilbao",
+    "FIELD2": "BIO",
+    "FIELD3": "BIO"
+  },
+  {
+    "IATA CODES": "Billings",
+    "FIELD2": "BIL",
+    "FIELD3": "BIL"
+  },
+  {
+    "IATA CODES": "Billund",
+    "FIELD2": "BLL",
+    "FIELD3": "BLL"
+  },
+  {
+    "IATA CODES": "Binghamton",
+    "FIELD2": "BGM",
+    "FIELD3": "BGM"
+  },
+  {
+    "IATA CODES": "Bintulu",
+    "FIELD2": "BTU",
+    "FIELD3": "BTU"
+  },
+  {
+    "IATA CODES": "Birmingham",
+    "FIELD2": "BHM",
+    "FIELD3": "BHM"
+  },
+  {
+    "IATA CODES": "Birmingham",
+    "FIELD2": "BHX",
+    "FIELD3": "BHX"
+  },
+  {
+    "IATA CODES": "Bissau",
+    "FIELD2": "BXO",
+    "FIELD3": "BXO"
+  },
+  {
+    "IATA CODES": "Blantyre",
+    "FIELD2": "BLZ",
+    "FIELD3": "BLZ"
+  },
+  {
+    "IATA CODES": "Bloemfontein",
+    "FIELD2": "BFN",
+    "FIELD3": "BFN"
+  },
+  {
+    "IATA CODES": "Bloomington",
+    "FIELD2": "BMI",
+    "FIELD3": "BMI"
+  },
+  {
+    "IATA CODES": "Boa Vista",
+    "FIELD2": "BVB",
+    "FIELD3": "BVB"
+  },
+  {
+    "IATA CODES": "Bodo",
+    "FIELD2": "BOO",
+    "FIELD3": "BOO"
+  },
+  {
+    "IATA CODES": "Bogota",
+    "FIELD2": "BOG",
+    "FIELD3": "BOG"
+  },
+  {
+    "IATA CODES": "Boise",
+    "FIELD2": "BOI",
+    "FIELD3": "BOI"
+  },
+  {
+    "IATA CODES": "Bologna",
+    "FIELD2": "BLQ",
+    "FIELD3": "BLQ"
+  },
+  {
+    "IATA CODES": "Bombay",
+    "FIELD2": "BOM",
+    "FIELD3": "BOM"
+  },
+  {
+    "IATA CODES": "Bonaire",
+    "FIELD2": "BON",
+    "FIELD3": "BON"
+  },
+  {
+    "IATA CODES": "Bordeaux",
+    "FIELD2": "BOD",
+    "FIELD3": "BOD"
+  },
+  {
+    "IATA CODES": "Boston",
+    "FIELD2": "BOS",
+    "FIELD3": "BOS"
+  },
+  {
+    "IATA CODES": "Boulder",
+    "FIELD2": "WBU",
+    "FIELD3": "WBU"
+  },
+  {
+    "IATA CODES": "Bourlamaq/Val D’or",
+    "FIELD2": "YVO",
+    "FIELD3": "YVO"
+  },
+  {
+    "IATA CODES": "Bournemouth",
+    "FIELD2": "BOH",
+    "FIELD3": "BOH"
+  },
+  {
+    "IATA CODES": "Bozeman",
+    "FIELD2": "BZN",
+    "FIELD3": "BZN"
+  },
+  {
+    "IATA CODES": "Bradley",
+    "FIELD2": "BDL",
+    "FIELD3": "BDL"
+  },
+  {
+    "IATA CODES": "Brainerd",
+    "FIELD2": "BRD",
+    "FIELD3": "BRD"
+  },
+  {
+    "IATA CODES": "Brasilia",
+    "FIELD2": "BSB",
+    "FIELD3": "BSB"
+  },
+  {
+    "IATA CODES": "Bratislava",
+    "FIELD2": "BTS",
+    "FIELD3": "BTS"
+  },
+  {
+    "IATA CODES": "Brazzaville",
+    "FIELD2": "BZV",
+    "FIELD3": "BZV"
+  },
+  {
+    "IATA CODES": "Bremen",
+    "FIELD2": "BRE",
+    "FIELD3": "BRE"
+  },
+  {
+    "IATA CODES": "Brest",
+    "FIELD2": "BES",
+    "FIELD3": "BES"
+  },
+  {
+    "IATA CODES": "Bridgeport",
+    "FIELD2": "BDR",
+    "FIELD3": "BDR"
+  },
+  {
+    "IATA CODES": "Brisbane",
+    "FIELD2": "BNE",
+    "FIELD3": "BNE"
+  },
+  {
+    "IATA CODES": "Bristol",
+    "FIELD2": "BRS",
+    "FIELD3": "BRS"
+  },
+  {
+    "IATA CODES": "Brownsville",
+    "FIELD2": "BRO",
+    "FIELD3": "BRO"
+  },
+  {
+    "IATA CODES": "Brussels",
+    "FIELD2": "BRU",
+    "FIELD3": "BRU"
+  },
+  {
+    "IATA CODES": "Bucaramanga",
+    "FIELD2": "BGA",
+    "FIELD3": "BGA"
+  },
+  {
+    "IATA CODES": "Bucharest",
+    "FIELD2": "BUH",
+    "FIELD3": "BUH"
+  },
+  {
+    "IATA CODES": "Bucharest, Baneasa",
+    "FIELD2": "BUH",
+    "FIELD3": "BBU"
+  },
+  {
+    "IATA CODES": "Bucharest, Otopeni",
+    "FIELD2": "BUH",
+    "FIELD3": "OTP"
+  },
+  {
+    "IATA CODES": "Budapest",
+    "FIELD2": "BUD",
+    "FIELD3": "BUD"
+  },
+  {
+    "IATA CODES": "Buenos Aires",
+    "FIELD2": "BUE",
+    "FIELD3": "BUE"
+  },
+  {
+    "IATA CODES": "Buenos Aires, Ministro Pistarini",
+    "FIELD2": "BUE",
+    "FIELD3": "EZE"
+  },
+  {
+    "IATA CODES": "Buenos Aires, Jorge Newbery",
+    "FIELD2": "BUE",
+    "FIELD3": "AEP"
+  },
+  {
+    "IATA CODES": "Bujumbura",
+    "FIELD2": "BJM",
+    "FIELD3": "BJM"
+  },
+  {
+    "IATA CODES": "Bulawayo",
+    "FIELD2": "BUQ",
+    "FIELD3": "BUQ"
+  },
+  {
+    "IATA CODES": "Bundaberg, Blanding",
+    "FIELD2": "BDG",
+    "FIELD3": "BDG"
+  },
+  {
+    "IATA CODES": "Burbank",
+    "FIELD2": "BUR",
+    "FIELD3": "BUR"
+  },
+  {
+    "IATA CODES": "Burlington",
+    "FIELD2": "BTV",
+    "FIELD3": "BTV"
+  },
+  {
+    "IATA CODES": "Bushehr",
+    "FIELD2": "BUZ",
+    "FIELD3": "BUZ"
+  },
+  {
+    "IATA CODES": "Butte",
+    "FIELD2": "BTM",
+    "FIELD3": "BTM"
+  },
+  {
+    "IATA CODES": "Chongqing",
+    "FIELD2": "CKG",
+    "FIELD3": "CKG"
+  },
+  {
+    "IATA CODES": "Christchurch",
+    "FIELD2": "CHC",
+    "FIELD3": "CHC"
+  },
+  {
+    "IATA CODES": "Chuathbaluk",
+    "FIELD2": "CHU",
+    "FIELD3": "CHU"
+  },
+  {
+    "IATA CODES": "Cincinnati",
+    "FIELD2": "CVG",
+    "FIELD3": "CVG"
+  },
+  {
+    "IATA CODES": "Cleveland",
+    "FIELD2": "CLE",
+    "FIELD3": "CLE"
+  },
+  {
+    "IATA CODES": "Cleveland, Burke    Lakefront",
+    "FIELD2": "CLE",
+    "FIELD3": "BKL"
+  },
+  {
+    "IATA CODES": "Cochabamba",
+    "FIELD2": "CBB",
+    "FIELD3": "CBB"
+  },
+  {
+    "IATA CODES": "Cochin",
+    "FIELD2": "COK",
+    "FIELD3": "COK"
+  },
+  {
+    "IATA CODES": "Coeur D’Alene",
+    "FIELD2": "COE",
+    "FIELD3": "COE"
+  },
+  {
+    "IATA CODES": "Cold Bay",
+    "FIELD2": "CDB",
+    "FIELD3": "CDB"
+  },
+  {
+    "IATA CODES": "Colima",
+    "FIELD2": "CLQ",
+    "FIELD3": "CLQ"
+  },
+  {
+    "IATA CODES": "College Station",
+    "FIELD2": "CLL",
+    "FIELD3": "CLL"
+  },
+  {
+    "IATA CODES": "Cologne",
+    "FIELD2": "CGN",
+    "FIELD3": "CGN"
+  },
+  {
+    "IATA CODES": "Colombo",
+    "FIELD2": "CMB",
+    "FIELD3": "CMB"
+  },
+  {
+    "IATA CODES": "Colorado Springs",
+    "FIELD2": "COS",
+    "FIELD3": "COS"
+  },
+  {
+    "IATA CODES": "Columbia",
+    "FIELD2": "CAE",
+    "FIELD3": "CAE"
+  },
+  {
+    "IATA CODES": "Columbia",
+    "FIELD2": "COU",
+    "FIELD3": "COU"
+  },
+  {
+    "IATA CODES": "Columbus",
+    "FIELD2": "CMH",
+    "FIELD3": "CMH"
+  },
+  {
+    "IATA CODES": "Columbus",
+    "FIELD2": "CSG",
+    "FIELD3": "CSG"
+  },
+  {
+    "IATA CODES": "Columbus",
+    "FIELD2": "UBS",
+    "FIELD3": "UBS"
+  },
+  {
+    "IATA CODES": "Conakry",
+    "FIELD2": "CKY",
+    "FIELD3": "CKY"
+  },
+  {
+    "IATA CODES": "Concepcion",
+    "FIELD2": "CCP",
+    "FIELD3": "CCP"
+  },
+  {
+    "IATA CODES": "Copenhagen",
+    "FIELD2": "CPH",
+    "FIELD3": "CPH"
+  },
+  {
+    "IATA CODES": "Copenhagen, Roskilde",
+    "FIELD2": "CPH",
+    "FIELD3": "RKE"
+  },
+  {
+    "IATA CODES": "Copiapo",
+    "FIELD2": "CPO",
+    "FIELD3": "CPO"
+  },
+  {
+    "IATA CODES": "Cordova",
+    "FIELD2": "CDV",
+    "FIELD3": "CDV"
+  },
+  {
+    "IATA CODES": "Cork",
+    "FIELD2": "ORK",
+    "FIELD3": "ORK"
+  },
+  {
+    "IATA CODES": "Corning, Elmira",
+    "FIELD2": "ELM",
+    "FIELD3": "ELM"
+  },
+  {
+    "IATA CODES": "Coro",
+    "FIELD2": "CZE",
+    "FIELD3": "CZE"
+  },
+  {
+    "IATA CODES": "Corpus Christie",
+    "FIELD2": "CRP",
+    "FIELD3": "CRP"
+  },
+  {
+    "IATA CODES": "Corpus Christie,    Cabaniss Field",
+    "FIELD2": "CRP",
+    "FIELD3": "NGW"
+  },
+  {
+    "IATA CODES": "Corpus Christie, Cuddihy Field",
+    "FIELD2": "CRP",
+    "FIELD3": "CUX"
+  },
+  {
+    "IATA CODES": "Cotonou",
+    "FIELD2": "COO",
+    "FIELD3": "COO"
+  },
+  {
+    "IATA CODES": "Coyhaique",
+    "FIELD2": "GXQ",
+    "FIELD3": "GXQ"
+  },
+  {
+    "IATA CODES": "Cozumel",
+    "FIELD2": "CZM",
+    "FIELD3": "CZM"
+  },
+  {
+    "IATA CODES": "Crokked Creek",
+    "FIELD2": "CKD",
+    "FIELD3": "CKD"
+  },
+  {
+    "IATA CODES": "Cruzeiro Do Sul",
+    "FIELD2": "CZS",
+    "FIELD3": "CZS"
+  },
+  {
+    "IATA CODES": "Cuenca",
+    "FIELD2": "CUE",
+    "FIELD3": "CUE"
+  },
+  {
+    "IATA CODES": "Cuiaba",
+    "FIELD2": "CGB",
+    "FIELD3": "CGB"
+  },
+  {
+    "IATA CODES": "Culebra",
+    "FIELD2": "CPX",
+    "FIELD3": "CPX"
+  },
+  {
+    "IATA CODES": "Culiacan",
+    "FIELD2": "CUL",
+    "FIELD3": "CUL"
+  },
+  {
+    "IATA CODES": "Cumana",
+    "FIELD2": "CUM",
+    "FIELD3": "CUM"
+  },
+  {
+    "IATA CODES": "Curacao",
+    "FIELD2": "CUR",
+    "FIELD3": "CUR"
+  },
+  {
+    "IATA CODES": "Curitiba",
+    "FIELD2": "CWB",
+    "FIELD3": "CWB"
+  },
+  {
+    "IATA CODES": "Cusco",
+    "FIELD2": "CUZ",
+    "FIELD3": "CUZ"
+  },
+  {
+    "IATA CODES": "Detroit",
+    "FIELD2": "DTT",
+    "FIELD3": "DTW"
+  },
+  {
+    "IATA CODES": "Detroit City",
+    "FIELD2": "DTT",
+    "FIELD3": "DET"
+  },
+  {
+    "IATA CODES": "Detroit, Willow Run",
+    "FIELD2": "DTT",
+    "FIELD3": "YIP"
+  },
+  {
+    "IATA CODES": "Dhahran",
+    "FIELD2": "DHA",
+    "FIELD3": "DHA"
+  },
+  {
+    "IATA CODES": "Dhaka",
+    "FIELD2": "DAC",
+    "FIELD3": "DAC"
+  },
+  {
+    "IATA CODES": "Dillingham",
+    "FIELD2": "DLG",
+    "FIELD3": "DLG"
+  },
+  {
+    "IATA CODES": "Djerba",
+    "FIELD2": "DJE",
+    "FIELD3": "DJE"
+  },
+  {
+    "IATA CODES": "Djibouti",
+    "FIELD2": "JIB",
+    "FIELD3": "JIB"
+  },
+  {
+    "IATA CODES": "Doha",
+    "FIELD2": "DOH",
+    "FIELD3": "DOH"
+  },
+  {
+    "IATA CODES": "Dominica, Cane Field",
+    "FIELD2": "DOM",
+    "FIELD3": "DCF"
+  },
+  {
+    "IATA CODES": "Dominica,  Melville Hall",
+    "FIELD2": "DOM",
+    "FIELD3": "DOM"
+  },
+  {
+    "IATA CODES": "Dothan",
+    "FIELD2": "DHN",
+    "FIELD3": "DHN"
+  },
+  {
+    "IATA CODES": "Douala",
+    "FIELD2": "DLA",
+    "FIELD3": "DLA"
+  },
+  {
+    "IATA CODES": "Dresden",
+    "FIELD2": "DRS",
+    "FIELD3": "DRS"
+  },
+  {
+    "IATA CODES": "Dubai",
+    "FIELD2": "DXB",
+    "FIELD3": "DXB"
+  },
+  {
+    "IATA CODES": "Dublin",
+    "FIELD2": "DUB",
+    "FIELD3": "DUB"
+  },
+  {
+    "IATA CODES": "Duluth",
+    "FIELD2": "DLH",
+    "FIELD3": "DLH"
+  },
+  {
+    "IATA CODES": "Durango",
+    "FIELD2": "DGO",
+    "FIELD3": "DGO"
+  },
+  {
+    "IATA CODES": "Durango",
+    "FIELD2": "DRO",
+    "FIELD3": "DRO"
+  },
+  {
+    "IATA CODES": "Durban",
+    "FIELD2": "DUR",
+    "FIELD3": "DUR"
+  },
+  {
+    "IATA CODES": "Dusseldorf",
+    "FIELD2": "DUS",
+    "FIELD3": "DUS"
+  },
+  {
+    "IATA CODES": "Dutch Harbor",
+    "FIELD2": "DUT",
+    "FIELD3": "DUT"
+  },
+  {
+    "IATA CODES": "Enschede",
+    "FIELD2": "ENS",
+    "FIELD3": "ENS"
+  },
+  {
+    "IATA CODES": "Entebbe",
+    "FIELD2": "EBB",
+    "FIELD3": "EBB"
+  },
+  {
+    "IATA CODES": "Ercan",
+    "FIELD2": "ECN",
+    "FIELD3": "ECN"
+  },
+  {
+    "IATA CODES": "Erevan",
+    "FIELD2": "EVN",
+    "FIELD3": "EVN"
+  },
+  {
+    "IATA CODES": "Erfurt",
+    "FIELD2": "ERF",
+    "FIELD3": "ERF"
+  },
+  {
+    "IATA CODES": "Erie",
+    "FIELD2": "ERI",
+    "FIELD3": "ERI"
+  },
+  {
+    "IATA CODES": "Eugene",
+    "FIELD2": "EUG",
+    "FIELD3": "EUG"
+  },
+  {
+    "IATA CODES": "Evansville",
+    "FIELD2": "EVV",
+    "FIELD3": "EVV"
+  },
+  {
+    "IATA CODES": "Evenes",
+    "FIELD2": "EVE",
+    "FIELD3": "EVE"
+  },
+  {
+    "IATA CODES": "Exeter",
+    "FIELD2": "EXT",
+    "FIELD3": "EXT"
+  },
+  {
+    "IATA CODES": "Frankfurt",
+    "FIELD2": "FRA",
+    "FIELD3": "FRA"
+  },
+  {
+    "IATA CODES": "Fredericton",
+    "FIELD2": "YFC",
+    "FIELD3": "YFC"
+  },
+  {
+    "IATA CODES": "Freeport",
+    "FIELD2": "FPO",
+    "FIELD3": "FPO"
+  },
+  {
+    "IATA CODES": "Freetown",
+    "FIELD2": "FNA",
+    "FIELD3": "FNA"
+  },
+  {
+    "IATA CODES": "Freetown, Hastings",
+    "FIELD2": "FNA",
+    "FIELD3": "HGS"
+  },
+  {
+    "IATA CODES": "Fresno",
+    "FIELD2": "FAT",
+    "FIELD3": "FAT"
+  },
+  {
+    "IATA CODES": "Friedrichshafen",
+    "FIELD2": "FDH",
+    "FIELD3": "FDH"
+  },
+  {
+    "IATA CODES": "Ft de France",
+    "FIELD2": "FDF",
+    "FIELD3": "FDF"
+  },
+  {
+    "IATA CODES": "Ft Pierce",
+    "FIELD2": "FPR",
+    "FIELD3": "FPR"
+  },
+  {
+    "IATA CODES": "Ft Simpson",
+    "FIELD2": "YFS",
+    "FIELD3": "YFS"
+  },
+  {
+    "IATA CODES": "Ft Smith",
+    "FIELD2": "FSM",
+    "FIELD3": "FSM"
+  },
+  {
+    "IATA CODES": "Ft Wayne",
+    "FIELD2": "FWA",
+    "FIELD3": "FWA"
+  },
+  {
+    "IATA CODES": "Ft Yukon",
+    "FIELD2": "FYU",
+    "FIELD3": "FYU"
+  },
+  {
+    "IATA CODES": "Fukuoka",
+    "FIELD2": "FUK",
+    "FIELD3": "FUK"
+  },
+  {
+    "IATA CODES": "Funchal",
+    "FIELD2": "FNC",
+    "FIELD3": "FNC"
+  },
+  {
+    "IATA CODES": "Fuzhou",
+    "FIELD2": "FOC",
+    "FIELD3": "FOC"
+  },
+  {
+    "IATA CODES": "Great Falls",
+    "FIELD2": "GTF",
+    "FIELD3": "GTF"
+  },
+  {
+    "IATA CODES": "Green Bay",
+    "FIELD2": "GRB",
+    "FIELD3": "GRB"
+  },
+  {
+    "IATA CODES": "Greensboro",
+    "FIELD2": "GSO",
+    "FIELD3": "GSO"
+  },
+  {
+    "IATA CODES": "Greenville",
+    "FIELD2": "GLH",
+    "FIELD3": "GLH"
+  },
+  {
+    "IATA CODES": "Greenville",
+    "FIELD2": "GSP",
+    "FIELD3": "GSP"
+  },
+  {
+    "IATA CODES": "Greenville",
+    "FIELD2": "PGV",
+    "FIELD3": "PGV"
+  },
+  {
+    "IATA CODES": "Grenada",
+    "FIELD2": "GND",
+    "FIELD3": "GND"
+  },
+  {
+    "IATA CODES": "Grenoble",
+    "FIELD2": "GNB",
+    "FIELD3": "GNB"
+  },
+  {
+    "IATA CODES": "Groningen",
+    "FIELD2": "GRQ",
+    "FIELD3": "GRQ"
+  },
+  {
+    "IATA CODES": "Guadalajara",
+    "FIELD2": "GDL",
+    "FIELD3": "GDL"
+  },
+  {
+    "IATA CODES": "Guam",
+    "FIELD2": "GUM",
+    "FIELD3": "GUM"
+  },
+  {
+    "IATA CODES": "Guangzhou",
+    "FIELD2": "CAN",
+    "FIELD3": "CAN"
+  },
+  {
+    "IATA CODES": "Guatemala City",
+    "FIELD2": "GUA",
+    "FIELD3": "GUA"
+  },
+  {
+    "IATA CODES": "Guayaquil",
+    "FIELD2": "GYE",
+    "FIELD3": "GYE"
+  },
+  {
+    "IATA CODES": "Guernsey",
+    "FIELD2": "GCI",
+    "FIELD3": "GCI"
+  },
+  {
+    "IATA CODES": "Guilin",
+    "FIELD2": "KWL",
+    "FIELD3": "KWL"
+  },
+  {
+    "IATA CODES": "Guiyang",
+    "FIELD2": "KWE",
+    "FIELD3": "KWE"
+  },
+  {
+    "IATA CODES": "Gulfport",
+    "FIELD2": "GPT",
+    "FIELD3": "GPT"
+  },
+  {
+    "IATA CODES": "Gunnison",
+    "FIELD2": "GUC",
+    "FIELD3": "GUC"
+  },
+  {
+    "IATA CODES": "Hilo",
+    "FIELD2": "ITO",
+    "FIELD3": "ITO"
+  },
+  {
+    "IATA CODES": "Hiroshima",
+    "FIELD2": "HIJ",
+    "FIELD3": "HIJ"
+  },
+  {
+    "IATA CODES": "Ho Chi Minh City",
+    "FIELD2": "SGN",
+    "FIELD3": "SGN"
+  },
+  {
+    "IATA CODES": "Hohhot",
+    "FIELD2": "HET",
+    "FIELD3": "HET"
+  },
+  {
+    "IATA CODES": "Holy Cross",
+    "FIELD2": "HCR",
+    "FIELD3": "HCR"
+  },
+  {
+    "IATA CODES": "Homer",
+    "FIELD2": "HOM",
+    "FIELD3": "HOM"
+  },
+  {
+    "IATA CODES": "Hong Kong",
+    "FIELD2": "HKG",
+    "FIELD3": "HKG"
+  },
+  {
+    "IATA CODES": "Honolulu",
+    "FIELD2": "HNL",
+    "FIELD3": "HNL"
+  },
+  {
+    "IATA CODES": "Hoolehua",
+    "FIELD2": "MKK",
+    "FIELD3": "MKK"
+  },
+  {
+    "IATA CODES": "Hooper Bay",
+    "FIELD2": "HPB",
+    "FIELD3": "HPB"
+  },
+  {
+    "IATA CODES": "Hoskins",
+    "FIELD2": "HKN",
+    "FIELD3": "HKN"
+  },
+  {
+    "IATA CODES": "Houston",
+    "FIELD2": "HOU",
+    "FIELD3": "HOU"
+  },
+  {
+    "IATA CODES": "Houston,   Intercontinental",
+    "FIELD2": "HOU",
+    "FIELD3": "IAH"
+  },
+  {
+    "IATA CODES": "Houston, Hull Field",
+    "FIELD2": "HOU",
+    "FIELD3": "SGR"
+  },
+  {
+    "IATA CODES": "Hughes",
+    "FIELD2": "HUS",
+    "FIELD3": "HUS"
+  },
+  {
+    "IATA CODES": "Humberside",
+    "FIELD2": "HUY",
+    "FIELD3": "HUY"
+  },
+  {
+    "IATA CODES": "Huntsville",
+    "FIELD2": "HSV",
+    "FIELD3": "HSV"
+  },
+  {
+    "IATA CODES": "Huslia",
+    "FIELD2": "HSL",
+    "FIELD3": "HSL"
+  },
+  {
+    "IATA CODES": "Hyannis",
+    "FIELD2": "HYA",
+    "FIELD3": "HYA"
+  },
+  {
+    "IATA CODES": "Hyderabad",
+    "FIELD2": "HYD",
+    "FIELD3": "HYD"
+  },
+  {
+    "IATA CODES": "Istanbul",
+    "FIELD2": "IST",
+    "FIELD3": "IST"
+  },
+  {
+    "IATA CODES": "Islip, Long Island Macarthur",
+    "FIELD2": "ISP",
+    "FIELD3": "ISP"
+  },
+  {
+    "IATA CODES": "Ithaca",
+    "FIELD2": "ITH",
+    "FIELD3": "ITH"
+  },
+  {
+    "IATA CODES": "Ivanoff Bay",
+    "FIELD2": "KIB",
+    "FIELD3": "KIB"
+  },
+  {
+    "IATA CODES": "Izmir",
+    "FIELD2": "IZM",
+    "FIELD3": "IZM"
+  },
+  {
+    "IATA CODES": "Izmir, Adnan Menderes",
+    "FIELD2": "IZM",
+    "FIELD3": "ADB"
+  },
+  {
+    "IATA CODES": "Izmir, Cigli Military",
+    "FIELD2": "IZM",
+    "FIELD3": "IGL"
+  },
+  {
+    "IATA CODES": "Jinan",
+    "FIELD2": "TNA",
+    "FIELD3": "TNA"
+  },
+  {
+    "IATA CODES": "Johannesburg",
+    "FIELD2": "JNB",
+    "FIELD3": "JNB"
+  },
+  {
+    "IATA CODES": "Johnston Island",
+    "FIELD2": "JON",
+    "FIELD3": "JON"
+  },
+  {
+    "IATA CODES": "Johor Bahru",
+    "FIELD2": "JHB",
+    "FIELD3": "JHB"
+  },
+  {
+    "IATA CODES": "Jonkoping",
+    "FIELD2": "JKG",
+    "FIELD3": "JKG"
+  },
+  {
+    "IATA CODES": "Juanjui",
+    "FIELD2": "JJI",
+    "FIELD3": "JJI"
+  },
+  {
+    "IATA CODES": "Juba",
+    "FIELD2": "JUB",
+    "FIELD3": "JUB"
+  },
+  {
+    "IATA CODES": "Juliaca",
+    "FIELD2": "JUL",
+    "FIELD3": "JUL"
+  },
+  {
+    "IATA CODES": "Juneau",
+    "FIELD2": "JNU",
+    "FIELD3": "JNU"
+  },
+  {
+    "IATA CODES": "King Cover",
+    "FIELD2": "KVC",
+    "FIELD3": "KVC"
+  },
+  {
+    "IATA CODES": "King Salm",
+    "FIELD2": "AKN",
+    "FIELD3": "AKN"
+  },
+  {
+    "IATA CODES": "Kingston",
+    "FIELD2": "KIN",
+    "FIELD3": "KIN"
+  },
+  {
+    "IATA CODES": "Kingston, Tinson",
+    "FIELD2": "KIN",
+    "FIELD3": "KTP"
+  },
+  {
+    "IATA CODES": "Kinshasa",
+    "FIELD2": "FIH",
+    "FIELD3": "FIH"
+  },
+  {
+    "IATA CODES": "Kipnuk",
+    "FIELD2": "KPN",
+    "FIELD3": "KPN"
+  },
+  {
+    "IATA CODES": "Kiruna",
+    "FIELD2": "KRN",
+    "FIELD3": "KRN"
+  },
+  {
+    "IATA CODES": "Kisangani",
+    "FIELD2": "FKI",
+    "FIELD3": "FKI"
+  },
+  {
+    "IATA CODES": "Klagenfurt",
+    "FIELD2": "KLU",
+    "FIELD3": "KLU"
+  },
+  {
+    "IATA CODES": "Knoxville",
+    "FIELD2": "TYS",
+    "FIELD3": "TYS"
+  },
+  {
+    "IATA CODES": "Kochi",
+    "FIELD2": "KCZ",
+    "FIELD3": "KCZ"
+  },
+  {
+    "IATA CODES": "Kodiak",
+    "FIELD2": "ADQ",
+    "FIELD3": "ADQ"
+  },
+  {
+    "IATA CODES": "Komatsu",
+    "FIELD2": "KMQ",
+    "FIELD3": "KMQ"
+  },
+  {
+    "IATA CODES": "Kongiganak",
+    "FIELD2": "KKH",
+    "FIELD3": "KKH"
+  },
+  {
+    "IATA CODES": "Koror",
+    "FIELD2": "ROR",
+    "FIELD3": "ROR"
+  },
+  {
+    "IATA CODES": "Kosrae",
+    "FIELD2": "KSA",
+    "FIELD3": "KSA"
+  },
+  {
+    "IATA CODES": "Kota Kinabalu",
+    "FIELD2": "BKI",
+    "FIELD3": "BKI"
+  },
+  {
+    "IATA CODES": "Kotzebue",
+    "FIELD2": "OTZ",
+    "FIELD3": "OTZ"
+  },
+  {
+    "IATA CODES": "Koyukuk",
+    "FIELD2": "KYU",
+    "FIELD3": "KYU"
+  },
+  {
+    "IATA CODES": "Krasnoyarsk",
+    "FIELD2": "KJA",
+    "FIELD3": "KJA"
+  },
+  {
+    "IATA CODES": "Kristiansand",
+    "FIELD2": "KRS",
+    "FIELD3": "KRS"
+  },
+  {
+    "IATA CODES": "Kuala Lumpur",
+    "FIELD2": "KUL",
+    "FIELD3": "KUL"
+  },
+  {
+    "IATA CODES": "Kuching",
+    "FIELD2": "KCH",
+    "FIELD3": "KCH"
+  },
+  {
+    "IATA CODES": "Kumamoto",
+    "FIELD2": "KMJ",
+    "FIELD3": "KMJ"
+  },
+  {
+    "IATA CODES": "Kunming",
+    "FIELD2": "KMG",
+    "FIELD3": "KMG"
+  },
+  {
+    "IATA CODES": "Kuopio",
+    "FIELD2": "KUO",
+    "FIELD3": "KUO"
+  },
+  {
+    "IATA CODES": "Kushiro",
+    "FIELD2": "KUH",
+    "FIELD3": "KUH"
+  },
+  {
+    "IATA CODES": "Kuujjuarap",
+    "FIELD2": "YGW",
+    "FIELD3": "YGW"
+  },
+  {
+    "IATA CODES": "Kuwait",
+    "FIELD2": "KWI",
+    "FIELD3": "KWI"
+  },
+  {
+    "IATA CODES": "Kwajalein",
+    "FIELD2": "KWA",
+    "FIELD3": "KWA"
+  },
+  {
+    "IATA CODES": "Kwangju",
+    "FIELD2": "KWJ",
+    "FIELD3": "KWJ"
+  },
+  {
+    "IATA CODES": "Kwethluk",
+    "FIELD2": "KWT",
+    "FIELD3": "KWT"
+  },
+  {
+    "IATA CODES": "Kwigillingok",
+    "FIELD2": "KWK",
+    "FIELD3": "KWK"
+  },
+  {
+    "IATA CODES": "Lisbon",
+    "FIELD2": "LIS",
+    "FIELD3": "LIS"
+  },
+  {
+    "IATA CODES": "Little Rock",
+    "FIELD2": "LIT",
+    "FIELD3": "LIT"
+  },
+  {
+    "IATA CODES": "Liverpool",
+    "FIELD2": "LPL",
+    "FIELD3": "LPL"
+  },
+  {
+    "IATA CODES": "Livingstone",
+    "FIELD2": "LVI",
+    "FIELD3": "LVI"
+  },
+  {
+    "IATA CODES": "Ljubljana",
+    "FIELD2": "LJU",
+    "FIELD3": "LJU"
+  },
+  {
+    "IATA CODES": "Lobito",
+    "FIELD2": "LOB",
+    "FIELD3": "LOB"
+  },
+  {
+    "IATA CODES": "Lome",
+    "FIELD2": "LFW",
+    "FIELD3": "LFW"
+  },
+  {
+    "IATA CODES": "London",
+    "FIELD2": "LON",
+    "FIELD3": "LON"
+  },
+  {
+    "IATA CODES": "London, Gatwick",
+    "FIELD2": "LON",
+    "FIELD3": "LGW"
+  },
+  {
+    "IATA CODES": "London, Heathrow",
+    "FIELD2": "LON",
+    "FIELD3": "LHR"
+  },
+  {
+    "IATA CODES": "London, City Airport",
+    "FIELD2": "LON",
+    "FIELD3": "LCY"
+  },
+  {
+    "IATA CODES": "London, Luton",
+    "FIELD2": "LON",
+    "FIELD3": "LTN"
+  },
+  {
+    "IATA CODES": "London, Stansted",
+    "FIELD2": "LON",
+    "FIELD3": "STN"
+  },
+  {
+    "IATA CODES": "Long Beach",
+    "FIELD2": "LGB",
+    "FIELD3": "LGB"
+  },
+  {
+    "IATA CODES": "Loreto",
+    "FIELD2": "LTO",
+    "FIELD3": "LTO"
+  },
+  {
+    "IATA CODES": "Los Angeles",
+    "FIELD2": "LAX",
+    "FIELD3": "LAX"
+  },
+  {
+    "IATA CODES": "Los Angeles",
+    "FIELD2": "LAX",
+    "FIELD3": "VNY"
+  },
+  {
+    "IATA CODES": "Los Mochis",
+    "FIELD2": "LMM",
+    "FIELD3": "LMM"
+  },
+  {
+    "IATA CODES": "Louisville",
+    "FIELD2": "SDF",
+    "FIELD3": "SDF"
+  },
+  {
+    "IATA CODES": "Lourdes/Tarbes",
+    "FIELD2": "LDE",
+    "FIELD3": "LDE"
+  },
+  {
+    "IATA CODES": "Luanda",
+    "FIELD2": "LAD",
+    "FIELD3": "LAD"
+  },
+  {
+    "IATA CODES": "Lubbock",
+    "FIELD2": "LBB",
+    "FIELD3": "LBB"
+  },
+  {
+    "IATA CODES": "Lubumbashi",
+    "FIELD2": "FBM",
+    "FIELD3": "FBM"
+  },
+  {
+    "IATA CODES": "Lucknow",
+    "FIELD2": "LKO",
+    "FIELD3": "LKO"
+  },
+  {
+    "IATA CODES": "Ludwigshafen",
+    "FIELD2": "LUD",
+    "FIELD3": "LUD"
+  },
+  {
+    "IATA CODES": "Lugano",
+    "FIELD2": "LUG",
+    "FIELD3": "LUG"
+  },
+  {
+    "IATA CODES": "Lulea",
+    "FIELD2": "LLA",
+    "FIELD3": "LLA"
+  },
+  {
+    "IATA CODES": "Lumid Pau",
+    "FIELD2": "LUB",
+    "FIELD3": "LUB"
+  },
+  {
+    "IATA CODES": "Lusaka",
+    "FIELD2": "LUN",
+    "FIELD3": "LUN"
+  },
+  {
+    "IATA CODES": "Luxembourg",
+    "FIELD2": "LUX",
+    "FIELD3": "LUX"
+  },
+  {
+    "IATA CODES": "Luxor",
+    "FIELD2": "LXR",
+    "FIELD3": "LXR"
+  },
+  {
+    "IATA CODES": "Lyon",
+    "FIELD2": "LYS",
+    "FIELD3": "LYS"
+  },
+  {
+    "IATA CODES": "Miami",
+    "FIELD2": "MIA",
+    "FIELD3": "MIA"
+  },
+  {
+    "IATA CODES": "Miami,  Downtown Heliport",
+    "FIELD2": "MIA",
+    "FIELD3": "JDM"
+  },
+  {
+    "IATA CODES": "Miami, Sea Plane Base",
+    "FIELD2": "MIA",
+    "FIELD3": "MPB"
+  },
+  {
+    "IATA CODES": "Midland",
+    "FIELD2": "MAF",
+    "FIELD3": "MAF"
+  },
+  {
+    "IATA CODES": "Milan",
+    "FIELD2": "MIL",
+    "FIELD3": "MIL"
+  },
+  {
+    "IATA CODES": "Milan, Linate",
+    "FIELD2": "MIL",
+    "FIELD3": "LIN"
+  },
+  {
+    "IATA CODES": "Milan, Malpensa",
+    "FIELD2": "MIL",
+    "FIELD3": "MXP"
+  },
+  {
+    "IATA CODES": "Milan, Orio al Serio",
+    "FIELD2": "MIL",
+    "FIELD3": "BGY"
+  },
+  {
+    "IATA CODES": "Milan, Segrate",
+    "FIELD2": "MIL",
+    "FIELD3": "SWK"
+  },
+  {
+    "IATA CODES": "Milford",
+    "FIELD2": "MLF",
+    "FIELD3": "MLF"
+  },
+  {
+    "IATA CODES": "Milwaukee",
+    "FIELD2": "MKE",
+    "FIELD3": "MKE"
+  },
+  {
+    "IATA CODES": "Minatitlan",
+    "FIELD2": "MTT",
+    "FIELD3": "MTT"
+  },
+  {
+    "IATA CODES": "Mineralnye",
+    "FIELD2": "MRV",
+    "FIELD3": "MRV"
+  },
+  {
+    "IATA CODES": "Minneapolis",
+    "FIELD2": "MSP",
+    "FIELD3": "MSP"
+  },
+  {
+    "IATA CODES": "Minot",
+    "FIELD2": "MOT",
+    "FIELD3": "MOT"
+  },
+  {
+    "IATA CODES": "Minsk",
+    "FIELD2": "MSQ",
+    "FIELD3": "MSQ"
+  },
+  {
+    "IATA CODES": "Miri",
+    "FIELD2": "MYY",
+    "FIELD3": "MYY"
+  },
+  {
+    "IATA CODES": "Missoula",
+    "FIELD2": "MSO",
+    "FIELD3": "MSO"
+  },
+  {
+    "IATA CODES": "Miyazaki",
+    "FIELD2": "KMI",
+    "FIELD3": "KMI"
+  },
+  {
+    "IATA CODES": "Mobile",
+    "FIELD2": "MOB",
+    "FIELD3": "MOB"
+  },
+  {
+    "IATA CODES": "Moline",
+    "FIELD2": "MLI",
+    "FIELD3": "MLI"
+  },
+  {
+    "IATA CODES": "Mombasa",
+    "FIELD2": "MBA",
+    "FIELD3": "MBA"
+  },
+  {
+    "IATA CODES": "Moncton",
+    "FIELD2": "YQM",
+    "FIELD3": "YQM"
+  },
+  {
+    "IATA CODES": "Monroe",
+    "FIELD2": "MLU",
+    "FIELD3": "MLU"
+  },
+  {
+    "IATA CODES": "Monrovia",
+    "FIELD2": "MLW",
+    "FIELD3": "MLW"
+  },
+  {
+    "IATA CODES": "Monrovia, Roberts International",
+    "FIELD2": "MLW",
+    "FIELD3": "ROB"
+  },
+  {
+    "IATA CODES": "Montego Bay",
+    "FIELD2": "MBJ",
+    "FIELD3": "MBJ"
+  },
+  {
+    "IATA CODES": "Monterrey",
+    "FIELD2": "MTY",
+    "FIELD3": "MTY"
+  },
+  {
+    "IATA CODES": "Montevideo",
+    "FIELD2": "MVD",
+    "FIELD3": "MVD"
+  },
+  {
+    "IATA CODES": "Montgomery",
+    "FIELD2": "MGM",
+    "FIELD3": "MGM"
+  },
+  {
+    "IATA CODES": "Montpellier",
+    "FIELD2": "MPL",
+    "FIELD3": "MPL"
+  },
+  {
+    "IATA CODES": "Montreal",
+    "FIELD2": "YMQ",
+    "FIELD3": "YMQ"
+  },
+  {
+    "IATA CODES": "Montreal, Dorval International",
+    "FIELD2": "YMQ",
+    "FIELD3": "YUL"
+  },
+  {
+    "IATA CODES": "Montreal, Mirabel International",
+    "FIELD2": "YMQ",
+    "FIELD3": "YMX"
+  },
+  {
+    "IATA CODES": "Morelia",
+    "FIELD2": "MLM",
+    "FIELD3": "MLM"
+  },
+  {
+    "IATA CODES": "Moroni",
+    "FIELD2": "YVA",
+    "FIELD3": "YVA"
+  },
+  {
+    "IATA CODES": "Moroni, Hahaya    International",
+    "FIELD2": "YVA",
+    "FIELD3": "HAH"
+  },
+  {
+    "IATA CODES": "Moscow",
+    "FIELD2": "MOW",
+    "FIELD3": "MOW"
+  },
+  {
+    "IATA CODES": "Moscow, Domodedovo",
+    "FIELD2": "MOW",
+    "FIELD3": "DME"
+  },
+  {
+    "IATA CODES": "Moscow, Sheremetyevo",
+    "FIELD2": "MOW",
+    "FIELD3": "SVO"
+  },
+  {
+    "IATA CODES": "Moscow, Vnukovo",
+    "FIELD2": "MOW",
+    "FIELD3": "VKO"
+  },
+  {
+    "IATA CODES": "Mount Hagen",
+    "FIELD2": "HGU",
+    "FIELD3": "HGU"
+  },
+  {
+    "IATA CODES": "Muenster",
+    "FIELD2": "FMO",
+    "FIELD3": "FMO"
+  },
+  {
+    "IATA CODES": "Mulhouse",
+    "FIELD2": "MLH",
+    "FIELD3": "MLH"
+  },
+  {
+    "IATA CODES": "Munich",
+    "FIELD2": "MUC",
+    "FIELD3": "MUC"
+  },
+  {
+    "IATA CODES": "Muscat",
+    "FIELD2": "MCT",
+    "FIELD3": "MCT"
+  },
+  {
+    "IATA CODES": "Muskegon",
+    "FIELD2": "MKG",
+    "FIELD3": "MKG"
+  },
+  {
+    "IATA CODES": "Myrtle Beach",
+    "FIELD2": "MYR",
+    "FIELD3": "MYR"
+  },
+  {
+    "IATA CODES": "Niagara Falls",
+    "FIELD2": "IAG",
+    "FIELD3": "IAG"
+  },
+  {
+    "IATA CODES": "Niamey",
+    "FIELD2": "NIM",
+    "FIELD3": "NIM"
+  },
+  {
+    "IATA CODES": "Nice",
+    "FIELD2": "NCE",
+    "FIELD3": "NCE"
+  },
+  {
+    "IATA CODES": "Nightmute",
+    "FIELD2": "NME",
+    "FIELD3": "NME"
+  },
+  {
+    "IATA CODES": "Niigata",
+    "FIELD2": "KIJ",
+    "FIELD3": "KIJ"
+  },
+  {
+    "IATA CODES": "Nimes",
+    "FIELD2": "FNI",
+    "FIELD3": "FNI"
+  },
+  {
+    "IATA CODES": "Ningbo",
+    "FIELD2": "NGB",
+    "FIELD3": "NGB"
+  },
+  {
+    "IATA CODES": "Nis",
+    "FIELD2": "INI",
+    "FIELD3": "INI"
+  },
+  {
+    "IATA CODES": "Nome",
+    "FIELD2": "OME",
+    "FIELD3": "OME"
+  },
+  {
+    "IATA CODES": "Norfolk",
+    "FIELD2": "ORF",
+    "FIELD3": "ORF"
+  },
+  {
+    "IATA CODES": "Norilsk",
+    "FIELD2": "NSK",
+    "FIELD3": "NSK"
+  },
+  {
+    "IATA CODES": "Norman Wells",
+    "FIELD2": "YVQ",
+    "FIELD3": "YVQ"
+  },
+  {
+    "IATA CODES": "Norrkoping",
+    "FIELD2": "NRK",
+    "FIELD3": "NRK"
+  },
+  {
+    "IATA CODES": "Norwich",
+    "FIELD2": "NWI",
+    "FIELD3": "NWI"
+  },
+  {
+    "IATA CODES": "Nouakchott",
+    "FIELD2": "NKC",
+    "FIELD3": "NKC"
+  },
+  {
+    "IATA CODES": "Noumea",
+    "FIELD2": "NOU",
+    "FIELD3": "NOU"
+  },
+  {
+    "IATA CODES": "Noumea, Magenta",
+    "FIELD2": "NOU",
+    "FIELD3": "GEA"
+  },
+  {
+    "IATA CODES": "Novosibirsk",
+    "FIELD2": "OVB",
+    "FIELD3": "OVB"
+  },
+  {
+    "IATA CODES": "Nuevo Laredo",
+    "FIELD2": "NLD",
+    "FIELD3": "NLD"
+  },
+  {
+    "IATA CODES": "Nulato",
+    "FIELD2": "NUL",
+    "FIELD3": "NUL"
+  },
+  {
+    "IATA CODES": "Nunapitchuk",
+    "FIELD2": "NUP",
+    "FIELD3": "NUP"
+  },
+  {
+    "IATA CODES": "Nuremberg",
+    "FIELD2": "NUE",
+    "FIELD3": "NUE"
+  },
+  {
+    "IATA CODES": "Osaka, Kansai International",
+    "FIELD2": "OSA",
+    "FIELD3": "KIX"
+  },
+  {
+    "IATA CODES": "Oshkosh",
+    "FIELD2": "OSH",
+    "FIELD3": "OSH"
+  },
+  {
+    "IATA CODES": "Osijek",
+    "FIELD2": "OSI",
+    "FIELD3": "OSI"
+  },
+  {
+    "IATA CODES": "Oslo",
+    "FIELD2": "OSL",
+    "FIELD3": "OSL"
+  },
+  {
+    "IATA CODES": "Oslo, Fornebu Airport",
+    "FIELD2": "OSL",
+    "FIELD3": "FBU"
+  },
+  {
+    "IATA CODES": "Oslo, Gardermoen",
+    "FIELD2": "OSL",
+    "FIELD3": "GEN"
+  },
+  {
+    "IATA CODES": "Osorno",
+    "FIELD2": "ZOS",
+    "FIELD3": "ZOS"
+  },
+  {
+    "IATA CODES": "Ostend",
+    "FIELD2": "OST",
+    "FIELD3": "OST"
+  },
+  {
+    "IATA CODES": "Ottawa",
+    "FIELD2": "YOW",
+    "FIELD3": "YOW"
+  },
+  {
+    "IATA CODES": "Ouagadougou",
+    "FIELD2": "OUA",
+    "FIELD3": "OUA"
+  },
+  {
+    "IATA CODES": "Oxnard/Ventura",
+    "FIELD2": "OXR",
+    "FIELD3": "OXR"
+  },
+  {
+    "IATA CODES": "Ponce",
+    "FIELD2": "PSE",
+    "FIELD3": "PSE"
+  },
+  {
+    "IATA CODES": "Ponta Delgada",
+    "FIELD2": "PDL",
+    "FIELD3": "PDL"
+  },
+  {
+    "IATA CODES": "Pori",
+    "FIELD2": "POR",
+    "FIELD3": "POR"
+  },
+  {
+    "IATA CODES": "Porlamar",
+    "FIELD2": "PMV",
+    "FIELD3": "PMV"
+  },
+  {
+    "IATA CODES": "Port au Prince",
+    "FIELD2": "PAP",
+    "FIELD3": "PAP"
+  },
+  {
+    "IATA CODES": "Port Elizabeth",
+    "FIELD2": "PLZ",
+    "FIELD3": "PLZ"
+  },
+  {
+    "IATA CODES": "Port Gentil",
+    "FIELD2": "POG",
+    "FIELD3": "POG"
+  },
+  {
+    "IATA CODES": "Port Graham",
+    "FIELD2": "PGM",
+    "FIELD3": "PGM"
+  },
+  {
+    "IATA CODES": "Port Harcourt",
+    "FIELD2": "PHC",
+    "FIELD3": "PHC"
+  },
+  {
+    "IATA CODES": "Port Hedland",
+    "FIELD2": "PHE",
+    "FIELD3": "PHE"
+  },
+  {
+    "IATA CODES": "Port Heiden",
+    "FIELD2": "PTH",
+    "FIELD3": "PTH"
+  },
+  {
+    "IATA CODES": "Port Moresby",
+    "FIELD2": "POM",
+    "FIELD3": "POM"
+  },
+  {
+    "IATA CODES": "Port of Spain, Trinidad",
+    "FIELD2": "POS",
+    "FIELD3": "POS"
+  },
+  {
+    "IATA CODES": "Port Velho",
+    "FIELD2": "PVH",
+    "FIELD3": "PVH"
+  },
+  {
+    "IATA CODES": "Port Vila",
+    "FIELD2": "VLI",
+    "FIELD3": "VLI"
+  },
+  {
+    "IATA CODES": "Portland",
+    "FIELD2": "PDX",
+    "FIELD3": "PDX"
+  },
+  {
+    "IATA CODES": "Portland",
+    "FIELD2": "PWM",
+    "FIELD3": "PWM"
+  },
+  {
+    "IATA CODES": "Porto",
+    "FIELD2": "OPO",
+    "FIELD3": "OPO"
+  },
+  {
+    "IATA CODES": "Porto Alegre",
+    "FIELD2": "POA",
+    "FIELD3": "POA"
+  },
+  {
+    "IATA CODES": "Prague",
+    "FIELD2": "PRG",
+    "FIELD3": "PRG"
+  },
+  {
+    "IATA CODES": "Presque Isle",
+    "FIELD2": "PQI",
+    "FIELD3": "PQI"
+  },
+  {
+    "IATA CODES": "Prince George",
+    "FIELD2": "YXS",
+    "FIELD3": "YXS"
+  },
+  {
+    "IATA CODES": "Prince Rupert",
+    "FIELD2": "YPR",
+    "FIELD3": "YPR"
+  },
+  {
+    "IATA CODES": "Providence",
+    "FIELD2": "PVD",
+    "FIELD3": "PVD"
+  },
+  {
+    "IATA CODES": "Providenciales",
+    "FIELD2": "PLS",
+    "FIELD3": "PLS"
+  },
+  {
+    "IATA CODES": "Prudhoe Bay / Deadhorse",
+    "FIELD2": "SCC",
+    "FIELD3": "SCC"
+  },
+  {
+    "IATA CODES": "Pucallpa",
+    "FIELD2": "PCL",
+    "FIELD3": "PCL"
+  },
+  {
+    "IATA CODES": "Puebla",
+    "FIELD2": "PBC",
+    "FIELD3": "PBC"
+  },
+  {
+    "IATA CODES": "Puerto Ayachucho",
+    "FIELD2": "PYH",
+    "FIELD3": "PYH"
+  },
+  {
+    "IATA CODES": "Puerto Cabello",
+    "FIELD2": "PBL",
+    "FIELD3": "PBL"
+  },
+  {
+    "IATA CODES": "Puerto Escondido",
+    "FIELD2": "PXM",
+    "FIELD3": "PXM"
+  },
+  {
+    "IATA CODES": "Puerto Maldonado",
+    "FIELD2": "PEM",
+    "FIELD3": "PEM"
+  },
+  {
+    "IATA CODES": "Puerto Montt",
+    "FIELD2": "PMC",
+    "FIELD3": "PMC"
+  },
+  {
+    "IATA CODES": "Puerto Ordaz",
+    "FIELD2": "PZO",
+    "FIELD3": "PZO"
+  },
+  {
+    "IATA CODES": "Puerto Plata",
+    "FIELD2": "POP",
+    "FIELD3": "POP"
+  },
+  {
+    "IATA CODES": "Puerto Vallarta",
+    "FIELD2": "PVR",
+    "FIELD3": "PVR"
+  },
+  {
+    "IATA CODES": "Punta Arenas",
+    "FIELD2": "PUQ",
+    "FIELD3": "PUQ"
+  },
+  {
+    "IATA CODES": "Pusan",
+    "FIELD2": "PUS",
+    "FIELD3": "PUS"
+  },
+  {
+    "IATA CODES": "Pyongyang",
+    "FIELD2": "FNJ",
+    "FIELD3": "FNJ"
+  },
+  {
+    "IATA CODES": "Quinhagak",
+    "FIELD2": "KWN",
+    "FIELD3": "KWN"
+  },
+  {
+    "IATA CODES": "Quito",
+    "FIELD2": "UIO",
+    "FIELD3": "UIO"
+  },
+  {
+    "IATA CODES": "Roanoke",
+    "FIELD2": "ROA",
+    "FIELD3": "ROA"
+  },
+  {
+    "IATA CODES": "Roatan",
+    "FIELD2": "RTB",
+    "FIELD3": "RTB"
+  },
+  {
+    "IATA CODES": "Rochester",
+    "FIELD2": "ROC",
+    "FIELD3": "ROC"
+  },
+  {
+    "IATA CODES": "Rochester",
+    "FIELD2": "RST",
+    "FIELD3": "RST"
+  },
+  {
+    "IATA CODES": "Rockford",
+    "FIELD2": "RFD",
+    "FIELD3": "RFD"
+  },
+  {
+    "IATA CODES": "Rocky Mount/Wilson",
+    "FIELD2": "RWI",
+    "FIELD3": "RWI"
+  },
+  {
+    "IATA CODES": "Rome",
+    "FIELD2": "ROM",
+    "FIELD3": "ROM"
+  },
+  {
+    "IATA CODES": "Rome, Clampino",
+    "FIELD2": "ROM",
+    "FIELD3": "CIA"
+  },
+  {
+    "IATA CODES": "Rome, Fiumicino",
+    "FIELD2": "ROM",
+    "FIELD3": "FCO"
+  },
+  {
+    "IATA CODES": "Roosevelt",
+    "FIELD2": "ROL",
+    "FIELD3": "ROL"
+  },
+  {
+    "IATA CODES": "Roswell",
+    "FIELD2": "ROW",
+    "FIELD3": "ROW"
+  },
+  {
+    "IATA CODES": "Rota",
+    "FIELD2": "ROP",
+    "FIELD3": "ROP"
+  },
+  {
+    "IATA CODES": "Rotterdam",
+    "FIELD2": "RTM",
+    "FIELD3": "RTM"
+  },
+  {
+    "IATA CODES": "Rouen",
+    "FIELD2": "URO",
+    "FIELD3": "URO"
+  },
+  {
+    "IATA CODES": "Ruby",
+    "FIELD2": "RBY",
+    "FIELD3": "RBY"
+  },
+  {
+    "IATA CODES": "Russian Mission",
+    "FIELD2": "RSH",
+    "FIELD3": "RSH"
+  },
+  {
+    "IATA CODES": "Shannon",
+    "FIELD2": "SNN",
+    "FIELD3": "SNN"
+  },
+  {
+    "IATA CODES": "Shantou/Swatow",
+    "FIELD2": "SWA",
+    "FIELD3": "SWA"
+  },
+  {
+    "IATA CODES": "Sharjah",
+    "FIELD2": "SHJ",
+    "FIELD3": "SHJ"
+  },
+  {
+    "IATA CODES": "Shemya Islands",
+    "FIELD2": "SYA",
+    "FIELD3": "SYA"
+  },
+  {
+    "IATA CODES": "Shenyang",
+    "FIELD2": "SHE",
+    "FIELD3": "SHE"
+  },
+  {
+    "IATA CODES": "Shenzhen",
+    "FIELD2": "SZX",
+    "FIELD3": "SZX"
+  },
+  {
+    "IATA CODES": "Shetland Islands, Lerwick /\nTingwall",
+    "FIELD2": "SDZ",
+    "FIELD3": "LWK"
+  },
+  {
+    "IATA CODES": "Shetland Islands, Scatsta",
+    "FIELD2": "SDZ",
+    "FIELD3": "SCS"
+  },
+  {
+    "IATA CODES": "Shetland Islands, Sumuburgh",
+    "FIELD2": "SDZ",
+    "FIELD3": "LSI"
+  },
+  {
+    "IATA CODES": "Shijiazhuang",
+    "FIELD2": "SJW",
+    "FIELD3": "SJW"
+  },
+  {
+    "IATA CODES": "Shiraz",
+    "FIELD2": "SYZ",
+    "FIELD3": "SYZ"
+  },
+  {
+    "IATA CODES": "Shreveport",
+    "FIELD2": "SHV",
+    "FIELD3": "SHV"
+  },
+  {
+    "IATA CODES": "Sibu",
+    "FIELD2": "SBW",
+    "FIELD3": "SBW"
+  },
+  {
+    "IATA CODES": "Simferopol",
+    "FIELD2": "SIP",
+    "FIELD3": "SIP"
+  },
+  {
+    "IATA CODES": "Singapore",
+    "FIELD2": "SIN",
+    "FIELD3": "SIN"
+  },
+  {
+    "IATA CODES": "Singapore, Paya Lebar",
+    "FIELD2": "SIN",
+    "FIELD3": "QPG"
+  },
+  {
+    "IATA CODES": "Singapore, Seletar",
+    "FIELD2": "SIN",
+    "FIELD3": "XSP"
+  },
+  {
+    "IATA CODES": "Sioux Falls",
+    "FIELD2": "FSD",
+    "FIELD3": "FSD"
+  },
+  {
+    "IATA CODES": "Sitka",
+    "FIELD2": "SIT",
+    "FIELD3": "SIT"
+  },
+  {
+    "IATA CODES": "Sleetmute",
+    "FIELD2": "SLQ",
+    "FIELD3": "SLQ"
+  },
+  {
+    "IATA CODES": "Sofia",
+    "FIELD2": "SOF",
+    "FIELD3": "SOF"
+  },
+  {
+    "IATA CODES": "Sokoto",
+    "FIELD2": "SKO",
+    "FIELD3": "SKO"
+  },
+  {
+    "IATA CODES": "Soldotna",
+    "FIELD2": "SXQ",
+    "FIELD3": "SXW"
+  },
+  {
+    "IATA CODES": "Sonderborg",
+    "FIELD2": "SGD",
+    "FIELD3": "SGD"
+  },
+  {
+    "IATA CODES": "Sondre Stromfjord",
+    "FIELD2": "SFJ",
+    "FIELD3": "SFJ"
+  },
+  {
+    "IATA CODES": "South Bend",
+    "FIELD2": "SBN",
+    "FIELD3": "SBN"
+  },
+  {
+    "IATA CODES": "Springfield",
+    "FIELD2": "SGF",
+    "FIELD3": "SGF"
+  },
+  {
+    "IATA CODES": "Springfield",
+    "FIELD2": "SPI",
+    "FIELD3": "SPI"
+  },
+  {
+    "IATA CODES": "St. Denis de La Reunion",
+    "FIELD2": "RUN",
+    "FIELD3": "RUN"
+  },
+  {
+    "IATA CODES": "St. George",
+    "FIELD2": "SGU",
+    "FIELD3": "SGU"
+  },
+  {
+    "IATA CODES": "St. George Island",
+    "FIELD2": "STG",
+    "FIELD3": "STG"
+  },
+  {
+    "IATA CODES": "St. Johns",
+    "FIELD2": "YYT",
+    "FIELD3": "YYT"
+  },
+  {
+    "IATA CODES": "St. Kitts",
+    "FIELD2": "SKB",
+    "FIELD3": "SKB"
+  },
+  {
+    "IATA CODES": "St.  Louis",
+    "FIELD2": "STL",
+    "FIELD3": "STL"
+  },
+  {
+    "IATA CODES": "St. Lucia",
+    "FIELD2": "SLU",
+    "FIELD3": "SLU"
+  },
+  {
+    "IATA CODES": "St. Lucia, Hewanorra",
+    "FIELD2": "SLU",
+    "FIELD3": "UVF"
+  },
+  {
+    "IATA CODES": "St. Maarten",
+    "FIELD2": "SXM",
+    "FIELD3": "SXM"
+  },
+  {
+    "IATA CODES": "St. Mary’s",
+    "FIELD2": "KSM",
+    "FIELD3": "KSM"
+  },
+  {
+    "IATA CODES": "St. Petersburg",
+    "FIELD2": "LED",
+    "FIELD3": "LED"
+  },
+  {
+    "IATA CODES": "St. Thomas",
+    "FIELD2": "STT",
+    "FIELD3": "STT"
+  },
+  {
+    "IATA CODES": "St. Vincent",
+    "FIELD2": "SVD",
+    "FIELD3": "SVD"
+  },
+  {
+    "IATA CODES": "Sta Cruz Huat",
+    "FIELD2": "HUX",
+    "FIELD3": "HUX"
+  },
+  {
+    "IATA CODES": "Stavanger",
+    "FIELD2": "SVG",
+    "FIELD3": "SVG"
+  },
+  {
+    "IATA CODES": "Steamboat Spring",
+    "FIELD2": "SBS",
+    "FIELD3": "SBS"
+  },
+  {
+    "IATA CODES": "Stevens Village",
+    "FIELD2": "SVS",
+    "FIELD3": "SVS"
+  },
+  {
+    "IATA CODES": "Stockholm",
+    "FIELD2": "STO",
+    "FIELD3": "STO"
+  },
+  {
+    "IATA CODES": "Stockholm, Arlanda",
+    "FIELD2": "STO",
+    "FIELD3": "ARN"
+  },
+  {
+    "IATA CODES": "Stockholm, Bromma",
+    "FIELD2": "STO",
+    "FIELD3": "BMA"
+  },
+  {
+    "IATA CODES": "Stockton",
+    "FIELD2": "SCK",
+    "FIELD3": "SCK"
+  },
+  {
+    "IATA CODES": "Stony River",
+    "FIELD2": "SRV",
+    "FIELD3": "SRV"
+  },
+  {
+    "IATA CODES": "Strasbourg",
+    "FIELD2": "SXB",
+    "FIELD3": "SXB"
+  },
+  {
+    "IATA CODES": "Stuttgart",
+    "FIELD2": "STR",
+    "FIELD3": "STR"
+  },
+  {
+    "IATA CODES": "Sudbury",
+    "FIELD2": "YSB",
+    "FIELD3": "YSB"
+  },
+  {
+    "IATA CODES": "Sukhumi",
+    "FIELD2": "SUI",
+    "FIELD3": "SUI"
+  },
+  {
+    "IATA CODES": "Sundsvall",
+    "FIELD2": "SDL",
+    "FIELD3": "SDL"
+  },
+  {
+    "IATA CODES": "Surabaya",
+    "FIELD2": "SUB",
+    "FIELD3": "SUB"
+  },
+  {
+    "IATA CODES": "Suva",
+    "FIELD2": "SUV",
+    "FIELD3": "SUV"
+  },
+  {
+    "IATA CODES": "Sverdlovsk, Ekaterinburg",
+    "FIELD2": "SVX",
+    "FIELD3": "SVX"
+  },
+  {
+    "IATA CODES": "Sydney",
+    "FIELD2": "SYD",
+    "FIELD3": "SYD"
+  },
+  {
+    "IATA CODES": "Syracuse",
+    "FIELD2": "SYR",
+    "FIELD3": "SYR"
+  },
+  {
+    "IATA CODES": "Tobago",
+    "FIELD2": "TAB",
+    "FIELD3": "TAB"
+  },
+  {
+    "IATA CODES": "Toksook Bay",
+    "FIELD2": "OOK",
+    "FIELD3": "OOK"
+  },
+  {
+    "IATA CODES": "Tokushima",
+    "FIELD2": "TKS",
+    "FIELD3": "TKS"
+  },
+  {
+    "IATA CODES": "Tokyo",
+    "FIELD2": "TYO",
+    "FIELD3": "TYO"
+  },
+  {
+    "IATA CODES": "Tokyo, Haneda",
+    "FIELD2": "TYO",
+    "FIELD3": "HND"
+  },
+  {
+    "IATA CODES": "Tokyo, Narita Airport",
+    "FIELD2": "TYO",
+    "FIELD3": "NRT"
+  },
+  {
+    "IATA CODES": "Toledo",
+    "FIELD2": "TOL",
+    "FIELD3": "TOL"
+  },
+  {
+    "IATA CODES": "Tongatapu",
+    "FIELD2": "TBU",
+    "FIELD3": "TBU"
+  },
+  {
+    "IATA CODES": "Topeka",
+    "FIELD2": "TOP",
+    "FIELD3": "TOP"
+  },
+  {
+    "IATA CODES": "Toronto",
+    "FIELD2": "YTO",
+    "FIELD3": "YTO"
+  },
+  {
+    "IATA CODES": "Toronto",
+    "FIELD2": "YYZ",
+    "FIELD3": "YYZ"
+  },
+  {
+    "IATA CODES": "Toronto Island",
+    "FIELD2": "YTO",
+    "FIELD3": "YTZ"
+  },
+  {
+    "IATA CODES": "Torreon",
+    "FIELD2": "TRC",
+    "FIELD3": "TRC"
+  },
+  {
+    "IATA CODES": "Tottori",
+    "FIELD2": "TTJ",
+    "FIELD3": "TTJ"
+  },
+  {
+    "IATA CODES": "Toulon/Hyeres",
+    "FIELD2": "TLN",
+    "FIELD3": "TLN"
+  },
+  {
+    "IATA CODES": "Toulouse",
+    "FIELD2": "TLS",
+    "FIELD3": "TLS"
+  },
+  {
+    "IATA CODES": "Toyama",
+    "FIELD2": "TOY",
+    "FIELD3": "TOY"
+  },
+  {
+    "IATA CODES": "Traverse City",
+    "FIELD2": "TVC",
+    "FIELD3": "TVC"
+  },
+  {
+    "IATA CODES": "Trenton",
+    "FIELD2": "TTN",
+    "FIELD3": "TTN"
+  },
+  {
+    "IATA CODES": "Tri -City",
+    "FIELD2": "TRI",
+    "FIELD3": "TRI"
+  },
+  {
+    "IATA CODES": "Trieste",
+    "FIELD2": "TRS",
+    "FIELD3": "TRS"
+  },
+  {
+    "IATA CODES": "Tripoli",
+    "FIELD2": "TIP",
+    "FIELD3": "TIP"
+  },
+  {
+    "IATA CODES": "Trivandrum",
+    "FIELD2": "TRV",
+    "FIELD3": "TRV"
+  },
+  {
+    "IATA CODES": "Trombetas",
+    "FIELD2": "TMT",
+    "FIELD3": "TMT"
+  },
+  {
+    "IATA CODES": "Tromso",
+    "FIELD2": "TOS",
+    "FIELD3": "TOS"
+  },
+  {
+    "IATA CODES": "Trondheim",
+    "FIELD2": "TRD",
+    "FIELD3": "TRD"
+  },
+  {
+    "IATA CODES": "Trujillo",
+    "FIELD2": "TRU",
+    "FIELD3": "TRU"
+  },
+  {
+    "IATA CODES": "Truk",
+    "FIELD2": "TKK",
+    "FIELD3": "TKK"
+  },
+  {
+    "IATA CODES": "Tucson",
+    "FIELD2": "TUS",
+    "FIELD3": "TUS"
+  },
+  {
+    "IATA CODES": "Tulsa",
+    "FIELD2": "TUL",
+    "FIELD3": "TUL"
+  },
+  {
+    "IATA CODES": "Tuluksak",
+    "FIELD2": "TLT",
+    "FIELD3": "TLT"
+  },
+  {
+    "IATA CODES": "Tumbes",
+    "FIELD2": "TBP",
+    "FIELD3": "TBP"
+  },
+  {
+    "IATA CODES": "Tunis",
+    "FIELD2": "TUN",
+    "FIELD3": "TUN"
+  },
+  {
+    "IATA CODES": "Tuntutulia",
+    "FIELD2": "WTL",
+    "FIELD3": "WTL"
+  },
+  {
+    "IATA CODES": "Tununak",
+    "FIELD2": "TNK",
+    "FIELD3": "TNK"
+  },
+  {
+    "IATA CODES": "Turin",
+    "FIELD2": "TRN",
+    "FIELD3": "TRN"
+  },
+  {
+    "IATA CODES": "Turku",
+    "FIELD2": "TKU",
+    "FIELD3": "TKU"
+  },
+  {
+    "IATA CODES": "Tuscaloosa",
+    "FIELD2": "TCL",
+    "FIELD3": "TCL"
+  },
+  {
+    "IATA CODES": "Tuxtla Gutierrez",
+    "FIELD2": "TGZ",
+    "FIELD3": "TGZ"
+  },
+  {
+    "IATA CODES": "Twin Falls",
+    "FIELD2": "TWF",
+    "FIELD3": "TWF"
+  },
+  {
+    "IATA CODES": "Tyler",
+    "FIELD2": "TYR",
+    "FIELD3": "TYR"
+  },
+  {
+    "IATA CODES": "Umea",
+    "FIELD2": "UME",
+    "FIELD3": "UME"
+  },
+  {
+    "IATA CODES": "Unalakleet",
+    "FIELD2": "UNK",
+    "FIELD3": "UNK"
+  },
+  {
+    "IATA CODES": "Urumqi",
+    "FIELD2": "URC",
+    "FIELD3": "URC"
+  },
+  {
+    "IATA CODES": "Veracruz",
+    "FIELD2": "VER",
+    "FIELD3": "VER"
+  },
+  {
+    "IATA CODES": "Vernal",
+    "FIELD2": "VEL",
+    "FIELD3": "VEL"
+  },
+  {
+    "IATA CODES": "Verona",
+    "FIELD2": "VRN",
+    "FIELD3": "VRN"
+  },
+  {
+    "IATA CODES": "Victoria",
+    "FIELD2": "YYJ",
+    "FIELD3": "YYJ"
+  },
+  {
+    "IATA CODES": "Vienna",
+    "FIELD2": "VIE",
+    "FIELD3": "VIE"
+  },
+  {
+    "IATA CODES": "Vientiane",
+    "FIELD2": "VTE",
+    "FIELD3": "VTE"
+  },
+  {
+    "IATA CODES": "Vieques",
+    "FIELD2": "VQS",
+    "FIELD3": "VQS"
+  },
+  {
+    "IATA CODES": "Villahermosa",
+    "FIELD2": "VSA",
+    "FIELD3": "VSA"
+  },
+  {
+    "IATA CODES": "Vilnius",
+    "FIELD2": "VNO",
+    "FIELD3": "VNO"
+  },
+  {
+    "IATA CODES": "Vitoria",
+    "FIELD2": "VIT",
+    "FIELD3": "VIT"
+  },
+  {
+    "IATA CODES": "Vladivostok",
+    "FIELD2": "VVO",
+    "FIELD3": "VVO"
+  },
+  {
+    "IATA CODES": "White River",
+    "FIELD2": "LEB",
+    "FIELD3": "LEB"
+  },
+  {
+    "IATA CODES": "Whitehorse",
+    "FIELD2": "YXY",
+    "FIELD3": "YXY"
+  },
+  {
+    "IATA CODES": "Wichita",
+    "FIELD2": "ICT",
+    "FIELD3": "ICT"
+  },
+  {
+    "IATA CODES": "Wichita Falls",
+    "FIELD2": "SPS",
+    "FIELD3": "SPS"
+  },
+  {
+    "IATA CODES": "Wilmington",
+    "FIELD2": "ILM",
+    "FIELD3": "ILM"
+  },
+  {
+    "IATA CODES": "Windhoek",
+    "FIELD2": "WDH",
+    "FIELD3": "WDH"
+  },
+  {
+    "IATA CODES": "Windhoek, Eros",
+    "FIELD2": "WDH",
+    "FIELD3": "ERS"
+  },
+  {
+    "IATA CODES": "Windsor",
+    "FIELD2": "YQG",
+    "FIELD3": "YQG"
+  },
+  {
+    "IATA CODES": "Winnipeg",
+    "FIELD2": "YWG",
+    "FIELD3": "YWG"
+  },
+  {
+    "IATA CODES": "Wrangell",
+    "FIELD2": "WRG",
+    "FIELD3": "WRG"
+  },
+  {
+    "IATA CODES": "Wuhan",
+    "FIELD2": "WUH",
+    "FIELD3": "WUH"
+  },
+  {
+    "IATA CODES": "Xian",
+    "FIELD2": "SIA",
+    "FIELD3": "SIA"
+  },
+  {
+    "IATA CODES": "Yellowknife",
+    "FIELD2": "YZF",
+    "FIELD3": "YZF"
+  },
+  {
+    "IATA CODES": "Yinchuang",
+    "FIELD2": "INC",
+    "FIELD3": "INC"
+  },
+  {
+    "IATA CODES": "Yurimaguas",
+    "FIELD2": "YMS",
+    "FIELD3": "YMS"
+  },
+  {
+    "IATA CODES": "Yuzhno -Sakhalinsk",
+    "FIELD2": "UUS",
+    "FIELD3": "UUS"
+  },
+  {
+    "IATA CODES": "Zhanjiang",
+    "FIELD2": "ZHA",
+    "FIELD3": "ZHA"
+  },
+  {
+    "IATA CODES": "Zhengzhou",
+    "FIELD2": "CGO",
+    "FIELD3": "CGO"
+  },
+  {
+    "IATA CODES": "Zihuatanejo",
+    "FIELD2": "ZIH",
+    "FIELD3": "ZIH"
+  },
+  {
+    "IATA CODES": "Zurich",
+    "FIELD2": "ZRH",
+    "FIELD3": "ZRH"
+  }
+]
