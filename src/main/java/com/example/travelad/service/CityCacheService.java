@@ -27,14 +27,13 @@ public class CityCacheService {
         return cities; // Return the list of cities
     }
 
-    // Add a city to the cache if it's not already present
     public String addCity(String city) {
-        // Check if the city is already in the list
-        if (!redisTemplate.opsForList().range(CITY_KEY, 0, -1).contains(city)) {
-            redisTemplate.opsForList().leftPush(CITY_KEY, city); // Add city to the cache
-            return "City '" + city + "' added successfully";
+        if (redisTemplate.opsForList().range(CITY_KEY, 0, -1).contains(city)) {
+            // Remove existing city before adding to ensure it's at the top
+            redisTemplate.opsForList().remove(CITY_KEY, 1, city);
         }
-        return "City '" + city + "' already exists in the cache";
+        redisTemplate.opsForList().leftPush(CITY_KEY, city);
+        return "City '" + city + "' added or updated successfully";
     }
 
     // Remove a specific city from the cache

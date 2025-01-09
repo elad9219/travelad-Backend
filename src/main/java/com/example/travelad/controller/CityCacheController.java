@@ -14,18 +14,15 @@ public class CityCacheController {
     @Autowired
     private CityCacheService cityCacheService;
 
-    // Get all cities in the cache for autocomplete
     @GetMapping("/cities/autocomplete")
     public ResponseEntity<Object> autocompleteCities() {
         Object cities = cityCacheService.getCities();
-        if (cities instanceof String) {
-            // Return custom message if it's a string
-            return ResponseEntity.ok(cities);
+        if (cities instanceof List && ((List<?>) cities).isEmpty()) {
+            return ResponseEntity.ok("No cities in the list");
         }
         return ResponseEntity.ok(cities); // Return list of cities
     }
 
-    // Add a city to the cache
     @PostMapping("/cities")
     public ResponseEntity<String> addCity(@RequestParam String city) {
         String message = cityCacheService.addCity(city);
