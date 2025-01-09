@@ -3,6 +3,7 @@ package com.example.travelad.service;
 import com.example.travelad.dto.WeatherDto;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Map;
@@ -42,9 +43,15 @@ public class WeatherService {
 
                 return weatherDto;
             }
+        } catch (HttpClientErrorException.BadRequest e) {
+            // Log the error and return null or an error message
+            System.err.println("Failed to fetch weather data for city: " + city + ". Error: " + e.getMessage());
+            return null; // or you could return a WeatherDto with error status
         } catch (Exception e) {
+            // For any other errors
+            System.err.println("An unexpected error occurred while fetching weather data: " + e.getMessage());
             e.printStackTrace();
-            throw new RuntimeException("Failed to fetch weather data");
+            return null; // or handle differently
         }
         return null;
     }
