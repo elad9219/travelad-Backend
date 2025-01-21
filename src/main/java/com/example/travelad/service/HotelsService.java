@@ -4,12 +4,13 @@ import com.amadeus.Amadeus;
 import com.amadeus.Params;
 import com.amadeus.exceptions.ResponseException;
 import com.amadeus.resources.HotelOfferSearch;
+import com.example.travelad.beans.GooglePlaces;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import com.amadeus.resources.Hotel;
-
 
 import javax.annotation.PostConstruct;
 
@@ -17,8 +18,13 @@ import javax.annotation.PostConstruct;
 public class HotelsService {
 
     private static final Logger logger = LoggerFactory.getLogger(HotelsService.class);
-
     private Amadeus amadeus;
+    private final GooglePlacesService googlePlacesService;
+
+    @Autowired
+    public HotelsService(GooglePlacesService googlePlacesService) {
+        this.googlePlacesService = googlePlacesService;
+    }
 
     @Value("${amadeus.api.key}")
     private String apiKey;
@@ -32,7 +38,7 @@ public class HotelsService {
     }
 
     // Method to search hotels by city code
-    public Hotel[] searchHotelsByCity(String cityCode) throws ResponseException {
+    public Hotel[] searchHotelsByCityCode(String cityCode) throws ResponseException {
         try {
             logger.info("Fetching hotels for cityCode: {}", cityCode);
 
@@ -41,8 +47,36 @@ public class HotelsService {
             );
 
         } catch (ResponseException e) {
-            logger.error("Error fetching hotels by city: {}", e.getMessage());
+            logger.error("Error fetching hotels by city code: {}", e.getMessage());
             throw e;
+        }
+    }
+
+    // Method to search hotels by city name
+    public Hotel[] searchHotelsByCityName(String cityName) {
+        try {
+            GooglePlaces place = googlePlacesService.searchPlaceByCity(cityName);
+            if (place == null) {
+                logger.warn("No place found for city name: {}", cityName);
+                return new Hotel[0];
+            }
+
+            logger.info("Fetching hotels for city name: {} using geocode: {}, {}", cityName, place.getLatitude(), place.getLongitude());
+
+            Hotel[] hotels = amadeus.referenceData.locations.hotels.byGeocode.get(
+                    Params.with("latitude", String.valueOf(place.getLatitude()))
+                            .and("longitude", String.valueOf(place.getLongitude()))
+            );
+
+            // Check if hotels is null before returning
+            return hotels != null ? hotels : new Hotel[0];
+
+        } catch (ResponseException e) {
+            logger.error("Amadeus API error fetching hotels by city name: {} - Status: {}, Message: {}", cityName, e.getResponse().getStatusCode(), e.getMessage());
+            throw new RuntimeException("Error fetching hotels from Amadeus API", e);
+        } catch (Exception e) {
+            logger.error("Unexpected error fetching hotels by city name: {} - {}", cityName, e.getMessage(), e);
+            throw new RuntimeException("Unexpected error processing hotel request", e);
         }
     }
 
@@ -65,4 +99,3 @@ public class HotelsService {
         return amadeus.shopping.hotelOffersSearch.get(params);
     }
 }
-
