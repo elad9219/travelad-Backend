@@ -20,7 +20,6 @@ public class LocationDto {
         this.cityCode = cityCode;
     }
 
-    // Getters and Setters
     public String getName() {
         return name;
     }
