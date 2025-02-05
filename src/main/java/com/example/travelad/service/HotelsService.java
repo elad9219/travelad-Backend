@@ -2,6 +2,7 @@ package com.example.travelad.service;
 
 import com.amadeus.Amadeus;
 import com.amadeus.Params;
+import com.amadeus.exceptions.ClientException;
 import com.amadeus.exceptions.ResponseException;
 import com.amadeus.resources.HotelOfferSearch;
 import com.example.travelad.beans.GooglePlaces;
@@ -80,7 +81,6 @@ public class HotelsService {
         }
     }
 
-    // Modify the method to handle optional parameters
     public HotelOfferSearch[] searchHotelOffers(String hotelIds, String checkInDate, String checkOutDate, Integer adults) throws ResponseException {
         Params params = Params.with("hotelIds", hotelIds);
 
@@ -96,6 +96,18 @@ public class HotelsService {
 
         logger.info("Fetching hotel offers for hotelIds: {}, checkInDate: {}, checkOutDate: {}, adults: {}",
                 hotelIds, checkInDate, checkOutDate, adults);
-        return amadeus.shopping.hotelOffersSearch.get(params);
+        try {
+            return amadeus.shopping.hotelOffersSearch.get(params);
+        } catch (ClientException e) {
+            logger.error("Client error fetching hotel offers: {}", e.getMessage(), e);
+            // Instead of returning an empty array, you could return a custom error structure
+            return new HotelOfferSearch[0];
+        } catch (ResponseException e) {
+            logger.error("Error fetching hotel offers: {}", e.getMessage(), e);
+            throw e; // Propagate the exception to the controller
+        } catch (Exception e) {
+            logger.error("Unexpected error fetching hotel offers: {}", e.getMessage(), e);
+            throw new RuntimeException("An unexpected error occurred while fetching hotel offers", e);
+        }
     }
 }

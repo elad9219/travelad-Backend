@@ -45,12 +45,3 @@ public class HotelDto {
         this.countryCode = countryCode;
     }
 }
-
-
-
-
-
-
-
-
-

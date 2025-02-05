@@ -26,20 +26,23 @@ public class FlightsController {
 
     @GetMapping
     public ResponseEntity<?> flights(@RequestParam String city) {
+        // Lookup IATA code for destination city using your utility
         String iataCode = IataCodeUtils.getIataCodeForCity(city);
         if (iataCode == null) {
             return ResponseEntity.ok(List.of()); // Return an empty list if no IATA code is found
         }
 
         try {
-            String origin = "TLV"; // Replace with your origin
+            // Set your origin; replace "TLV" with your actual origin code if needed
+            String origin = "TLV";
+            // Set departure and return dates (for example, 10 and 15 days from now)
             String departDate = LocalDate.now().plusDays(10).toString();
             String returnDate = LocalDate.now().plusDays(15).toString();
             String adults = "1";
 
             FlightOfferSearch[] flightOffers = flightsService.flights(origin, iataCode, departDate, adults, returnDate);
             if (flightOffers == null || flightOffers.length == 0) {
-                return ResponseEntity.ok(List.of()); // Return an empty list if no flights are found
+                return ResponseEntity.ok(List.of());
             }
 
             List<FlightOfferDto> flightOfferDtos = Arrays.stream(flightOffers)
@@ -48,7 +51,8 @@ public class FlightsController {
 
             return ResponseEntity.ok(flightOfferDtos);
         } catch (ResponseException e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error fetching flights: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error fetching flights: " + e.getMessage());
         }
     }
 }

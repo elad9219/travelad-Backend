@@ -24,6 +24,7 @@ public class FlightsService {
     private String apiSecret;
 
     private static final int MAX_RETRIES = 3;
+    private static final long RETRY_DELAY_MS = 2000; // delay 2 seconds between retries
 
     @PostConstruct
     public void init() {
@@ -34,10 +35,10 @@ public class FlightsService {
         Params params = Params.with("originLocationCode", origin)
                 .and("destinationLocationCode", destination)
                 .and("departureDate", departDate)
-                .and("returnDate", returnDate)
                 .and("adults", adults)
                 .and("max", 5);
 
+        // If a return date is provided, add it to the parameters
         if (returnDate != null && !returnDate.isEmpty()) {
             params.and("returnDate", returnDate);
         }
@@ -49,8 +50,16 @@ public class FlightsService {
                 return amadeus.shopping.flightOffersSearch.get(params);
             } catch (ResponseException e) {
                 retryCount++;
-                logger.error("Error fetching flights: {}, retrying ({}/{})", e.getMessage(), retryCount, MAX_RETRIES);
-                if (retryCount >= MAX_RETRIES) throw e;
+                logger.error("Error fetching flights: {}. Retrying ({}/{})", e.getMessage(), retryCount, MAX_RETRIES);
+                if (retryCount >= MAX_RETRIES) {
+                    throw e;
+                }
+                try {
+                    Thread.sleep(RETRY_DELAY_MS);
+                } catch (InterruptedException ie) {
+                    Thread.currentThread().interrupt();
+                    throw new ResponseException(e.getResponse());
+                }
             }
         }
         return new FlightOfferSearch[0];
