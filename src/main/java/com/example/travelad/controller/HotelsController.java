@@ -35,14 +35,10 @@ public class HotelsController {
             if (cityName == null || cityName.isEmpty()) {
                 return ResponseEntity.badRequest().body("City name is required.");
             }
-
-            // Search hotels by city name
             com.amadeus.resources.Hotel[] locations = hotelsService.searchHotelsByCityName(cityName);
-
             if (locations == null || locations.length == 0) {
                 return ResponseEntity.notFound().build();
             }
-
             List<HotelDto> hotels = Arrays.stream(locations)
                     .filter(Objects::nonNull)
                     .map(location -> new HotelDto(
@@ -50,13 +46,10 @@ public class HotelsController {
                             location.getHotelId() != null ? location.getHotelId() : "Unknown",
                             location.getIataCode() != null ? location.getIataCode() : "Unknown",
                             (location.getAddress() != null && location.getAddress().getCountryCode() != null)
-                                    ? location.getAddress().getCountryCode()
-                                    : "Unknown"
+                                    ? location.getAddress().getCountryCode() : "Unknown"
                     ))
                     .collect(Collectors.toList());
-
             return ResponseEntity.ok(hotels);
-
         } catch (Exception e) {
             logger.error("Failed to fetch hotels for city: {} - {}", cityName, e.getMessage(), e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
@@ -70,13 +63,10 @@ public class HotelsController {
             if (cityCode == null || cityCode.isEmpty()) {
                 return ResponseEntity.badRequest().body("City code is required.");
             }
-
             com.amadeus.resources.Hotel[] locations = hotelsService.searchHotelsByCityCode(cityCode);
-
             if (locations == null || locations.length == 0) {
                 return ResponseEntity.notFound().build();
             }
-
             List<HotelDto> hotels = Arrays.stream(locations)
                     .map(location -> new HotelDto(
                             location.getName(),
@@ -85,9 +75,7 @@ public class HotelsController {
                             location.getAddress().getCountryCode()
                     ))
                     .collect(Collectors.toList());
-
             return ResponseEntity.ok(hotels);
-
         } catch (ResponseException e) {
             return ResponseEntity.internalServerError()
                     .body("Error fetching hotels by city code: " + e.getMessage());
@@ -107,8 +95,6 @@ public class HotelsController {
                 logger.info("No hotel offers returned for hotelIds: {}", hotelIds);
                 return ResponseEntity.ok(List.of());
             }
-
-            // Process offers safely and skip any offer where required fields are missing.
             List<HotelOffersDto> hotelOffers = Arrays.stream(offers)
                     .filter(Objects::nonNull)
                     .flatMap(offer -> {
@@ -116,7 +102,6 @@ public class HotelsController {
                             logger.info("Hotel or Offers are null for offer: {}", offer);
                             return Stream.empty();
                         }
-                        // For each offer, process each individual hotelOffer entry
                         return Arrays.stream(offer.getOffers())
                                 .filter(hotelOffer ->
                                         hotelOffer != null &&
@@ -131,39 +116,39 @@ public class HotelsController {
                                                 hotelOffer.getPrice().getTotal() != null
                                 )
                                 .map(hotelOffer -> {
-                                    HotelOfferSearch.RoomDetails roomDetails = hotelOffer.getRoom();
-                                    HotelOfferSearch.HotelPrice price = hotelOffer.getPrice();
-
-                                    // If any nested field is missing, skip the offer by returning null
-                                    if (roomDetails.getTypeEstimated() == null ||
-                                            roomDetails.getTypeEstimated().getBedType() == null ||
-                                            roomDetails.getTypeEstimated().getBeds() == null ||
-                                            roomDetails.getDescription() == null ||
-                                            roomDetails.getDescription().getText() == null) {
+                                    try {
+                                        if (hotelOffer.getRoom().getTypeEstimated() == null ||
+                                                hotelOffer.getRoom().getTypeEstimated().getBedType() == null ||
+                                                hotelOffer.getRoom().getTypeEstimated().getBeds() == null ||
+                                                hotelOffer.getRoom().getDescription() == null ||
+                                                hotelOffer.getRoom().getDescription().getText() == null) {
+                                            return null;
+                                        }
+                                        com.amadeus.resources.HotelOfferSearch.RoomDetails roomDetails = hotelOffer.getRoom();
+                                        com.amadeus.resources.HotelOfferSearch.HotelPrice price = hotelOffer.getPrice();
+                                        RoomDto room = new RoomDto(
+                                                roomDetails.getTypeEstimated().getBedType(),
+                                                roomDetails.getTypeEstimated().getBeds(),
+                                                roomDetails.getDescription().getText()
+                                        );
+                                        return new HotelOffersDto(
+                                                offer.getHotel().getName(),
+                                                offer.getHotel().getCityCode(),
+                                                price.getCurrency(),
+                                                price.getBase(),
+                                                price.getTotal(),
+                                                hotelOffer.getCheckInDate(),
+                                                hotelOffer.getCheckOutDate(),
+                                                room
+                                        );
+                                    } catch (Exception ex) {
+                                        logger.error("Error processing offer for hotel: " + offer.getHotel().getName(), ex);
                                         return null;
                                     }
-
-                                    RoomDto room = new RoomDto(
-                                            roomDetails.getTypeEstimated().getBedType(),
-                                            roomDetails.getTypeEstimated().getBeds(),
-                                            roomDetails.getDescription().getText()
-                                    );
-
-                                    return new HotelOffersDto(
-                                            offer.getHotel().getName(),
-                                            offer.getHotel().getCityCode(),
-                                            price.getCurrency(),
-                                            price.getBase(),
-                                            price.getTotal(),
-                                            hotelOffer.getCheckInDate(),
-                                            hotelOffer.getCheckOutDate(),
-                                            room
-                                    );
                                 });
                     })
                     .filter(Objects::nonNull)
                     .collect(Collectors.toList());
-
             return ResponseEntity.ok(hotelOffers);
         } catch (Exception e) {
             logger.error("Failed to fetch hotel offers for hotelIds: {} - {}", hotelIds, e.getMessage(), e);
