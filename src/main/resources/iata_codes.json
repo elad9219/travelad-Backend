@@ -2260,6 +2260,16 @@
     "FIELD3": "JFK"
   },
   {
+    "IATA CODES": "New York, LaGuardia Airport ",
+    "FIELD2": "NYC",
+    "FIELD3": "LGA"
+  },
+  {
+    "IATA CODES": "New York, Newark Liberty International Airport",
+    "FIELD2": "NYC",
+    "FIELD3": "EWR"
+  },
+  {
     "IATA CODES": "Orebro",
     "FIELD2": "ORB",
     "FIELD3": "ORB"

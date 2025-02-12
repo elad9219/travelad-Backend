@@ -23,8 +23,8 @@ public class FlightsService {
     @Value("${amadeus.api.secret}")
     private String apiSecret;
 
-    private static final int MAX_RETRIES = 3;
-    private static final long RETRY_DELAY_MS = 2000; // delay 2 seconds between retries
+    private static final int MAX_RETRIES = 2;
+    private static final long RETRY_DELAY_MS = 2000; // 2 seconds between retries
 
     @PostConstruct
     public void init() {
@@ -36,9 +36,8 @@ public class FlightsService {
                 .and("destinationLocationCode", destination)
                 .and("departureDate", departDate)
                 .and("adults", adults)
-                .and("max", 5);
+                .and("max", 20);
 
-        // If a return date is provided, add it to the parameters
         if (returnDate != null && !returnDate.isEmpty()) {
             params.and("returnDate", returnDate);
         }

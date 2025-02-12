@@ -16,7 +16,10 @@ import java.util.stream.Collectors;
 public class IataCodeUtils {
 
     private static final Logger logger = LoggerFactory.getLogger(IataCodeUtils.class);
+    // Map for FIELD2 (search IATA code)
     private static final Map<String, String> cityToIataMap = new HashMap<>();
+    // Map for FIELD3 (final destination IATA code)
+    private static final Map<String, String> cityToFinalDestinationMap = new HashMap<>();
 
     static {
         try {
@@ -28,8 +31,14 @@ public class IataCodeUtils {
             );
 
             for (IataCodeEntry entry : entries) {
-                if (entry.getField2() != null && entry.getIataCode() != null) {
+                if (entry.getIataCode() != null && entry.getField2() != null) {
+                    // Use the value in "IATA CODES" (converted to lower-case) as the key
                     cityToIataMap.put(entry.getIataCode().toLowerCase(), entry.getField2());
+                }
+                if (entry.getIataCode() != null) {
+                    // For FIELD3, if not provided, default to FIELD2
+                    String finalDest = entry.getField3() != null ? entry.getField3() : entry.getField2();
+                    cityToFinalDestinationMap.put(entry.getIataCode().toLowerCase(), finalDest);
                 }
             }
 
@@ -43,13 +52,18 @@ public class IataCodeUtils {
         return cityToIataMap.get(city.toLowerCase());
     }
 
-    public static List<IataCodeEntry> getIataCodeEntries() {
-        // If you need the raw list of entries
-        return List.copyOf(cityToIataMap.entrySet().stream()
-                .map(entry -> new IataCodeEntry() {{
-                    setIataCode(entry.getKey());
-                    setField2(entry.getValue());
-                }})
-                .collect(Collectors.toList()));
+    public static String getFinalDestinationIataForCity(String city) {
+        return cityToFinalDestinationMap.get(city.toLowerCase());
+    }
+
+    public static java.util.List<IataCodeEntry> getIataCodeEntries() {
+        return cityToIataMap.entrySet().stream()
+                .map(entry -> {
+                    IataCodeEntry e = new IataCodeEntry();
+                    e.setIataCode(entry.getKey());
+                    e.setField2(entry.getValue());
+                    return e;
+                })
+                .collect(Collectors.toList());
     }
 }
