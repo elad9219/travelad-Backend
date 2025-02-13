@@ -24,24 +24,57 @@ public class FlightsController {
         this.flightsService = flightsService;
     }
 
+    // Default endpoint (using preset values)
     @GetMapping
     public ResponseEntity<?> flights(@RequestParam String city) {
-        // Lookup the IATA code for the city using FIELD2 for the search.
         final String destinationIata = IataCodeUtils.getIataCodeForCity(city);
         if (destinationIata == null) {
             return ResponseEntity.ok(List.of());
         }
-        // Lookup the final destination IATA code (FIELD3) and default to destinationIata if null.
         final String tempFinal = IataCodeUtils.getFinalDestinationIataForCity(city);
         final String finalDestinationIata = tempFinal != null ? tempFinal : destinationIata;
 
         try {
-            String origin = "TLV"; // replace with your origin if needed
+            String origin = "TLV";
             String departDate = LocalDate.now().plusDays(10).toString();
             String returnDate = LocalDate.now().plusDays(15).toString();
             String adults = "1";
 
             FlightOfferSearch[] offers = flightsService.flights(origin, destinationIata, departDate, adults, returnDate);
+            if (offers == null || offers.length == 0) {
+                return ResponseEntity.ok(List.of());
+            }
+
+            List<FlightOfferDto> flightOfferDtos = Arrays.stream(offers)
+                    .map(offer -> FlightOfferDto.fromFlightOfferSearch(offer, finalDestinationIata))
+                    .collect(Collectors.toList());
+
+            return ResponseEntity.ok(flightOfferDtos);
+        } catch (ResponseException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error fetching flights: " + e.getMessage());
+        }
+    }
+
+    // Advanced search endpoint: client provides all parameters.
+    @GetMapping("/advancedFlightSearch")
+    public ResponseEntity<?> advancedFlightSearch(
+            @RequestParam String origin,
+            @RequestParam String destination,
+            @RequestParam String departDate,
+            @RequestParam(required = false, defaultValue = "") String returnDate,
+            @RequestParam String adults) {
+
+        final String originIata = IataCodeUtils.getIataCodeForCity(origin);
+        final String destinationIata = IataCodeUtils.getIataCodeForCity(destination);
+        if (originIata == null || destinationIata == null) {
+            return ResponseEntity.badRequest().body("Invalid origin or destination city provided.");
+        }
+        final String tempFinal = IataCodeUtils.getFinalDestinationIataForCity(destination);
+        final String finalDestinationIata = tempFinal != null ? tempFinal : destinationIata;
+
+        try {
+            FlightOfferSearch[] offers = flightsService.flights(originIata, destinationIata, departDate, adults, returnDate);
             if (offers == null || offers.length == 0) {
                 return ResponseEntity.ok(List.of());
             }
