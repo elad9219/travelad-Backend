@@ -830,7 +830,7 @@
     "FIELD3": "DLC"
   },
   {
-    "IATA CODES": "Dallas/Ft. Worth",
+    "IATA CODES": "Dallas",
     "FIELD2": "DFW",
     "FIELD3": "DFW"
   },
@@ -3320,8 +3320,8 @@
     "FIELD3": "ZNZ"
   },
   {
-    "IATA CODES": "Zaragoza                                         ZAZ",
-    "FIELD2": "",
+    "IATA CODES": "Zaragoza",
+    "FIELD2": "ZAZ",
     "FIELD3": "ZAZ"
   },
   {

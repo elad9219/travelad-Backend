@@ -32,16 +32,15 @@ public class IataCodeUtils {
 
             for (IataCodeEntry entry : entries) {
                 if (entry.getIataCode() != null && entry.getField2() != null) {
-                    // Use the value in "IATA CODES" (converted to lower-case) as the key
+                    // Use the full "IATA CODES" (converted to lower-case) as the key
                     cityToIataMap.put(entry.getIataCode().toLowerCase(), entry.getField2());
                 }
                 if (entry.getIataCode() != null) {
-                    // For FIELD3, if not provided, default to FIELD2
+                    // For FIELD3, default to FIELD2 if FIELD3 is not provided
                     String finalDest = entry.getField3() != null ? entry.getField3() : entry.getField2();
                     cityToFinalDestinationMap.put(entry.getIataCode().toLowerCase(), finalDest);
                 }
             }
-
             logger.info("IataCodeUtils initialized successfully.");
         } catch (IOException e) {
             logger.error("Error initializing IataCodeUtils: {}", e.getMessage(), e);
@@ -49,14 +48,39 @@ public class IataCodeUtils {
     }
 
     public static String getIataCodeForCity(String city) {
-        return cityToIataMap.get(city.toLowerCase());
+        String lowerCity = city.toLowerCase().trim();
+        // First, try an exact match.
+        if (cityToIataMap.containsKey(lowerCity)) {
+            return cityToIataMap.get(lowerCity);
+        }
+        // If not found, try a simple fuzzy match: if the key contains the search term or vice-versa.
+        for (Map.Entry<String, String> entry : cityToIataMap.entrySet()) {
+            String key = entry.getKey();
+            if (key.contains(lowerCity) || lowerCity.contains(key)) {
+                return entry.getValue();
+            }
+        }
+        // If still not found, return null.
+        return null;
     }
 
     public static String getFinalDestinationIataForCity(String city) {
-        return cityToFinalDestinationMap.get(city.toLowerCase());
+        String lowerCity = city.toLowerCase().trim();
+        // Try exact match first.
+        if (cityToFinalDestinationMap.containsKey(lowerCity)) {
+            return cityToFinalDestinationMap.get(lowerCity);
+        }
+        // Fuzzy match if exact match not found.
+        for (Map.Entry<String, String> entry : cityToFinalDestinationMap.entrySet()) {
+            String key = entry.getKey();
+            if (key.contains(lowerCity) || lowerCity.contains(key)) {
+                return entry.getValue();
+            }
+        }
+        return null;
     }
 
-    public static java.util.List<IataCodeEntry> getIataCodeEntries() {
+    public static List<IataCodeEntry> getIataCodeEntries() {
         return cityToIataMap.entrySet().stream()
                 .map(entry -> {
                     IataCodeEntry e = new IataCodeEntry();
