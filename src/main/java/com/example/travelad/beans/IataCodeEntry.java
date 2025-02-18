@@ -6,36 +6,36 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class IataCodeEntry {
 
-    @JsonProperty("FIELD2")
-    private String field2;
+    @JsonProperty("FULL NAME")
+    private String fullName;
 
-    @JsonProperty("IATA CODES")
-    private String iataCode;
+    @JsonProperty("CITY CODE")
+    private String cityCode;
 
-    @JsonProperty("FIELD3")
-    private String field3;
+    @JsonProperty("AIRPORT CODE")
+    private String airportCode;
 
-    public String getField2() {
-        return field2;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setField2(String field2) {
-        this.field2 = field2;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
-    public String getIataCode() {
-        return iataCode;
+    public String getCityCode() {
+        return cityCode;
     }
 
-    public void setIataCode(String iataCode) {
-        this.iataCode = iataCode;
+    public void setCityCode(String cityCode) {
+        this.cityCode = cityCode;
     }
 
-    public String getField3() {
-        return field3;
+    public String getAirportCode() {
+        return airportCode;
     }
 
-    public void setField3(String field3) {
-        this.field3 = field3;
+    public void setAirportCode(String airportCode) {
+        this.airportCode = airportCode;
     }
 }

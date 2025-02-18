@@ -24,15 +24,15 @@ public class FlightsController {
         this.flightsService = flightsService;
     }
 
-    // Default endpoint (using preset values)
     @GetMapping
     public ResponseEntity<?> flights(@RequestParam String city) {
         final String destinationIata = IataCodeUtils.getIataCodeForCity(city);
         if (destinationIata == null) {
             return ResponseEntity.ok(List.of());
         }
-        final String tempFinal = IataCodeUtils.getFinalDestinationIataForCity(city);
-        final String finalDestinationIata = tempFinal != null ? tempFinal : destinationIata;
+        final String finalDestinationIata = (IataCodeUtils.getFinalDestinationIataForCity(city) != null)
+                ? IataCodeUtils.getFinalDestinationIataForCity(city)
+                : destinationIata;
 
         try {
             String origin = "TLV";
@@ -56,7 +56,6 @@ public class FlightsController {
         }
     }
 
-    // Advanced search endpoint: client provides all parameters.
     @GetMapping("/advancedFlightSearch")
     public ResponseEntity<?> advancedFlightSearch(
             @RequestParam String origin,
@@ -70,8 +69,9 @@ public class FlightsController {
         if (originIata == null || destinationIata == null) {
             return ResponseEntity.badRequest().body("Invalid origin or destination city provided.");
         }
-        final String tempFinal = IataCodeUtils.getFinalDestinationIataForCity(destination);
-        final String finalDestinationIata = tempFinal != null ? tempFinal : destinationIata;
+        final String finalDestinationIata = (IataCodeUtils.getFinalDestinationIataForCity(destination) != null)
+                ? IataCodeUtils.getFinalDestinationIataForCity(destination)
+                : destinationIata;
 
         try {
             FlightOfferSearch[] offers = flightsService.flights(originIata, destinationIata, departDate, adults, returnDate);
