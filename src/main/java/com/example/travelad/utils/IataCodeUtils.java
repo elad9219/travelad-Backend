@@ -24,7 +24,7 @@ public class IataCodeUtils {
                     new ClassPathResource("iata_codes.json").getInputStream(),
                     new TypeReference<List<IataCodeEntry>>() {}
             );
-            // For each entry, if FIELD3 is null or empty, set it to the value from "IATA CODES".
+            // For each entry, if AIRPORT CODE is null or empty, set it to the value from "FULL NAME".
             for (IataCodeEntry entry : originalEntries) {
                 if (entry.getAirportCode() == null || entry.getAirportCode().trim().isEmpty()) {
                     // Fallback: use the value from "IATA CODES" (i.e. getIataCode()).
