@@ -2,6 +2,7 @@ package com.example.travelad.dto;
 
 import com.amadeus.resources.FlightOfferSearch;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.example.travelad.utils.AirlineServiceStatic;
 
 import java.util.Arrays;
 import java.util.List;
@@ -9,21 +10,15 @@ import java.util.stream.Collectors;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class FlightOfferDto {
-    // For one-way flights: only this field is set.
+    // For one-way flights:
     private List<FlightSegmentDto> segments;
-    // For round-trip flights: these fields are set.
+    // For round-trip flights:
     private List<FlightSegmentDto> outboundSegments;
     private List<FlightSegmentDto> returnSegments;
     private double price;
 
-    // New fields for total duration of each itinerary
-    private String outboundDuration;
-    private String returnDuration;
-
     public FlightOfferDto() {
     }
-
-    // Getters and setters
 
     public List<FlightSegmentDto> getSegments() {
         return segments;
@@ -49,28 +44,7 @@ public class FlightOfferDto {
     public void setPrice(double price) {
         this.price = price;
     }
-    public String getOutboundDuration() {
-        return outboundDuration;
-    }
-    public void setOutboundDuration(String outboundDuration) {
-        this.outboundDuration = outboundDuration;
-    }
-    public String getReturnDuration() {
-        return returnDuration;
-    }
-    public void setReturnDuration(String returnDuration) {
-        this.returnDuration = returnDuration;
-    }
 
-    /**
-     * Converts a FlightOfferSearch object into a FlightOfferDto.
-     * It maps the segments and additional details: duration, carrier code, flight number,
-     * terminals, and aircraft. If two itineraries are present, it sets outboundDuration and returnDuration.
-     *
-     * @param offer                The flight offer from Amadeus.
-     * @param finalDestinationIata The final destination IATA code (used for splitting).
-     * @return A FlightOfferDto instance.
-     */
     public static FlightOfferDto fromFlightOfferSearch(FlightOfferSearch offer, String finalDestinationIata) {
         FlightOfferDto dto = new FlightOfferDto();
         double totalPrice;
@@ -81,58 +55,65 @@ public class FlightOfferDto {
         }
         dto.setPrice(totalPrice);
 
+        // Use lambda with type inference to map each segment.
+        // Note: We assume that offer.getItineraries()[].getSegments() returns an array of objects
+        // that have the methods getDeparture(), getArrival(), getDuration(), etc.
+        // The lambda uses these methods without explicitly referencing a Segment type.
+        // Also, we enrich each segment with an airline logo URL.
         if (offer.getItineraries().length == 1) {
-            // One-way flight: Set outboundDuration and segments
-            dto.setOutboundDuration(offer.getItineraries()[0].getDuration());
             List<FlightSegmentDto> segments = Arrays.stream(offer.getItineraries()[0].getSegments())
-                    .map(segment -> new FlightSegmentDto(
-                            segment.getDeparture().getIataCode(),
-                            segment.getArrival().getIataCode(),
-                            segment.getDeparture().getAt(),
-                            segment.getArrival().getAt(),
-                            segment.getDuration(),
-                            segment.getCarrierCode(),
-                            segment.getNumber(),
-                            segment.getDeparture().getTerminal(),
-                            segment.getArrival().getTerminal(),
-                            segment.getAircraft().getCode()
+                    .map(seg -> new FlightSegmentDto(
+                            seg.getDeparture().getIataCode(),
+                            seg.getArrival().getIataCode(),
+                            seg.getDeparture().getAt(),
+                            seg.getArrival().getAt(),
+                            seg.getDuration(),
+                            seg.getCarrierCode(),
+                            seg.getNumber(),
+                            seg.getAircraft().getCode(),
+                            seg.getDeparture().getTerminal(),
+                            seg.getArrival().getTerminal(),
+                            AirlineServiceStatic.getAirlineLogoUrl(seg.getCarrierCode())
                     ))
                     .collect(Collectors.toList());
             dto.setSegments(segments);
-        } else if (offer.getItineraries().length == 2) {
-            // Round-trip flight: Set outboundDuration, returnDuration, outboundSegments, and returnSegments
-            dto.setOutboundDuration(offer.getItineraries()[0].getDuration());
-            dto.setReturnDuration(offer.getItineraries()[1].getDuration());
-            List<FlightSegmentDto> outboundSegments = Arrays.stream(offer.getItineraries()[0].getSegments())
-                    .map(segment -> new FlightSegmentDto(
-                            segment.getDeparture().getIataCode(),
-                            segment.getArrival().getIataCode(),
-                            segment.getDeparture().getAt(),
-                            segment.getArrival().getAt(),
-                            segment.getDuration(),
-                            segment.getCarrierCode(),
-                            segment.getNumber(),
-                            segment.getDeparture().getTerminal(),
-                            segment.getArrival().getTerminal(),
-                            segment.getAircraft().getCode()
+        } else {
+            List<FlightSegmentDto> segments = Arrays.stream(offer.getItineraries())
+                    .flatMap(itinerary -> Arrays.stream(itinerary.getSegments()))
+                    .map(seg -> new FlightSegmentDto(
+                            seg.getDeparture().getIataCode(),
+                            seg.getArrival().getIataCode(),
+                            seg.getDeparture().getAt(),
+                            seg.getArrival().getAt(),
+                            seg.getDuration(),
+                            seg.getCarrierCode(),
+                            seg.getNumber(),
+                            seg.getAircraft().getCode(),
+                            seg.getDeparture().getTerminal(),
+                            seg.getArrival().getTerminal(),
+                            AirlineServiceStatic.getAirlineLogoUrl(seg.getCarrierCode())
                     ))
                     .collect(Collectors.toList());
-            List<FlightSegmentDto> returnSegments = Arrays.stream(offer.getItineraries()[1].getSegments())
-                    .map(segment -> new FlightSegmentDto(
-                            segment.getDeparture().getIataCode(),
-                            segment.getArrival().getIataCode(),
-                            segment.getDeparture().getAt(),
-                            segment.getArrival().getAt(),
-                            segment.getDuration(),
-                            segment.getCarrierCode(),
-                            segment.getNumber(),
-                            segment.getDeparture().getTerminal(),
-                            segment.getArrival().getTerminal(),
-                            segment.getAircraft().getCode()
-                    ))
-                    .collect(Collectors.toList());
-            dto.setOutboundSegments(outboundSegments);
-            dto.setReturnSegments(returnSegments);
+            if (segments.size() == 2) {
+                dto.setOutboundSegments(segments.subList(0, 1));
+                dto.setReturnSegments(segments.subList(1, 2));
+            } else if (segments.size() > 2) {
+                int boundaryIndex = -1;
+                for (int i = 0; i < segments.size(); i++) {
+                    if (segments.get(i).getDestination().equalsIgnoreCase(finalDestinationIata)) {
+                        boundaryIndex = i;
+                        break;
+                    }
+                }
+                if (boundaryIndex != -1 && boundaryIndex < segments.size() - 1) {
+                    dto.setOutboundSegments(segments.subList(0, boundaryIndex + 1));
+                    dto.setReturnSegments(segments.subList(boundaryIndex + 1, segments.size()));
+                } else {
+                    int mid = segments.size() / 2;
+                    dto.setOutboundSegments(segments.subList(0, mid));
+                    dto.setReturnSegments(segments.subList(mid, segments.size()));
+                }
+            }
         }
         return dto;
     }

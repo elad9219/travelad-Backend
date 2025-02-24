@@ -33,22 +33,18 @@ public class FlightsController {
         final String finalDestinationIata = (IataCodeUtils.getFinalDestinationIataForCity(city) != null)
                 ? IataCodeUtils.getFinalDestinationIataForCity(city)
                 : destinationIata;
-
         try {
             String origin = "TLV";
             String departDate = LocalDate.now().plusDays(10).toString();
             String returnDate = LocalDate.now().plusDays(15).toString();
             String adults = "1";
-
             FlightOfferSearch[] offers = flightsService.flights(origin, destinationIata, departDate, adults, returnDate);
             if (offers == null || offers.length == 0) {
                 return ResponseEntity.ok(List.of());
             }
-
             List<FlightOfferDto> flightOfferDtos = Arrays.stream(offers)
                     .map(offer -> FlightOfferDto.fromFlightOfferSearch(offer, finalDestinationIata))
                     .collect(Collectors.toList());
-
             return ResponseEntity.ok(flightOfferDtos);
         } catch (ResponseException e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
@@ -63,7 +59,6 @@ public class FlightsController {
             @RequestParam String departDate,
             @RequestParam(required = false, defaultValue = "") String returnDate,
             @RequestParam String adults) {
-
         final String originIata = IataCodeUtils.getIataCodeForCity(origin);
         final String destinationIata = IataCodeUtils.getIataCodeForCity(destination);
         if (originIata == null || destinationIata == null) {
@@ -72,17 +67,14 @@ public class FlightsController {
         final String finalDestinationIata = (IataCodeUtils.getFinalDestinationIataForCity(destination) != null)
                 ? IataCodeUtils.getFinalDestinationIataForCity(destination)
                 : destinationIata;
-
         try {
             FlightOfferSearch[] offers = flightsService.flights(originIata, destinationIata, departDate, adults, returnDate);
             if (offers == null || offers.length == 0) {
                 return ResponseEntity.ok(List.of());
             }
-
             List<FlightOfferDto> flightOfferDtos = Arrays.stream(offers)
                     .map(offer -> FlightOfferDto.fromFlightOfferSearch(offer, finalDestinationIata))
                     .collect(Collectors.toList());
-
             return ResponseEntity.ok(flightOfferDtos);
         } catch (ResponseException e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
