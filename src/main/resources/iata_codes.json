@@ -875,7 +875,7 @@
     "AIRPORT CODE": "DAB"
   },
   {
-    "FULL NAME": "Indira Gandhi International Airport",
+    "FULL NAME": "Indira Gandhi International Airport, New Delhi",
     "CITY CODE": "DEL",
     "AIRPORT CODE": "DEL"
   },
@@ -3650,11 +3650,6 @@
     "AIRPORT CODE": "BLQ"
   },
   {
-    "FULL NAME": "Bombay",
-    "CITY CODE": "BOM",
-    "AIRPORT CODE": "BOM"
-  },
-  {
     "FULL NAME": "Bonaire",
     "CITY CODE": "BON",
     "AIRPORT CODE": "BON"
@@ -4488,6 +4483,11 @@
     "FULL NAME": "Istanbul",
     "CITY CODE": "IST",
     "AIRPORT CODE": "IST"
+  },
+  {
+    "FULL NAME": "Sabiha Gökçen International Airport, Istanbul",
+    "CITY CODE": "IST",
+    "AIRPORT CODE": "SAW"
   },
   {
     "FULL NAME": "Islip, Long Island Macarthur",
