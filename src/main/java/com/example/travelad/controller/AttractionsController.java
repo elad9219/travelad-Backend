@@ -19,6 +19,6 @@ public class AttractionsController {
 
     @GetMapping("/api/geoapify/places")
     public List<Attraction> getPlaces(@RequestParam String city) {
-        return attractionsService.searchPlacesByCity(city);  // This will call the method from the service
+        return attractionsService.searchPlacesByCity(city);
     }
 }

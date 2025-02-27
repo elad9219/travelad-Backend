@@ -10,6 +10,5 @@ import java.util.Optional;
 @Repository
 public interface AttractionRepository extends JpaRepository<Attraction, Long> {
     List<Attraction> findByCityIgnoreCase(String city);
-
     Optional<Attraction> findByNameAndCityIgnoreCase(String name, String city);
 }

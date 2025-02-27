@@ -41,25 +41,42 @@ public class AttractionsService {
         placesUrl = "https://api.geoapify.com/v2/places";
     }
 
+    /**
+     * Normalize the city name by taking only the first part before a hyphen (if any)
+     * and trimming whitespace.
+     */
+    private String normalizeCityName(String cityName) {
+        if (cityName == null) return null;
+        // Split on hyphen and take first part, then trim.
+        return cityName.split("-")[0].trim();
+    }
+
     public List<Attraction> searchPlacesByCity(String cityName) {
-        // Check database for cached attractions
-        List<Attraction> cachedAttractions = attractionRepository.findByCityIgnoreCase(cityName);
+        // Normalize city name for lookup and for saving.
+        String normalizedCity = normalizeCityName(cityName);
+        // Check database for cached attractions using normalized city.
+        List<Attraction> cachedAttractions = attractionRepository.findByCityIgnoreCase(normalizedCity);
         if (!cachedAttractions.isEmpty()) {
-            logger.info("Returning cached attractions for city: {}", cityName);
+            logger.info("Returning cached attractions for city: {}", normalizedCity);
             return cachedAttractions;
         }
 
-        logger.info("Fetching from Geoapify API for city: {}", cityName);
-        List<AttractionDto> geoapifyPlaces = fetchPlacesFromGeoapify(cityName);
+        logger.info("Fetching from Geoapify API for city: {}", normalizedCity);
+        List<AttractionDto> geoapifyPlaces = fetchPlacesFromGeoapify(normalizedCity);
 
-        // Map Geoapify places to Attraction entities, filter existing, and save new attractions
+        // Map Geoapify places to Attraction entities, filter existing, and save new attractions.
         List<Attraction> newAttractions = geoapifyPlaces.stream()
-                .map(this::mapToAttraction)
+                .map(dto -> {
+                    Attraction attraction = mapToAttraction(dto);
+                    // Set the city field to the normalized city.
+                    attraction.setCity(normalizedCity);
+                    return attraction;
+                })
                 .filter(attraction -> !attractionRepository.findByNameAndCityIgnoreCase(attraction.getName(), attraction.getCity()).isPresent())
                 .map(attractionRepository::save)
                 .collect(Collectors.toList());
 
-        logger.info("Saved {} new attractions for city: {}", newAttractions.size(), cityName);
+        logger.info("Saved {} new attractions for city: {}", newAttractions.size(), normalizedCity);
         return newAttractions;
     }
 
@@ -91,13 +108,13 @@ public class AttractionsService {
         for (int i = 0; i < features.length(); i++) {
             JSONObject properties = features.getJSONObject(i).getJSONObject("properties");
 
-            // Extract the name, prioritizing the international name if available
+            // Extract the name, prioritizing the international name if available.
             String name = properties.optJSONObject("name_international") != null
                     ? properties.getJSONObject("name_international").optString("en", properties.optString("name", null))
                     : properties.optString("name", null);
 
             AttractionDto place = new AttractionDto(
-                    name, // Use the extracted international name
+                    name, // Use the extracted international name.
                     properties.optString("city", null),
                     properties.optString("country", null),
                     properties.optString("description", null)
@@ -115,17 +132,16 @@ public class AttractionsService {
         return places;
     }
 
-
-    private Attraction mapToAttraction(AttractionDto placeDto) {
+    private Attraction mapToAttraction(AttractionDto dto) {
         Attraction attraction = new Attraction();
-        attraction.setName(placeDto.getName());
-        attraction.setCity(placeDto.getCity());
-        attraction.setCountry(placeDto.getCountry());
-        attraction.setDescription(placeDto.getDescription());
-        attraction.setAddress(placeDto.getAddress());
-        attraction.setPhone(placeDto.getPhone());
-        attraction.setWebsite(placeDto.getWebsite());
-        attraction.setOpeningHours(placeDto.getOpening_hours());
+        attraction.setName(dto.getName());
+        attraction.setCity(dto.getCity());
+        attraction.setCountry(dto.getCountry());
+        attraction.setDescription(dto.getDescription());
+        attraction.setAddress(dto.getAddress());
+        attraction.setPhone(dto.getPhone());
+        attraction.setWebsite(dto.getWebsite());
+        attraction.setOpeningHours(dto.getOpening_hours());
         return attraction;
     }
 }

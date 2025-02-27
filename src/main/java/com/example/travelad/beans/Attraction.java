@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Table(name = "attraction", uniqueConstraints = @UniqueConstraint(columnNames = {"name", "city"}))
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Attraction {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,6 +23,8 @@ public class Attraction {
 
     @Column(name = "opening_hours")
     private String openingHours;
+
+    // Getters and setters
 
     public Long getId() {
         return id;
