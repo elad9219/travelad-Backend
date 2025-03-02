@@ -9,9 +9,10 @@ import com.amadeus.resources.Hotel;
 import com.example.travelad.beans.GooglePlaces;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
 import javax.annotation.PostConstruct;
 
 @Service
@@ -27,7 +28,6 @@ public class HotelsService {
     @Value("${amadeus.api.secret}")
     private String apiSecret;
 
-    @Autowired
     public HotelsService(GooglePlacesService googlePlacesService) {
         this.googlePlacesService = googlePlacesService;
     }
@@ -37,7 +37,6 @@ public class HotelsService {
         this.amadeus = Amadeus.builder(apiKey, apiSecret).build();
     }
 
-    // Method to search hotels by city code
     public Hotel[] searchHotelsByCityCode(String cityCode) throws ResponseException {
         try {
             logger.info("Fetching hotels for cityCode: {}", cityCode);
@@ -50,7 +49,6 @@ public class HotelsService {
         }
     }
 
-    // Method to search hotels by city name
     public Hotel[] searchHotelsByCityName(String cityName) {
         try {
             GooglePlaces place = googlePlacesService.searchPlaceByCity(cityName);

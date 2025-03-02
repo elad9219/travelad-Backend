@@ -1,7 +1,7 @@
 package com.example.travelad.controller;
 
 import com.amadeus.exceptions.ResponseException;
-import com.amadeus.resources.HotelOfferSearch;
+import com.amadeus.resources.Hotel;
 import com.example.travelad.dto.HotelDto;
 import com.example.travelad.dto.HotelOffersDto;
 import com.example.travelad.dto.RoomDto;
@@ -31,30 +31,26 @@ public class HotelsController {
 
     @GetMapping("/by-city-name")
     public ResponseEntity<?> getHotelsByCityName(@RequestParam String cityName) {
-        try {
-            if (cityName == null || cityName.isEmpty()) {
-                return ResponseEntity.badRequest().body("City name is required.");
-            }
-            com.amadeus.resources.Hotel[] locations = hotelsService.searchHotelsByCityName(cityName);
-            if (locations == null || locations.length == 0) {
-                return ResponseEntity.notFound().build();
-            }
-            List<HotelDto> hotels = Arrays.stream(locations)
-                    .filter(Objects::nonNull)
-                    .map(location -> new HotelDto(
-                            location.getName() != null ? location.getName() : "Unknown",
-                            location.getHotelId() != null ? location.getHotelId() : "Unknown",
-                            location.getIataCode() != null ? location.getIataCode() : "Unknown",
-                            (location.getAddress() != null && location.getAddress().getCountryCode() != null)
-                                    ? location.getAddress().getCountryCode() : "Unknown"
-                    ))
-                    .collect(Collectors.toList());
-            return ResponseEntity.ok(hotels);
-        } catch (Exception e) {
-            logger.error("Failed to fetch hotels for city: {} - {}", cityName, e.getMessage(), e);
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("An error occurred while fetching hotels for " + cityName);
+        if (cityName == null || cityName.isEmpty()) {
+            return ResponseEntity.badRequest().body("City name is required.");
         }
+        Hotel[] locations = hotelsService.searchHotelsByCityName(cityName);
+        if (locations == null || locations.length == 0) {
+            return ResponseEntity.notFound().build();
+        }
+        List<HotelDto> hotels = Arrays.stream(locations)
+                .filter(Objects::nonNull)
+                .map(location -> new HotelDto(
+                        location.getName() != null ? location.getName() : "Unknown",
+                        location.getHotelId() != null ? location.getHotelId() : "Unknown",
+                        location.getIataCode() != null ? location.getIataCode() : "Unknown",
+                        (location.getAddress() != null && location.getAddress().getCountryCode() != null)
+                                ? location.getAddress().getCountryCode() : "Unknown",
+                        location.getGeoCode() != null ? Double.valueOf(location.getGeoCode().getLatitude()) : null,
+                        location.getGeoCode() != null ? Double.valueOf(location.getGeoCode().getLongitude()) : null
+                ))
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(hotels);
     }
 
     @GetMapping("/by-city-code")
@@ -63,7 +59,7 @@ public class HotelsController {
             if (cityCode == null || cityCode.isEmpty()) {
                 return ResponseEntity.badRequest().body("City code is required.");
             }
-            com.amadeus.resources.Hotel[] locations = hotelsService.searchHotelsByCityCode(cityCode);
+            Hotel[] locations = hotelsService.searchHotelsByCityCode(cityCode);
             if (locations == null || locations.length == 0) {
                 return ResponseEntity.notFound().build();
             }
@@ -72,7 +68,9 @@ public class HotelsController {
                             location.getName(),
                             location.getHotelId(),
                             location.getIataCode(),
-                            location.getAddress().getCountryCode()
+                            location.getAddress().getCountryCode(),
+                            location.getGeoCode() != null ? Double.valueOf(location.getGeoCode().getLatitude()) : null,
+                            location.getGeoCode() != null ? Double.valueOf(location.getGeoCode().getLongitude()) : null
                     ))
                     .collect(Collectors.toList());
             return ResponseEntity.ok(hotels);
@@ -90,7 +88,7 @@ public class HotelsController {
             @RequestParam(required = false) Integer adults
     ) {
         try {
-            HotelOfferSearch[] offers = hotelsService.searchHotelOffers(hotelIds, checkInDate, checkOutDate, adults);
+            com.amadeus.resources.HotelOfferSearch[] offers = hotelsService.searchHotelOffers(hotelIds, checkInDate, checkOutDate, adults);
             if (offers == null || offers.length == 0) {
                 logger.info("No hotel offers returned for hotelIds: {}", hotelIds);
                 return ResponseEntity.ok(List.of());
