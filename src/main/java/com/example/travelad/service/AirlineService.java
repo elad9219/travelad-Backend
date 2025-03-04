@@ -50,9 +50,13 @@ public class AirlineService {
     }
 
     public String getAirlineLogoUrl(String iataCode) {
+        // Special handling for Alitalia: if the carrier code is "AZ", return the custom logo URL.
+        if (iataCode != null && iataCode.equalsIgnoreCase("AZ")) {
+            return "https://1000logos.net/wp-content/uploads/2019/12/Alitalia-Logo.png";
+        }
         String icaoCode = getIcaoCode(iataCode);
         if (icaoCode != null && !icaoCode.isEmpty()) {
-            // Build URL using the GitHub raw URL.
+            // Build the default URL using the GitHub raw URL and the ICAO code.
             return "https://raw.githubusercontent.com/sexym0nk3y/airline-logos/main/logos/" + icaoCode.toUpperCase() + ".png";
         }
         return null;
