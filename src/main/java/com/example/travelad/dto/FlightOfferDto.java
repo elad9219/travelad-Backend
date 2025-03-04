@@ -3,7 +3,6 @@ package com.example.travelad.dto;
 import com.amadeus.resources.FlightOfferSearch;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.example.travelad.utils.AirlineServiceStatic;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,7 +14,12 @@ public class FlightOfferDto {
     // For round-trip flights:
     private List<FlightSegmentDto> outboundSegments;
     private List<FlightSegmentDto> returnSegments;
+
     private double price;
+
+    // New fields for the total itinerary durations.
+    private String outboundDuration;
+    private String returnDuration;
 
     public FlightOfferDto() {
     }
@@ -44,7 +48,23 @@ public class FlightOfferDto {
     public void setPrice(double price) {
         this.price = price;
     }
+    public String getOutboundDuration() {
+        return outboundDuration;
+    }
+    public void setOutboundDuration(String outboundDuration) {
+        this.outboundDuration = outboundDuration;
+    }
+    public String getReturnDuration() {
+        return returnDuration;
+    }
+    public void setReturnDuration(String returnDuration) {
+        this.returnDuration = returnDuration;
+    }
 
+    /**
+     * Map the FlightOfferSearch object from Amadeus into our DTO.
+     * This method now also extracts the total itinerary duration from the API response.
+     */
     public static FlightOfferDto fromFlightOfferSearch(FlightOfferSearch offer, String finalDestinationIata) {
         FlightOfferDto dto = new FlightOfferDto();
         double totalPrice;
@@ -55,11 +75,15 @@ public class FlightOfferDto {
         }
         dto.setPrice(totalPrice);
 
-        // Use lambda with type inference to map each segment.
-        // Note: We assume that offer.getItineraries()[].getSegments() returns an array of objects
-        // that have the methods getDeparture(), getArrival(), getDuration(), etc.
-        // The lambda uses these methods without explicitly referencing a Segment type.
-        // Also, we enrich each segment with an airline logo URL.
+        // Set the total itinerary durations provided by Amadeus.
+        if (offer.getItineraries() != null && offer.getItineraries().length > 0) {
+            dto.setOutboundDuration(offer.getItineraries()[0].getDuration());
+            if (offer.getItineraries().length > 1) {
+                dto.setReturnDuration(offer.getItineraries()[1].getDuration());
+            }
+        }
+
+        // Map segments for one-way vs. round-trip
         if (offer.getItineraries().length == 1) {
             List<FlightSegmentDto> segments = Arrays.stream(offer.getItineraries()[0].getSegments())
                     .map(seg -> new FlightSegmentDto(
