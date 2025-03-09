@@ -71,7 +71,7 @@ public class GooglePlacesService {
         if (result.has("photos")) {
             JSONObject photo = result.getJSONArray("photos").getJSONObject(0);
             String photoReference = photo.getString("photo_reference");
-            String photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference="
+            String photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=3400&photo_reference="
                     + photoReference + "&key=" + apiKey;
             if (photoUrl.length() <= 1000) {
                 place.setIcon(photoUrl);
