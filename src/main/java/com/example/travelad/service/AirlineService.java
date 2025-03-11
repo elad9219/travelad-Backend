@@ -54,6 +54,12 @@ public class AirlineService {
         if (iataCode != null && iataCode.equalsIgnoreCase("AZ")) {
             return "https://1000logos.net/wp-content/uploads/2019/12/Alitalia-Logo.png";
         }
+        if (iataCode != null && iataCode.equalsIgnoreCase("5F")) {
+            return "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1ljeg2mAUrwpeBTNcUdWR4BQoORVXROAZfQ&s";
+        }
+        if (iataCode != null && iataCode.equalsIgnoreCase("H1")) {
+            return "https://logos-world.net/wp-content/uploads/2023/01/Hahn-Air-Logo-500x281.png";
+        }
         String icaoCode = getIcaoCode(iataCode);
         if (icaoCode != null && !icaoCode.isEmpty()) {
             // Build the default URL using the GitHub raw URL and the ICAO code.
