@@ -20,7 +20,6 @@ public class AttractionDto {
         this.description = description;
     }
 
-    // Getters and setters
 
     public String getName() {
         return name;

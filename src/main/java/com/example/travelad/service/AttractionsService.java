@@ -8,12 +8,14 @@ import kong.unirest.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -41,43 +43,56 @@ public class AttractionsService {
         placesUrl = "https://api.geoapify.com/v2/places";
     }
 
-    /**
-     * Normalize the city name by taking only the first part before a hyphen (if any)
-     * and trimming whitespace.
-     */
     private String normalizeCityName(String cityName) {
         if (cityName == null) return null;
-        // Split on hyphen and take first part, then trim.
-        return cityName.split("-")[0].trim();
+        return cityName.split("-")[0].trim().toLowerCase();
     }
 
     public List<Attraction> searchPlacesByCity(String cityName) {
-        // Normalize city name for lookup and for saving.
         String normalizedCity = normalizeCityName(cityName);
-        // Check database for cached attractions using normalized city.
-        List<Attraction> cachedAttractions = attractionRepository.findByCityIgnoreCase(normalizedCity);
-        if (!cachedAttractions.isEmpty()) {
-            logger.info("Returning cached attractions for city: {}", normalizedCity);
-            return cachedAttractions;
+        List<Attraction> cachedAttractions = null;
+
+        // Try fetching from the database first
+        try {
+            cachedAttractions = attractionRepository.findByCityIgnoreCase(normalizedCity);
+            if (cachedAttractions != null && !cachedAttractions.isEmpty()) {
+                logger.info("Returning cached attractions for city: {}", normalizedCity);
+                return cachedAttractions;
+            }
+        } catch (DataAccessException e) {
+            logger.error("Database error while fetching attractions for city " + normalizedCity + ": " + e.getMessage() + ". Falling back to API.");
         }
 
+        // Fetch from API if database is unavailable or no cached data
         logger.info("Fetching from Geoapify API for city: {}", normalizedCity);
         List<AttractionDto> geoapifyPlaces = fetchPlacesFromGeoapify(normalizedCity);
 
-        // Map Geoapify places to Attraction entities, filter existing, and save new attractions.
-        List<Attraction> newAttractions = geoapifyPlaces.stream()
+        // Map Geoapify places to Attraction entities
+        List<Attraction> attractions = geoapifyPlaces.stream()
                 .map(dto -> {
                     Attraction attraction = mapToAttraction(dto);
-                    // Set the city field to the normalized city.
                     attraction.setCity(normalizedCity);
                     return attraction;
                 })
-                .filter(attraction -> !attractionRepository.findByNameAndCityIgnoreCase(attraction.getName(), attraction.getCity()).isPresent())
-                .map(attractionRepository::save)
+                .filter(attraction -> attraction.getName() != null && !attraction.getName().isEmpty())
                 .collect(Collectors.toList());
 
-        logger.info("Saved {} new attractions for city: {}", newAttractions.size(), normalizedCity);
-        return newAttractions;
+        // Save new attractions to the database, skipping duplicates
+        try {
+            for (Attraction attraction : attractions) {
+                Optional<Attraction> existingAttraction = attractionRepository.findByNameAndCityIgnoreCase(attraction.getName(), attraction.getCity());
+                if (existingAttraction.isEmpty()) {
+                    attractionRepository.save(attraction);
+                    logger.info("Saved new attraction: {} in {}", attraction.getName(), attraction.getCity());
+                } else {
+                    logger.info("Attraction already exists: {} in {}", attraction.getName(), attraction.getCity());
+                }
+            }
+        } catch (DataAccessException e) {
+            logger.error("Database error while saving attractions for city " + normalizedCity + ": " + e.getMessage() + ". Proceeding with API data.");
+        }
+
+        return attractions;
     }
 
     private List<AttractionDto> fetchPlacesFromGeoapify(String cityName) {
@@ -108,13 +123,17 @@ public class AttractionsService {
         for (int i = 0; i < features.length(); i++) {
             JSONObject properties = features.getJSONObject(i).getJSONObject("properties");
 
-            // Extract the name, prioritizing the international name if available.
             String name = properties.optJSONObject("name_international") != null
                     ? properties.getJSONObject("name_international").optString("en", properties.optString("name", null))
                     : properties.optString("name", null);
 
+            if (name == null || name.isEmpty()) {
+                logger.warn("Skipping attraction without a name at index {}", i);
+                continue; // Skip attractions without names
+            }
+
             AttractionDto place = new AttractionDto(
-                    name, // Use the extracted international name.
+                    name,
                     properties.optString("city", null),
                     properties.optString("country", null),
                     properties.optString("description", null)

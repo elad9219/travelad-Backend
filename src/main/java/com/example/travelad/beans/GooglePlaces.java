@@ -1,13 +1,16 @@
 package com.example.travelad.beans;
 
-import javax.persistence.Id;
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "google_places")
 public class GooglePlaces {
 
+    @Setter
+    @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,75 +31,36 @@ public class GooglePlaces {
     @Column(updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 
-    public Long getId() {
-        return id;
-    }
+    private boolean isComplete;
+    private int attractionCount;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public String getPlaceId() { return placeId; }
+    public void setPlaceId(String placeId) { this.placeId = placeId; }
 
-    public String getPlaceId() {
-        return placeId;
-    }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
-    public void setPlaceId(String placeId) {
-        this.placeId = placeId;
-    }
+    public String getAddress() { return address; }
+    public void setAddress(String address) { this.address = address; }
 
-    public String getName() {
-        return name;
-    }
+    public Double getLatitude() { return latitude; }
+    public void setLatitude(Double latitude) { this.latitude = latitude; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public Double getLongitude() { return longitude; }
+    public void setLongitude(Double longitude) { this.longitude = longitude; }
 
-    public String getAddress() {
-        return address;
-    }
+    public String getIcon() { return icon; }
+    public void setIcon(String icon) { this.icon = icon; }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
+    public LocalDateTime getCreatedAt() { return createdAt; }
+    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
 
-    public Double getLatitude() {
-        return latitude;
-    }
+    public String getCity() { return city; }
+    public void setCity(String city) { this.city = city; }
 
-    public void setLatitude(Double latitude) {
-        this.latitude = latitude;
-    }
+    public boolean isComplete() { return isComplete; }
+    public void setComplete(boolean complete) { this.isComplete = complete; }
 
-    public Double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(Double longitude) {
-        this.longitude = longitude;
-    }
-
-    public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
+    public int getAttractionCount() { return attractionCount; }
+    public void setAttractionCount(int attractionCount) { this.attractionCount = attractionCount; }
 }
