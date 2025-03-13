@@ -60,8 +60,8 @@ public class AirlineService {
         if (iataCode != null && iataCode.equalsIgnoreCase("H1")) {
             return "https://logos-world.net/wp-content/uploads/2023/01/Hahn-Air-Logo-500x281.png";
         }
-        if (iataCode != null && iataCode.equalsIgnoreCase("H4")) {
-            return "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd2lzgYotP6HeSYoI2cLIHEjtJ0bVr3PxUGg&s";
+        if (iataCode != null && iataCode.equalsIgnoreCase("Q1")) {
+            return "https://1000logos.net/wp-content/uploads/2020/03/Qatar-Airways-Logo.png";
         }
         String icaoCode = getIcaoCode(iataCode);
         if (icaoCode != null && !icaoCode.isEmpty()) {
