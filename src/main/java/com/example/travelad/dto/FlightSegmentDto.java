@@ -9,13 +9,14 @@ public class FlightSegmentDto {
     private String carrierCode;
     private String flightNumber;
     private String aircraft;
+    private String aircraftFullName; // New field for full aircraft name
     private String departureTerminal;
     private String arrivalTerminal;
-    private String airlineLogoUrl; // New field for the logo URL
+    private String airlineLogoUrl; // Existing field for the logo URL
 
     public FlightSegmentDto(String origin, String destination, String departureDate, String arrivalDate,
                             String duration, String carrierCode, String flightNumber, String aircraft,
-                            String departureTerminal, String arrivalTerminal, String airlineLogoUrl) {
+                            String aircraftFullName, String departureTerminal, String arrivalTerminal, String airlineLogoUrl) {
         this.origin = origin;
         this.destination = destination;
         this.departureDate = departureDate;
@@ -24,10 +25,13 @@ public class FlightSegmentDto {
         this.carrierCode = carrierCode;
         this.flightNumber = flightNumber;
         this.aircraft = aircraft;
+        this.aircraftFullName = aircraftFullName; // Initialize new field
         this.departureTerminal = departureTerminal;
         this.arrivalTerminal = arrivalTerminal;
         this.airlineLogoUrl = airlineLogoUrl;
     }
+
+    // Getters and Setters
 
     public String getOrigin() {
         return origin;
@@ -91,6 +95,14 @@ public class FlightSegmentDto {
 
     public void setAircraft(String aircraft) {
         this.aircraft = aircraft;
+    }
+
+    public String getAircraftFullName() {
+        return aircraftFullName;
+    }
+
+    public void setAircraftFullName(String aircraftFullName) {
+        this.aircraftFullName = aircraftFullName;
     }
 
     public String getDepartureTerminal() {

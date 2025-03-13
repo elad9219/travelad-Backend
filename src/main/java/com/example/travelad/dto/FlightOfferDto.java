@@ -2,6 +2,7 @@ package com.example.travelad.dto;
 
 import com.amadeus.resources.FlightOfferSearch;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.example.travelad.service.AircraftMapping; // Import AircraftMapping
 import com.example.travelad.utils.AirlineServiceStatic;
 import java.util.Arrays;
 import java.util.List;
@@ -24,46 +25,60 @@ public class FlightOfferDto {
     public FlightOfferDto() {
     }
 
+    // Getters and Setters
+
     public List<FlightSegmentDto> getSegments() {
         return segments;
     }
+
     public void setSegments(List<FlightSegmentDto> segments) {
         this.segments = segments;
     }
+
     public List<FlightSegmentDto> getOutboundSegments() {
         return outboundSegments;
     }
+
     public void setOutboundSegments(List<FlightSegmentDto> outboundSegments) {
         this.outboundSegments = outboundSegments;
     }
+
     public List<FlightSegmentDto> getReturnSegments() {
         return returnSegments;
     }
+
     public void setReturnSegments(List<FlightSegmentDto> returnSegments) {
         this.returnSegments = returnSegments;
     }
+
     public double getPrice() {
         return price;
     }
+
     public void setPrice(double price) {
         this.price = price;
     }
+
     public String getOutboundDuration() {
         return outboundDuration;
     }
+
     public void setOutboundDuration(String outboundDuration) {
         this.outboundDuration = outboundDuration;
     }
+
     public String getReturnDuration() {
         return returnDuration;
     }
+
     public void setReturnDuration(String returnDuration) {
         this.returnDuration = returnDuration;
     }
 
     /**
      * Map the FlightOfferSearch object from Amadeus into our DTO.
-     * This method now also extracts the total itinerary duration from the API response.
+     * This method now also extracts the total itinerary duration from the API response
+     * and includes the full aircraft name using AircraftMapping.
      */
     public static FlightOfferDto fromFlightOfferSearch(FlightOfferSearch offer, String finalDestinationIata) {
         FlightOfferDto dto = new FlightOfferDto();
@@ -94,7 +109,8 @@ public class FlightOfferDto {
                             seg.getDuration(),
                             seg.getCarrierCode(),
                             seg.getNumber(),
-                            seg.getAircraft().getCode(),
+                            seg.getAircraft().getCode(), // Aircraft code
+                            AircraftMapping.getAircraftFullName(seg.getAircraft().getCode()), // Full aircraft name
                             seg.getDeparture().getTerminal(),
                             seg.getArrival().getTerminal(),
                             AirlineServiceStatic.getAirlineLogoUrl(seg.getCarrierCode())
@@ -112,7 +128,8 @@ public class FlightOfferDto {
                             seg.getDuration(),
                             seg.getCarrierCode(),
                             seg.getNumber(),
-                            seg.getAircraft().getCode(),
+                            seg.getAircraft().getCode(), // Aircraft code
+                            AircraftMapping.getAircraftFullName(seg.getAircraft().getCode()), // Full aircraft name
                             seg.getDeparture().getTerminal(),
                             seg.getArrival().getTerminal(),
                             AirlineServiceStatic.getAirlineLogoUrl(seg.getCarrierCode())
