@@ -35,8 +35,10 @@ public class AircraftMapping {
         aircraftMap.put("764", "BOEING 767-400");
         aircraftMap.put("75T", "BOEING 757-300 WINGLETS");
         aircraftMap.put("744", "BOEING 747-400");
+        aircraftMap.put("787", "BOEING 787 Dreamliner");
         aircraftMap.put("788", "BOEING 787-8");
         aircraftMap.put("739", "BOEING 737-900ER");
+        aircraftMap.put("319", "AIRBUS A319");
     }
 
     public static String getAircraftFullName(String code) {
