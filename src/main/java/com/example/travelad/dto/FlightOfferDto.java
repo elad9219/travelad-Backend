@@ -25,8 +25,6 @@ public class FlightOfferDto {
     public FlightOfferDto() {
     }
 
-    // Getters and Setters
-
     public List<FlightSegmentDto> getSegments() {
         return segments;
     }

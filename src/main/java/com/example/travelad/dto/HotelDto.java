@@ -20,7 +20,6 @@ public class HotelDto {
         this.longitude = longitude;
     }
 
-    // Getters and setters
     public String getName() {
         return name;
     }

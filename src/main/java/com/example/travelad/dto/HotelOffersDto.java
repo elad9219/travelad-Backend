@@ -22,7 +22,6 @@ public class HotelOffersDto {
         this.room = room;
     }
 
-    // Getters and setters
     public String getName() {
         return name;
     }

@@ -31,7 +31,6 @@ public class FlightSegmentDto {
         this.airlineLogoUrl = airlineLogoUrl;
     }
 
-    // Getters and Setters
 
     public String getOrigin() {
         return origin;

@@ -24,7 +24,6 @@ public class Attraction {
     @Column(name = "opening_hours")
     private String openingHours;
 
-    // Getters and setters
 
     public Long getId() {
         return id;

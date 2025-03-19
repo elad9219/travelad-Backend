@@ -11,7 +11,6 @@ public class RoomDto {
         this.description = description;
     }
 
-    // Getters and setters
     public String getBedType() {
         return bedType;
     }
