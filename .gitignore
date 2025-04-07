@@ -34,3 +34,14 @@ build/
 
 # Ignore React build files
 static/
+
+# Ignore static build files
+src/main/resources/static/
+
+# Ignore macOS files
+.DS_Store
+**/.DS_Store
+
+# Ignore IDE files
+.idea/
+
