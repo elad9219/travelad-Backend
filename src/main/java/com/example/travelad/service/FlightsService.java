@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+
 import javax.annotation.PostConstruct;
 
 @Service
@@ -23,7 +24,7 @@ public class FlightsService {
     private String apiSecret;
 
     private static final int MAX_RETRIES = 2;
-    private static final long RETRY_DELAY_MS = 2000; // 2 seconds between retries
+    private static final long RETRY_DELAY_MS = 2000;
 
     @PostConstruct
     public void init() {
@@ -35,7 +36,7 @@ public class FlightsService {
                 .and("destinationLocationCode", destination)
                 .and("departureDate", departDate)
                 .and("adults", adults)
-                .and("max", 20);
+                .and("max", 15);
 
         if (returnDate != null && !returnDate.isEmpty()) {
             params.and("returnDate", returnDate);
@@ -44,12 +45,15 @@ public class FlightsService {
         int retryCount = 0;
         while (retryCount < MAX_RETRIES) {
             try {
-                logger.info("Requesting flight offers with params: {}", params);
-                return amadeus.shopping.flightOffersSearch.get(params);
+                logger.info("Starting flight search with params: {}", params);
+                FlightOfferSearch[] offers = amadeus.shopping.flightOffersSearch.get(params);
+                logger.info("Successfully fetched {} flight offers", offers.length);
+                return offers;
             } catch (ResponseException e) {
                 retryCount++;
                 logger.error("Error fetching flights: {}. Retrying ({}/{})", e.getMessage(), retryCount, MAX_RETRIES);
                 if (retryCount >= MAX_RETRIES) {
+                    logger.error("Max retries reached. Throwing exception: {}", e.getMessage());
                     throw e;
                 }
                 try {
@@ -60,6 +64,7 @@ public class FlightsService {
                 }
             }
         }
+        logger.warn("No flight offers returned after retries.");
         return new FlightOfferSearch[0];
     }
 }

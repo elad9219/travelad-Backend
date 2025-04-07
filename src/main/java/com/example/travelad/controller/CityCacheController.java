@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/cache")
+@CrossOrigin(origins = "*")
 public class CityCacheController {
 
     @Autowired

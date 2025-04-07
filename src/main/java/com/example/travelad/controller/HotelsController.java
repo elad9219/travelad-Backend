@@ -20,6 +20,7 @@ import java.util.stream.Stream;
 
 @RestController
 @RequestMapping("/hotels")
+@CrossOrigin(origins = "*")
 public class HotelsController {
 
     private final HotelsService hotelsService;
