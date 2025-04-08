@@ -1,7 +1,6 @@
 package com.example.travelad.controller;
 
 import com.amadeus.exceptions.ResponseException;
-import com.amadeus.resources.Hotel;
 import com.example.travelad.dto.HotelDto;
 import com.example.travelad.dto.HotelOffersDto;
 import com.example.travelad.dto.RoomDto;
@@ -35,7 +34,7 @@ public class HotelsController {
         if (cityName == null || cityName.isEmpty()) {
             return ResponseEntity.badRequest().body("City name is required.");
         }
-        Hotel[] locations = hotelsService.searchHotelsByCityName(cityName);
+        com.example.travelad.beans.Hotel[] locations = hotelsService.searchHotelsByCityName(cityName);
         if (locations == null || locations.length == 0) {
             return ResponseEntity.notFound().build();
         }
@@ -44,11 +43,10 @@ public class HotelsController {
                 .map(location -> new HotelDto(
                         location.getName() != null ? location.getName() : "Unknown",
                         location.getHotelId() != null ? location.getHotelId() : "Unknown",
-                        location.getIataCode() != null ? location.getIataCode() : "Unknown",
-                        (location.getAddress() != null && location.getAddress().getCountryCode() != null)
-                                ? location.getAddress().getCountryCode() : "Unknown",
-                        location.getGeoCode() != null ? Double.valueOf(location.getGeoCode().getLatitude()) : null,
-                        location.getGeoCode() != null ? Double.valueOf(location.getGeoCode().getLongitude()) : null
+                        location.getCityCode() != null ? location.getCityCode() : "Unknown",
+                        location.getCountryCode() != null ? location.getCountryCode() : "Unknown",
+                        location.getLatitude(),
+                        location.getLongitude()
                 ))
                 .collect(Collectors.toList());
         return ResponseEntity.ok(hotels);
@@ -60,7 +58,7 @@ public class HotelsController {
             if (cityCode == null || cityCode.isEmpty()) {
                 return ResponseEntity.badRequest().body("City code is required.");
             }
-            Hotel[] locations = hotelsService.searchHotelsByCityCode(cityCode);
+            com.example.travelad.beans.Hotel[] locations = hotelsService.searchHotelsByCityCode(cityCode);
             if (locations == null || locations.length == 0) {
                 return ResponseEntity.notFound().build();
             }
@@ -68,16 +66,15 @@ public class HotelsController {
                     .map(location -> new HotelDto(
                             location.getName(),
                             location.getHotelId(),
-                            location.getIataCode(),
-                            location.getAddress().getCountryCode(),
-                            location.getGeoCode() != null ? Double.valueOf(location.getGeoCode().getLatitude()) : null,
-                            location.getGeoCode() != null ? Double.valueOf(location.getGeoCode().getLongitude()) : null
+                            location.getCityCode(),
+                            location.getCountryCode(),
+                            location.getLatitude(),
+                            location.getLongitude()
                     ))
                     .collect(Collectors.toList());
             return ResponseEntity.ok(hotels);
         } catch (ResponseException e) {
-            return ResponseEntity.internalServerError()
-                    .body("Error fetching hotels by city code: " + e.getMessage());
+            return ResponseEntity.internalServerError().body("Error fetching hotels by city code: " + e.getMessage());
         }
     }
 
