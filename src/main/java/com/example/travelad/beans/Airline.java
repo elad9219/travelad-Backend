@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-// Entity representing an airline in the PostgreSQL database
 @Entity
 @Table(name = "airlines")
 public class Airline {

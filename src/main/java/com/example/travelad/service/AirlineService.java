@@ -4,6 +4,7 @@ import com.amadeus.Amadeus;
 import com.amadeus.Params;
 import com.amadeus.exceptions.ResponseException;
 import com.example.travelad.repositories.AirlineRepository;
+import com.example.travelad.repositories.AirlineCacheStatusRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,10 +28,15 @@ public class AirlineService {
 
     private Map<String, String> iataToIcaoCache = new HashMap<>();
     private final AirlineRepository airlineRepository;
+    private final AirlineCacheStatusRepository cacheStatusRepository;
+    private final AsyncAirlineCacheService asyncAirlineCacheService;
 
-    // Constructor עם הזרקת תלות
-    public AirlineService(AirlineRepository airlineRepository) {
+    public AirlineService(AirlineRepository airlineRepository,
+                          AirlineCacheStatusRepository cacheStatusRepository,
+                          AsyncAirlineCacheService asyncAirlineCacheService) {
         this.airlineRepository = airlineRepository;
+        this.cacheStatusRepository = cacheStatusRepository;
+        this.asyncAirlineCacheService = asyncAirlineCacheService;
     }
 
     @PostConstruct
@@ -38,8 +44,13 @@ public class AirlineService {
         this.amadeus = Amadeus.builder(apiKey, apiSecret).build();
     }
 
+    /**
+     * Returns the ICAO code for a given IATA code.
+     * If persistent cache exists and is complete, retrieves from DB;
+     * otherwise, calls the API and returns result immediately, and asynchronously saves data.
+     */
     public String getIcaoCode(String iataCode) {
-        String key = iataCode != null ? iataCode.toUpperCase() : null;
+        String key = (iataCode != null ? iataCode.toUpperCase() : null);
         if (key == null || key.isEmpty()) {
             logger.warn("Invalid IATA code provided: null or empty");
             return null;
@@ -47,15 +58,18 @@ public class AirlineService {
         if (iataToIcaoCache.containsKey(key)) {
             return iataToIcaoCache.get(key);
         }
-
-        Optional<com.example.travelad.beans.Airline> cachedAirline = airlineRepository.findById(key);
-        if (cachedAirline.isPresent()) {
-            String icao = cachedAirline.get().getIcaoCode();
-            iataToIcaoCache.put(key, icao);
-            logger.info("Retrieved ICAO code from database for IATA code: {}", key);
-            return icao;
+        boolean cacheComplete = cacheStatusRepository.findById(key)
+                .map(a -> a.isComplete())
+                .orElse(false);
+        if (cacheComplete) {
+            Optional<com.example.travelad.beans.Airline> cachedAirline = airlineRepository.findById(key);
+            if (cachedAirline.isPresent()) {
+                String icao = cachedAirline.get().getIcaoCode();
+                iataToIcaoCache.put(key, icao);
+                logger.info("Retrieved ICAO code from database for IATA code: {}", key);
+                return icao;
+            }
         }
-
         try {
             com.amadeus.resources.Airline[] airlines = amadeus.referenceData.airlines.get(Params.with("airlineCodes", key));
             if (airlines != null && airlines.length > 0) {
@@ -64,8 +78,8 @@ public class AirlineService {
                 com.example.travelad.beans.Airline airlineEntity = new com.example.travelad.beans.Airline();
                 airlineEntity.setIataCode(key);
                 airlineEntity.setIcaoCode(icao);
-                airlineRepository.save(airlineEntity);
-                logger.info("Fetched ICAO code {} for IATA code {} from Amadeus API and saved to database", icao, key);
+                asyncAirlineCacheService.saveAirlineAsync(airlineEntity, key);
+                logger.info("Fetched ICAO code {} for IATA code {} from API and initiated async save", icao, key);
                 return icao;
             } else {
                 logger.warn("No airline data found for IATA code: {}", key);
@@ -77,6 +91,10 @@ public class AirlineService {
         }
     }
 
+    /**
+     * Returns the airline logo URL for a given IATA code.
+     * Uses static mappings for some codes; otherwise, checks persistent cache.
+     */
     public String getAirlineLogoUrl(String iataCode) {
         if (iataCode == null || iataCode.isEmpty()) {
             logger.warn("Invalid IATA code provided for logo URL: null or empty");
@@ -108,8 +126,8 @@ public class AirlineService {
             airlineEntity.setIataCode(iataCode.toUpperCase());
             airlineEntity.setIcaoCode(icaoCode);
             airlineEntity.setLogoUrl(logoUrl);
-            airlineRepository.save(airlineEntity);
-            logger.info("Saved logo URL {} for IATA code {} to database", logoUrl, iataCode);
+            asyncAirlineCacheService.saveAirlineAsync(airlineEntity, iataCode.toUpperCase());
+            logger.info("Initiated async save for logo URL {} for IATA code {}", logoUrl, iataCode);
             return logoUrl;
         }
         logger.warn("No logo URL available for IATA code: {}", iataCode);
