@@ -124,32 +124,6 @@ public class HotelsService {
         }
     }
 
-    /**
-     * Searches hotels by city code (synchronously).
-     */
-    public com.example.travelad.beans.Hotel[] searchHotelsByCityCode(String cityCode) throws ResponseException {
-        String normalizedCity = cityCode.toLowerCase();
-        List<com.example.travelad.beans.Hotel> cachedHotels = hotelRepository.findByCityCode(normalizedCity);
-        if (cachedHotels != null && !cachedHotels.isEmpty()) {
-            logger.info("Returning cached hotels for city: {}", normalizedCity);
-            return cachedHotels.toArray(new com.example.travelad.beans.Hotel[0]);
-        }
-        Hotel[] apiHotels = amadeus.referenceData.locations.hotels.byCity.get(
-                Params.with("cityCode", cityCode)
-        );
-        List<com.example.travelad.beans.Hotel> entities = Arrays.stream(apiHotels)
-                .map(apiHotel -> mapToHotelEntity(apiHotel, normalizedCity))
-                .collect(Collectors.toList());
-        for (com.example.travelad.beans.Hotel hotel : entities) {
-            try {
-                hotelRepository.save(hotel);
-                logger.info("Saved hotel: {} in {}", hotel.getName(), normalizedCity);
-            } catch (DataAccessException e) {
-                logger.error("Error saving hotel {}: {}", hotel.getName(), e.getMessage());
-            }
-        }
-        return entities.toArray(new com.example.travelad.beans.Hotel[0]);
-    }
 
     public HotelOfferSearch[] searchHotelOffers(String hotelIds, String checkInDate, String checkOutDate, Integer adults) throws ResponseException {
         Params params = Params.with("hotelIds", hotelIds);

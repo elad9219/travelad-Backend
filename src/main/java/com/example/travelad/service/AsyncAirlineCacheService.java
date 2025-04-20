@@ -4,6 +4,7 @@ import com.example.travelad.beans.Airline;
 import com.example.travelad.beans.AirlineCacheStatus;
 import com.example.travelad.repositories.AirlineCacheStatusRepository;
 import com.example.travelad.repositories.AirlineRepository;
+import org.hibernate.exception.ConstraintViolationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataAccessException;
@@ -25,29 +26,31 @@ public class AsyncAirlineCacheService {
         this.cacheStatusRepository = cacheStatusRepository;
     }
 
-    /**
-     * Saves the airline data asynchronously in a thread-safe manner.
-     * For the given IATA code, only one thread at a time can perform the update.
-     * If an airline record already exists, it is updated; otherwise, a new record is inserted.
-     * Then, the persistent cache status for the IATA code is updated.
-     */
     @Async
     public void saveAirlineAsync(Airline airline, String iataCode) {
-        // Synchronize on the interned iataCode to ensure only one thread works with it at once.
+        // Synchronize on the interned string to prevent concurrent updates for the same key.
         synchronized (iataCode.intern()) {
             try {
-                Optional<Airline> existingAirline = airlineRepository.findById(iataCode);
-                if (existingAirline.isPresent()) {
-                    Airline existing = existingAirline.get();
+                Optional<Airline> optExisting = airlineRepository.findById(iataCode);
+                if (optExisting.isPresent()) {
+                    Airline existing = optExisting.get();
                     existing.setIcaoCode(airline.getIcaoCode());
                     existing.setLogoUrl(airline.getLogoUrl());
                     airlineRepository.save(existing);
+                    logger.info("Updated airline for IATA code {}", iataCode);
                 } else {
                     airlineRepository.save(airline);
+                    logger.info("Saved new airline for IATA code {} with logo {}", iataCode, airline.getLogoUrl());
                 }
             } catch (DataAccessException e) {
-                logger.error("Error saving airline asynchronously for IATA code {}: {}", iataCode, e.getMessage());
+                if (e.getCause() instanceof ConstraintViolationException) {
+                    // Duplicate key occurred – זה מובן, לכן נתעד כהתרעה ולא נזרוק חריגה.
+                    logger.warn("Duplicate record for airline {}. Skipping insert/update.", iataCode);
+                } else {
+                    logger.error("Error saving airline asynchronously for IATA code {}: {}", iataCode, e.getMessage());
+                }
             }
+
             // Update the persistent cache status for the IATA code.
             try {
                 Optional<AirlineCacheStatus> optStatus = cacheStatusRepository.findById(iataCode);
@@ -56,16 +59,20 @@ public class AsyncAirlineCacheService {
                     if (!status.isComplete()) {
                         status.setComplete(true);
                         cacheStatusRepository.save(status);
-                        logger.info("Updated cache status for IATA code {} to true.", iataCode);
+                        logger.info("Updated cache status for IATA code {} to complete.", iataCode);
                     } else {
-                        logger.info("Cache status for IATA code {} already true.", iataCode);
+                        logger.info("Cache status for IATA code {} already complete.", iataCode);
                     }
                 } else {
                     cacheStatusRepository.save(new AirlineCacheStatus(iataCode, true));
-                    logger.info("Inserted cache status for IATA code {} as true.", iataCode);
+                    logger.info("Inserted cache status for IATA code {} as complete.", iataCode);
                 }
             } catch (DataAccessException e) {
-                logger.error("Error updating cache status for IATA code {}: {}", iataCode, e.getMessage());
+                if (e.getCause() instanceof ConstraintViolationException) {
+                    logger.warn("Duplicate cache status for airline {}. Skipping cache update.", iataCode);
+                } else {
+                    logger.error("Error updating cache status for IATA code {}: {}", iataCode, e.getMessage());
+                }
             }
         }
     }

@@ -52,31 +52,7 @@ public class HotelsController {
         return ResponseEntity.ok(hotels);
     }
 
-    @GetMapping("/by-city-code")
-    public ResponseEntity<?> getHotelsByCityCode(@RequestParam String cityCode) {
-        try {
-            if (cityCode == null || cityCode.isEmpty()) {
-                return ResponseEntity.badRequest().body("City code is required.");
-            }
-            com.example.travelad.beans.Hotel[] locations = hotelsService.searchHotelsByCityCode(cityCode);
-            if (locations == null || locations.length == 0) {
-                return ResponseEntity.notFound().build();
-            }
-            List<HotelDto> hotels = Arrays.stream(locations)
-                    .map(location -> new HotelDto(
-                            location.getName(),
-                            location.getHotelId(),
-                            location.getCityCode(),
-                            location.getCountryCode(),
-                            location.getLatitude(),
-                            location.getLongitude()
-                    ))
-                    .collect(Collectors.toList());
-            return ResponseEntity.ok(hotels);
-        } catch (ResponseException e) {
-            return ResponseEntity.internalServerError().body("Error fetching hotels by city code: " + e.getMessage());
-        }
-    }
+
 
     @GetMapping("/offers")
     public ResponseEntity<?> getHotelOffers(
