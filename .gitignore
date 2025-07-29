@@ -45,5 +45,4 @@ src/main/resources/static/
 # Ignore IDE files
 .idea/
 
-application.properties
-
+src/main/resources/application.properties
