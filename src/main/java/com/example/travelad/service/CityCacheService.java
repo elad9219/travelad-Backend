@@ -13,42 +13,50 @@ public class CityCacheService {
     @Autowired
     private RedisTemplate<String, String> redisTemplate;
 
-    private static final String CITY_KEY = "city_names";
-
-    // Get all cities in the cache
-    public Object getCities() {
-        List<String> cities = redisTemplate.opsForList().range(CITY_KEY, 0, -1).stream()
-                .distinct()  // Removes duplicates
-                .collect(Collectors.toList()); // Collect into a list
-
-        if (cities == null || cities.isEmpty()) {
-            return "No cities in the list"; // Custom message when no cities are found
-        }
-        return cities; // Return the list of cities
+    /**
+     * Gets the list of recently searched cities for a specific user.
+     */
+    public List<String> getCities(String userId) {
+        String key = "user_cities:" + userId;
+        List<String> cities = redisTemplate.opsForList().range(key, 0, -1).stream()
+                .distinct()
+                .collect(Collectors.toList());
+        return cities.isEmpty() ? List.of() : cities;
     }
 
-    public String addCity(String city) {
-        if (redisTemplate.opsForList().range(CITY_KEY, 0, -1).contains(city)) {
-            // Remove existing city before adding to ensure it's at the top
-            redisTemplate.opsForList().remove(CITY_KEY, 1, city);
+    /**
+     * Adds a city to the user's search history.
+     */
+    public String addCity(String userId, String city) {
+        String key = "user_cities:" + userId;
+        if (redisTemplate.opsForList().range(key, 0, -1).contains(city)) {
+            redisTemplate.opsForList().remove(key, 1, city);
         }
-        redisTemplate.opsForList().leftPush(CITY_KEY, city);
-        return "City '" + city + "' added or updated successfully";
+        redisTemplate.opsForList().leftPush(key, city);
+        // Limit the list to 10 cities to prevent unlimited growth
+        redisTemplate.opsForList().trim(key, 0, 9);
+        return "City '" + city + "' added to user's history successfully";
     }
 
-    // Remove a specific city from the cache
-    public String removeCity(String city) {
-        List<String> cities = redisTemplate.opsForList().range(CITY_KEY, 0, -1);
+    /**
+     * Removes a specific city from the user's search history.
+     */
+    public String removeCity(String userId, String city) {
+        String key = "user_cities:" + userId;
+        List<String> cities = redisTemplate.opsForList().range(key, 0, -1);
         if (cities != null && cities.contains(city)) {
-            redisTemplate.opsForList().remove(CITY_KEY, 1, city); // Remove the city from the cache
-            return "City '" + city + "' removed successfully";
+            redisTemplate.opsForList().remove(key, 1, city);
+            return "City '" + city + "' removed from user's history successfully";
         }
-        return "City '" + city + "' not found in the cache";
+        return "City '" + city + "' not found in user's history";
     }
 
-    // Clear all cities from the cache and return a success message
-    public String clearCities() {
-        redisTemplate.delete(CITY_KEY); // Remove the key and all associated values
-        return "All cities cleared successfully";
+    /**
+     * Clears all cities from the user's search history.
+     */
+    public String clearCities(String userId) {
+        String key = "user_cities:" + userId;
+        redisTemplate.delete(key);
+        return "All cities cleared from user's history successfully";
     }
 }

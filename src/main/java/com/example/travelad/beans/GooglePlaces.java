@@ -7,10 +7,10 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "google_places")
+@Setter
+@Getter
 public class GooglePlaces {
 
-    @Setter
-    @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,6 +27,7 @@ public class GooglePlaces {
     private Double longitude;
     @Column(length = 1000)
     private String icon;
+    private String country;
 
     @Column(updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
@@ -51,6 +52,9 @@ public class GooglePlaces {
 
     public String getIcon() { return icon; }
     public void setIcon(String icon) { this.icon = icon; }
+
+    public String getCountry() { return country; }
+    public void setCountry(String country) { this.country = country; }
 
     public LocalDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
