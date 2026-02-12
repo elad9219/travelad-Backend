@@ -3,7 +3,10 @@ package com.example.travelad.utils;
 import com.example.travelad.dto.FlightOfferDto;
 import com.example.travelad.dto.FlightSegmentDto;
 import com.example.travelad.dto.HotelDto;
+import com.example.travelad.dto.RoomDto; // Ensure this is imported
 
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -13,10 +16,10 @@ public class MockDataUtils {
 
     private static final Random random = new Random();
 
-    // חברות תעופה נפוצות בנתב"ג
+    // Common carriers in Ben Gurion Airport
     private static final List<String> CARRIERS = Arrays.asList("LY", "BA", "AF", "DL", "LH", "UA", "AA", "EK", "TK", "U2");
 
-    // מוקדי קונקשן הגיוניים
+    // Logical connection hubs based on region
     private static final Map<String, List<String>> REGIONAL_HUBS = new HashMap<>();
 
     static {
@@ -26,7 +29,6 @@ public class MockDataUtils {
     }
 
     public static List<FlightOfferDto> generateMockFlights(String origin, String destination, String departDate, String returnDate, String adults) {
-        // השהייה מלאכותית של 1.5 שניות לאמינות
         try { Thread.sleep(1500); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
 
         List<FlightOfferDto> offers = new ArrayList<>();
@@ -34,28 +36,22 @@ public class MockDataUtils {
 
         for (int i = 0; i < count; i++) {
             FlightOfferDto offer = new FlightOfferDto();
-
             double basePrice = 250 + random.nextInt(500);
             if (destination.length() > 2 && (destination.contains("JFK") || destination.contains("LAX"))) basePrice += 500;
-
             int passengers = Integer.parseInt(adults);
             offer.setPrice(basePrice * passengers);
-
             boolean isDirect = random.nextDouble() > 0.4;
 
-            // הלוך
             List<FlightSegmentDto> outboundSegments = generateSmartSegments(origin, destination, departDate, isDirect);
             offer.setOutboundSegments(outboundSegments);
             offer.setOutboundDuration(calculateTotalDuration(outboundSegments));
             offer.setSegments(outboundSegments);
 
-            // חזור
             if (returnDate != null && !returnDate.isEmpty()) {
                 List<FlightSegmentDto> returnSegments = generateSmartSegments(destination, origin, returnDate, isDirect);
                 offer.setReturnSegments(returnSegments);
                 offer.setReturnDuration(calculateTotalDuration(returnSegments));
             }
-
             offers.add(offer);
         }
         return offers;
@@ -77,7 +73,6 @@ public class MockDataUtils {
             int f1 = 180 + random.nextInt(60);
             LocalDateTime arr1 = depTime.plusMinutes(f1);
             segments.add(createSegment(from, hub, depTime, arr1, carrier));
-
             int layover = 90 + random.nextInt(120);
             LocalDateTime dep2 = arr1.plusMinutes(layover);
             int f2 = 180 + random.nextInt(300);
@@ -91,13 +86,7 @@ public class MockDataUtils {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
         long diff = java.time.Duration.between(dep, arr).toMinutes();
         String durationStr = String.format("PT%dH%dM", diff / 60, diff % 60);
-
-        return new FlightSegmentDto(
-                from, to, dep.format(formatter), arr.format(formatter),
-                durationStr, carrier, carrier + (100 + random.nextInt(900)),
-                "738", "Boeing 737-800", "1", "1",
-                "https://pics.avs.io/200/200/" + carrier + ".png"
-        );
+        return new FlightSegmentDto(from, to, dep.format(formatter), arr.format(formatter), durationStr, carrier, carrier + (100 + random.nextInt(900)), "738", "Boeing 737-800", "1", "1", "https://pics.avs.io/200/200/" + carrier + ".png");
     }
 
     private static String calculateTotalDuration(List<FlightSegmentDto> segments) {
@@ -110,11 +99,32 @@ public class MockDataUtils {
 
     public static List<HotelDto> generateMockHotels(String city, double lat, double lon) {
         List<HotelDto> hotels = new ArrayList<>();
+        String decodedCity = URLDecoder.decode(city, StandardCharsets.UTF_8);
         String[] brands = {"Grand", "Royal", "Plaza", "Hilton", "Marriott", "Hyatt", "Sheraton"};
+        String[] roomDescs = {"Deluxe Room, City View", "Superior Suite, 1 King Bed", "Standard Double Room", "Executive Lounge Access, Guest room", "Family Suite, 2 Queen Beds"};
+        String[] bedTypes = {"KING", "QUEEN", "DOUBLE", "TWIN"};
+
         for (int i = 0; i < 15; i++) {
             double hLat = lat + (random.nextDouble() - 0.5) * 0.04;
             double hLon = lon + (random.nextDouble() - 0.5) * 0.04;
-            hotels.add(new HotelDto(brands[i % brands.length] + " " + city, "MOCK_" + i, "XX", "XX", hLat, hLon, (double) (100 + random.nextInt(300))));
+            double price = 100 + random.nextInt(400);
+
+            HotelDto hotel = new HotelDto(
+                    brands[i % brands.length] + " " + decodedCity,
+                    "MOCK_" + i,
+                    "XX",
+                    "XX",
+                    hLat,
+                    hLon,
+                    price
+            );
+
+            // Setting additional info for detailed view
+            hotel.setIataCode(decodedCity.substring(0, Math.min(decodedCity.length(), 3)).toUpperCase());
+
+            // To mimic the original detailed data, we could add a method or extend HotelDto
+            // For now, let's assume we use the Price to show "Base Price" and "Total Price" (Price * 1.2 tax)
+            hotels.add(hotel);
         }
         return hotels;
     }
