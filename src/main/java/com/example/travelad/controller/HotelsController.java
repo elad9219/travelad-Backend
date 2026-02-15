@@ -19,13 +19,17 @@ public class HotelsController {
     }
 
     @GetMapping("/by-city-name")
-    public ResponseEntity<?> getHotelsByCityName(@RequestParam String cityName) {
+    public ResponseEntity<?> getHotelsByCityName(
+            @RequestParam String cityName,
+            @RequestParam(required = false) String checkInDate,
+            @RequestParam(required = false) String checkOutDate) {
+
         if (cityName == null || cityName.isEmpty()) {
             return ResponseEntity.badRequest().body("City name is required.");
         }
 
-        // הסרוויס מחזיר ישר DTOs עם מחירים
-        List<HotelDto> hotels = hotelsService.searchHotelsByCityName(cityName);
+        // Pass dates to service for total price calculation
+        List<HotelDto> hotels = hotelsService.searchHotelsByCityName(cityName, checkInDate, checkOutDate);
 
         if (hotels.isEmpty()) {
             return ResponseEntity.notFound().build();
@@ -34,8 +38,6 @@ public class HotelsController {
         return ResponseEntity.ok(hotels);
     }
 
-    // משאירים את ה-Endpoint הזה קיים כדי שהפרונטאנד לא יקרוס, אבל הוא יחזיר רשימה ריקה
-    // כי המחירים כבר מגיעים ב-Endpoint הראשון
     @GetMapping("/offers")
     public ResponseEntity<?> getHotelOffers(@RequestParam String hotelIds) {
         return ResponseEntity.ok(List.of());
