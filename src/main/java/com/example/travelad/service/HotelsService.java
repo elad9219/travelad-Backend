@@ -23,7 +23,7 @@ public class HotelsService {
         this.googlePlacesService = googlePlacesService;
     }
 
-    public List<HotelDto> searchHotelsByCityName(String cityName, String checkInDate, String checkOutDate) {
+    public List<HotelDto> searchHotelsByCityName(String cityName, String checkInDate, String checkOutDate, Integer adults) {
         String decodedCity = cityName;
         try {
             decodedCity = URLDecoder.decode(cityName, StandardCharsets.UTF_8);
@@ -31,20 +31,23 @@ public class HotelsService {
             logger.warn("Failed to decode city name: {}", cityName);
         }
 
-        logger.info("Searching hotels for city: {} from {} to {}", decodedCity, checkInDate, checkOutDate);
+        int numAdults = (adults != null && adults > 0) ? adults : 1;
+        logger.info("Searching hotels for city: {} | Dates: {} to {} | Guests: {}", decodedCity, checkInDate, checkOutDate, numAdults);
 
-        // Calculate number of nights
+        // חישוב מספר לילות
         long nights = 1;
         try {
-            LocalDate start = LocalDate.parse(checkInDate);
-            LocalDate end = LocalDate.parse(checkOutDate);
-            nights = ChronoUnit.DAYS.between(start, end);
-            if (nights <= 0) nights = 1;
+            if (checkInDate != null && checkOutDate != null) {
+                LocalDate start = LocalDate.parse(checkInDate);
+                LocalDate end = LocalDate.parse(checkOutDate);
+                nights = ChronoUnit.DAYS.between(start, end);
+                if (nights <= 0) nights = 1;
+            }
         } catch (Exception e) {
-            logger.warn("Failed to calculate nights, defaulting to 1");
+            logger.warn("Date parsing failed, defaulting to 1 night");
         }
 
-        // Get coordinates from Google
+        // קבלת קואורדינטות מגוגל
         GooglePlaces place = googlePlacesService.searchPlaceByCity(decodedCity);
         double lat = 0.0;
         double lon = 0.0;
@@ -54,11 +57,16 @@ public class HotelsService {
             lon = place.getLongitude();
         }
 
-        // Generate hotels with total prices based on nights
+        // יצירת נתוני דמה
         List<HotelDto> hotels = MockDataUtils.generateMockHotels(decodedCity, lat, lon);
+
+        // חישוב מחיר: (מחיר ללילה * לילות) + (20% תוספת על כל אורח נוסף)
+        double guestMultiplier = 1 + ((numAdults - 1) * 0.20);
+
         for (HotelDto hotel : hotels) {
             if (hotel.getPrice() != null) {
-                hotel.setPrice(hotel.getPrice() * nights);
+                double basePriceForNights = hotel.getPrice() * nights;
+                hotel.setPrice(basePriceForNights * guestMultiplier);
             }
         }
 

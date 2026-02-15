@@ -22,14 +22,18 @@ public class HotelsController {
     public ResponseEntity<?> getHotelsByCityName(
             @RequestParam String cityName,
             @RequestParam(required = false) String checkInDate,
-            @RequestParam(required = false) String checkOutDate) {
+            @RequestParam(required = false) String checkOutDate,
+            @RequestParam(required = false) Integer adults) {
 
         if (cityName == null || cityName.isEmpty()) {
             return ResponseEntity.badRequest().body("City name is required.");
         }
 
-        // Pass dates to service for total price calculation
-        List<HotelDto> hotels = hotelsService.searchHotelsByCityName(cityName, checkInDate, checkOutDate);
+        // וידוא שהערך של האורחים תקין (מינימום 1)
+        Integer numAdults = (adults != null && adults > 0) ? adults : 1;
+
+        // קריאה לסרוויס עם כל 4 הפרמטרים הנדרשים
+        List<HotelDto> hotels = hotelsService.searchHotelsByCityName(cityName, checkInDate, checkOutDate, numAdults);
 
         if (hotels.isEmpty()) {
             return ResponseEntity.notFound().build();
