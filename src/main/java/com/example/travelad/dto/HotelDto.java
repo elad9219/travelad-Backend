@@ -10,50 +10,36 @@ public class HotelDto {
     private String countryCode;
     private Double latitude;
     private Double longitude;
+    private Double price; // שדה חדש!
 
+    // קונסטרקטור מעודכן
+    public HotelDto(String name, String hotelId, String iataCode, String countryCode, Double latitude, Double longitude, Double price) {
+        this.name = name;
+        this.hotelId = hotelId;
+        this.iataCode = iataCode;
+        this.countryCode = countryCode;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.price = price;
+    }
+
+    // קונסטרקטור ישן (למקרה שיש שימוש אחר, אופציונלי)
     public HotelDto(String name, String hotelId, String iataCode, String countryCode, Double latitude, Double longitude) {
-        this.name = name;
-        this.hotelId = hotelId;
-        this.iataCode = iataCode;
-        this.countryCode = countryCode;
-        this.latitude = latitude;
-        this.longitude = longitude;
+        this(name, hotelId, iataCode, countryCode, latitude, longitude, null);
     }
 
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getHotelId() {
-        return hotelId;
-    }
-    public void setHotelId(String hotelId) {
-        this.hotelId = hotelId;
-    }
-    public String getIataCode() {
-        return iataCode;
-    }
-    public void setIataCode(String iataCode) {
-        this.iataCode = iataCode;
-    }
-    public String getCountryCode() {
-        return countryCode;
-    }
-    public void setCountryCode(String countryCode) {
-        this.countryCode = countryCode;
-    }
-    public Double getLatitude() {
-        return latitude;
-    }
-    public void setLatitude(Double latitude) {
-        this.latitude = latitude;
-    }
-    public Double getLongitude() {
-        return longitude;
-    }
-    public void setLongitude(Double longitude) {
-        this.longitude = longitude;
-    }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+    public String getHotelId() { return hotelId; }
+    public void setHotelId(String hotelId) { this.hotelId = hotelId; }
+    public String getIataCode() { return iataCode; }
+    public void setIataCode(String iataCode) { this.iataCode = iataCode; }
+    public String getCountryCode() { return countryCode; }
+    public void setCountryCode(String countryCode) { this.countryCode = countryCode; }
+    public Double getLatitude() { return latitude; }
+    public void setLatitude(Double latitude) { this.latitude = latitude; }
+    public Double getLongitude() { return longitude; }
+    public void setLongitude(Double longitude) { this.longitude = longitude; }
+    public Double getPrice() { return price; }
+    public void setPrice(Double price) { this.price = price; }
 }
