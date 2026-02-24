@@ -10,10 +10,12 @@ public class HotelDto {
     private String countryCode;
     private Double latitude;
     private Double longitude;
-    private Double price; // שדה חדש!
+    private Double price;
+    private String imageUrl; // שדה חדש לתמונה
+    private Double rating;   // שדה חדש לדירוג
 
-    // קונסטרקטור מעודכן
-    public HotelDto(String name, String hotelId, String iataCode, String countryCode, Double latitude, Double longitude, Double price) {
+    // קונסטרקטור מעודכן (המלא)
+    public HotelDto(String name, String hotelId, String iataCode, String countryCode, Double latitude, Double longitude, Double price, String imageUrl, Double rating) {
         this.name = name;
         this.hotelId = hotelId;
         this.iataCode = iataCode;
@@ -21,11 +23,18 @@ public class HotelDto {
         this.latitude = latitude;
         this.longitude = longitude;
         this.price = price;
+        this.imageUrl = imageUrl;
+        this.rating = rating;
     }
 
-    // קונסטרקטור ישן (למקרה שיש שימוש אחר, אופציונלי)
+    // קונסטרקטור ללא תמונה ודירוג (תאימות לאחור)
+    public HotelDto(String name, String hotelId, String iataCode, String countryCode, Double latitude, Double longitude, Double price) {
+        this(name, hotelId, iataCode, countryCode, latitude, longitude, price, null, null);
+    }
+
+    // קונסטרקטור ישן (ללא מחיר, תמונה ודירוג)
     public HotelDto(String name, String hotelId, String iataCode, String countryCode, Double latitude, Double longitude) {
-        this(name, hotelId, iataCode, countryCode, latitude, longitude, null);
+        this(name, hotelId, iataCode, countryCode, latitude, longitude, null, null, null);
     }
 
     public String getName() { return name; }
@@ -42,4 +51,8 @@ public class HotelDto {
     public void setLongitude(Double longitude) { this.longitude = longitude; }
     public Double getPrice() { return price; }
     public void setPrice(Double price) { this.price = price; }
+    public String getImageUrl() { return imageUrl; }
+    public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
+    public Double getRating() { return rating; }
+    public void setRating(Double rating) { this.rating = rating; }
 }

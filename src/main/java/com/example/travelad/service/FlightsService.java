@@ -1,7 +1,7 @@
 package com.example.travelad.service;
 
 import com.example.travelad.dto.FlightOfferDto;
-import com.example.travelad.utils.MockDataUtils;
+import com.example.travelad.utils.MockFlightUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -19,6 +19,6 @@ public class FlightsService {
         logger.info("Generating MOCK flights from {} to {} on {}", origin, destination, departDate);
 
         // קריאה לפונקציה שיצרנו ב-Utils
-        return MockDataUtils.generateMockFlights(origin, destination, departDate, returnDate, adults);
+        return MockFlightUtils.generateMockFlights(origin, destination, departDate, returnDate, adults);
     }
 }

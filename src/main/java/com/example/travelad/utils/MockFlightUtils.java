@@ -2,16 +2,17 @@ package com.example.travelad.utils;
 
 import com.example.travelad.dto.FlightOfferDto;
 import com.example.travelad.dto.FlightSegmentDto;
-import com.example.travelad.dto.HotelDto;
 
-import java.net.URLDecoder;
-import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Random;
 
-public class MockDataUtils {
+public class MockFlightUtils {
 
     private static final Random random = new Random();
 
@@ -19,24 +20,15 @@ public class MockDataUtils {
     private static final String LOGO_BASE_URL = "https://pics.avs.io/200/200/";
 
     // --- CARRIERS LISTS ---
-    // Israel
-    private static final List<String> ISRAEL_CARRIERS = Arrays.asList("LY", "IZ", "6H"); // El Al, Arkia, Israir
-
-    // Europe Specific
-    private static final List<String> UK_CARRIERS = Arrays.asList("BA", "U2", "VS", "W6"); // British, EasyJet, Virgin, Wizz
-    private static final List<String> FRANCE_CARRIERS = Arrays.asList("AF", "TO", "U2"); // Air France, Transavia, EasyJet
-    private static final List<String> GERMANY_CARRIERS = Arrays.asList("LH", "EW"); // Lufthansa, Eurowings
-    private static final List<String> ITALY_CARRIERS = Arrays.asList("AZ", "FR", "W6"); // ITA, Ryanair, Wizz
-    private static final List<String> GREECE_CYPRUS_CARRIERS = Arrays.asList("A3", "CY", "FR", "IZ", "6H"); // Aegean, Cyprus Airways, Ryanair, Arkia, Israir
-
-    // Low Cost General (Fallback for Europe)
-    private static final List<String> LOW_COST_EUROPE = Arrays.asList("FR", "W6", "U2"); // Ryanair, Wizz, EasyJet
-
-    // US
-    private static final List<String> US_CARRIERS = Arrays.asList("DL", "UA", "AA"); // Delta, United, American
-
-    // Asia
-    private static final List<String> ASIA_CARRIERS = Arrays.asList("EK", "TK", "ET", "AI", "CX"); // Emirates, Turkish, Ethiopian, Air India, Cathay
+    private static final List<String> ISRAEL_CARRIERS = Arrays.asList("LY", "IZ", "6H");
+    private static final List<String> UK_CARRIERS = Arrays.asList("BA", "U2", "VS", "W6");
+    private static final List<String> FRANCE_CARRIERS = Arrays.asList("AF", "TO", "U2");
+    private static final List<String> GERMANY_CARRIERS = Arrays.asList("LH", "EW");
+    private static final List<String> ITALY_CARRIERS = Arrays.asList("AZ", "FR", "W6");
+    private static final List<String> GREECE_CYPRUS_CARRIERS = Arrays.asList("A3", "CY", "FR", "IZ", "6H");
+    private static final List<String> LOW_COST_EUROPE = Arrays.asList("FR", "W6", "U2");
+    private static final List<String> US_CARRIERS = Arrays.asList("DL", "UA", "AA");
+    private static final List<String> ASIA_CARRIERS = Arrays.asList("EK", "TK", "ET", "AI", "CX");
 
     // --- HUBS FOR CONNECTIONS ---
     private static final List<String> EUROPE_HUBS = Arrays.asList("LHR", "CDG", "FRA", "MUC", "FCO", "ZRH", "IST");
@@ -46,7 +38,6 @@ public class MockDataUtils {
         EUROPE, US_EAST, US_WEST, ASIA, NEAR_EAST, UNKNOWN
     }
 
-    // Identify region based on city code
     private static Region getRegionByCode(String code) {
         if (code == null) return Region.UNKNOWN;
         code = code.toUpperCase();
@@ -61,7 +52,6 @@ public class MockDataUtils {
     }
 
     public static List<FlightOfferDto> generateMockFlights(String origin, String destination, String departDate, String returnDate, String adults) {
-        // Simulate network latency
         try { Thread.sleep(800 + random.nextInt(600)); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
 
         List<FlightOfferDto> offers = new ArrayList<>();
@@ -71,16 +61,13 @@ public class MockDataUtils {
 
         for (int i = 0; i < count; i++) {
             FlightOfferDto offer = new FlightOfferDto();
-
             boolean isDirect = shouldBeDirect(region);
 
-            // Generate Outbound
             List<FlightSegmentDto> outboundSegments = generateSmartSegments(origin, destination, departDate, isDirect, region);
             offer.setOutboundSegments(outboundSegments);
             offer.setOutboundDuration(calculateTotalDuration(outboundSegments));
             offer.setSegments(outboundSegments);
 
-            // Generate Return (if needed)
             if (returnDate != null && !returnDate.isEmpty()) {
                 List<FlightSegmentDto> returnSegments = generateSmartSegments(destination, origin, returnDate, isDirect, region);
                 offer.setReturnSegments(returnSegments);
@@ -100,11 +87,11 @@ public class MockDataUtils {
     private static boolean shouldBeDirect(Region region) {
         double rand = random.nextDouble();
         switch (region) {
-            case NEAR_EAST: return rand > 0.05; // 95% Direct (Cyprus/Greece)
-            case EUROPE: return rand > 0.2; // 80% Direct
-            case US_EAST: return rand > 0.5; // 50% Direct
-            case US_WEST: return false; // Always connection
-            case ASIA: return rand > 0.7; // 30% Direct
+            case NEAR_EAST: return rand > 0.05;
+            case EUROPE: return rand > 0.2;
+            case US_EAST: return rand > 0.5;
+            case US_WEST: return false;
+            case ASIA: return rand > 0.7;
             default: return rand > 0.5;
         }
     }
@@ -119,20 +106,16 @@ public class MockDataUtils {
             case ASIA: basePrice = 700 + random.nextInt(400); break;
             default: basePrice = 400 + random.nextInt(400);
         }
-        if (isDirect) basePrice *= 1.15; // Direct is slightly more expensive
+        if (isDirect) basePrice *= 1.15;
         return Math.floor(basePrice * passengers);
     }
 
-    // --- CORE LOGIC: Pick relevant airline based on destination ---
     private static String pickRelevantCarrier(String destination, Region region) {
         List<String> options = new ArrayList<>();
-
-        // Always include El Al as an option for TLV flights
         options.add("LY");
 
         String dest = destination.toUpperCase();
 
-        // 1. Specific City Logic
         if (dest.contains("LON") || dest.contains("LHR") || dest.contains("LTN") || dest.contains("LGW")) {
             options.addAll(UK_CARRIERS);
         } else if (dest.contains("PAR") || dest.contains("CDG") || dest.contains("ORY")) {
@@ -143,13 +126,11 @@ public class MockDataUtils {
             options.addAll(ITALY_CARRIERS);
         } else if (dest.contains("LCA") || dest.contains("PFO") || dest.contains("ATH")) {
             options.addAll(GREECE_CYPRUS_CARRIERS);
-        }
-        // 2. Regional Logic (if no specific city matched)
-        else {
+        } else {
             switch (region) {
                 case EUROPE:
-                    options.addAll(LOW_COST_EUROPE); // EasyJet, Wizz, etc.
-                    options.add("LH"); // Lufthansa is common
+                    options.addAll(LOW_COST_EUROPE);
+                    options.add("LH");
                     break;
                 case US_EAST:
                 case US_WEST:
@@ -169,7 +150,6 @@ public class MockDataUtils {
     private static List<FlightSegmentDto> generateSmartSegments(String from, String to, String dateStr, boolean isDirect, Region region) {
         List<FlightSegmentDto> segments = new ArrayList<>();
 
-        // Determine main carrier based on destination (or origin if returning)
         String targetForCarrier = from.equals("TLV") ? to : from;
         String carrier = pickRelevantCarrier(targetForCarrier, region);
 
@@ -182,14 +162,12 @@ public class MockDataUtils {
             LocalDateTime arrTime = depTime.plusMinutes(flightMinutes);
             segments.add(createSegment(from, to, depTime, arrTime, carrier));
         } else {
-            // Connection Logic
             String hub = pickHub(region);
 
-            // Special case: If connecting via Istanbul, maybe switch carrier to Turkish?
             if (hub.equals("IST")) carrier = "TK";
             if (hub.equals("DXB")) carrier = "EK";
 
-            int leg1Min = 240 + random.nextInt(60); // To Hub
+            int leg1Min = 240 + random.nextInt(60);
             LocalDateTime arr1 = depTime.plusMinutes(leg1Min);
             segments.add(createSegment(from, hub, depTime, arr1, carrier));
 
@@ -236,7 +214,6 @@ public class MockDataUtils {
 
         String[] aircrafts = {"Boeing 737-800", "Airbus A320", "Boeing 787 Dreamliner", "Airbus A321neo", "Boeing 777"};
         String aircraft = aircrafts[random.nextInt(aircrafts.length)];
-        // Small override for Israir/Arkia to use smaller planes usually
         if (carrier.equals("IZ") || carrier.equals("6H")) {
             aircraft = "Airbus A320";
         }
@@ -250,33 +227,11 @@ public class MockDataUtils {
         );
     }
 
-    // Calculate total duration helper
     private static String calculateTotalDuration(List<FlightSegmentDto> segments) {
         if (segments.isEmpty()) return "PT0H0M";
         LocalDateTime start = LocalDateTime.parse(segments.get(0).getDepartureDate());
         LocalDateTime end = LocalDateTime.parse(segments.get(segments.size() - 1).getArrivalDate());
         long diff = java.time.Duration.between(start, end).toMinutes();
         return String.format("PT%dH%dM", diff / 60, diff % 60);
-    }
-
-    // --- HOTELS MOCK (Unchanged) ---
-    public static List<HotelDto> generateMockHotels(String city, double lat, double lon) {
-        List<HotelDto> hotels = new ArrayList<>();
-        String decodedCity = URLDecoder.decode(city, StandardCharsets.UTF_8);
-        String[] brands = {"Grand", "Royal", "Plaza", "Hilton", "Marriott", "Hyatt", "Sheraton"};
-
-        for (int i = 0; i < 15; i++) {
-            double hLat = lat + (random.nextDouble() - 0.5) * 0.04;
-            double hLon = lon + (random.nextDouble() - 0.5) * 0.04;
-            double price = 100 + random.nextInt(400);
-
-            HotelDto hotel = new HotelDto(
-                    brands[i % brands.length] + " " + decodedCity,
-                    "MOCK_" + i, "XX", "XX", hLat, hLon, price
-            );
-            hotel.setIataCode(decodedCity.substring(0, Math.min(decodedCity.length(), 3)).toUpperCase());
-            hotels.add(hotel);
-        }
-        return hotels;
     }
 }

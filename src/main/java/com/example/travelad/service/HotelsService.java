@@ -2,7 +2,7 @@ package com.example.travelad.service;
 
 import com.example.travelad.beans.GooglePlaces;
 import com.example.travelad.dto.HotelDto;
-import com.example.travelad.utils.MockDataUtils;
+import com.example.travelad.utils.MockHotelUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -34,7 +34,6 @@ public class HotelsService {
         int numAdults = (adults != null && adults > 0) ? adults : 1;
         logger.info("Searching hotels for city: {} | Dates: {} to {} | Guests: {}", decodedCity, checkInDate, checkOutDate, numAdults);
 
-        // חישוב מספר לילות
         long nights = 1;
         try {
             if (checkInDate != null && checkOutDate != null) {
@@ -47,7 +46,6 @@ public class HotelsService {
             logger.warn("Date parsing failed, defaulting to 1 night");
         }
 
-        // קבלת קואורדינטות מגוגל
         GooglePlaces place = googlePlacesService.searchPlaceByCity(decodedCity);
         double lat = 0.0;
         double lon = 0.0;
@@ -57,16 +55,22 @@ public class HotelsService {
             lon = place.getLongitude();
         }
 
-        // יצירת נתוני דמה
-        List<HotelDto> hotels = MockDataUtils.generateMockHotels(decodedCity, lat, lon);
+        try {
+            Thread.sleep(600);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
 
-        // חישוב מחיר: (מחיר ללילה * לילות) + (20% תוספת על כל אורח נוסף)
+        // שימוש במחלקת המלונות המפוצלת החדשה
+        List<HotelDto> hotels = MockHotelUtils.generateMockHotels(decodedCity, lat, lon);
+
         double guestMultiplier = 1 + ((numAdults - 1) * 0.20);
 
         for (HotelDto hotel : hotels) {
             if (hotel.getPrice() != null) {
                 double basePriceForNights = hotel.getPrice() * nights;
-                hotel.setPrice(basePriceForNights * guestMultiplier);
+                double finalPrice = Math.round((basePriceForNights * guestMultiplier) * 100.0) / 100.0;
+                hotel.setPrice(finalPrice);
             }
         }
 
