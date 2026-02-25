@@ -5,17 +5,24 @@ import com.example.travelad.beans.AttractionCacheStatus;
 import com.example.travelad.dto.AttractionDto;
 import com.example.travelad.repositories.AttractionCacheStatusRepository;
 import com.example.travelad.repositories.AttractionRepository;
+import com.example.travelad.utils.MockAttractionUtils;
 import kong.unirest.json.JSONArray;
 import kong.unirest.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DataAccessException;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -54,26 +61,30 @@ public class AttractionsService {
         return cityName.split("-")[0].trim().toLowerCase();
     }
 
-    /**
-     * Searches for attractions by city.
-     * If the persistent cache status is marked as complete, returns data from DB.
-     * Otherwise, calls the API immediately and asynchronously saves attractions,
-     * updating the persistent cache status.
-     */
     public List<Attraction> searchPlacesByCity(String cityName) {
         String normalizedCity = normalizeCityName(cityName);
         boolean cacheComplete = cacheStatusRepository.findById(normalizedCity)
                 .map(AttractionCacheStatus::isComplete)
                 .orElse(false);
+
         if (cacheComplete) {
             List<Attraction> cachedAttractions = attractionRepository.findByCityIgnoreCase(normalizedCity);
             if (cachedAttractions != null && !cachedAttractions.isEmpty()) {
                 logger.info("Returning cached attractions for city: {}", normalizedCity);
+
+                // VITAL: If old cached data doesn't have images, fetch them now and update DB
+                boolean needsImages = cachedAttractions.stream().anyMatch(a -> a.getImageUrl() == null || a.getImageUrl().isEmpty());
+                if (needsImages) {
+                    enrichWithImages(cachedAttractions);
+                    attractionRepository.saveAll(cachedAttractions);
+                }
                 return cachedAttractions;
             }
         }
+
         logger.info("Fetching attractions from Geoapify API for city: {}", normalizedCity);
         List<AttractionDto> geoapifyPlaces = fetchPlacesFromGeoapify(normalizedCity);
+
         List<Attraction> attractions = geoapifyPlaces.stream()
                 .map(dto -> {
                     Attraction attraction = mapToAttraction(dto);
@@ -81,12 +92,66 @@ public class AttractionsService {
                     return attraction;
                 })
                 .filter(a -> a.getName() != null && !a.getName().isEmpty())
+                .limit(20) // Limit to 20 to prevent UI clutter
                 .collect(Collectors.toList());
+
+        // Fetch Wikipedia images in parallel
+        enrichWithImages(attractions);
+
         // Save attraction cache status as incomplete first
         cacheStatusRepository.save(new AttractionCacheStatus(normalizedCity, false));
         // Asynchronously save attractions
         asyncSaveAttractions(attractions, normalizedCity);
+
         return attractions;
+    }
+
+    private void enrichWithImages(List<Attraction> attractions) {
+        attractions.parallelStream().forEach(attraction -> {
+            if (attraction.getImageUrl() == null || attraction.getImageUrl().isEmpty()) {
+                String wikiImageUrl = fetchWikipediaImage(attraction.getName());
+                if (wikiImageUrl != null) {
+                    attraction.setImageUrl(wikiImageUrl);
+                } else {
+                    // Fallback to a stable urban mock image
+                    int hashIndex = Math.abs(attraction.getName().hashCode());
+                    attraction.setImageUrl(MockAttractionUtils.getImageUrlForIndex(hashIndex));
+                }
+            }
+        });
+    }
+
+    private String fetchWikipediaImage(String attractionName) {
+        try {
+            String encodedName = URLEncoder.encode(attractionName, StandardCharsets.UTF_8.toString());
+            String wikiUrl = "https://en.wikipedia.org/w/api.php?action=query&titles="
+                    + encodedName
+                    + "&prop=pageimages&format=json&pithumbsize=800";
+
+            // FIX: Wikipedia explicitly blocks default Java requests. We must provide a proper User-Agent!
+            HttpHeaders headers = new HttpHeaders();
+            headers.set("User-Agent", "TraveladProject/1.0 (Student Portfolio)");
+            HttpEntity<String> entity = new HttpEntity<>(headers);
+
+            ResponseEntity<String> response = restTemplate.exchange(wikiUrl, HttpMethod.GET, entity, String.class);
+            String responseBody = response.getBody();
+
+            if (responseBody != null) {
+                JSONObject json = new JSONObject(responseBody);
+                JSONObject pages = json.getJSONObject("query").getJSONObject("pages");
+                String pageId = pages.keys().next();
+
+                if (!pageId.equals("-1")) {
+                    JSONObject page = pages.getJSONObject(pageId);
+                    if (page.has("thumbnail")) {
+                        return page.getJSONObject("thumbnail").getString("source");
+                    }
+                }
+            }
+        } catch (Exception e) {
+            logger.warn("Could not fetch Wikipedia image for {}: {}", attractionName, e.getMessage());
+        }
+        return null;
     }
 
     @Async

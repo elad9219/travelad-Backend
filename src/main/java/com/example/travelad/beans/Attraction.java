@@ -24,6 +24,9 @@ public class Attraction {
     @Column(name = "opening_hours")
     private String openingHours;
 
+    // Added for UI Mock Images
+    private String imageUrl;
+
 
     public Long getId() {
         return id;
@@ -95,5 +98,13 @@ public class Attraction {
 
     public void setOpeningHours(String openingHours) {
         this.openingHours = openingHours;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
