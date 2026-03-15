@@ -1,12 +1,8 @@
 package com.example.travelad.beans;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-
 import javax.persistence.*;
 
 @Entity
-@Table(name = "attraction", uniqueConstraints = @UniqueConstraint(columnNames = {"name", "city"}))
-@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Attraction {
 
     @Id
@@ -16,17 +12,20 @@ public class Attraction {
     private String name;
     private String city;
     private String country;
+
+    @Column(columnDefinition = "TEXT")
     private String description;
+
     private String address;
     private String phone;
     private String website;
-
-    @Column(name = "opening_hours")
     private String openingHours;
 
-    // Added for UI Mock Images
+    @Column(length = 2048)
     private String imageUrl;
 
+    public Attraction() {
+    }
 
     public Long getId() {
         return id;

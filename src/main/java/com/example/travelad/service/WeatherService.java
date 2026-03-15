@@ -4,6 +4,7 @@ import com.example.travelad.dto.WeatherDto;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Map;
@@ -23,7 +24,6 @@ public class WeatherService {
         try {
             var response = restTemplate.getForObject(url, Map.class);
 
-            // Parse the response into WeatherDto
             if (response != null) {
                 var location = (Map<?, ?>) response.get("location");
                 var current = (Map<?, ?>) response.get("current");
@@ -43,15 +43,12 @@ public class WeatherService {
 
                 return weatherDto;
             }
-        } catch (HttpClientErrorException.BadRequest e) {
-            // Log the error and return null or an error message
-            System.err.println("Failed to fetch weather data for city: " + city + ". Error: " + e.getMessage());
-            return null; // or you could return a WeatherDto with error status
+        } catch (HttpClientErrorException | HttpServerErrorException e) {
+            System.err.println("API Error fetching weather data for city: " + city + ". Status: " + e.getStatusCode());
+            return null;
         } catch (Exception e) {
-            // For any other errors
-            System.err.println("An unexpected error occurred while fetching weather data: " + e.getMessage());
-            e.printStackTrace();
-            return null; // or handle differently
+            System.err.println("An unexpected error occurred while fetching weather data for city: " + city);
+            return null;
         }
         return null;
     }

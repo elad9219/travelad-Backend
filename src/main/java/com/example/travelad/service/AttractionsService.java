@@ -5,7 +5,6 @@ import com.example.travelad.beans.AttractionCacheStatus;
 import com.example.travelad.dto.AttractionDto;
 import com.example.travelad.repositories.AttractionCacheStatusRepository;
 import com.example.travelad.repositories.AttractionRepository;
-import com.example.travelad.utils.MockAttractionUtils;
 import kong.unirest.json.JSONArray;
 import kong.unirest.json.JSONObject;
 import org.slf4j.Logger;
@@ -71,14 +70,9 @@ public class AttractionsService {
             List<Attraction> cachedAttractions = attractionRepository.findByCityIgnoreCase(normalizedCity);
             if (cachedAttractions != null && !cachedAttractions.isEmpty()) {
                 logger.info("Returning cached attractions for city: {}", normalizedCity);
-
-                // VITAL: If old cached data doesn't have images, fetch them now and update DB
-                boolean needsImages = cachedAttractions.stream().anyMatch(a -> a.getImageUrl() == null || a.getImageUrl().isEmpty());
-                if (needsImages) {
-                    enrichWithImages(cachedAttractions);
-                    attractionRepository.saveAll(cachedAttractions);
-                }
                 return cachedAttractions;
+            } else {
+                logger.warn("Cache marked as complete for {} but DB is empty. Re-fetching.", normalizedCity);
             }
         }
 
@@ -92,15 +86,12 @@ public class AttractionsService {
                     return attraction;
                 })
                 .filter(a -> a.getName() != null && !a.getName().isEmpty())
-                .limit(20) // Limit to 20 to prevent UI clutter
+                .limit(20)
                 .collect(Collectors.toList());
 
-        // Fetch Wikipedia images in parallel
         enrichWithImages(attractions);
 
-        // Save attraction cache status as incomplete first
         cacheStatusRepository.save(new AttractionCacheStatus(normalizedCity, false));
-        // Asynchronously save attractions
         asyncSaveAttractions(attractions, normalizedCity);
 
         return attractions;
@@ -108,48 +99,46 @@ public class AttractionsService {
 
     private void enrichWithImages(List<Attraction> attractions) {
         attractions.parallelStream().forEach(attraction -> {
-            if (attraction.getImageUrl() == null || attraction.getImageUrl().isEmpty()) {
-                String wikiImageUrl = fetchWikipediaImage(attraction.getName());
-                if (wikiImageUrl != null) {
-                    attraction.setImageUrl(wikiImageUrl);
-                } else {
-                    // Fallback to a stable urban mock image
-                    int hashIndex = Math.abs(attraction.getName().hashCode());
-                    attraction.setImageUrl(MockAttractionUtils.getImageUrlForIndex(hashIndex));
-                }
-            }
+            String wikiImageUrl = fetchWikipediaImage(attraction.getName());
+            attraction.setImageUrl(wikiImageUrl);
         });
     }
 
     private String fetchWikipediaImage(String attractionName) {
         try {
-            String encodedName = URLEncoder.encode(attractionName, StandardCharsets.UTF_8.toString());
-            String wikiUrl = "https://en.wikipedia.org/w/api.php?action=query&titles="
-                    + encodedName
-                    + "&prop=pageimages&format=json&pithumbsize=800";
+            String cleanName = attractionName.replaceAll("(?i),.*$", "").trim();
 
-            // FIX: Wikipedia explicitly blocks default Java requests. We must provide a proper User-Agent!
+            boolean isLatinOnly = cleanName.matches("^[\\p{IsLatin}\\p{Punct}\\s0-9]+$");
+            if (!isLatinOnly) {
+                return null;
+            }
+
+            String encodedSearch = URLEncoder.encode(cleanName, StandardCharsets.UTF_8.toString());
+            String wikiUrl = "https://en.wikipedia.org/w/api.php?action=query&format=json&generator=search"
+                    + "&gsrsearch=" + encodedSearch
+                    + "&gsrlimit=1&prop=pageimages&pithumbsize=800";
+
             HttpHeaders headers = new HttpHeaders();
-            headers.set("User-Agent", "TraveladProject/1.0 (Student Portfolio)");
+            headers.set("User-Agent", "TraveladProject/1.0");
             HttpEntity<String> entity = new HttpEntity<>(headers);
 
             ResponseEntity<String> response = restTemplate.exchange(wikiUrl, HttpMethod.GET, entity, String.class);
-            String responseBody = response.getBody();
+            String body = response.getBody();
 
-            if (responseBody != null) {
-                JSONObject json = new JSONObject(responseBody);
-                JSONObject pages = json.getJSONObject("query").getJSONObject("pages");
-                String pageId = pages.keys().next();
+            if (body != null) {
+                JSONObject json = new JSONObject(body);
+                if (json.has("query")) {
+                    JSONObject pages = json.getJSONObject("query").getJSONObject("pages");
+                    String firstKey = pages.keys().next();
+                    JSONObject page = pages.getJSONObject(firstKey);
 
-                if (!pageId.equals("-1")) {
-                    JSONObject page = pages.getJSONObject(pageId);
                     if (page.has("thumbnail")) {
                         return page.getJSONObject("thumbnail").getString("source");
                     }
                 }
             }
         } catch (Exception e) {
-            logger.warn("Could not fetch Wikipedia image for {}: {}", attractionName, e.getMessage());
+            logger.warn("Wikipedia fetch failed for: {}", attractionName);
         }
         return null;
     }
@@ -163,84 +152,88 @@ public class AttractionsService {
                     Optional<Attraction> existing = attractionRepository.findByNameAndCityIgnoreCase(attraction.getName(), attraction.getCity());
                     if (existing.isEmpty()) {
                         attractionRepository.save(attraction);
-                        logger.info("Saved attraction asynchronously: {} in {}", attraction.getName(), attraction.getCity());
-                    } else {
-                        logger.info("Attraction already exists: {} in {}", attraction.getName(), attraction.getCity());
                     }
                 } catch (DataAccessException e) {
                     allSaved = false;
-                    logger.error("Error saving attraction {} asynchronously: {}", attraction.getName(), e.getMessage());
+                    logger.error("Error saving attraction {}: {}", attraction.getName(), e.getMessage());
                 }
             }
         }
-        try {
-            if (allSaved) {
-                cacheStatusRepository.save(new AttractionCacheStatus(city, true));
-                logger.info("Attraction cache for city {} marked as complete.", city);
-            } else {
-                logger.warn("Attraction cache for city {} remains incomplete.", city);
-            }
-        } catch (Exception e) {
-            logger.error("Error updating attraction cache status for city {}: {}", city, e.getMessage());
+        if (allSaved) {
+            cacheStatusRepository.save(new AttractionCacheStatus(city, true));
         }
     }
 
     private List<AttractionDto> fetchPlacesFromGeoapify(String cityName) {
-        String geocodingRequestUrl = String.format("%s?text=%s&apiKey=%s", geocodingUrl, cityName, apiKey);
-        String geocodingResponse = restTemplate.getForObject(geocodingRequestUrl, String.class);
-        JSONObject geocodingJson = new JSONObject(geocodingResponse);
-        JSONArray features = geocodingJson.getJSONArray("features");
-        if (features.isEmpty()) {
-            throw new RuntimeException("City not found in Geoapify geocoding API");
+        try {
+            String encodedCity = URLEncoder.encode(cityName, StandardCharsets.UTF_8.toString());
+            String geocodingRequestUrl = geocodingUrl + "?text=" + encodedCity + "&apiKey=" + apiKey;
+
+            String geocodingResponse = restTemplate.getForObject(geocodingRequestUrl, String.class);
+            JSONObject geocodingJson = new JSONObject(geocodingResponse);
+            JSONArray features = geocodingJson.getJSONArray("features");
+
+            if (features.isEmpty()) {
+                throw new RuntimeException("City not found in Geoapify");
+            }
+
+            // שולף את ה-place_id המדויק של העיר במקום נקודות ציון
+            JSONObject properties = features.getJSONObject(0).getJSONObject("properties");
+            if (!properties.has("place_id")) {
+                throw new RuntimeException("place_id not found for city");
+            }
+            String placeId = properties.getString("place_id");
+
+            // חיפוש לפי הגבולות של ה-place_id ולא לפי רדיוס שרירותי
+            String placesRequestUrl = placesUrl + "?categories=tourism.sights&filter=place:" + placeId + "&limit=20&apiKey=" + apiKey + "&lang=en";
+            String placesResponse = restTemplate.getForObject(placesRequestUrl, String.class);
+
+            return parsePlaces(new JSONObject(placesResponse));
+        } catch (Exception e) {
+            logger.error("Error fetching places from Geoapify for city {}: {}", cityName, e.getMessage());
+            return new ArrayList<>();
         }
-        JSONObject geometry = features.getJSONObject(0).getJSONObject("geometry");
-        String lon = geometry.getJSONArray("coordinates").get(0).toString();
-        String lat = geometry.getJSONArray("coordinates").get(1).toString();
-        String placesRequestUrl = String.format("%s?categories=tourism.sights&filter=circle:%s,%s,5000&apiKey=%s&lang=en",
-                placesUrl, lon, lat, apiKey);
-        String placesResponse = restTemplate.getForObject(placesRequestUrl, String.class);
-        return parsePlaces(new JSONObject(placesResponse));
     }
 
-    private List<AttractionDto> parsePlaces(JSONObject placesJson) {
-        List<AttractionDto> places = new ArrayList<>();
-        JSONArray features = placesJson.getJSONArray("features");
+    private List<AttractionDto> parsePlaces(JSONObject json) {
+        List<AttractionDto> list = new ArrayList<>();
+        if (!json.has("features")) return list;
+
+        JSONArray features = json.getJSONArray("features");
         for (int i = 0; i < features.length(); i++) {
-            JSONObject properties = features.getJSONObject(i).getJSONObject("properties");
-            String name = properties.optJSONObject("name_international") != null
-                    ? properties.getJSONObject("name_international").optString("en", properties.optString("name", null))
-                    : properties.optString("name", null);
+            JSONObject props = features.getJSONObject(i).getJSONObject("properties");
+
+            String name = props.optString("name:en", null);
             if (name == null || name.isEmpty()) {
-                logger.warn("Skipping attraction without a name at index {}", i);
-                continue;
+                name = props.optString("name", null);
             }
-            AttractionDto place = new AttractionDto(
+            if (name == null || name.isEmpty()) continue;
+
+            AttractionDto dto = new AttractionDto(
                     name,
-                    properties.optString("city", null),
-                    properties.optString("country", null),
-                    properties.optString("description", null)
+                    props.optString("city", null),
+                    props.optString("country", null),
+                    props.optString("description", null)
             );
-            place.setAddress(properties.optString("formatted", null));
-            place.setPhone(properties.optJSONObject("contact") != null
-                    ? properties.getJSONObject("contact").optString("phone", null)
-                    : null);
-            place.setWebsite(properties.optString("website", null));
-            place.setOpening_hours(properties.optString("opening_hours", null));
-            places.add(place);
+            dto.setAddress(props.optString("formatted", null));
+            dto.setPhone(props.optJSONObject("contact") != null ? props.getJSONObject("contact").optString("phone", null) : null);
+            dto.setWebsite(props.optString("website", null));
+            dto.setOpening_hours(props.optString("opening_hours", null));
+            list.add(dto);
         }
-        return places;
+        return list;
     }
 
     private Attraction mapToAttraction(AttractionDto dto) {
-        Attraction attraction = new Attraction();
-        attraction.setName(dto.getName());
-        attraction.setCity(dto.getCity());
-        attraction.setCountry(dto.getCountry());
-        attraction.setDescription(dto.getDescription());
-        attraction.setAddress(dto.getAddress());
-        attraction.setPhone(dto.getPhone());
-        attraction.setWebsite(dto.getWebsite());
-        attraction.setOpeningHours(dto.getOpening_hours());
-        return attraction;
+        Attraction a = new Attraction();
+        a.setName(dto.getName());
+        a.setCity(dto.getCity());
+        a.setCountry(dto.getCountry());
+        a.setDescription(dto.getDescription());
+        a.setAddress(dto.getAddress());
+        a.setPhone(dto.getPhone());
+        a.setWebsite(dto.getWebsite());
+        a.setOpeningHours(dto.getOpening_hours());
+        return a;
     }
 }
