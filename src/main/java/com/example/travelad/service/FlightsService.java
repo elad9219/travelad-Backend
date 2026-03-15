@@ -13,12 +13,11 @@ public class FlightsService {
 
     private static final Logger logger = LoggerFactory.getLogger(FlightsService.class);
 
-    // הסרנו את התלות ב-Amadeus וב-PostConstruct
-
+    // חתימת הפונקציה הוחזרה בדיוק לסדר המקורי: origin, destination, departDate, adults, returnDate
     public List<FlightOfferDto> flights(String origin, String destination, String departDate, String adults, String returnDate) {
         logger.info("Generating MOCK flights from {} to {} on {}", origin, destination, departDate);
 
-        // קריאה לפונקציה שיצרנו ב-Utils
+        // העברת הפרמטרים ל-Mock בדיוק בסדר שהוא מצפה לקבל אותם
         return MockFlightUtils.generateMockFlights(origin, destination, departDate, returnDate, adults);
     }
 }
