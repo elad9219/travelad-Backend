@@ -59,12 +59,11 @@ Built with an emphasis on resilient architecture, the platform features a multi-
 * **WeatherAPI**  
 * **Wikipedia API** (Media Enrichment)
 
-Project Structure
+## Project Structure
 
-Backend (elad9219/travelad-backend)
+### Backend (`elad9219/travelad-backend`)
 
-<details> <summary>📂 Click to view full Backend file tree</summary>
-
+```
 travelad-backend/
 ├── pom.xml
 ├── Dockerfile
@@ -138,14 +137,13 @@ travelad-backend/
         │       └── MockHotelUtils.java
         └── resources/
             └── application.properties.example
+```
 
 
-</details>
 
-Frontend (elad9219/travelad-frontend)
+### Frontend (`elad9219/travelad-frontend`)
 
-<details> <summary>📂 Click to view full Frontend file tree</summary>
-
+```
 travelad-frontend/
 ├── package.json
 ├── tsconfig.json
@@ -191,9 +189,9 @@ travelad-frontend/
     │   └── Weather.ts
     └── utils/
         └── globals.ts
+```
 
 
-</details>
 
 ## **Screenshots**
 
