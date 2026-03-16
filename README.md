@@ -59,143 +59,141 @@ Built with an emphasis on resilient architecture, the platform features a multi-
 * **WeatherAPI**  
 * **Wikipedia API** (Media Enrichment)
 
-## **Project Structure**
+Project Structure
 
-└── elad9219-travelad-backend/  
-    ├── pom.xml  
-    └── src/  
-        └── main/  
-            ├── java/  
-            │   └── com/  
-            │       └── example/  
-            │           └── travelad/  
-            │               ├── TraveladApplication.java  
-            │               ├── advice/  
-            │               │   ├── ApiAdvice.java  
-            │               │   └── ErrorDetail.java  
-            │               ├── beans/  
-            │               │   ├── Airline.java  
-            │               │   ├── AirlineCacheStatus.java  
-            │               │   ├── Attraction.java  
-            │               │   ├── AttractionCacheStatus.java  
-            │               │   ├── GooglePlaces.java  
-            │               │   ├── Hotel.java  
-            │               │   ├── HotelCacheStatus.java  
-            │               │   └── IataCodeEntry.java  
-            │               ├── config/  
-            │               │   ├── AppConfig.java  
-            │               │   ├── AsyncConfig.java  
-            │               │   ├── CORS.java  
-            │               │   ├── RedisConfig.java  
-            │               │   └── SwaggerConfig.java  
-            │               ├── controller/  
-            │               │   ├── AttractionsController.java  
-            │               │   ├── CityCacheController.java  
-            │               │   ├── FlightsController.java  
-            │               │   ├── GooglePlacesController.java  
-            │               │   ├── HotelsController.java  
-            │               │   ├── IataCodesController.java  
-            │               │   └── WeatherController.java  
-            │               ├── dto/  
-            │               │   ├── AttractionDto.java  
-            │               │   ├── FlightOfferDto.java  
-            │               │   ├── FlightSegmentDto.java  
-            │               │   ├── HotelDto.java  
-            │               │   ├── HotelOffersDto.java  
-            │               │   ├── LocationDto.java  
-            │               │   ├── RoomDto.java  
-            │               │   └── WeatherDto.java  
-            │               ├── exceptions/  
-            │               │   ├── ExternalApiException.java  
-            │               │   ├── GlobalExceptionHandler.java  
-            │               │   └── InvalidInputException.java  
-            │               ├── repositories/  
-            │               │   ├── AirlineCacheStatusRepository.java  
-            │               │   ├── AirlineRepository.java  
-            │               │   ├── AttractionCacheStatusRepository.java  
-            │               │   ├── AttractionRepository.java  
-            │               │   ├── GooglePlacesRepository.java  
-            │               │   ├── HotelCacheStatusRepository.java  
-            │               │   └── HotelRepository.java  
-            │               ├── service/  
-            │               │   ├── AircraftMapping.java  
-            │               │   ├── AirlineService.java  
-            │               │   ├── AsyncAirlineCacheService.java  
-            │               │   ├── AsyncHotelCacheService.java  
-            │               │   ├── AttractionsService.java  
-            │               │   ├── CityCacheService.java  
-            │               │   ├── FlightsService.java  
-            │               │   ├── GooglePlacesService.java  
-            │               │   ├── HotelsService.java  
-            │               │   └── WeatherService.java  
-            │               └── utils/  
-            │                   ├── AirlineServiceStatic.java  
-            │                   ├── IataCodeUtils.java  
-            │                   ├── InputValidator.java  
-            │                   ├── MockFlightUtils.java  
-            │                   └── MockHotelUtils.java  
-            └── resources/  
-                └── application.properties.example
+Backend (elad9219/travelad-backend)
 
-└── elad9219-travelad-frontend/  
-    ├── clean-cities.ts  
-    ├── package.json  
-    ├── tsconfig.json  
-    ├── public/  
-    │   ├── index.html  
-    │   ├── manifest.json  
-    │   └── robots.txt  
-    └── src/  
-        ├── App.css  
-        ├── App.test.tsx  
-        ├── App.tsx  
-        ├── index.css  
-        ├── index.tsx  
-        ├── react-app-env.d.ts  
-        ├── reportWebVitals.ts  
-        ├── setupTests.ts  
-        ├── Components/  
-        │   ├── Components/  
-        │   │   ├── AttractionComponent/  
-        │   │   │   ├── AttractionComponent.css  
-        │   │   │   └── AttractionComponent.tsx  
-        │   │   ├── ErrorBoundary/  
-        │   │   │   ├── ErrorBoundary.css  
-        │   │   │   └── ErrorBoundary.tsx  
-        │   │   ├── FlightComponent/  
-        │   │   │   ├── FlightComponent.css  
-        │   │   │   └── FlightComponent.tsx  
-        │   │   ├── HotelComponent/  
-        │   │   │   ├── HotelComponent.css  
-        │   │   │   └── HotelComponent.tsx  
-        │   │   ├── Loader/  
-        │   │   │   ├── Loader.css  
-        │   │   │   └── Loader.tsx  
-        │   │   ├── MapComponent/  
-        │   │   │   ├── MapComponent.css  
-        │   │   │   └── MapComponent.tsx  
-        │   │   ├── SearchBar/  
-        │   │   │   ├── SearchBar.css  
-        │   │   │   └── SearchBar.tsx  
-        │   │   ├── SkeletonCard/  
-        │   │   │   ├── SkeletonCard.css  
-        │   │   │   └── SkeletonCard.tsx  
-        │   │   └── WeatherComponent/  
-        │   │       ├── WeatherComponent.css  
-        │   │       └── WeatherComponent.tsx  
-        │   └── PlaceDetails/  
-        │       └── PlaceDetails/  
-        │           ├── PlaceDetails.css  
-        │           └── PlaceDetails.tsx  
-        ├── modal/  
-        │   ├── Attraction.ts  
-        │   ├── City.ts  
-        │   ├── Flight.ts  
-        │   ├── Hotel.ts  
-        │   ├── LocationDto.ts  
-        │   └── Weather.ts  
-        └── utils/  
-            └── globals.ts
+<details> <summary>📂 Click to view full Backend file tree</summary>
+
+travelad-backend/
+├── pom.xml
+├── Dockerfile
+└── src/
+    └── main/
+        ├── java/com/example/travelad/
+        │   ├── TraveladApplication.java
+        │   ├── advice/
+        │   │   ├── ApiAdvice.java
+        │   │   └── ErrorDetail.java
+        │   ├── beans/
+        │   │   ├── Airline.java
+        │   │   ├── AirlineCacheStatus.java
+        │   │   ├── Attraction.java
+        │   │   ├── AttractionCacheStatus.java
+        │   │   ├── GooglePlaces.java
+        │   │   ├── Hotel.java
+        │   │   ├── HotelCacheStatus.java
+        │   │   └── IataCodeEntry.java
+        │   ├── config/
+        │   │   ├── AppConfig.java
+        │   │   ├── AsyncConfig.java
+        │   │   ├── CORS.java
+        │   │   ├── RedisConfig.java
+        │   │   └── SwaggerConfig.java
+        │   ├── controller/
+        │   │   ├── AttractionsController.java
+        │   │   ├── CityCacheController.java
+        │   │   ├── FlightsController.java
+        │   │   ├── GooglePlacesController.java
+        │   │   ├── HotelsController.java
+        │   │   ├── IataCodesController.java
+        │   │   └── WeatherController.java
+        │   ├── dto/
+        │   │   ├── AttractionDto.java
+        │   │   ├── FlightOfferDto.java
+        │   │   ├── FlightSegmentDto.java
+        │   │   ├── HotelDto.java
+        │   │   ├── HotelOffersDto.java
+        │   │   ├── LocationDto.java
+        │   │   ├── RoomDto.java
+        │   │   └── WeatherDto.java
+        │   ├── exceptions/
+        │   │   ├── ExternalApiException.java
+        │   │   ├── GlobalExceptionHandler.java
+        │   │   └── InvalidInputException.java
+        │   ├── repositories/
+        │   │   ├── AirlineCacheStatusRepository.java
+        │   │   ├── AirlineRepository.java
+        │   │   ├── AttractionCacheStatusRepository.java
+        │   │   ├── AttractionRepository.java
+        │   │   ├── GooglePlacesRepository.java
+        │   │   ├── HotelCacheStatusRepository.java
+        │   │   └── HotelRepository.java
+        │   ├── service/
+        │   │   ├── AircraftMapping.java
+        │   │   ├── AirlineService.java
+        │   │   ├── AsyncAirlineCacheService.java
+        │   │   ├── AsyncHotelCacheService.java
+        │   │   ├── AttractionsService.java
+        │   │   ├── CityCacheService.java
+        │   │   ├── FlightsService.java
+        │   │   ├── GooglePlacesService.java
+        │   │   ├── HotelsService.java
+        │   │   └── WeatherService.java
+        │   └── utils/
+        │       ├── AirlineServiceStatic.java
+        │       ├── IataCodeUtils.java
+        │       ├── InputValidator.java
+        │       ├── MockFlightUtils.java
+        │       └── MockHotelUtils.java
+        └── resources/
+            └── application.properties.example
+
+
+</details>
+
+Frontend (elad9219/travelad-frontend)
+
+<details> <summary>📂 Click to view full Frontend file tree</summary>
+
+travelad-frontend/
+├── package.json
+├── tsconfig.json
+├── clean-cities.ts
+├── public/
+│   ├── index.html
+│   └── manifest.json
+└── src/
+    ├── App.tsx
+    ├── App.css
+    ├── index.tsx
+    ├── index.css
+    ├── Components/
+    │   ├── Components/
+    │   │   ├── AttractionComponent/
+    │   │   │   ├── AttractionComponent.tsx
+    │   │   │   └── AttractionComponent.css
+    │   │   ├── FlightComponent/
+    │   │   │   ├── FlightComponent.tsx
+    │   │   │   └── FlightComponent.css
+    │   │   ├── HotelComponent/
+    │   │   │   ├── HotelComponent.tsx
+    │   │   │   └── HotelComponent.css
+    │   │   ├── MapComponent/
+    │   │   │   ├── MapComponent.tsx
+    │   │   │   └── MapComponent.css
+    │   │   ├── SearchBar/
+    │   │   │   ├── SearchBar.tsx
+    │   │   │   └── SearchBar.css
+    │   │   └── WeatherComponent/
+    │   │       ├── WeatherComponent.tsx
+    │   │       └── WeatherComponent.css
+    │   └── PlaceDetails/
+    │       └── PlaceDetails/
+    │           ├── PlaceDetails.tsx
+    │           └── PlaceDetails.css
+    ├── modal/
+    │   ├── Attraction.ts
+    │   ├── City.ts
+    │   ├── Flight.ts
+    │   ├── Hotel.ts
+    │   ├── LocationDto.ts
+    │   └── Weather.ts
+    └── utils/
+        └── globals.ts
+
+
+</details>
 
 ## **Screenshots**
 
