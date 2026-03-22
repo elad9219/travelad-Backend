@@ -1,10 +1,5 @@
 google.places.api.key=${GOOGLE_PLACES_API_KEY}
 
-amadeus.api.key=${AMADEUS_API_KEY}
-amadeus.api.secret=${AMADEUS_API_SECRET}
-amadeus.api.token.url=https://test.api.amadeus.com/v1/security/oauth2/token
-amadeus.api.flight.destinations.url=https://test.api.amadeus.com/v1/shopping/flight-destinations
-
 spring.http.converters.preferred-json-mapper=gson
 
 geoapify.api.key=${GEOAPIFY_API_KEY}
