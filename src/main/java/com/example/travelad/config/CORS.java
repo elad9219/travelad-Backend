@@ -11,28 +11,34 @@ import java.util.List;
 @Configuration
 public class CORS {
     @Bean
-    public CorsFilter corsFilter(){
-        //create new url configuration for browsers
+    public CorsFilter corsFilter() {
+        // Create new url configuration for browsers
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        //create new cors configuration....
+        // Create new cors configuration
         CorsConfiguration config = new CorsConfiguration();
-        //allow to get credentials in cors
+
+        // Allow credentials (cookies, authorization headers, etc.)
         config.setAllowCredentials(true);
-        //allow to get from any ip/domain
+
+        // Allow any origin (Vercel, localhost, etc.)
         config.addAllowedOriginPattern("*");
-        //allow to get any header
+
+        // Allow any header
         config.addAllowedHeader("*");
-        //allow to get methods
+
+        // Allow specific methods
         config.addAllowedMethod("OPTIONS");
         config.addAllowedMethod("GET");
         config.addAllowedMethod("POST");
         config.addAllowedMethod("PUT");
         config.addAllowedMethod("DELETE");
-        //tell spring expose authorization header
+
+        // Expose authorization header
         config.setExposedHeaders(List.of("authorization"));
-        //allow to get any route -> localhost:8080/api/lecturer -> /api/lecture is route
-        source.registerCorsConfiguration("/**",config);
-        ///return new configuration
+
+        // Apply configuration to all routes
+        source.registerCorsConfiguration("/**", config);
+
         return new CorsFilter(source);
     }
 }
