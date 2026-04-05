@@ -9,5 +9,5 @@ RUN mvn clean package -DskipTests
 FROM eclipse-temurin:11-jre
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
-# Start the Spring Boot application and point to the secret properties file
-ENTRYPOINT ["java", "-jar", "app.jar", "--spring.config.additional-location=file:/etc/secrets/application.properties"]
+# Start the Spring Boot application normally
+ENTRYPOINT ["java", "-jar", "app.jar"]
