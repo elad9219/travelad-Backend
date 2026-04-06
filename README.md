@@ -6,10 +6,10 @@ Built with an emphasis on resilient architecture, the platform features a multi-
 
 ## **Quick Links**
 
-* **Live Demo**: [https://traveladd.runmydocker-app.com/](https://traveladd.runmydocker-app.com/)  
-* **API Documentation (Swagger)**: [https://traveladd.runmydocker-app.com/swagger-ui.html](https://traveladd.runmydocker-app.com/swagger-ui.html)  
-* **Backend Repository**: [https://github.com/elad9219/travelad-backend](https://github.com/elad9219/travelad-backend)  
-* **Frontend Repository**: [https://github.com/elad9219/travelad-frontend](https://github.com/elad9219/travelad-frontend)
+* **Live Demo**:  [https://travelad.vercel.app/](https://travelad.vercel.app/)  
+* **API Documentation (Swagger)**:  [https://traveladd.runmydocker-app.com/swagger-ui.html](https://traveladd.runmydocker-app.com/swagger-ui.html)  
+* **Backend Repository**:  [https://github.com/elad9219/travelad-backend](https://github.com/elad9219/travelad-backend)  
+* **Frontend Repository**:  [https://github.com/elad9219/travelad-frontend](https://github.com/elad9219/travelad-frontend)
 
 ## **Table of Contents**
 
