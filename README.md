@@ -195,21 +195,37 @@ travelad-frontend/
 
 ## **Screenshots**
 
-### **Main Dashboard & Search**
+### **Homepage**
 
-*(Add your screenshot here)*
+<img width="1374" height="1185" alt="image" src="https://github.com/user-attachments/assets/38366063-ccb5-40d1-9d50-e3edcc0f572d" />
 
-### **Attractions (Aggregation Engine & Fallbacks)**
 
-*(Add your screenshot here)*
+### **Flights Advanced Search**
 
-### **Flights & Hotels Simulation**
+<img width="1232" height="622" alt="image" src="https://github.com/user-attachments/assets/b6fdc2ae-4c09-4cf2-8acc-6fab6d9efc44" />
 
-*(Add your screenshot here)*
 
-### **Interactive Map & Weather**
+### **Flight Details**
 
-*(Add your screenshot here)*
+<img width="1229" height="620" alt="image" src="https://github.com/user-attachments/assets/69086a19-9fba-4e45-946b-c336c80fbe22" />
+
+
+### **Hotels Advanced Search and Details**
+
+<img width="1218" height="618" alt="image" src="https://github.com/user-attachments/assets/6f126897-c647-4324-96bc-2bc3b8b06461" />
+
+
+### **Attraction Details**
+
+<img width="1217" height="604" alt="image" src="https://github.com/user-attachments/assets/5c0995f8-b320-48bc-b4cc-2aa916b2f51c" />
+
+
+### **Image, Map, Weather and Flights**
+
+<img width="2559" height="1270" alt="image" src="https://github.com/user-attachments/assets/9c82c82a-8f3c-4f86-8452-a7cd68b281a6" />
+
+
+
 
 ## **Installation & Local Setup**
 
