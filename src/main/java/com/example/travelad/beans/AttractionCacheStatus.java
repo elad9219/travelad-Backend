@@ -9,8 +9,10 @@ import javax.persistence.Table;
 public class AttractionCacheStatus {
 
     @Id
-    private String city;  // normalized city name
+    private String city;
 
+    private Integer version;
+    private Long refreshedAt;
     private boolean complete;
 
     public AttractionCacheStatus() {}
@@ -19,6 +21,11 @@ public class AttractionCacheStatus {
         this.city = city;
         this.complete = complete;
     }
+
+    public Integer getVersion() { return version; }
+    public void setVersion(Integer version) { this.version = version; }
+    public Long getRefreshedAt() { return refreshedAt; }
+    public void setRefreshedAt(Long refreshedAt) { this.refreshedAt = refreshedAt; }
 
     public String getCity() {
         return city;
