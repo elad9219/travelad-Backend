@@ -2,8 +2,6 @@ package com.example.travelad.controller;
 
 import com.example.travelad.dto.WeatherDto;
 import com.example.travelad.service.WeatherService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,15 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "*")
 public class WeatherController {
 
-    @Autowired
-    private WeatherService weatherService;
+    private final WeatherService weatherService;
+
+    public WeatherController(WeatherService weatherService) {
+        this.weatherService = weatherService;
+    }
 
     @GetMapping("/weather")
-    public ResponseEntity<?> getWeather(@RequestParam String city) {
-        WeatherDto weather = weatherService.getWeatherByCity(city);
-        if (weather == null) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Weather data not found for city: " + city);
-        }
-        return ResponseEntity.ok(weather);
+    public ResponseEntity<WeatherDto> getWeather(@RequestParam String city) {
+        return ResponseEntity.ok(weatherService.getWeatherByCity(city));
     }
 }
