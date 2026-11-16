@@ -1,12 +1,13 @@
 package com.example.travelad.controller;
 
 import com.example.travelad.dto.FlightOfferDto;
+import com.example.travelad.service.CityCacheService;
 import com.example.travelad.service.FlightsService;
 import com.example.travelad.utils.IataCodeUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -16,7 +17,6 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 public class FlightsController {
 
-    private static final Logger logger = LoggerFactory.getLogger(FlightsController.class);
     private final FlightsService flightsService;
 
     public FlightsController(FlightsService flightsService) {
@@ -24,52 +24,60 @@ public class FlightsController {
     }
 
     @GetMapping
-    public ResponseEntity<?> flights(@RequestParam String city) {
-        final String destinationIata = IataCodeUtils.getIataCodeForCity(city);
+    public ResponseEntity<List<FlightOfferDto>> flights(
+            @RequestParam("city") String city) {
+        String destination = IataCodeUtils.getIataCodeForCity(
+                CityCacheService.normalizeCity(city)
+        );
 
-        if (destinationIata == null) {
-            return ResponseEntity.ok().body("No IATA code found for the specified city.");
+        if (destination == null) {
+            return ResponseEntity.ok(List.of());
         }
 
-        try {
-            String origin = "TLV";
-            String departDate = LocalDate.now().plusDays(10).toString();
-            String returnDate = LocalDate.now().plusDays(15).toString();
-            String adults = "1";
+        LocalDate today = LocalDate.now();
 
-            // הסרוויס מחזיר עכשיו ישר את ה-DTO, אין צורך בהמרה כאן
-            List<FlightOfferDto> flightOfferDtos = flightsService.flights(origin, destinationIata, departDate, adults, returnDate);
-
-            return ResponseEntity.ok(flightOfferDtos);
-
-        } catch (Exception e) {
-            logger.error("Error fetching flights (mock): {}", e.getMessage());
-            return ResponseEntity.status(500).body("An unexpected error occurred.");
-        }
+        return ResponseEntity.ok(flightsService.flights(
+                "TLV",
+                destination,
+                today.plusDays(10).toString(),
+                "1",
+                today.plusDays(15).toString()
+        ));
     }
 
     @GetMapping("/advancedFlightSearch")
-    public ResponseEntity<?> advancedFlightSearch(
-            @RequestParam String origin,
-            @RequestParam String destination,
-            @RequestParam String departDate,
-            @RequestParam(required = false, defaultValue = "") String returnDate,
-            @RequestParam String adults) {
+    public ResponseEntity<List<FlightOfferDto>> advancedFlightSearch(
+            @RequestParam("origin") String origin,
+            @RequestParam("destination") String destination,
+            @RequestParam("departDate") String departDate,
+            @RequestParam(
+                    value = "returnDate",
+                    required = false,
+                    defaultValue = ""
+            ) String returnDate,
+            @RequestParam("adults") String adults) {
+        String from = IataCodeUtils.getIataCodeForCity(
+                CityCacheService.normalizeCity(origin)
+        );
+        String to = IataCodeUtils.getIataCodeForCity(
+                CityCacheService.normalizeCity(destination)
+        );
 
-        final String originIata = IataCodeUtils.getIataCodeForCity(origin);
-        final String destinationIata = IataCodeUtils.getIataCodeForCity(destination);
-
-        if (originIata == null || destinationIata == null) {
-            return ResponseEntity.badRequest().body("Invalid origin or destination city provided.");
+        if (from == null || to == null) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST,
+                    "Invalid origin or destination city"
+            );
         }
 
-        try {
-            List<FlightOfferDto> flightOfferDtos = flightsService.flights(originIata, destinationIata, departDate, adults, returnDate);
-            return ResponseEntity.ok(flightOfferDtos);
-
-        } catch (Exception e) {
-            logger.error("Error fetching advanced flights (mock): {}", e.getMessage());
-            return ResponseEntity.status(500).body("An unexpected error occurred.");
-        }
+        return ResponseEntity.ok(
+                flightsService.flights(
+                        from,
+                        to,
+                        departDate,
+                        adults,
+                        returnDate
+                )
+        );
     }
 }
