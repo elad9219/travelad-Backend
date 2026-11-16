@@ -1,62 +1,119 @@
 package com.example.travelad.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.script.DefaultRedisScript;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 @Service
 public class CityCacheService {
 
-    @Autowired
-    private RedisTemplate<String, String> redisTemplate;
+    private static final Pattern USER_ID = Pattern.compile("[A-Za-z0-9_-]{1,128}");
+    private static final long HISTORY_TTL_SECONDS = 30L * 24 * 60 * 60;
 
-    /**
-     * Gets the list of recently searched cities for a specific user.
-     */
+    private static final DefaultRedisScript<Long> ADD_CITY = new DefaultRedisScript<>(
+            "redis.call('LREM', KEYS[1], 0, ARGV[1]); " +
+                    "redis.call('LPUSH', KEYS[1], ARGV[1]); " +
+                    "redis.call('LTRIM', KEYS[1], 0, 9); " +
+                    "redis.call('EXPIRE', KEYS[1], ARGV[2]); " +
+                    "return 1;",
+            Long.class
+    );
+
+    private final RedisTemplate<String, String> redisTemplate;
+
+    public CityCacheService(RedisTemplate<String, String> redisTemplate) {
+        this.redisTemplate = redisTemplate;
+    }
+
+    public static String validateUserId(String userId) {
+        if (userId == null || !USER_ID.matcher(userId).matches()) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST,
+                    "Invalid history identifier"
+            );
+        }
+        return userId;
+    }
+
+    public static String normalizeCity(String city) {
+        if (city == null || city.length() > 120 ||
+                city.codePoints().anyMatch(Character::isISOControl)) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST,
+                    "Invalid city name"
+            );
+        }
+
+        String normalized = city.strip();
+        if (normalized.isEmpty()) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST,
+                    "City name is required"
+            );
+        }
+        return normalized;
+    }
+
+    private String key(String userId) {
+        return "user_cities:" + validateUserId(userId);
+    }
+
     public List<String> getCities(String userId) {
-        String key = "user_cities:" + userId;
-        List<String> cities = redisTemplate.opsForList().range(key, 0, -1).stream()
+        // Reading history must remain read-only for the public availability probe.
+        String historyKey = key(userId);
+        List<String> cities = redisTemplate.opsForList().range(historyKey, 0, 9);
+
+        if (cities == null) {
+            return List.of();
+        }
+
+        return cities.stream()
                 .distinct()
                 .collect(Collectors.toList());
-        return cities.isEmpty() ? List.of() : cities;
     }
 
-    /**
-     * Adds a city to the user's search history.
-     */
     public String addCity(String userId, String city) {
-        String key = "user_cities:" + userId;
-        if (redisTemplate.opsForList().range(key, 0, -1).contains(city)) {
-            redisTemplate.opsForList().remove(key, 1, city);
+        String historyKey = key(userId);
+        String normalizedCity = normalizeCity(city);
+
+        // Keep deduplication, ordering, size and expiry atomic across requests.
+        Long result = redisTemplate.execute(
+                ADD_CITY,
+                Collections.singletonList(historyKey),
+                normalizedCity,
+                Long.toString(HISTORY_TTL_SECONDS)
+        );
+
+        if (result == null) {
+            throw new IllegalStateException("History update did not complete");
         }
-        redisTemplate.opsForList().leftPush(key, city);
-        // Limit the list to 10 cities to prevent unlimited growth
-        redisTemplate.opsForList().trim(key, 0, 9);
-        return "City '" + city + "' added to user's history successfully";
+
+        return "City '" + normalizedCity + "' added to user's history successfully";
     }
 
-    /**
-     * Removes a specific city from the user's search history.
-     */
     public String removeCity(String userId, String city) {
-        String key = "user_cities:" + userId;
-        List<String> cities = redisTemplate.opsForList().range(key, 0, -1);
-        if (cities != null && cities.contains(city)) {
-            redisTemplate.opsForList().remove(key, 1, city);
-            return "City '" + city + "' removed from user's history successfully";
-        }
-        return "City '" + city + "' not found in user's history";
+        String historyKey = key(userId);
+        String normalizedCity = normalizeCity(city);
+        Long removed = redisTemplate.opsForList().remove(
+                historyKey,
+                0,
+                normalizedCity
+        );
+
+        return "City '" + normalizedCity + (removed != null && removed > 0
+                ? "' removed from user's history successfully"
+                : "' not found in user's history");
     }
 
-    /**
-     * Clears all cities from the user's search history.
-     */
     public String clearCities(String userId) {
-        String key = "user_cities:" + userId;
-        redisTemplate.delete(key);
+        redisTemplate.delete(key(userId));
         return "All cities cleared from user's history successfully";
     }
 }

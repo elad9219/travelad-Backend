@@ -1,19 +1,13 @@
 package com.example.travelad.controller;
 
 import com.example.travelad.beans.GooglePlaces;
-import com.example.travelad.service.GooglePlacesService;
 import com.example.travelad.service.CityCacheService;
+import com.example.travelad.service.GooglePlacesService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.net.URLDecoder;
-import java.util.List;
-import java.util.UUID;
-import java.util.stream.Collectors;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -24,84 +18,51 @@ public class GooglePlacesController {
     private final GooglePlacesService googlePlacesService;
     private final CityCacheService cityCacheService;
 
-    @Autowired
-    public GooglePlacesController(GooglePlacesService googlePlacesService, CityCacheService cityCacheService) {
+    public GooglePlacesController(
+            GooglePlacesService googlePlacesService,
+            CityCacheService cityCacheService) {
         this.googlePlacesService = googlePlacesService;
         this.cityCacheService = cityCacheService;
     }
 
     @GetMapping("/search")
-    public ResponseEntity<GooglePlaces> searchOrFetchPlace(@RequestParam String city, @RequestParam(required = false) String userId) {
+    public ResponseEntity<GooglePlaces> searchOrFetchPlace(
+            @RequestParam("city") String city,
+            @RequestParam(value = "userId", required = false) String userId) {
+        // Spring has already decoded query parameters. Preserve literal '+' and '%'.
+        String normalizedCity = CityCacheService.normalizeCity(city);
+        if (userId != null) {
+            CityCacheService.validateUserId(userId);
+        }
+
+        GooglePlaces place;
         try {
-            String decodedCity = URLDecoder.decode(city, "UTF-8");
-            GooglePlaces place = googlePlacesService.searchPlaceByCity(decodedCity);
-            // Cache city for user
+            place = googlePlacesService.searchPlaceByCity(normalizedCity);
+        } catch (Exception e) {
+            logger.warn("Place search unavailable ({})", e.getClass().getSimpleName());
+            return ResponseEntity.status(HttpStatus.BAD_GATEWAY).build();
+        }
+
+        if (place == null ||
+                place.getPlaceId() == null ||
+                place.getPlaceId().isBlank() ||
+                place.getPlaceId().startsWith("unknown_")) {
+            return ResponseEntity.status(HttpStatus.BAD_GATEWAY).build();
+        }
+
+        // Missing history identifiers must not create unreachable anonymous keys.
+        if (userId != null) {
             try {
-                String effectiveUserId = userId != null ? userId : UUID.randomUUID().toString();
-                cityCacheService.addCity(effectiveUserId, decodedCity);
+                cityCacheService.addCity(userId, normalizedCity);
             } catch (Exception e) {
-                logger.warn("Failed to cache city {} for user {}: {}", decodedCity, userId, e.getMessage());
+                // A history outage must not discard valid place details.
+                logger.warn(
+                        "Place loaded but history update unavailable ({})",
+                        e.getClass().getSimpleName()
+                );
             }
-            return ResponseEntity.ok(place);
-        } catch (Exception e) {
-            logger.error("Error searching for city {}: {}", city, e.getMessage());
-            GooglePlaces fallbackPlace = new GooglePlaces();
-            fallbackPlace.setCity(city);
-            fallbackPlace.setName(city);
-            fallbackPlace.setAddress("Unknown address");
-            fallbackPlace.setIcon("https://via.placeholder.com/150");
-            fallbackPlace.setLatitude(0.0);
-            fallbackPlace.setLongitude(0.0);
-            fallbackPlace.setPlaceId("unknown_" + city);
-            fallbackPlace.setAttractionCount(0);
-            fallbackPlace.setComplete(false);
-            fallbackPlace.setCountry("");
-            return ResponseEntity.status(HttpStatus.OK).body(fallbackPlace);
         }
-    }
 
-    @GetMapping("/cache/cities")
-    public ResponseEntity<List<String>> getCachedCities(@RequestParam String userId) {
-        try {
-            List<String> cities = cityCacheService.getCities(userId);
-            // Decode cities before returning
-            List<String> decodedCities = cities.stream()
-                    .map(city -> {
-                        try {
-                            return URLDecoder.decode(city, "UTF-8");
-                        } catch (Exception e) {
-                            return city;
-                        }
-                    })
-                    .collect(Collectors.toList());
-            return ResponseEntity.ok(decodedCities);
-        } catch (Exception e) {
-            logger.error("Error fetching cached cities for user {}: {}", userId, e.getMessage());
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(List.of());
-        }
-    }
-
-    @PostMapping("/cache/cities")
-    public ResponseEntity<String> addCityToCache(@RequestParam String userId, @RequestParam String city) {
-        try {
-            String decodedCity = URLDecoder.decode(city, "UTF-8");
-            String result = cityCacheService.addCity(userId, decodedCity);
-            return ResponseEntity.ok(result);
-        } catch (Exception e) {
-            logger.error("Error adding city {} to cache for user {}: {}", city, userId, e.getMessage());
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to add city to cache");
-        }
-    }
-
-    @DeleteMapping("/cache/cities")
-    public ResponseEntity<String> removeCityFromCache(@RequestParam String userId, @RequestParam String city) {
-        try {
-            String decodedCity = URLDecoder.decode(city, "UTF-8");
-            String result = cityCacheService.removeCity(userId, decodedCity);
-            return ResponseEntity.ok(result);
-        } catch (Exception e) {
-            logger.error("Error removing city {} from cache for user {}: {}", city, userId, e.getMessage());
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to remove city from cache");
-        }
+        return ResponseEntity.ok(place);
     }
 }
