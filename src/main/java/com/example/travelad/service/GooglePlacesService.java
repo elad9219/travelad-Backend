@@ -2,214 +2,297 @@ package com.example.travelad.service;
 
 import com.example.travelad.beans.GooglePlaces;
 import com.example.travelad.repositories.GooglePlacesRepository;
+import com.fasterxml.jackson.databind.JsonNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import java.nio.charset.StandardCharsets;
-import java.util.HashMap;
+import java.net.URI;
+import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
-import java.util.Optional;
 
 @Service
 public class GooglePlacesService {
 
-    private static final Logger logger = LoggerFactory.getLogger(GooglePlacesService.class);
-    private final RestTemplate restTemplate;
-    private final GooglePlacesRepository googlePlacesRepository;
-    private final String googleApiKey;
-    private final Map<String, GooglePlaces> localCache = new HashMap<>(); // Local in-memory cache
+    private static final Logger logger =
+            LoggerFactory.getLogger(GooglePlacesService.class);
 
-    @Autowired
-    public GooglePlacesService(RestTemplate restTemplate, GooglePlacesRepository googlePlacesRepository,
-                               @Value("${google.places.api.key}") String googleApiKey) {
-        this.restTemplate = restTemplate;
-        this.googlePlacesRepository = googlePlacesRepository;
-        this.googleApiKey = googleApiKey;
+    private static final long CACHE_TTL_MS = 5 * 60 * 1000L;
+
+    private final RestTemplate http;
+    private final GooglePlacesRepository repository;
+    private final String apiKey;
+    private final Object[] locks = new Object[32];
+
+    private final Map<String, CachedPlace> cache = Collections.synchronizedMap(
+            new LinkedHashMap<String, CachedPlace>(100, 0.75f, true) {
+                @Override
+                protected boolean removeEldestEntry(
+                        Map.Entry<String, CachedPlace> eldest) {
+                    return size() > 100;
+                }
+            }
+    );
+
+    public GooglePlacesService(
+            RestTemplate http,
+            GooglePlacesRepository repository,
+            @Value("${google.places.api.key}") String apiKey) {
+        this.http = http;
+        this.repository = repository;
+        this.apiKey = apiKey;
+
+        for (int i = 0; i < locks.length; i++) {
+            locks[i] = new Object();
+        }
     }
 
     public GooglePlaces searchPlaceByCity(String city) {
-        try {
-            // Normalize and encode city name
-            String normalizedCity = city.trim().toLowerCase();
-            String encodedCity = UriComponentsBuilder.fromUriString(normalizedCity)
-                    .build()
-                    .toUriString()
-                    .replace(" ", "+");
-            logger.debug("Searching for city: {}, normalized: {}, encoded: {}", city, normalizedCity, encodedCity);
+        GooglePlaces place = findPlaceByCity(city);
 
-            // Check local cache first
-            if (localCache.containsKey(normalizedCity)) {
-                GooglePlaces place = localCache.get(normalizedCity);
-                String photoUrl = getPhotoUrl(place.getPlaceId());
-                place.setIcon(photoUrl != null ? photoUrl : "https://via.placeholder.com/150");
-                logger.info("Returning locally cached GooglePlaces for city: {}", normalizedCity);
-                return place;
+        if (usable(place)) {
+            // Photo references must be obtained fresh, never persisted in the city cache.
+            place.setIcon(photoUrl(place.getPlaceId()));
+        }
+
+        return place;
+    }
+
+    public GooglePlaces findPlaceByCity(String city) {
+        String requestedCity = CityCacheService.normalizeCity(city);
+        String key = requestedCity.toLowerCase(Locale.ROOT);
+
+        synchronized (locks[Math.floorMod(key.hashCode(), locks.length)]) {
+            CachedPlace cached = cache.get(key);
+
+            if (cached != null && cached.expiresAt > System.currentTimeMillis()) {
+                return copy(cached.place);
             }
 
-            // Check database cache
-            List<GooglePlaces> cachedPlaces = googlePlacesRepository.findByCityIgnoreCase(normalizedCity);
-            if (!cachedPlaces.isEmpty()) {
-                GooglePlaces place = cachedPlaces.get(0);
-                String photoUrl = getPhotoUrl(place.getPlaceId());
-                place.setIcon(photoUrl != null ? photoUrl : "https://via.placeholder.com/150");
-                localCache.put(normalizedCity, place); // Update local cache
-                logger.info("Returning database cached GooglePlaces for city: {}", normalizedCity);
-                return place;
-            }
-
-            // Fetch from Google Places API
-            String url = UriComponentsBuilder.fromHttpUrl("https://maps.googleapis.com/maps/api/place/textsearch/json")
-                    .queryParam("query", encodedCity)
-                    .queryParam("key", googleApiKey)
-                    .toUriString();
-            logger.debug("Calling Google Places API with URL: {}", url);
-            Map<String, Object> response = restTemplate.getForObject(url, Map.class);
-
-            if (response == null) {
-                logger.warn("Google Places API returned null response for city: {}", normalizedCity);
-                return createEnhancedFallbackPlace(normalizedCity);
-            }
-
-            String status = (String) response.get("status");
-            if (!"OK".equals(status)) {
-                logger.warn("Google Places API returned non-OK status: {} for city: {}", status, normalizedCity);
-                return createEnhancedFallbackPlace(normalizedCity);
-            }
-
-            @SuppressWarnings("unchecked")
-            List<Map<String, Object>> results = (List<Map<String, Object>>) response.get("results");
-            if (results == null || results.isEmpty()) {
-                logger.warn("Google Places API returned empty or null results for city: {}", normalizedCity);
-                return createEnhancedFallbackPlace(normalizedCity);
-            }
-
-            Map<String, Object> result = results.get(0);
-            String placeId = (String) result.getOrDefault("place_id", "unknown_" + normalizedCity);
-            GooglePlaces place;
-
-            // Check if place_id already exists in database
-            Optional<GooglePlaces> existingPlaceOpt = googlePlacesRepository.findByPlaceId(placeId);
-            if (existingPlaceOpt.isPresent()) {
-                place = existingPlaceOpt.get();
-                logger.info("Found existing GooglePlaces for place_id: {}", placeId);
-            } else {
-                place = new GooglePlaces();
-                place.setPlaceId(placeId);
-            }
-
-            place.setCity(normalizedCity);
-            place.setName((String) result.getOrDefault("name", normalizedCity));
-            place.setAddress((String) result.getOrDefault("formatted_address", normalizedCity));
-            @SuppressWarnings("unchecked")
-            Map<String, Object> geometry = (Map<String, Object>) result.getOrDefault("geometry", new HashMap<>());
-            @SuppressWarnings("unchecked")
-            Map<String, Double> location = (Map<String, Double>) geometry.getOrDefault("location", new HashMap<>());
-            place.setLatitude(location.getOrDefault("lat", 0.0));
-            place.setLongitude(location.getOrDefault("lng", 0.0));
-            place.setAttractionCount(0); // Placeholder, can be enhanced later
-            place.setComplete(true);
-            place.setCountry(extractCountry((String) result.get("formatted_address")));
-
-            // Fetch photo directly
-            String photoUrl = getPhotoUrl(place.getPlaceId());
-            place.setIcon(photoUrl != null ? photoUrl : "https://via.placeholder.com/150");
-
-            // Save or update in database
             try {
-                googlePlacesRepository.save(place);
-                logger.info("Saved/Updated GooglePlaces for city {} in database", normalizedCity);
-            } catch (Exception e) {
-                logger.error("Error saving GooglePlaces for city {}: {}", normalizedCity, e.getMessage(), e);
-                return createEnhancedFallbackPlace(normalizedCity);
-            }
-
-            // Save to local cache
-            localCache.put(normalizedCity, place);
-            logger.info("Returning GooglePlaces for city: {}", normalizedCity);
-            return place;
-
-        } catch (Exception e) {
-            logger.error("Error fetching place for city {}: {}", city, e.getMessage(), e);
-            return createEnhancedFallbackPlace(city);
-        }
-    }
-
-    private String getPhotoUrl(String placeId) {
-        try {
-            String detailsUrl = "https://maps.googleapis.com/maps/api/place/details/json" +
-                    "?place_id=" + placeId +
-                    "&fields=photos" +
-                    "&key=" + googleApiKey;
-            logger.debug("Fetching photo with URL: {}", detailsUrl);
-            Map<String, Object> response = restTemplate.getForObject(detailsUrl, Map.class);
-            if (response == null) {
-                logger.warn("Google Places Details API returned null response for placeId: {}", placeId);
-                return null;
-            }
-
-            if (response.containsKey("status") && !"OK".equals(response.get("status"))) {
-                logger.warn("Google Places Details API returned non-OK status: {} for placeId: {}", response.get("status"), placeId);
-                return null;
-            }
-
-            if (response.containsKey("result")) {
-                @SuppressWarnings("unchecked")
-                Map<String, Object> result = (Map<String, Object>) response.get("result");
-                if (result.containsKey("photos")) {
-                    @SuppressWarnings("unchecked")
-                    List<Map<String, Object>> photos = (List<Map<String, Object>>) result.get("photos");
-                    if (!photos.isEmpty()) {
-                        String photoReference = (String) photos.get(0).get("photo_reference");
-                        String photoUrl = "https://maps.googleapis.com/maps/api/place/photo" +
-                                "?maxwidth=1600" +
-                                "&photo_reference=" + photoReference +
-                                "&key=" + googleApiKey;
-                        logger.debug("Generated photo URL: {}", photoUrl);
-                        return photoUrl;
-                    } else {
-                        logger.warn("No photos found for placeId: {}", placeId);
-                    }
-                } else {
-                    logger.warn("Response missing 'photos' key for placeId: {}", placeId);
+                GooglePlaces place = storedPlace(key);
+                if (place == null) {
+                    place = fetchPlace(requestedCity, key);
                 }
-            } else {
-                logger.warn("Response missing 'result' key for placeId: {}", placeId);
+
+                place.setIcon("");
+                cache.put(key, new CachedPlace(copy(place)));
+                return copy(place);
+            } catch (Exception e) {
+                logger.warn(
+                        "Place lookup failed ({})",
+                        e.getClass().getSimpleName()
+                );
+                return fallback(requestedCity);
             }
-            return null;
+        }
+    }
+
+    private GooglePlaces storedPlace(String city) {
+        try {
+            List<GooglePlaces> values = repository.findByCityIgnoreCase(city);
+
+            if (values != null) {
+                for (GooglePlaces value : values) {
+                    if (usable(value)) {
+                        return copy(value);
+                    }
+                }
+            }
         } catch (Exception e) {
-            logger.error("Error fetching photo for place {}: {}", placeId, e.getMessage(), e);
-            return null;
+            logger.warn(
+                    "City cache read failed ({})",
+                    e.getClass().getSimpleName()
+            );
         }
+
+        return null;
     }
 
-    private String extractCountry(String address) {
-        if (address == null) return "";
-        String[] parts = address.split(",");
-        if (parts.length > 0) {
-            return parts[parts.length - 1].trim();
-        }
-        return "";
-    }
+    private GooglePlaces fetchPlace(String city, String key) {
+        JsonNode response = http.getForObject(
+                url("textsearch/json", Map.of("query", city)),
+                JsonNode.class
+        );
 
-    private GooglePlaces createEnhancedFallbackPlace(String city) {
+        JsonNode result = response == null
+                ? null
+                : response.path("results").path(0);
+
+        if (response == null ||
+                !"OK".equals(response.path("status").asText()) ||
+                result == null ||
+                !result.isObject()) {
+            throw new IllegalStateException(
+                    "Place provider returned no usable result"
+            );
+        }
+
+        JsonNode location = result.path("geometry").path("location");
+
         GooglePlaces place = new GooglePlaces();
+        place.setPlaceId(result.path("place_id").asText(""));
+        place.setName(result.path("name").asText(""));
+        place.setCity(key);
+        place.setAddress(result.path("formatted_address").asText(city));
+        place.setLatitude(
+                location.path("lat").isNumber()
+                        ? location.path("lat").asDouble()
+                        : null
+        );
+        place.setLongitude(
+                location.path("lng").isNumber()
+                        ? location.path("lng").asDouble()
+                        : null
+        );
+        place.setCountry(country(result.path("formatted_address").asText("")));
+        place.setComplete(true);
+        place.setIcon("");
+
+        if (!usable(place)) {
+            throw new IllegalStateException("Invalid place provider result");
+        }
+
+        try {
+            repository.findByPlaceId(place.getPlaceId())
+                    .ifPresent(existing -> place.setId(existing.getId()));
+            repository.save(place);
+        } catch (Exception e) {
+            // Persistence is optional when the provider has already returned valid data.
+            logger.warn(
+                    "City cache write failed ({})",
+                    e.getClass().getSimpleName()
+            );
+        }
+
+        return place;
+    }
+
+    private String photoUrl(String placeId) {
+        try {
+            JsonNode response = http.getForObject(
+                    url(
+                            "details/json",
+                            Map.of("place_id", placeId, "fields", "photos")
+                    ),
+                    JsonNode.class
+            );
+
+            if (response == null ||
+                    !"OK".equals(response.path("status").asText())) {
+                return "";
+            }
+
+            String reference = response.path("result")
+                    .path("photos")
+                    .path(0)
+                    .path("photo_reference")
+                    .asText("");
+
+            if (reference.isBlank()) {
+                return "";
+            }
+
+            return url(
+                    "photo",
+                    Map.of(
+                            "maxwidth", "1600",
+                            "photo_reference", reference
+                    )
+            ).toASCIIString();
+        } catch (Exception e) {
+            logger.warn(
+                    "City photo lookup failed ({})",
+                    e.getClass().getSimpleName()
+            );
+            return "";
+        }
+    }
+
+    private URI url(String path, Map<String, String> parameters) {
+        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(
+                "https://maps.googleapis.com/maps/api/place/" + path
+        );
+
+        Map<String, String> values = new LinkedHashMap<>(parameters);
+        values.put("key", apiKey);
+
+        values.forEach((name, value) ->
+                builder.queryParam(name, "{" + name + "}")
+        );
+
+        return builder.encode().buildAndExpand(values).toUri();
+    }
+
+    private boolean usable(GooglePlaces place) {
+        return place != null &&
+                place.getPlaceId() != null &&
+                !place.getPlaceId().isBlank() &&
+                !place.getPlaceId().startsWith("unknown_") &&
+                place.getName() != null &&
+                !place.getName().isBlank() &&
+                place.getLatitude() != null &&
+                Double.isFinite(place.getLatitude()) &&
+                Math.abs(place.getLatitude()) <= 90 &&
+                place.getLongitude() != null &&
+                Double.isFinite(place.getLongitude()) &&
+                Math.abs(place.getLongitude()) <= 180;
+    }
+
+    private GooglePlaces copy(GooglePlaces source) {
+        GooglePlaces result = new GooglePlaces();
+        result.setId(source.getId());
+        result.setPlaceId(source.getPlaceId());
+        result.setCity(source.getCity());
+        result.setName(source.getName());
+        result.setAddress(source.getAddress());
+        result.setLatitude(source.getLatitude());
+        result.setLongitude(source.getLongitude());
+        result.setCountry(source.getCountry());
+        result.setComplete(source.isComplete());
+        result.setAttractionCount(source.getAttractionCount());
+        result.setCreatedAt(source.getCreatedAt());
+        result.setIcon("");
+        return result;
+    }
+
+    private String country(String address) {
+        if (address == null) {
+            return "";
+        }
+
+        String[] parts = address.split(",");
+        return parts.length == 0 ? "" : parts[parts.length - 1].trim();
+    }
+
+    private GooglePlaces fallback(String city) {
+        GooglePlaces place = new GooglePlaces();
+        place.setPlaceId("unknown_" + city);
         place.setCity(city);
         place.setName(city);
-        place.setAddress(city + ", Unknown"); // Improved fallback address
-        place.setIcon("https://via.placeholder.com/150");
+        place.setAddress(city);
         place.setLatitude(0.0);
         place.setLongitude(0.0);
-        place.setPlaceId("unknown_" + city);
-        place.setAttractionCount(0); // Placeholder
-        place.setComplete(false);
         place.setCountry("");
-        logger.info("Created enhanced fallback place for city: {}", city);
+        place.setIcon("");
+        place.setComplete(false);
         return place;
+    }
+
+    private static class CachedPlace {
+
+        private final GooglePlaces place;
+        private final long expiresAt =
+                System.currentTimeMillis() + CACHE_TTL_MS;
+
+        private CachedPlace(GooglePlaces place) {
+            this.place = place;
+        }
     }
 }

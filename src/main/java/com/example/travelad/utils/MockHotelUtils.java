@@ -2,8 +2,6 @@ package com.example.travelad.utils;
 
 import com.example.travelad.dto.HotelDto;
 
-import java.net.URLDecoder;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -13,7 +11,7 @@ public class MockHotelUtils {
 
     private static final Random random = new Random();
 
-    // 25 תמונות איכותיות של מלונות
+    // Images used by the existing hotel demo.
     private static final List<String> HOTEL_IMAGES = Arrays.asList(
             "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=800",
             "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -42,12 +40,22 @@ public class MockHotelUtils {
             "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80"
     );
 
-    private static final String[] HOTEL_PREFIXES = {"Grand", "Royal", "The", "Central", "Luxury", "Boutique", "Downtown", "Premium", "Oasis", "Urban"};
-    private static final String[] HOTEL_SUFFIXES = {"Resort", "Plaza", "Hotel", "Suites", "Lodge", "Inn", "Spa & Resort", "Palace", "Gardens"};
+    private static final String[] HOTEL_PREFIXES = {
+            "Grand", "Royal", "The", "Central", "Luxury",
+            "Boutique", "Downtown", "Premium", "Oasis", "Urban"
+    };
 
-    public static List<HotelDto> generateMockHotels(String city, double lat, double lon) {
+    private static final String[] HOTEL_SUFFIXES = {
+            "Resort", "Plaza", "Hotel", "Suites", "Lodge",
+            "Inn", "Spa & Resort", "Palace", "Gardens"
+    };
+
+    public static List<HotelDto> generateMockHotels(
+            String city,
+            double lat,
+            double lon) {
         List<HotelDto> hotels = new ArrayList<>();
-        String decodedCity = URLDecoder.decode(city, StandardCharsets.UTF_8);
+        String decodedCity = city;
 
         for (int i = 0; i < 25; i++) {
             double hLat = lat + (random.nextDouble() - 0.5) * 0.04;
@@ -60,7 +68,7 @@ public class MockHotelUtils {
 
             String imageUrl = HOTEL_IMAGES.get(random.nextInt(HOTEL_IMAGES.size()));
 
-            // ציונים ריאליים יותר: בין 6.0 ל-9.5
+            // Generate demo ratings between 6.0 and 9.5.
             double rawRating = 6.0 + (random.nextDouble() * 3.5);
             double roundedRating = Math.round(rawRating * 10.0) / 10.0;
 
@@ -76,9 +84,14 @@ public class MockHotelUtils {
                     roundedRating
             );
 
-            hotel.setIataCode(decodedCity.length() >= 3 ? decodedCity.substring(0, 3).toUpperCase() : "XXX");
+            hotel.setIataCode(
+                    decodedCity.length() >= 3
+                            ? decodedCity.substring(0, 3).toUpperCase()
+                            : "XXX"
+            );
             hotels.add(hotel);
         }
+
         return hotels;
     }
 }
