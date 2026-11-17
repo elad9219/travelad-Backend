@@ -63,16 +63,14 @@ public class HotelsService {
                 city, checkIn, checkOut, numAdults);
 
         GooglePlaces place = googlePlacesService.findPlaceByCity(city);
-        double lat = 0.0;
-        double lon = 0.0;
+        boolean hasCityLocation = place != null
+                && place.getPlaceId() != null
+                && !place.getPlaceId().isBlank()
+                && !place.getPlaceId().startsWith("unknown_")
+                && validCoordinates(place.getLatitude(), place.getLongitude());
 
-        if (place != null
-                && place.getLatitude() != null
-                && place.getLongitude() != null) {
-
-            lat = place.getLatitude();
-            lon = place.getLongitude();
-        }
+        double lat = hasCityLocation ? place.getLatitude() : 0.0;
+        double lon = hasCityLocation ? place.getLongitude() : 0.0;
 
         try {
             Thread.sleep(600);
@@ -87,6 +85,13 @@ public class HotelsService {
         double guestMultiplier = 1 + ((numAdults - 1) * 0.20);
 
         for (HotelDto hotel : hotels) {
+            // Generated demo points need a real city location as their reference.
+            if (!hasCityLocation
+                    || !validCoordinates(hotel.getLatitude(), hotel.getLongitude())) {
+                hotel.setLatitude(null);
+                hotel.setLongitude(null);
+            }
+
             if (hotel.getPrice() != null) {
                 double basePriceForNights = hotel.getPrice() * nights;
 
@@ -99,6 +104,15 @@ public class HotelsService {
         }
 
         return hotels;
+    }
+
+    private boolean validCoordinates(Double latitude, Double longitude) {
+        return latitude != null
+                && Double.isFinite(latitude)
+                && Math.abs(latitude) <= 90
+                && longitude != null
+                && Double.isFinite(longitude)
+                && Math.abs(longitude) <= 180;
     }
 
     private LocalDate date(String value) {
