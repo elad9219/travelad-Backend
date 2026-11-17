@@ -5,8 +5,9 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.5.2</version>
-		<relativePath/> </parent>
+		<version>2.7.18</version>
+		<relativePath/>
+	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>travelad</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -26,7 +27,9 @@
 		<url/>
 	</scm>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>21</java.version>
+		<!-- Temporary alignment for Mockito on Java 21 during the Boot 2.7 step. -->
+		<byte-buddy.version>1.14.19</byte-buddy.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -70,7 +73,8 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.34</version> <scope>provided</scope>
+			<version>1.18.34</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
@@ -82,7 +86,6 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
-			<version>2.18.2</version>
 		</dependency>
 
 		<dependency>
@@ -115,10 +118,6 @@
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<dependency>
