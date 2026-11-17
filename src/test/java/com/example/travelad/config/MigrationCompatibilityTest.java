@@ -29,18 +29,24 @@ class MigrationCompatibilityTest {
     private MockMvc mvc;
 
     @Test
-    void legacyReadinessStillReturnsSwaggerMetadata() throws Exception {
-        mvc.perform(get("/v2/api-docs"))
+    void readinessReturnsOpenApiMetadata() throws Exception {
+        mvc.perform(get("/v3/api-docs"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.swagger").value("2.0"))
+                .andExpect(jsonPath("$.openapi").value(org.hamcrest.Matchers.startsWith("3.")))
                 .andExpect(jsonPath("$.paths").isMap());
     }
 
     @Test
     void browserCanReadTheReadinessResponse() throws Exception {
-        mvc.perform(get("/v2/api-docs").header("Origin", "http://localhost:3000"))
+        mvc.perform(get("/v3/api-docs").header("Origin", "http://localhost:3000"))
                 .andExpect(status().isOk())
                 .andExpect(header().string("Access-Control-Allow-Origin", "http://localhost:3000"));
+    }
+
+    @Test
+    void removedLegacyDocumentationReturnsNotFound() throws Exception {
+        mvc.perform(get("/v2/api-docs"))
+                .andExpect(status().isNotFound());
     }
 
     @Test

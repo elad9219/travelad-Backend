@@ -1,34 +1,37 @@
 google.places.api.key=${GOOGLE_PLACES_API_KEY}
 
-spring.http.converters.preferred-json-mapper=gson
+spring.mvc.converters.preferred-json-mapper=jackson
 
 geoapify.api.key=${GEOAPIFY_API_KEY}
 
 weatherapi.api.key=${WEATHERAPI_API_KEY}
-weatherapi.base.url=http://api.weatherapi.com/v1
+weatherapi.base.url=https://api.weatherapi.com/v1
 
-spring.redis.host=${REDIS_HOST}
-spring.redis.port=${REDIS_PORT}
-spring.redis.pool.max-active=8
-spring.redis.pool.max-wait=-1
-spring.redis.pool.max-idle=8
-spring.redis.pool.min-idle=0
+spring.data.redis.host=${REDIS_HOST}
+spring.data.redis.port=${REDIS_PORT}
+spring.data.redis.lettuce.pool.max-active=8
+spring.data.redis.lettuce.pool.max-wait=-1
+spring.data.redis.lettuce.pool.max-idle=8
+spring.data.redis.lettuce.pool.min-idle=0
 
 spring.datasource.url=${DB_URL}
 spring.datasource.username=${DB_USERNAME}
 spring.datasource.password=${DB_PASSWORD}
 spring.datasource.driver-class-name=org.postgresql.Driver
-spring.jpa.show-sql=true
-spring.jpa.hibernate.ddl-auto=update
+
+spring.jpa.show-sql=false
+spring.jpa.hibernate.ddl-auto=validate
 spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
 
 spring.datasource.hikari.connection-timeout=20000
 spring.datasource.hikari.max-lifetime=1800000
 spring.datasource.hikari.idle-timeout=300000
 spring.datasource.hikari.leak-detection-threshold=60000
-spring.datasource.hikari.test-on-borrow=true
 spring.datasource.hikari.connection-test-query=SELECT 1
 spring.datasource.hikari.minimum-idle=5
 
 management.endpoints.web.exposure.include=health,info
-management.endpoint.health.show-details=always
+management.endpoint.health.show-details=never
+
+spring.data.redis.repositories.enabled=false
+spring.jpa.open-in-view=false

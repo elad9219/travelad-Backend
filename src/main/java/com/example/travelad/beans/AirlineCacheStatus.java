@@ -1,15 +1,15 @@
 package com.example.travelad.beans;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "airline_cache_status")
 public class AirlineCacheStatus {
 
     @Id
-    private String iataCode;  // Primary key (normalized, e.g., "A3")
+    private String iataCode; // Primary key (normalized, e.g., "A3")
 
     private boolean complete;
 

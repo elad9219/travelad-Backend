@@ -4,7 +4,7 @@ import com.example.travelad.beans.GooglePlaces;
 import com.example.travelad.config.AppConfig;
 import com.example.travelad.repositories.GooglePlacesRepository;
 import com.sun.net.httpserver.HttpServer;
-import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;

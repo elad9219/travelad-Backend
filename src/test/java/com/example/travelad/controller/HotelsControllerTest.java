@@ -157,11 +157,11 @@ class HotelsControllerTest {
 
         assertEquals(
                 HttpStatus.BAD_REQUEST,
-                invalidGuests.getStatus());
+                invalidGuests.getStatusCode());
 
         assertEquals(
                 HttpStatus.BAD_REQUEST,
-                invalidDates.getStatus());
+                invalidDates.getStatusCode());
 
         verifyNoInteractions(places);
     }

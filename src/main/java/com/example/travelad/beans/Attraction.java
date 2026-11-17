@@ -1,6 +1,6 @@
 package com.example.travelad.beans;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 public class Attraction {

@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -20,7 +21,7 @@ public class ApiAdvice extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(ResponseStatusException.class)
     public ResponseEntity<ErrorDetail> handleResponseStatus(ResponseStatusException ex) {
-        HttpStatus status = ex.getStatus();
+        HttpStatusCode status = ex.getStatusCode();
         return ResponseEntity.status(status).body(errorBody(status));
     }
 
@@ -49,7 +50,7 @@ public class ApiAdvice extends ResponseEntityExceptionHandler {
             Exception ex,
             Object body,
             HttpHeaders headers,
-            HttpStatus status,
+            HttpStatusCode status,
             WebRequest request) {
         // Preserve Spring's status and headers, such as Allow for HTTP 405.
         return super.handleExceptionInternal(
@@ -61,11 +62,13 @@ public class ApiAdvice extends ResponseEntityExceptionHandler {
         );
     }
 
-    private ErrorDetail errorBody(HttpStatus status) {
+    private ErrorDetail errorBody(HttpStatusCode status) {
         String description = status.is5xxServerError()
                 ? "The request could not be completed. Please try again later."
                 : "The request could not be processed. Please check your input.";
 
-        return new ErrorDetail(status.getReasonPhrase(), description);
+        HttpStatus knownStatus = HttpStatus.resolve(status.value());
+        return new ErrorDetail(knownStatus == null ? "HTTP " + status.value()
+                : knownStatus.getReasonPhrase(), description);
     }
 }

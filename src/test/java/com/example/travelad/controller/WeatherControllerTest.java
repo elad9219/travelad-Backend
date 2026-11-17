@@ -153,7 +153,7 @@ class WeatherControllerTest {
                 ResponseStatusException.class,
                 () -> service.getWeatherByCity(" "));
 
-        assertEquals(HttpStatus.BAD_REQUEST, error.getStatus());
+        assertEquals(HttpStatus.BAD_REQUEST, error.getStatusCode());
     }
 
     @Test
