@@ -2,7 +2,7 @@ package com.example.travelad.config;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.autoconfigure.AutoConfigurations;
-import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
+import org.springframework.boot.data.redis.autoconfigure.DataRedisAutoConfiguration;
 import org.springframework.boot.test.context.runner.ApplicationContextRunner;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
@@ -23,7 +23,7 @@ class LocalRedisConfigurationTest {
                 .toArray(String[]::new);
 
         new ApplicationContextRunner()
-                .withConfiguration(AutoConfigurations.of(RedisAutoConfiguration.class))
+                .withConfiguration(AutoConfigurations.of(DataRedisAutoConfiguration.class))
                 .withPropertyValues(values)
                 .run(context -> {
                     assertNull(context.getStartupFailure());

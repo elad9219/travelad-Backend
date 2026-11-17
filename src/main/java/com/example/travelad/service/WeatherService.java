@@ -39,7 +39,7 @@ public class WeatherService {
         try {
             body = http.getForObject(requestUri(normalized), String.class);
         } catch (RestClientResponseException failure) {
-            if (failure.getRawStatusCode() == 400
+            if (failure.getStatusCode().value() == 400
                     && isUnknownLocation(failure.getResponseBodyAsString())) {
                 throw new ResponseStatusException(
                         HttpStatus.NOT_FOUND,
@@ -90,7 +90,7 @@ public class WeatherService {
 
     private URI requestUri(String city) {
         UriComponentsBuilder builder =
-                UriComponentsBuilder.fromHttpUrl(baseUrl);
+                UriComponentsBuilder.fromUriString(baseUrl);
 
         URI configured = URI.create(baseUrl);
 

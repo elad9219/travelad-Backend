@@ -2,7 +2,7 @@ package com.example.travelad.service;
 
 import com.example.travelad.beans.GooglePlaces;
 import com.example.travelad.repositories.GooglePlacesRepository;
-import com.fasterxml.jackson.databind.JsonNode;
+import tools.jackson.databind.JsonNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -216,7 +216,7 @@ public class GooglePlacesService {
     }
 
     private URI url(String path, Map<String, String> parameters) {
-        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(
+        UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(
                 "https://maps.googleapis.com/maps/api/place/" + path
         );
 

@@ -2,11 +2,13 @@ package com.example.travelad.config;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
+import tools.jackson.databind.json.JsonMapper;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.hamcrest.Matchers.greaterThan;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -27,6 +29,19 @@ class MigrationCompatibilityTest {
 
     @Autowired
     private MockMvc mvc;
+
+    @Autowired
+    private JsonMapper httpJson;
+
+    @Test
+    void defaultHttpJsonMapperPreservesNullExclusion() throws Exception {
+        var hotel = new com.example.travelad.dto.HotelDto(
+                "Demo Hotel", "MOCK_1", "PAR", "FR", null, null);
+        var result = httpJson.readTree(httpJson.writeValueAsString(hotel));
+        assertFalse(result.has("latitude"));
+        assertFalse(result.has("longitude"));
+        assertEquals("Demo Hotel", result.path("name").asText());
+    }
 
     @Test
     void readinessReturnsOpenApiMetadata() throws Exception {

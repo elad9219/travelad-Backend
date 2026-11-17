@@ -208,7 +208,7 @@ public class AttractionsService {
     }
 
     private JsonNode get(String url, Map<String, String> parameters) throws Exception {
-        UriComponentsBuilder request = UriComponentsBuilder.fromHttpUrl(url).queryParam("apiKey", apiKey);
+        UriComponentsBuilder request = UriComponentsBuilder.fromUriString(url).queryParam("apiKey", apiKey);
         parameters.forEach(request::queryParam);
         String body = http.getForObject(request.build().encode().toUri(), String.class);
         JsonNode result = new ObjectMapper().readTree(body == null ? "{}" : body);

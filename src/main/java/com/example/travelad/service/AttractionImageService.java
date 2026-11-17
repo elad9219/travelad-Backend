@@ -142,7 +142,7 @@ public class AttractionImageService {
                     );
 
                     UriComponentsBuilder request = UriComponentsBuilder
-                            .fromHttpUrl("https://" + language + ".wikipedia.org/w/api.php")
+                            .fromUriString("https://" + language + ".wikipedia.org/w/api.php")
                             .queryParam("action", "query")
                             .queryParam("format", "json")
                             .queryParam("titles", batch)
@@ -206,7 +206,7 @@ public class AttractionImageService {
                 );
 
                 UriComponentsBuilder request = UriComponentsBuilder
-                        .fromHttpUrl("https://www.wikidata.org/w/api.php")
+                        .fromUriString("https://www.wikidata.org/w/api.php")
                         .queryParam("action", "wbgetentities")
                         .queryParam("format", "json")
                         .queryParam("ids", batch)
@@ -329,7 +329,7 @@ public class AttractionImageService {
                         .collect(Collectors.joining("|"));
 
                 UriComponentsBuilder request = UriComponentsBuilder
-                        .fromHttpUrl("https://en.wikipedia.org/w/api.php")
+                        .fromUriString("https://en.wikipedia.org/w/api.php")
                         .queryParam("action", "query")
                         .queryParam("format", "json")
                         .queryParam("titles", names)
@@ -376,7 +376,7 @@ public class AttractionImageService {
                 );
 
                 UriComponentsBuilder request = UriComponentsBuilder
-                        .fromHttpUrl("https://commons.wikimedia.org/w/api.php")
+                        .fromUriString("https://commons.wikimedia.org/w/api.php")
                         .queryParam("action", "query")
                         .queryParam("format", "json")
                         .queryParam("redirects", 1)

@@ -1,7 +1,5 @@
 google.places.api.key=${GOOGLE_PLACES_API_KEY}
 
-spring.mvc.converters.preferred-json-mapper=jackson
-
 geoapify.api.key=${GEOAPIFY_API_KEY}
 
 weatherapi.api.key=${WEATHERAPI_API_KEY}
