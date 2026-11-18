@@ -2,12 +2,14 @@ package com.example.travelad.service;
 
 import com.example.travelad.beans.GooglePlaces;
 import com.example.travelad.config.AppConfig;
+import com.example.travelad.config.GooglePlacesQuota;
 import com.example.travelad.repositories.GooglePlacesRepository;
 import com.sun.net.httpserver.HttpServer;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.client.MockRestServiceServer;
 import org.springframework.web.client.RestClientException;
@@ -165,8 +167,7 @@ class GooglePlacesServiceTest {
         textSearch(response);
 
         assertTrue(
-                service.findPlaceByCity("Paris")
-                        .getPlaceId()
+                service.findPlaceByCity("Paris").getPlaceId()
                         .startsWith("unknown_")
         );
 
@@ -225,7 +226,6 @@ class GooglePlacesServiceTest {
         verify(resolver).resolve(argThat(uri ->
                 uri.getRawQuery().contains("reference-one")
         ));
-
         verify(resolver).resolve(argThat(uri ->
                 uri.getRawQuery().contains("reference-two")
         ));
@@ -330,7 +330,7 @@ class GooglePlacesServiceTest {
     @Test
     void cacheIsBoundedAndEvictsOlderCities() {
         when(repository.findByCityIgnoreCase(anyString()))
-                .thenAnswer(call -> List.of(stored()));
+                .thenReturn(List.of(stored()));
 
         for (int i = 0; i <= 100; i++) {
             service.findPlaceByCity("City " + i);
@@ -401,7 +401,9 @@ class GooglePlacesServiceTest {
         endpoint.start();
         AppConfig config = new AppConfig();
 
-        try (CloseableHttpClient client = config.outboundHttpClient()) {
+        @SuppressWarnings("unchecked")
+        RedisTemplate<String, String> redis = mock(RedisTemplate.class);
+        try (CloseableHttpClient client = config.outboundHttpClient(new GooglePlacesQuota(redis))) {
             RestTemplate realHttp = config.restTemplate(client);
 
             URI uri = URI.create(

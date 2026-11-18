@@ -2,6 +2,7 @@ package com.example.travelad.config;
 
 import org.apache.hc.client5.http.config.ConnectionConfig;
 import org.apache.hc.client5.http.config.RequestConfig;
+import org.apache.hc.client5.http.impl.ChainElement;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.HttpClients;
 import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManagerBuilder;
@@ -15,7 +16,7 @@ import org.springframework.web.client.RestTemplate;
 public class AppConfig {
 
     @Bean
-    public CloseableHttpClient outboundHttpClient() {
+    public CloseableHttpClient outboundHttpClient(GooglePlacesQuota googlePlacesQuota) {
         RequestConfig timeouts = RequestConfig.custom()
                 .setConnectionRequestTimeout(Timeout.ofSeconds(3))
                 .setResponseTimeout(Timeout.ofSeconds(10))
@@ -32,6 +33,9 @@ public class AppConfig {
                 .setConnectionManager(connections)
                 .setDefaultRequestConfig(timeouts)
                 .disableAutomaticRetries()
+                .addExecInterceptorBefore(
+                        ChainElement.PROTOCOL.name(), "google-places-quota", googlePlacesQuota
+                )
                 .build();
     }
 
