@@ -44,7 +44,8 @@ class GooglePlacesCacheAgeTest {
         assertEquals(48.86, service.findPlaceByCity("Paris").getLatitude());
         assertEquals(48.86, service.findPlaceByCity("Paris").getLatitude());
         verify(repository).save(argThat(place -> Long.valueOf(7).equals(place.getId()) &&
-                place.getCreatedAt().isAfter(expired.getCreatedAt())));
+                place.getCreatedAt().isAfter(expired.getCreatedAt()) &&
+                place.getName() == null && place.getAddress() == null && place.getCountry() == null));
         server.verify();
     }
 
@@ -54,6 +55,30 @@ class GooglePlacesCacheAgeTest {
         server.expect(requestTo(containsString("/textsearch/json"))).andRespond(withServerError());
 
         assertTrue(service.findPlaceByCity("Paris").getPlaceId().startsWith("unknown_"));
+        server.verify();
+    }
+
+    @Test
+    void cachedCoordinatesUseLiveDisplayDetailsAndFallBackToTheRequestedCity() {
+        GooglePlaces legacy = stored(LocalDateTime.now());
+        legacy.setName("Legacy label");
+        when(repository.findByCityIgnoreCase("paris")).thenReturn(List.of(legacy));
+
+        server.expect(requestTo(containsString("/details/json"))).andRespond(withSuccess("""
+                {"status":"OK","result":{"name":"Paris","formatted_address":"Paris, France"}}
+                """, MediaType.APPLICATION_JSON));
+        server.expect(requestTo(containsString("/details/json"))).andRespond(withServerError());
+
+        GooglePlaces first = service.searchPlaceByCity("Paris");
+        assertEquals("Paris, France", first.getAddress());
+        assertEquals("France", first.getCountry());
+        assertEquals("", first.getIcon());
+
+        GooglePlaces second = service.searchPlaceByCity("Paris");
+        assertEquals("Paris", second.getName());
+        assertEquals("Paris", second.getAddress());
+        assertEquals("", second.getCountry());
+        assertEquals(48.85, second.getLatitude());
         server.verify();
     }
 

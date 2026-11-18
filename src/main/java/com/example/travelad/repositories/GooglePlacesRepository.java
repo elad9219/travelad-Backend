@@ -26,4 +26,14 @@ public interface GooglePlacesRepository extends JpaRepository<GooglePlaces, Long
               and (place.latitude is not null or place.longitude is not null)
             """)
      int clearExpiredCoordinates(@Param("cutoff") LocalDateTime cutoff);
+
+     @Transactional
+     @Modifying
+     @Query("""
+            update GooglePlaces place
+            set place.name = null, place.address = null, place.country = null, place.icon = null
+            where place.name is not null or place.address is not null or place.country is not null
+              or (place.icon is not null and place.icon <> '')
+            """)
+     int clearStoredDisplayDetails();
 }

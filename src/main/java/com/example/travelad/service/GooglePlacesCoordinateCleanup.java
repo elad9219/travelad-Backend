@@ -22,5 +22,6 @@ public class GooglePlacesCoordinateCleanup {
     public void clearExpiredCoordinates() {
         // Leave margin for scheduling delays and local clock differences.
         repository.clearExpiredCoordinates(LocalDateTime.now().minusDays(29));
+        repository.clearStoredDisplayDetails();
     }
 }

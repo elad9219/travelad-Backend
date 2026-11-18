@@ -51,6 +51,32 @@ class GooglePlacesCoordinateCleanupTest {
         assertEquals(2.35, fresh.getLongitude());
     }
 
+    @Test
+    void clearsLegacyDisplayDetailsWithoutChangingUsableCoordinates() {
+        LocalDateTime fetchedAt = LocalDateTime.of(2026, 11, 12, 12, 0);
+        Long id = store("legacy", fetchedAt);
+        GooglePlaces legacy = entities.find(GooglePlaces.class, id);
+        legacy.setAddress("Paris, France");
+        legacy.setCountry("France");
+        legacy.setIcon("https://example.test/legacy-photo");
+        entities.flush();
+
+        assertEquals(1, repository.clearStoredDisplayDetails());
+        assertEquals(0, repository.clearStoredDisplayDetails());
+        entities.clear();
+
+        GooglePlaces cleaned = entities.find(GooglePlaces.class, id);
+        assertEquals("legacy", cleaned.getPlaceId());
+        assertEquals("paris", cleaned.getCity());
+        assertEquals(fetchedAt, cleaned.getCreatedAt());
+        assertEquals(48.85, cleaned.getLatitude());
+        assertEquals(2.35, cleaned.getLongitude());
+        assertNull(cleaned.getName());
+        assertNull(cleaned.getAddress());
+        assertNull(cleaned.getCountry());
+        assertNull(cleaned.getIcon());
+    }
+
     private Long store(String placeId, LocalDateTime fetchedAt) {
         GooglePlaces place = new GooglePlaces();
         place.setPlaceId(placeId);

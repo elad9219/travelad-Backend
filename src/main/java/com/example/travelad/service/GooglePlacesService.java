@@ -63,10 +63,7 @@ public class GooglePlacesService {
         GooglePlaces place = findPlaceByCity(city);
 
         if (usable(place)) {
-            // Photo references must be obtained fresh, never persisted in the city cache.
-            Photo photo = photo(place.getPlaceId());
-            place.setIcon(photo.url());
-            place.setPhotoAttributions(photo.attributions());
+            loadDisplayDetails(place);
         }
 
         return place;
@@ -81,19 +78,20 @@ public class GooglePlacesService {
 
             if (cached != null && cached.expiresAt > System.currentTimeMillis() &&
                     isFresh(cached.place)) {
-                return copy(cached.place);
+                return forRequestedCity(cached.place, requestedCity);
             }
 
             try {
                 GooglePlaces place = storedPlace(key);
 
-                if (place == null) {
-                    place = fetchPlace(requestedCity, key);
+                if (place != null) {
+                    cache.put(key, new CachedPlace(place));
+                    return forRequestedCity(place, requestedCity);
                 }
 
-                place.setIcon("");
-                cache.put(key, new CachedPlace(copy(place)));
-                return copy(place);
+                place = fetchPlace(requestedCity, key);
+                cache.put(key, new CachedPlace(copyCoordinates(place)));
+                return place;
             } catch (Exception e) {
                 logger.warn(
                         "Place lookup failed ({})",
@@ -111,7 +109,7 @@ public class GooglePlacesService {
             if (values != null) {
                 for (GooglePlaces value : values) {
                     if (usable(value) && isFresh(value)) {
-                        return copy(value);
+                        return copyCoordinates(value);
                     }
                 }
             }
@@ -172,14 +170,14 @@ public class GooglePlacesService {
         place.setComplete(true);
         place.setIcon("");
 
-        if (!usable(place)) {
+        if (!usable(place) || place.getName().isBlank()) {
             throw new IllegalStateException("Invalid place provider result");
         }
 
         try {
             repository.findByPlaceId(place.getPlaceId())
                     .ifPresent(existing -> place.setId(existing.getId()));
-            repository.save(place);
+            repository.save(copyCoordinates(place));
         } catch (Exception e) {
             // Persistence is optional when the provider has already returned valid data.
             logger.warn(
@@ -191,26 +189,40 @@ public class GooglePlacesService {
         return place;
     }
 
-    private Photo photo(String placeId) {
+    private void loadDisplayDetails(GooglePlaces place) {
         try {
             JsonNode response = http.getForObject(
                     url(
                             "details/json",
-                            Map.of("place_id", placeId, "fields", "photos")
+                            Map.of(
+                                    "place_id", place.getPlaceId(),
+                                    "fields", "name,formatted_address,photos"
+                            )
                     ),
                     JsonNode.class
             );
 
             if (response == null ||
                     !"OK".equals(response.path("status").asText())) {
-                return Photo.empty();
+                return;
             }
 
-            JsonNode photo = response.path("result").path("photos").path(0);
+            JsonNode result = response.path("result");
+            String name = result.path("name").asText("");
+            if (!name.isBlank()) {
+                place.setName(name);
+            }
+            String address = result.path("formatted_address").asText("");
+            if (!address.isBlank()) {
+                place.setAddress(address);
+                place.setCountry(country(address));
+            }
+
+            JsonNode photo = result.path("photos").path(0);
             String reference = photo.path("photo_reference").asText("");
 
             if (reference.isBlank()) {
-                return Photo.empty();
+                return;
             }
 
             List<String> attributions = new ArrayList<>();
@@ -221,13 +233,13 @@ public class GooglePlacesService {
                     if (!credit.isTextual() ||
                             credit.asText().length() > 8192 ||
                             attributions.size() >= 20) {
-                        return Photo.empty();
+                        return;
                     }
 
                     attributions.add(credit.asText());
                 }
             } else if (!credits.isMissingNode() && !credits.isNull()) {
-                return Photo.empty();
+                return;
             }
 
             String image = photoResolver.resolve(url(
@@ -238,22 +250,15 @@ public class GooglePlacesService {
                     )
             ));
 
-            return image.isBlank()
-                    ? Photo.empty()
-                    : new Photo(image, List.copyOf(attributions));
+            if (!image.isBlank()) {
+                place.setIcon(image);
+                place.setPhotoAttributions(List.copyOf(attributions));
+            }
         } catch (Exception e) {
             logger.warn(
-                    "City photo lookup failed ({})",
+                    "Place display details unavailable ({})",
                     e.getClass().getSimpleName()
             );
-            return Photo.empty();
-        }
-    }
-
-    private record Photo(String url, List<String> attributions) {
-
-        private static Photo empty() {
-            return new Photo("", List.of());
         }
     }
 
@@ -277,8 +282,6 @@ public class GooglePlacesService {
                 place.getPlaceId() != null &&
                 !place.getPlaceId().isBlank() &&
                 !place.getPlaceId().startsWith("unknown_") &&
-                place.getName() != null &&
-                !place.getName().isBlank() &&
                 place.getLatitude() != null &&
                 Double.isFinite(place.getLatitude()) &&
                 Math.abs(place.getLatitude()) <= 90 &&
@@ -287,16 +290,21 @@ public class GooglePlacesService {
                 Math.abs(place.getLongitude()) <= 180;
     }
 
-    private GooglePlaces copy(GooglePlaces source) {
+    private GooglePlaces forRequestedCity(GooglePlaces source, String city) {
+        GooglePlaces result = copyCoordinates(source);
+        result.setName(city);
+        result.setAddress(city);
+        result.setCountry("");
+        return result;
+    }
+
+    private GooglePlaces copyCoordinates(GooglePlaces source) {
         GooglePlaces result = new GooglePlaces();
         result.setId(source.getId());
         result.setPlaceId(source.getPlaceId());
         result.setCity(source.getCity());
-        result.setName(source.getName());
-        result.setAddress(source.getAddress());
         result.setLatitude(source.getLatitude());
         result.setLongitude(source.getLongitude());
-        result.setCountry(source.getCountry());
         result.setComplete(source.isComplete());
         result.setAttractionCount(source.getAttractionCount());
         result.setCreatedAt(source.getCreatedAt());
