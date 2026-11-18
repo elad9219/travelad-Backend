@@ -6,6 +6,7 @@ import org.apache.hc.core5.http.ClassicHttpRequest;
 import org.apache.hc.core5.http.ClassicHttpResponse;
 import org.apache.hc.core5.http.HttpException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
 import org.springframework.stereotype.Component;
@@ -39,7 +40,7 @@ public class GooglePlacesQuota implements ExecChainHandler {
     private final Clock clock;
 
     @Autowired
-    public GooglePlacesQuota(RedisTemplate<String, String> redis) {
+    public GooglePlacesQuota(@Qualifier("redisTemplate") RedisTemplate<String, String> redis) {
         this(redis, Clock.system(BILLING_ZONE));
     }
 

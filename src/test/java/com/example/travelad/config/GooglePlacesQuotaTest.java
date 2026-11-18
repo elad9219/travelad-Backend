@@ -7,8 +7,12 @@ import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.protocol.HttpClientContext;
 import org.apache.hc.core5.http.HttpHost;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.TestConfiguration;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.RedisConnectionFailureException;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.script.RedisScript;
 
 import java.io.IOException;
@@ -18,6 +22,7 @@ import java.time.ZoneOffset;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
@@ -36,6 +41,14 @@ class GooglePlacesQuotaTest {
 
     @SuppressWarnings("unchecked")
     private final RedisTemplate<String, String> redis = mock(RedisTemplate.class);
+
+    @Test
+    void springCanCreateTheQuotaWithBothRedisTemplates() {
+        try (var context = new AnnotationConfigApplicationContext(
+                RedisTemplates.class, GooglePlacesQuota.class)) {
+            assertNotNull(context.getBean(GooglePlacesQuota.class));
+        }
+    }
 
     @Test
     void deniesAllPlacesRequestsBeforeConnectingWhenReservationFails() throws Exception {
@@ -84,5 +97,20 @@ class GooglePlacesQuotaTest {
 
     private GooglePlacesQuota quota(String instant) {
         return new GooglePlacesQuota(redis, Clock.fixed(Instant.parse(instant), ZoneOffset.UTC));
+    }
+
+    @TestConfiguration(proxyBeanMethods = false)
+    static class RedisTemplates {
+
+        @Bean
+        @SuppressWarnings("unchecked")
+        RedisTemplate<String, String> redisTemplate() {
+            return mock(RedisTemplate.class);
+        }
+
+        @Bean
+        StringRedisTemplate stringRedisTemplate() {
+            return mock(StringRedisTemplate.class);
+        }
     }
 }

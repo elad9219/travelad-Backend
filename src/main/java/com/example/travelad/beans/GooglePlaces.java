@@ -35,7 +35,7 @@ public class GooglePlaces {
     @Transient
     private List<String> photoAttributions = List.of();
 
-    @Column(updatable = false)
+    // Existing column records the fetch time and is renewed when provider data is refreshed.
     private LocalDateTime createdAt = LocalDateTime.now();
 
     private boolean isComplete;

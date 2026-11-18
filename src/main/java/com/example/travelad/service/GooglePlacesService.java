@@ -11,6 +11,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -25,6 +26,7 @@ public class GooglePlacesService {
             LoggerFactory.getLogger(GooglePlacesService.class);
 
     private static final long CACHE_TTL_MS = 5 * 60 * 1000L;
+    private static final int MAX_STORED_AGE_DAYS = 29;
 
     private final RestTemplate http;
     private final GooglePlacesRepository repository;
@@ -77,7 +79,8 @@ public class GooglePlacesService {
         synchronized (locks[Math.floorMod(key.hashCode(), locks.length)]) {
             CachedPlace cached = cache.get(key);
 
-            if (cached != null && cached.expiresAt > System.currentTimeMillis()) {
+            if (cached != null && cached.expiresAt > System.currentTimeMillis() &&
+                    isFresh(cached.place)) {
                 return copy(cached.place);
             }
 
@@ -107,7 +110,7 @@ public class GooglePlacesService {
 
             if (values != null) {
                 for (GooglePlaces value : values) {
-                    if (usable(value)) {
+                    if (usable(value) && isFresh(value)) {
                         return copy(value);
                     }
                 }
@@ -120,6 +123,13 @@ public class GooglePlacesService {
         }
 
         return null;
+    }
+
+    private boolean isFresh(GooglePlaces place) {
+        LocalDateTime fetchedAt = place.getCreatedAt();
+        LocalDateTime now = LocalDateTime.now();
+        return fetchedAt != null && !fetchedAt.isAfter(now) &&
+                fetchedAt.isAfter(now.minusDays(MAX_STORED_AGE_DAYS));
     }
 
     private GooglePlaces fetchPlace(String city, String key) {
