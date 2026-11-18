@@ -11,6 +11,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -28,6 +29,7 @@ public class GooglePlacesService {
     private final RestTemplate http;
     private final GooglePlacesRepository repository;
     private final String apiKey;
+    private final GooglePhotoUrlResolver photoResolver;
     private final Object[] locks = new Object[32];
 
     private final Map<String, CachedPlace> cache = Collections.synchronizedMap(
@@ -43,10 +45,12 @@ public class GooglePlacesService {
     public GooglePlacesService(
             RestTemplate http,
             GooglePlacesRepository repository,
+            GooglePhotoUrlResolver photoResolver,
             @Value("${google.places.api.key}") String apiKey) {
         this.http = http;
         this.repository = repository;
         this.apiKey = apiKey;
+        this.photoResolver = photoResolver;
 
         for (int i = 0; i < locks.length; i++) {
             locks[i] = new Object();
@@ -58,7 +62,9 @@ public class GooglePlacesService {
 
         if (usable(place)) {
             // Photo references must be obtained fresh, never persisted in the city cache.
-            place.setIcon(photoUrl(place.getPlaceId()));
+            Photo photo = photo(place.getPlaceId());
+            place.setIcon(photo.url());
+            place.setPhotoAttributions(photo.attributions());
         }
 
         return place;
@@ -77,6 +83,7 @@ public class GooglePlacesService {
 
             try {
                 GooglePlaces place = storedPlace(key);
+
                 if (place == null) {
                     place = fetchPlace(requestedCity, key);
                 }
@@ -174,7 +181,7 @@ public class GooglePlacesService {
         return place;
     }
 
-    private String photoUrl(String placeId) {
+    private Photo photo(String placeId) {
         try {
             JsonNode response = http.getForObject(
                     url(
@@ -186,32 +193,57 @@ public class GooglePlacesService {
 
             if (response == null ||
                     !"OK".equals(response.path("status").asText())) {
-                return "";
+                return Photo.empty();
             }
 
-            String reference = response.path("result")
-                    .path("photos")
-                    .path(0)
-                    .path("photo_reference")
-                    .asText("");
+            JsonNode photo = response.path("result").path("photos").path(0);
+            String reference = photo.path("photo_reference").asText("");
 
             if (reference.isBlank()) {
-                return "";
+                return Photo.empty();
             }
 
-            return url(
+            List<String> attributions = new ArrayList<>();
+            JsonNode credits = photo.path("html_attributions");
+
+            if (credits.isArray()) {
+                for (JsonNode credit : credits) {
+                    if (!credit.isTextual() ||
+                            credit.asText().length() > 8192 ||
+                            attributions.size() >= 20) {
+                        return Photo.empty();
+                    }
+
+                    attributions.add(credit.asText());
+                }
+            } else if (!credits.isMissingNode() && !credits.isNull()) {
+                return Photo.empty();
+            }
+
+            String image = photoResolver.resolve(url(
                     "photo",
                     Map.of(
-                            "maxwidth", "1600",
+                            "maxwidth", "1200",
                             "photo_reference", reference
                     )
-            ).toASCIIString();
+            ));
+
+            return image.isBlank()
+                    ? Photo.empty()
+                    : new Photo(image, List.copyOf(attributions));
         } catch (Exception e) {
             logger.warn(
                     "City photo lookup failed ({})",
                     e.getClass().getSimpleName()
             );
-            return "";
+            return Photo.empty();
+        }
+    }
+
+    private record Photo(String url, List<String> attributions) {
+
+        private static Photo empty() {
+            return new Photo("", List.of());
         }
     }
 

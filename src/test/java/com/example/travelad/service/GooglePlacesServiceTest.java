@@ -35,14 +35,24 @@ import static org.springframework.test.web.client.response.MockRestResponseCreat
 
 class GooglePlacesServiceTest {
 
-    private static final String PLACE = "{\"status\":\"OK\",\"results\":[{\"place_id\":\"known-place\","
-            + "\"name\":\"Paris\",\"formatted_address\":\"Paris, France\","
-            + "\"geometry\":{\"location\":{\"lat\":48.85,\"lng\":2.35}}}]}";
+    private static final String PLACE =
+            "{\"status\":\"OK\",\"results\":[{\"place_id\":\"known-place\","
+                    + "\"name\":\"Paris\",\"formatted_address\":\"Paris, France\","
+                    + "\"geometry\":{\"location\":{\"lat\":48.85,\"lng\":2.35}}}]}";
 
-    private final GooglePlacesRepository repository = mock(GooglePlacesRepository.class);
+    private final GooglePlacesRepository repository =
+            mock(GooglePlacesRepository.class);
+
     private final RestTemplate http = new RestTemplate();
-    private final MockRestServiceServer server = MockRestServiceServer.bindTo(http).build();
-    private final GooglePlacesService service = new GooglePlacesService(http, repository, "test-key");
+
+    private final MockRestServiceServer server =
+            MockRestServiceServer.bindTo(http).build();
+
+    private final GooglePhotoUrlResolver resolver =
+            mock(GooglePhotoUrlResolver.class);
+
+    private final GooglePlacesService service =
+            new GooglePlacesService(http, repository, resolver, "test-key");
 
     private GooglePlaces stored() {
         GooglePlaces place = new GooglePlaces();
@@ -50,19 +60,26 @@ class GooglePlacesServiceTest {
         place.setName("Paris");
         place.setLatitude(48.85);
         place.setLongitude(2.35);
-        place.setIcon("https://old.example/photo?key=old-key&photo_reference=old-reference");
+        place.setIcon(
+                "https://old.example/photo?key=old-key&photo_reference=old-reference"
+        );
         return place;
     }
 
     private void textSearch(String response) {
-        server.expect(requestTo(org.hamcrest.Matchers.containsString("/textsearch/json")))
-                .andRespond(withSuccess(response, MediaType.APPLICATION_JSON));
+        server.expect(requestTo(
+                org.hamcrest.Matchers.containsString("/textsearch/json")
+        )).andRespond(withSuccess(response, MediaType.APPLICATION_JSON));
     }
 
     private void photo(String reference) {
-        server.expect(requestTo(org.hamcrest.Matchers.containsString("/details/json")))
-                .andRespond(withSuccess("{\"status\":\"OK\",\"result\":{\"photos\":[{\"photo_reference\":\""
-                        + reference + "\"}]}}", MediaType.APPLICATION_JSON));
+        server.expect(requestTo(
+                org.hamcrest.Matchers.containsString("/details/json")
+        )).andRespond(withSuccess(
+                "{\"status\":\"OK\",\"result\":{\"photos\":[{\"photo_reference\":\""
+                        + reference + "\"}]}}",
+                MediaType.APPLICATION_JSON
+        ));
     }
 
     @Test
@@ -71,29 +88,47 @@ class GooglePlacesServiceTest {
 
         server.expect(request -> {
             String query = request.getURI().getRawQuery();
+
             String encoded = java.util.Arrays.stream(query.split("&"))
                     .filter(value -> value.startsWith("query="))
                     .findFirst()
                     .orElseThrow()
                     .substring(6);
 
-            assertEquals(city, URLDecoder.decode(encoded, StandardCharsets.UTF_8));
+            assertEquals(
+                    city,
+                    URLDecoder.decode(encoded, StandardCharsets.UTF_8)
+            );
             assertTrue(query.contains("%2B"));
             assertTrue(query.contains("%2520"));
         }).andRespond(withSuccess(PLACE, MediaType.APPLICATION_JSON));
 
-        assertEquals("known-place", service.findPlaceByCity(city).getPlaceId());
+        assertEquals(
+                "known-place",
+                service.findPlaceByCity(city).getPlaceId()
+        );
+
         server.verify();
     }
 
     @Test
     void databaseReadAndWriteFailuresDoNotDiscardProviderData() {
-        when(repository.findByCityIgnoreCase("paris")).thenThrow(new IllegalStateException());
-        when(repository.save(any())).thenThrow(new IllegalStateException());
+        when(repository.findByCityIgnoreCase("paris"))
+                .thenThrow(new IllegalStateException());
+
+        when(repository.save(any()))
+                .thenThrow(new IllegalStateException());
+
         textSearch(PLACE);
 
-        assertEquals("known-place", service.findPlaceByCity("Paris").getPlaceId());
-        assertEquals("known-place", service.findPlaceByCity(" PARIS ").getPlaceId());
+        assertEquals(
+                "known-place",
+                service.findPlaceByCity("Paris").getPlaceId()
+        );
+        assertEquals(
+                "known-place",
+                service.findPlaceByCity(" PARIS ").getPlaceId()
+        );
 
         verify(repository, times(1)).findByCityIgnoreCase("paris");
         server.verify();
@@ -104,8 +139,16 @@ class GooglePlacesServiceTest {
         textSearch("{\"status\":\"OVER_QUERY_LIMIT\",\"results\":[]}");
         textSearch(PLACE);
 
-        assertTrue(service.findPlaceByCity("Paris").getPlaceId().startsWith("unknown_"));
-        assertEquals("known-place", service.findPlaceByCity("Paris").getPlaceId());
+        assertTrue(
+                service.findPlaceByCity("Paris")
+                        .getPlaceId()
+                        .startsWith("unknown_")
+        );
+
+        assertEquals(
+                "known-place",
+                service.findPlaceByCity("Paris").getPlaceId()
+        );
 
         verify(repository, times(1)).save(any());
         server.verify();
@@ -121,7 +164,11 @@ class GooglePlacesServiceTest {
     void malformedProviderDataIsNotPersisted(String response) {
         textSearch(response);
 
-        assertTrue(service.findPlaceByCity("Paris").getPlaceId().startsWith("unknown_"));
+        assertTrue(
+                service.findPlaceByCity("Paris")
+                        .getPlaceId()
+                        .startsWith("unknown_")
+        );
 
         verify(repository, never()).save(any());
         server.verify();
@@ -130,10 +177,13 @@ class GooglePlacesServiceTest {
     @Test
     void photoFailureKeepsValidDetailsAndDoesNotMutateTheStoredEntity() {
         GooglePlaces original = stored();
-        when(repository.findByCityIgnoreCase("paris")).thenReturn(List.of(original));
 
-        server.expect(requestTo(org.hamcrest.Matchers.containsString("/details/json")))
-                .andRespond(withServerError());
+        when(repository.findByCityIgnoreCase("paris"))
+                .thenReturn(List.of(original));
+
+        server.expect(requestTo(
+                org.hamcrest.Matchers.containsString("/details/json")
+        )).andRespond(withServerError());
 
         GooglePlaces result = service.searchPlaceByCity("Paris");
 
@@ -150,18 +200,98 @@ class GooglePlacesServiceTest {
         photo("reference-one");
         photo("reference-two");
 
-        assertTrue(service.searchPlaceByCity("Paris").getIcon().contains("reference-one"));
-        assertEquals("", service.findPlaceByCity("Paris").getIcon());
-        assertTrue(service.searchPlaceByCity("Paris").getIcon().contains("reference-two"));
+        when(resolver.resolve(any())).thenReturn(
+                "https://lh3.googleusercontent.com/places/photo-one",
+                "https://lh3.googleusercontent.com/places/photo-two"
+        );
 
-        verify(repository).save(argThat(place -> "".equals(place.getIcon())));
+        assertTrue(
+                service.searchPlaceByCity("Paris")
+                        .getIcon()
+                        .endsWith("photo-one")
+        );
+        assertEquals("", service.findPlaceByCity("Paris").getIcon());
+        assertTrue(
+                service.searchPlaceByCity("Paris")
+                        .getIcon()
+                        .endsWith("photo-two")
+        );
+
+        verify(repository).save(argThat(place ->
+                "".equals(place.getIcon()) &&
+                        place.getPhotoAttributions().isEmpty()
+        ));
+
+        verify(resolver).resolve(argThat(uri ->
+                uri.getRawQuery().contains("reference-one")
+        ));
+
+        verify(resolver).resolve(argThat(uri ->
+                uri.getRawQuery().contains("reference-two")
+        ));
+
+        server.verify();
+    }
+
+    @Test
+    void photoCreditsBelongToTheDisplayedPhotoAndNeverEnterMetadataStorage() {
+        textSearch(PLACE);
+
+        server.expect(requestTo(
+                org.hamcrest.Matchers.containsString("/details/json")
+        )).andRespond(withSuccess("""
+                {"status":"OK","result":{"photos":[{
+                  "photo_reference":"private-reference",
+                  "html_attributions":["Author &amp; Co"]
+                }]}}
+                """, MediaType.APPLICATION_JSON));
+
+        when(resolver.resolve(any())).thenReturn(
+                "https://lh3.googleusercontent.com/places/image"
+        );
+
+        GooglePlaces result = service.searchPlaceByCity("Paris");
+
+        assertEquals(
+                List.of("Author &amp; Co"),
+                result.getPhotoAttributions()
+        );
+        assertFalse(result.getIcon().contains("test-key"));
+        assertFalse(result.getIcon().contains("private-reference"));
+        assertTrue(
+                service.findPlaceByCity("Paris")
+                        .getPhotoAttributions()
+                        .isEmpty()
+        );
+
+        verify(repository).save(argThat(place ->
+                place.getPhotoAttributions().isEmpty()
+        ));
+
+        server.verify();
+    }
+
+    @Test
+    void rejectedPhotoRedirectKeepsTheCityAndDoesNotShowUnrelatedCredits() {
+        when(repository.findByCityIgnoreCase("paris"))
+                .thenReturn(List.of(stored()));
+
+        photo("private-reference");
+        when(resolver.resolve(any())).thenReturn("");
+
+        GooglePlaces result = service.searchPlaceByCity("Paris");
+
+        assertEquals("Paris", result.getName());
+        assertEquals("", result.getIcon());
+        assertTrue(result.getPhotoAttributions().isEmpty());
 
         server.verify();
     }
 
     @Test
     void callersCannotMutateTheCachedEntity() {
-        when(repository.findByCityIgnoreCase("paris")).thenReturn(List.of(stored()));
+        when(repository.findByCityIgnoreCase("paris"))
+                .thenReturn(List.of(stored()));
 
         GooglePlaces first = service.findPlaceByCity("Paris");
         first.setName("Changed");
@@ -175,7 +305,8 @@ class GooglePlacesServiceTest {
 
     @Test
     void simultaneousMetadataRequestsShareOneLookup() throws Exception {
-        when(repository.findByCityIgnoreCase("paris")).thenReturn(List.of(stored()));
+        when(repository.findByCityIgnoreCase("paris"))
+                .thenReturn(List.of(stored()));
 
         ExecutorService workers = Executors.newFixedThreadPool(8);
 
@@ -216,7 +347,9 @@ class GooglePlacesServiceTest {
 
         try {
             Locale.setDefault(Locale.forLanguageTag("tr-TR"));
-            when(repository.findByCityIgnoreCase("istanbul")).thenReturn(List.of(stored()));
+
+            when(repository.findByCityIgnoreCase("istanbul"))
+                    .thenReturn(List.of(stored()));
 
             service.findPlaceByCity("ISTANBUL");
 
@@ -228,25 +361,37 @@ class GooglePlacesServiceTest {
 
     @Test
     void hotelSearchUsesMetadataWithoutFetchingCityPhotos() {
-        when(repository.findByCityIgnoreCase("paris+100%")).thenReturn(List.of(stored()));
+        when(repository.findByCityIgnoreCase("paris+100%"))
+                .thenReturn(List.of(stored()));
 
         HotelsService hotels = new HotelsService(service);
 
-        List<com.example.travelad.dto.HotelDto> results = hotels.searchHotelsByCityName(
-                "Paris+100%", LocalDate.now().plusDays(4).toString(),
-                LocalDate.now().plusDays(6).toString(), 1);
+        List<com.example.travelad.dto.HotelDto> results =
+                hotels.searchHotelsByCityName(
+                        "Paris+100%",
+                        LocalDate.now().plusDays(4).toString(),
+                        LocalDate.now().plusDays(6).toString(),
+                        1
+                );
 
         assertEquals(25, results.size());
-        assertTrue(results.stream().allMatch(hotel -> hotel.getName().contains("Paris+100%")));
+        assertTrue(results.stream().allMatch(hotel ->
+                hotel.getName().contains("Paris+100%")
+        ));
 
         verify(repository).findByCityIgnoreCase("paris+100%");
         server.verify();
     }
 
     @Test
-    void outboundHttpClientDoesNotReplayADisconnectedRequest() throws Exception {
+    void outboundHttpClientDoesNotReplayADisconnectedRequest()
+            throws Exception {
         AtomicInteger requests = new AtomicInteger();
-        HttpServer endpoint = HttpServer.create(new InetSocketAddress("127.0.0.1", 0), 0);
+
+        HttpServer endpoint = HttpServer.create(
+                new InetSocketAddress("127.0.0.1", 0),
+                0
+        );
 
         endpoint.createContext("/", exchange -> {
             requests.incrementAndGet();
@@ -258,9 +403,16 @@ class GooglePlacesServiceTest {
 
         try (CloseableHttpClient client = config.outboundHttpClient()) {
             RestTemplate realHttp = config.restTemplate(client);
-            URI uri = URI.create("http://127.0.0.1:" + endpoint.getAddress().getPort() + "/");
 
-            assertThrows(RestClientException.class, () -> realHttp.getForObject(uri, String.class));
+            URI uri = URI.create(
+                    "http://127.0.0.1:" + endpoint.getAddress().getPort() + "/"
+            );
+
+            assertThrows(
+                    RestClientException.class,
+                    () -> realHttp.getForObject(uri, String.class)
+            );
+
             assertEquals(1, requests.get());
         } finally {
             endpoint.stop(0);

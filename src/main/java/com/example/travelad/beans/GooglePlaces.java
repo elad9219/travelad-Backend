@@ -2,6 +2,7 @@ package com.example.travelad.beans;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,9 +26,14 @@ public class GooglePlaces {
     private String address;
     private Double latitude;
     private Double longitude;
+
     @Column(length = 1000)
     private String icon;
+
     private String country;
+
+    @Transient
+    private List<String> photoAttributions = List.of();
 
     @Column(updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
@@ -66,5 +72,7 @@ public class GooglePlaces {
     public void setComplete(boolean complete) { this.isComplete = complete; }
 
     public int getAttractionCount() { return attractionCount; }
-    public void setAttractionCount(int attractionCount) { this.attractionCount = attractionCount; }
+    public void setAttractionCount(int attractionCount) {
+        this.attractionCount = attractionCount;
+    }
 }
