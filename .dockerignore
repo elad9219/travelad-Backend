@@ -1,0 +1,10 @@
+**
+!pom.xml
+!src/
+!src/main/
+!src/main/**
+
+src/main/**/application*.properties
+src/main/**/application*.yml
+src/main/**/application*.yaml
+src/main/**/.env*
