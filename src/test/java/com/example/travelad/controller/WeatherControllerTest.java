@@ -1,6 +1,8 @@
 package com.example.travelad.controller;
 
 import com.example.travelad.config.AppConfig;
+import com.example.travelad.config.GooglePlacesQuota;
+import com.example.travelad.config.PublicRequestLimits;
 import com.example.travelad.service.WeatherService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,6 +15,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.TestPropertySource;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.client.MockRestServiceServer;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.client.RestTemplate;
@@ -38,10 +41,18 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 })
 class WeatherControllerTest {
 
-    private static final String VALID = "{\"location\":{\"name\":\"Paris\",\"region\":\"Ile-de-France\","
-            + "\"country\":\"France\"},\"current\":{\"temp_c\":20.0,\"temp_f\":68.0,"
-            + "\"wind_kph\":10.0,\"humidity\":50,\"last_updated\":\"2026-11-16 12:00\","
-            + "\"condition\":{\"text\":\"Sunny\",\"icon\":\"//cdn.weatherapi.com/weather/64x64/day/113.png\"}}}";
+    private static final String VALID =
+            "{\"location\":{\"name\":\"Paris\",\"region\":\"Ile-de-France\","
+                    + "\"country\":\"France\"},\"current\":{\"temp_c\":20.0,\"temp_f\":68.0,"
+                    + "\"wind_kph\":10.0,\"humidity\":50,\"last_updated\":\"2026-11-16 12:00\","
+                    + "\"condition\":{\"text\":\"Sunny\",\"icon\":\"//cdn.weatherapi.com/weather/64x64/day/113.png\"}}}";
+
+    @MockitoBean
+    private GooglePlacesQuota googlePlacesQuota;
+
+    // Request throttling is covered separately by PublicRequestLimitsTest.
+    @MockitoBean
+    private PublicRequestLimits publicRequestLimits;
 
     @Autowired
     private MockMvc mvc;
@@ -78,6 +89,7 @@ class WeatherControllerTest {
     @Test
     void preservesTheExistingWeatherResponseAndUsesTheSharedHttpClient()
             throws Exception {
+
         respond(VALID, HttpStatus.OK);
 
         mvc.perform(get("/weather").param("city", "Paris"))
@@ -112,19 +124,25 @@ class WeatherControllerTest {
     @Test
     void cityIsEncodedExactlyOnceIncludingUnicodeAndReservedCharacters()
             throws Exception {
+
         String city = "東京 A+B%20&C";
 
         server.expect(request -> {
             assertEquals("https", request.getURI().getScheme());
 
             String query = request.getURI().getRawQuery();
+
             String encoded = Arrays.stream(query.split("&"))
                     .filter(value -> value.startsWith("q="))
                     .findFirst()
                     .orElseThrow()
                     .substring(2);
 
-            assertEquals(city, URLDecoder.decode(encoded, StandardCharsets.UTF_8));
+            assertEquals(
+                    city,
+                    URLDecoder.decode(encoded, StandardCharsets.UTF_8)
+            );
+
             assertEquals(2, query.split("&").length);
         }).andRespond(withSuccess(VALID, MediaType.APPLICATION_JSON));
 
@@ -136,6 +154,7 @@ class WeatherControllerTest {
     @ValueSource(strings = {"", " ", "Paris\nprobe"})
     void invalidCitiesAreRejectedBeforeCallingTheProvider(String city)
             throws Exception {
+
         mvc.perform(get("/weather").param("city", city))
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.error").value("Bad Request"));
@@ -151,7 +170,8 @@ class WeatherControllerTest {
 
         ResponseStatusException error = assertThrows(
                 ResponseStatusException.class,
-                () -> service.getWeatherByCity(" "));
+                () -> service.getWeatherByCity(" ")
+        );
 
         assertEquals(HttpStatus.BAD_REQUEST, error.getStatusCode());
     }
@@ -159,9 +179,11 @@ class WeatherControllerTest {
     @Test
     void onlyTheDocumentedUnknownLocationErrorBecomesNotFound()
             throws Exception {
+
         respond(
                 "{\"error\":{\"code\":1006,\"message\":\"No matching location\"}}",
-                HttpStatus.BAD_REQUEST);
+                HttpStatus.BAD_REQUEST
+        );
 
         mvc.perform(get("/weather").param("city", "Unknown"))
                 .andExpect(status().isNotFound())
@@ -172,15 +194,18 @@ class WeatherControllerTest {
     @ValueSource(ints = {400, 401, 403, 404, 429, 500})
     void providerFailuresAreNotMisreportedAsMissingCities(int status)
             throws Exception {
+
         respond(
                 "{\"error\":{\"code\":2006,\"message\":\"weather-test-secret\"}}",
-                HttpStatus.valueOf(status));
+                HttpStatus.valueOf(status)
+        );
 
         mvc.perform(get("/weather").param("city", "Paris"))
                 .andExpect(status().isBadGateway())
                 .andExpect(jsonPath("$.error").value("Bad Gateway"))
                 .andExpect(content().string(
-                        not(containsString("weather-test-secret"))));
+                        not(containsString("weather-test-secret"))
+                ));
     }
 
     @ParameterizedTest
@@ -194,6 +219,7 @@ class WeatherControllerTest {
     })
     void malformedSuccessResponsesAreProviderFailures(String body)
             throws Exception {
+
         respond(body, HttpStatus.OK);
 
         mvc.perform(get("/weather").param("city", "Paris"))
@@ -204,11 +230,14 @@ class WeatherControllerTest {
     @ValueSource(strings = {"null", "\"20\"", "1e999"})
     void missingOrInvalidTemperaturesAreRejected(String temperature)
             throws Exception {
+
         respond(
                 VALID.replace(
                         "\"temp_c\":20.0",
-                        "\"temp_c\":" + temperature),
-                HttpStatus.OK);
+                        "\"temp_c\":" + temperature
+                ),
+                HttpStatus.OK
+        );
 
         mvc.perform(get("/weather").param("city", "Paris"))
                 .andExpect(status().isBadGateway());
@@ -220,8 +249,10 @@ class WeatherControllerTest {
         respond(
                 VALID.replace(
                         "\"humidity\":50",
-                        "\"humidity\":" + humidity),
-                HttpStatus.OK);
+                        "\"humidity\":" + humidity
+                ),
+                HttpStatus.OK
+        );
 
         mvc.perform(get("/weather").param("city", "Paris"))
                 .andExpect(status().isBadGateway());
@@ -230,11 +261,14 @@ class WeatherControllerTest {
     @Test
     void anAbsentOptionalIconDoesNotDiscardWeatherReadings()
             throws Exception {
+
         respond(
                 VALID.replace(
                         ",\"icon\":\"//cdn.weatherapi.com/weather/64x64/day/113.png\"",
-                        ""),
-                HttpStatus.OK);
+                        ""
+                ),
+                HttpStatus.OK
+        );
 
         mvc.perform(get("/weather").param("city", "Paris"))
                 .andExpect(status().isOk())
@@ -244,16 +278,19 @@ class WeatherControllerTest {
     @Test
     void timeoutDoesNotReplayAutomaticallyAndANewRequestCanRecover()
             throws Exception {
+
         server.expect(request -> {})
                 .andRespond(withException(
-                        new SocketTimeoutException("weather-test-secret")));
+                        new SocketTimeoutException("weather-test-secret")
+                ));
 
         respond(VALID, HttpStatus.OK);
 
         mvc.perform(get("/weather").param("city", "Paris"))
                 .andExpect(status().isBadGateway())
                 .andExpect(content().string(
-                        not(containsString("weather-test-secret"))));
+                        not(containsString("weather-test-secret"))
+                ));
 
         mvc.perform(get("/weather").param("city", "Paris"))
                 .andExpect(status().isOk());

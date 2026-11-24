@@ -1,0 +1,3821 @@
+{
+  "London, United Kingdom": [
+    {
+      "id": "Q13529112",
+      "name": "41 Hotel",
+      "latitude": 51.498241,
+      "longitude": -0.143703,
+      "dataSource": "https://www.wikidata.org/wiki/Q13529112",
+      "photo": {
+        "file": "File:41 Hotel.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/41_Hotel.jpg/960px-41_Hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:41_Hotel.jpg",
+        "author": "Robert-brook",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q13529112.webp"
+    },
+    {
+      "id": "Q13529180",
+      "name": "Hilton London Hyde Park",
+      "latitude": 51.510416666,
+      "longitude": -0.187694444,
+      "dataSource": "https://www.wikidata.org/wiki/Q13529180",
+      "photo": {
+        "file": "File:Hilton London Hyde Park Hotel, Bayswater Road, London W2 - geograph.org.uk - 1149723.jpg",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/de/Hilton_London_Hyde_Park_Hotel%2C_Bayswater_Road%2C_London_W2_-_geograph.org.uk_-_1149723.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hilton_London_Hyde_Park_Hotel,_Bayswater_Road,_London_W2_-_geograph.org.uk_-_1149723.jpg",
+        "author": "Stacey Harris",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q13529180.webp"
+    },
+    {
+      "id": "Q13529117",
+      "name": "The Bentley London",
+      "latitude": 51.4928,
+      "longitude": -0.1842,
+      "dataSource": "https://www.wikidata.org/wiki/Q13529117",
+      "photo": {
+        "file": "File:The Bentley London, Exterior.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/The_Bentley_London%2C_Exterior.jpg/960px-The_Bentley_London%2C_Exterior.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Bentley_London,_Exterior.jpg",
+        "author": "Mastcraft",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q13529117.webp"
+    },
+    {
+      "id": "Q7750722",
+      "name": "The May Fair",
+      "latitude": 51.5081,
+      "longitude": -0.143889,
+      "dataSource": "https://www.wikidata.org/wiki/Q7750722",
+      "photo": {
+        "file": "File:BERT AMBROSE - The May Fair Hotel Stratton Street Mayfair London W1J 8LT.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/BERT_AMBROSE_-_The_May_Fair_Hotel_Stratton_Street_Mayfair_London_W1J_8LT.jpg/960px-BERT_AMBROSE_-_The_May_Fair_Hotel_Stratton_Street_Mayfair_London_W1J_8LT.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:BERT_AMBROSE_-_The_May_Fair_Hotel_Stratton_Street_Mayfair_London_W1J_8LT.jpg",
+        "author": "Spudgun67",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q7750722.webp"
+    },
+    {
+      "id": "Q746639",
+      "name": "Savoy Hotel",
+      "latitude": 51.509898,
+      "longitude": -0.120215,
+      "dataSource": "https://www.wikidata.org/wiki/Q746639",
+      "photo": {
+        "file": "File:Hôtel Savoy The Strand Londres - edited.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/H%C3%B4tel_Savoy_The_Strand_Londres_-_edited.jpg/960px-H%C3%B4tel_Savoy_The_Strand_Londres_-_edited.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:H%C3%B4tel_Savoy_The_Strand_Londres_-_edited.jpg",
+        "author": "Photo by CVB , edited and cropped by Cart",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q746639.webp"
+    },
+    {
+      "id": "Q17361841",
+      "name": "Chiltern Firehouse",
+      "latitude": 51.518724,
+      "longitude": -0.15505,
+      "dataSource": "https://www.wikidata.org/wiki/Q17361841",
+      "photo": {
+        "file": "File:Chiltern Firehouse 04.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Chiltern_Firehouse_04.jpg/960px-Chiltern_Firehouse_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chiltern_Firehouse_04.jpg",
+        "author": "Philafrenzy",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q17361841.webp"
+    },
+    {
+      "id": "Q6044870",
+      "name": "InterContinental London Park Lane",
+      "latitude": 51.50397,
+      "longitude": -0.15015,
+      "dataSource": "https://www.wikidata.org/wiki/Q6044870",
+      "photo": {
+        "file": "File:InterContinental Hotel London Park Lane Hotel.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/InterContinental_Hotel_London_Park_Lane_Hotel.jpg/960px-InterContinental_Hotel_London_Park_Lane_Hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:InterContinental_Hotel_London_Park_Lane_Hotel.jpg",
+        "author": "Garry Knight",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q6044870.webp"
+    },
+    {
+      "id": "Q111119448",
+      "name": "Park Hotel",
+      "latitude": 51.494623,
+      "longitude": -0.186531,
+      "dataSource": "https://www.wikidata.org/wiki/Q111119448",
+      "photo": {
+        "file": "File:At London 2024 450.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/At_London_2024_450.jpg/960px-At_London_2024_450.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:At_London_2024_450.jpg",
+        "author": "Photograph by Mike Peel ( www.mikepeel.net ).",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111119448.webp"
+    },
+    {
+      "id": "Q26407111",
+      "name": "The White House",
+      "latitude": 51.525306,
+      "longitude": -0.143626,
+      "dataSource": "https://www.wikidata.org/wiki/Q26407111",
+      "photo": {
+        "file": "File:The White House, London 4.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/The_White_House%2C_London_4.jpg/960px-The_White_House%2C_London_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_White_House,_London_4.jpg",
+        "author": "Paul the Archivist",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q26407111.webp"
+    }
+  ],
+  "Paris, France": [
+    {
+      "id": "Q109324388",
+      "name": "Hotel Balzac Paris",
+      "latitude": 48.873290764,
+      "longitude": 2.300392868,
+      "dataSource": "https://www.wikidata.org/wiki/Q109324388",
+      "photo": {
+        "file": "File:6 rue Balzac Paris.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/6_rue_Balzac_Paris.jpg/960px-6_rue_Balzac_Paris.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:6_rue_Balzac_Paris.jpg",
+        "author": "CVB",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q109324388.webp"
+    },
+    {
+      "id": "Q111113749",
+      "name": "Cafe Hotel de l'avenir",
+      "latitude": 48.9061378,
+      "longitude": 2.3323659,
+      "dataSource": "https://www.wikidata.org/wiki/Q111113749",
+      "photo": {
+        "file": "File:Cafe Hotel de l'avenir.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Cafe_Hotel_de_l%27avenir.jpg/960px-Cafe_Hotel_de_l%27avenir.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cafe_Hotel_de_l%27avenir.jpg",
+        "author": "Alex Sirac",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111113749.webp"
+    },
+    {
+      "id": "Q111113693",
+      "name": "FIAP Jean Monnet",
+      "latitude": 48.8304658,
+      "longitude": 2.3380702,
+      "dataSource": "https://www.wikidata.org/wiki/Q111113693",
+      "photo": {
+        "file": "File:Garden, FIAP Jean Monnet, 30 Rue Cabanis, 75014 Paris, July 2009.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Garden%2C_FIAP_Jean_Monnet%2C_30_Rue_Cabanis%2C_75014_Paris%2C_July_2009.jpg/960px-Garden%2C_FIAP_Jean_Monnet%2C_30_Rue_Cabanis%2C_75014_Paris%2C_July_2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Garden,_FIAP_Jean_Monnet,_30_Rue_Cabanis,_75014_Paris,_July_2009.jpg",
+        "author": "Roman SUZUKI",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111113693.webp"
+    },
+    {
+      "id": "Q111113695",
+      "name": "Hotel Paris Lafayette",
+      "latitude": 48.8764057,
+      "longitude": 2.3489483,
+      "dataSource": "https://www.wikidata.org/wiki/Q111113695",
+      "photo": {
+        "file": "File:Hotel Paris Lafayette.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Hotel_Paris_Lafayette.jpg/960px-Hotel_Paris_Lafayette.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Paris_Lafayette.jpg",
+        "author": "Teolemon",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111113695.webp"
+    },
+    {
+      "id": "Q111113736",
+      "name": "Hotel France Albion",
+      "latitude": 48.8774953,
+      "longitude": 2.3382864,
+      "dataSource": "https://www.wikidata.org/wiki/Q111113736",
+      "photo": {
+        "file": "File:Hotel France Albion.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Hotel_France_Albion.jpg/960px-Hotel_France_Albion.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_France_Albion.jpg",
+        "author": "FR",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111113736.webp"
+    },
+    {
+      "id": "Q2375304",
+      "name": "Plaza Athénée",
+      "latitude": 48.866299601,
+      "longitude": 2.304347542,
+      "dataSource": "https://www.wikidata.org/wiki/Q2375304",
+      "photo": {
+        "file": "File:Plaza Athénée, avenue Montaigne, Paris 8e.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Plaza_Ath%C3%A9n%C3%A9e%2C_avenue_Montaigne%2C_Paris_8e.jpg/960px-Plaza_Ath%C3%A9n%C3%A9e%2C_avenue_Montaigne%2C_Paris_8e.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plaza_Ath%C3%A9n%C3%A9e,_avenue_Montaigne,_Paris_8e.jpg",
+        "author": "Celette",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q2375304.webp"
+    },
+    {
+      "id": "Q111877088",
+      "name": "9Confidentiel",
+      "latitude": 48.8569,
+      "longitude": 2.35625,
+      "dataSource": "https://www.wikidata.org/wiki/Q111877088",
+      "photo": {
+        "file": "File:9Confidentiel, Paris.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/9Confidentiel%2C_Paris.jpg/960px-9Confidentiel%2C_Paris.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:9Confidentiel,_Paris.jpg",
+        "author": "Frog404",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111877088.webp"
+    },
+    {
+      "id": "Q111877089",
+      "name": "Hôtel Bourg Tibourg",
+      "latitude": 48.85721,
+      "longitude": 2.35593,
+      "dataSource": "https://www.wikidata.org/wiki/Q111877089",
+      "photo": {
+        "file": "File:Hôtel Bourg Tibourg, Paris.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/H%C3%B4tel_Bourg_Tibourg%2C_Paris.jpg/960px-H%C3%B4tel_Bourg_Tibourg%2C_Paris.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:H%C3%B4tel_Bourg_Tibourg,_Paris.jpg",
+        "author": "Frog404",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111877089.webp"
+    },
+    {
+      "id": "Q111411971",
+      "name": "Gardette Park Hotel",
+      "latitude": 48.86098,
+      "longitude": 2.37897,
+      "dataSource": "https://www.wikidata.org/wiki/Q111411971",
+      "photo": {
+        "file": "File:Gardette Park Hotel2 (Alter Fritz).jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Gardette_Park_Hotel2_%28Alter_Fritz%29.jpg/960px-Gardette_Park_Hotel2_%28Alter_Fritz%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gardette_Park_Hotel2_(Alter_Fritz).jpg",
+        "author": "Alter Fritz",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111411971.webp"
+    }
+  ],
+  "New York City, United States": [
+    {
+      "id": "Q14707458",
+      "name": "The Standard, High Line",
+      "latitude": 40.74068,
+      "longitude": -74.00781,
+      "dataSource": "https://www.wikidata.org/wiki/Q14707458",
+      "photo": {
+        "file": "File:The Standard High Line (24245).jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/The_Standard_High_Line_%2824245%29.jpg/960px-The_Standard_High_Line_%2824245%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Standard_High_Line_(24245).jpg",
+        "author": "Rhododendrites",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q14707458.webp"
+    },
+    {
+      "id": "Q5911454",
+      "name": "Hotel Elysee",
+      "latitude": 40.7599,
+      "longitude": -73.9732,
+      "dataSource": "https://www.wikidata.org/wiki/Q5911454",
+      "photo": {
+        "file": "File:Hotel Elysée, NYC, NY.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Hotel_Elys%C3%A9e%2C_NYC%2C_NY.jpg/960px-Hotel_Elys%C3%A9e%2C_NYC%2C_NY.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Elys%C3%A9e,_NYC,_NY.jpg",
+        "author": "Elisa.rolle",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q5911454.webp"
+    },
+    {
+      "id": "Q5911529",
+      "name": "Hotel Giraffe",
+      "latitude": 40.7422,
+      "longitude": -73.9847,
+      "dataSource": "https://www.wikidata.org/wiki/Q5911529",
+      "photo": {
+        "file": "File:Hotel Giraffe 26 St and Park Avenue - 2013-08-10 jeh.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Hotel_Giraffe_26_St_and_Park_Avenue_-_2013-08-10_jeh.jpg/960px-Hotel_Giraffe_26_St_and_Park_Avenue_-_2013-08-10_jeh.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Giraffe_26_St_and_Park_Avenue_-_2013-08-10_jeh.jpg",
+        "author": "User:Jim.henderson",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q5911529.webp"
+    },
+    {
+      "id": "Q5912214",
+      "name": "Hotel on Rivington",
+      "latitude": 40.7198,
+      "longitude": -73.9881,
+      "dataSource": "https://www.wikidata.org/wiki/Q5912214",
+      "photo": {
+        "file": "File:Hotel on Rivington WTM tony 0096.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Hotel_on_Rivington_WTM_tony_0096.jpg/960px-Hotel_on_Rivington_WTM_tony_0096.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_on_Rivington_WTM_tony_0096.jpg",
+        "author": "This photo was taken by participant/team Tony as part of the Commons:Wikipedia Takes Manhattan project on April 4, 2008. This file is licensed under the Creative Commons Attribution-Share Alike 3.0 Unported license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. share alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original. https://creativecommons.org/licenses/by-sa/3.0 CC BY-SA 3.0 Creative Commons Attribution-Share Alike 3.0 true true",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q5912214.webp"
+    },
+    {
+      "id": "Q7013741",
+      "name": "New York Marriott Marquis",
+      "latitude": 40.75856,
+      "longitude": -73.98598,
+      "dataSource": "https://www.wikidata.org/wiki/Q7013741",
+      "photo": {
+        "file": "File:Times Sq Nov 2021 23.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Times_Sq_Nov_2021_23.jpg/960px-Times_Sq_Nov_2021_23.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Times_Sq_Nov_2021_23.jpg",
+        "author": "Epicgenius",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q7013741.webp"
+    },
+    {
+      "id": "Q3488860",
+      "name": "Sofitel New York Hotel",
+      "latitude": 40.755702565,
+      "longitude": -73.981936276,
+      "dataSource": "https://www.wikidata.org/wiki/Q3488860",
+      "photo": {
+        "file": "File:Sofitel New York1.jpg",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/39/Sofitel_New_York1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sofitel_New_York1.jpg",
+        "author": "Rob Young",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q3488860.webp"
+    }
+  ],
+  "Cape Town, South Africa": [
+    {
+      "id": "Q111860489",
+      "name": "Protea Hotel by Marriott Cape Town Mowbray",
+      "latitude": -33.9420307,
+      "longitude": 18.4797904,
+      "dataSource": "https://www.wikidata.org/wiki/Q111860489",
+      "photo": {
+        "file": "File:Valkenberg Estate 01.jpg",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/11/Valkenberg_Estate_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Valkenberg_Estate_01.jpg",
+        "author": "Chris Snelling",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111860489.webp"
+    },
+    {
+      "id": "Q4959707",
+      "name": "Breakwater Lodge",
+      "latitude": -33.90666667,
+      "longitude": 18.41611111,
+      "dataSource": "https://www.wikidata.org/wiki/Q4959707",
+      "photo": {
+        "file": "File:Breakwater Lodge in Cape Town, 1997.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Breakwater_Lodge_in_Cape_Town%2C_1997.jpg/960px-Breakwater_Lodge_in_Cape_Town%2C_1997.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Breakwater_Lodge_in_Cape_Town,_1997.jpg",
+        "author": "BKP",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q4959707.webp"
+    },
+    {
+      "id": "Q60451984",
+      "name": "Dutch Manor Antique Hotel",
+      "latitude": -33.9228996,
+      "longitude": 18.4123657,
+      "dataSource": "https://www.wikidata.org/wiki/Q60451984",
+      "photo": {
+        "file": "File:Bo-Kaap by ArmAg (23).jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Bo-Kaap_by_ArmAg_%2823%29.jpg/960px-Bo-Kaap_by_ArmAg_%2823%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bo-Kaap_by_ArmAg_(23).jpg",
+        "author": "Armineaghayan",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q60451984.webp"
+    },
+    {
+      "id": "Q60452089",
+      "name": "Hilton Cape Town City Centre",
+      "latitude": -33.921631,
+      "longitude": 18.415853,
+      "dataSource": "https://www.wikidata.org/wiki/Q60452089",
+      "photo": {
+        "file": "File:Wikimania 2018, Cape Town ( 1050382).jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Wikimania_2018%2C_Cape_Town_%28_1050382%29.jpg/960px-Wikimania_2018%2C_Cape_Town_%28_1050382%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wikimania_2018,_Cape_Town_(_1050382).jpg",
+        "author": "Matti Blume",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q60452089.webp"
+    },
+    {
+      "id": "Q111401610",
+      "name": "The Bay Hotel",
+      "latitude": -33.95244,
+      "longitude": 18.37816,
+      "dataSource": "https://www.wikidata.org/wiki/Q111401610",
+      "photo": {
+        "file": "File:Table Mountain, Cape Town (MP) 2018 035.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Table_Mountain%2C_Cape_Town_%28MP%29_2018_035.jpg/960px-Table_Mountain%2C_Cape_Town_%28MP%29_2018_035.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Table_Mountain,_Cape_Town_(MP)_2018_035.jpg",
+        "author": "Photograph by Mike Peel ( www.mikepeel.net ).",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111401610.webp"
+    },
+    {
+      "id": "Q111401542",
+      "name": "Cape Grace Hotel & Spa",
+      "latitude": -33.90868,
+      "longitude": 18.42056,
+      "dataSource": "https://www.wikidata.org/wiki/Q111401542",
+      "photo": {
+        "file": "File:Cape Town, Cape Grace Hotel - panoramio.jpg",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Cape_Town%2C_Cape_Grace_Hotel_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cape_Town,_Cape_Grace_Hotel_-_panoramio.jpg",
+        "author": "Frans-Banja Mulder",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111401542.webp"
+    },
+    {
+      "id": "Q111401546",
+      "name": "City Lodge Hotel V&A Waterfront",
+      "latitude": -33.91397,
+      "longitude": 18.42286,
+      "dataSource": "https://www.wikidata.org/wiki/Q111401546",
+      "photo": {
+        "file": "File:At Cape Town (MP) 2018 089.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/At_Cape_Town_%28MP%29_2018_089.jpg/960px-At_Cape_Town_%28MP%29_2018_089.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:At_Cape_Town_(MP)_2018_089.jpg",
+        "author": "Photograph by Mike Peel ( www.mikepeel.net ).",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111401546.webp"
+    },
+    {
+      "id": "Q111401540",
+      "name": "Garden Court Nelson Mandela Boulevard",
+      "latitude": -33.93398,
+      "longitude": 18.44662,
+      "dataSource": "https://www.wikidata.org/wiki/Q111401540",
+      "photo": {
+        "file": "File:Garden Court Nelson Mandela Boulevard.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Garden_Court_Nelson_Mandela_Boulevard.jpg/960px-Garden_Court_Nelson_Mandela_Boulevard.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Garden_Court_Nelson_Mandela_Boulevard.jpg",
+        "author": "Axxter99",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111401540.webp"
+    },
+    {
+      "id": "Q111401547",
+      "name": "One&Only Cape Town",
+      "latitude": -33.908113211,
+      "longitude": 18.416666686,
+      "dataSource": "https://www.wikidata.org/wiki/Q111401547",
+      "photo": {
+        "file": "File:One&Only Cape Town.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/One%26Only_Cape_Town.jpg/960px-One%26Only_Cape_Town.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:One%26Only_Cape_Town.jpg",
+        "author": "Axxter99",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111401547.webp"
+    },
+    {
+      "id": "Q111401550",
+      "name": "Park Inn by Radisson Cape Town Foreshore",
+      "latitude": -33.91887,
+      "longitude": 18.42591,
+      "dataSource": "https://www.wikidata.org/wiki/Q111401550",
+      "photo": {
+        "file": "File:Park Inn hotel in Cape Town 1.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Park_Inn_hotel_in_Cape_Town_1.jpg/960px-Park_Inn_hotel_in_Cape_Town_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Park_Inn_hotel_in_Cape_Town_1.jpg",
+        "author": "Bl1zz4rd-editor",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111401550.webp"
+    }
+  ],
+  "Reykjavík, Iceland": [
+    {
+      "id": "Q112013002",
+      "name": "Hotel Von",
+      "latitude": 64.1446,
+      "longitude": -21.92318,
+      "dataSource": "https://www.wikidata.org/wiki/Q112013002",
+      "photo": {
+        "file": "File:Hotel Von.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Hotel_Von.jpg/960px-Hotel_Von.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Von.jpg",
+        "author": "OhanaUnited Talk page",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q112013002.webp"
+    },
+    {
+      "id": "Q111409558",
+      "name": "Apótek Hotel Reykjavík by Keahotels",
+      "latitude": 64.147338,
+      "longitude": -21.938584,
+      "dataSource": "https://www.wikidata.org/wiki/Q111409558",
+      "photo": {
+        "file": "File:Apótek Hotel Reykjavík by Keahotels.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Ap%C3%B3tek_Hotel_Reykjav%C3%ADk_by_Keahotels.jpg/960px-Ap%C3%B3tek_Hotel_Reykjav%C3%ADk_by_Keahotels.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ap%C3%B3tek_Hotel_Reykjav%C3%ADk_by_Keahotels.jpg",
+        "author": "OhanaUnited Talk page",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111409558.webp"
+    },
+    {
+      "id": "Q111409562",
+      "name": "Center Hotels Plaza",
+      "latitude": 64.1481,
+      "longitude": -21.94184,
+      "dataSource": "https://www.wikidata.org/wiki/Q111409562",
+      "photo": {
+        "file": "File:Center Hotels Plaza (1).jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Center_Hotels_Plaza_%281%29.jpg/960px-Center_Hotels_Plaza_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Center_Hotels_Plaza_(1).jpg",
+        "author": "OhanaUnited Talk page",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111409562.webp"
+    },
+    {
+      "id": "Q111409564",
+      "name": "Hotel Reykjavik Centrum",
+      "latitude": 64.14745,
+      "longitude": -21.94248,
+      "dataSource": "https://www.wikidata.org/wiki/Q111409564",
+      "photo": {
+        "file": "File:Hotel Reykjavik Centrum.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Hotel_Reykjavik_Centrum.jpg/960px-Hotel_Reykjavik_Centrum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Reykjavik_Centrum.jpg",
+        "author": "OhanaUnited Talk page",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111409564.webp"
+    },
+    {
+      "id": "Q124077578",
+      "name": "Iceland Parliament Hotel, Curio Collection by Hilton",
+      "latitude": 64.147219,
+      "longitude": -21.940722,
+      "dataSource": "https://www.wikidata.org/wiki/Q124077578",
+      "photo": {
+        "file": "File:Iceland Parliament Hotel, Curio Collection by Hilton, Reykjavík.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Iceland_Parliament_Hotel%2C_Curio_Collection_by_Hilton%2C_Reykjav%C3%ADk.jpg/960px-Iceland_Parliament_Hotel%2C_Curio_Collection_by_Hilton%2C_Reykjav%C3%ADk.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Iceland_Parliament_Hotel,_Curio_Collection_by_Hilton,_Reykjav%C3%ADk.jpg",
+        "author": "OhanaUnited Talk page",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q124077578.webp"
+    }
+  ],
+  "Tokyo, Japan": [
+    {
+      "id": "Q11288499",
+      "name": "The Westin Tokyo",
+      "latitude": 35.6415,
+      "longitude": 139.715361,
+      "dataSource": "https://www.wikidata.org/wiki/Q11288499",
+      "photo": {
+        "file": "File:Westin Hotel Tokyo.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Westin_Hotel_Tokyo.jpg/960px-Westin_Hotel_Tokyo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Westin_Hotel_Tokyo.jpg",
+        "author": "Harani0403",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q11288499.webp"
+    },
+    {
+      "id": "Q111406658",
+      "name": "Sakura Hotel Hatagaya",
+      "latitude": 35.676018973,
+      "longitude": 139.676675498,
+      "dataSource": "https://www.wikidata.org/wiki/Q111406658",
+      "photo": {
+        "file": "File:Sakura Hotel Hatagaya.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Sakura_Hotel_Hatagaya.jpg/960px-Sakura_Hotel_Hatagaya.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sakura_Hotel_Hatagaya.jpg",
+        "author": "BriefEdits",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111406658.webp"
+    },
+    {
+      "id": "Q111406670",
+      "name": "Shibuya Tobu Hotel",
+      "latitude": 35.663162,
+      "longitude": 139.69876,
+      "dataSource": "https://www.wikidata.org/wiki/Q111406670",
+      "photo": {
+        "file": "File:Shibuya-Tobu-Hotel-01.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Shibuya-Tobu-Hotel-01.jpg/960px-Shibuya-Tobu-Hotel-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shibuya-Tobu-Hotel-01.jpg",
+        "author": "Rs1421",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111406670.webp"
+    },
+    {
+      "id": "Q55528639",
+      "name": "Rihga Royal Hotel Tokyo",
+      "latitude": 35.710594,
+      "longitude": 139.72253,
+      "dataSource": "https://www.wikidata.org/wiki/Q55528639",
+      "photo": {
+        "file": "File:Ri-gawaseda.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Ri-gawaseda.jpg/960px-Ri-gawaseda.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ri-gawaseda.jpg",
+        "author": "Hykw-a4",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q55528639.webp"
+    },
+    {
+      "id": "Q111121623",
+      "name": "The Millennials Shibuya",
+      "latitude": 35.6621966,
+      "longitude": 139.6996954,
+      "dataSource": "https://www.wikidata.org/wiki/Q111121623",
+      "photo": {
+        "file": "File:The Millennials (44881632584).jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/The_Millennials_%2844881632584%29.jpg/960px-The_Millennials_%2844881632584%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Millennials_(44881632584).jpg",
+        "author": "Michael Ocampo from United States",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111121623.webp"
+    },
+    {
+      "id": "Q65247843",
+      "name": "Mitsui Garden Hotel Jingugaien Tokyo Premier",
+      "latitude": 35.679694,
+      "longitude": 139.715738,
+      "dataSource": "https://www.wikidata.org/wiki/Q65247843",
+      "photo": {
+        "file": "File:Jingu Gaien Hotel 191130a.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Jingu_Gaien_Hotel_191130a.jpg/960px-Jingu_Gaien_Hotel_191130a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jingu_Gaien_Hotel_191130a.jpg",
+        "author": "江戸村のとくぞう",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q65247843.webp"
+    },
+    {
+      "id": "Q11329793",
+      "name": "Park Hyatt Tokyo",
+      "latitude": 35.68487108,
+      "longitude": 139.691046774,
+      "dataSource": "https://www.wikidata.org/wiki/Q11329793",
+      "photo": {
+        "file": "File:ParkHyattTokyo.JPG",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/ParkHyattTokyo.JPG/960px-ParkHyattTokyo.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:ParkHyattTokyo.JPG",
+        "author": "moore",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q11329793.webp"
+    },
+    {
+      "id": "Q111866016",
+      "name": "Nippon Seinenkan Hotel",
+      "latitude": 35.673905,
+      "longitude": 139.715804,
+      "dataSource": "https://www.wikidata.org/wiki/Q111866016",
+      "photo": {
+        "file": "File:Nihon seinenkan-1.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Nihon_seinenkan-1.jpg/960px-Nihon_seinenkan-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nihon_seinenkan-1.jpg",
+        "author": "江戸村のとくぞう",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111866016.webp"
+    },
+    {
+      "id": "Q111865996",
+      "name": "Pearl Hotel Shinjuku Akebonobashi",
+      "latitude": 35.69428,
+      "longitude": 139.72086,
+      "dataSource": "https://www.wikidata.org/wiki/Q111865996",
+      "photo": {
+        "file": "File:パールホテル新宿曙橋 - Mapillary (681205856808206).jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/%E3%83%91%E3%83%BC%E3%83%AB%E3%83%9B%E3%83%86%E3%83%AB%E6%96%B0%E5%AE%BF%E6%9B%99%E6%A9%8B_-_Mapillary_%28681205856808206%29.jpg/960px-%E3%83%91%E3%83%BC%E3%83%AB%E3%83%9B%E3%83%86%E3%83%AB%E6%96%B0%E5%AE%BF%E6%9B%99%E6%A9%8B_-_Mapillary_%28681205856808206%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E3%83%91%E3%83%BC%E3%83%AB%E3%83%9B%E3%83%86%E3%83%AB%E6%96%B0%E5%AE%BF%E6%9B%99%E6%A9%8B_-_Mapillary_(681205856808206).jpg",
+        "author": "musashino5 @ Mapillary",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111865996.webp"
+    },
+    {
+      "id": "Q6383787",
+      "name": "Keio Plaza Hotel Tokyo",
+      "latitude": 35.68988,
+      "longitude": 139.69395,
+      "dataSource": "https://www.wikidata.org/wiki/Q6383787",
+      "photo": {
+        "file": "File:Keio Plaza Hotel -01.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Keio_Plaza_Hotel_-01.jpg/960px-Keio_Plaza_Hotel_-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Keio_Plaza_Hotel_-01.jpg",
+        "author": "Aimaimyi",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q6383787.webp"
+    }
+  ],
+  "Rome, Italy": [
+    {
+      "id": "Q111879647",
+      "name": "Hotel De La Ville",
+      "latitude": 41.90591,
+      "longitude": 12.48372,
+      "dataSource": "https://www.wikidata.org/wiki/Q111879647",
+      "photo": {
+        "file": "File:Hotel De La Ville.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Hotel_De_La_Ville.jpg/960px-Hotel_De_La_Ville.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_De_La_Ville.jpg",
+        "author": "PatriaDeTodos",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 4128,
+        "height": 3096,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111879647.webp"
+    },
+    {
+      "id": "Q12885104",
+      "name": "Albergo del Sole al Pantheon",
+      "latitude": 41.89955556,
+      "longitude": 12.477,
+      "dataSource": "https://www.wikidata.org/wiki/Q12885104",
+      "photo": {
+        "file": "File:Hotel Sole al Pantheon, Rome 2009.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Hotel_Sole_al_Pantheon%2C_Rome_2009.jpg/960px-Hotel_Sole_al_Pantheon%2C_Rome_2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Sole_al_Pantheon,_Rome_2009.jpg",
+        "author": "DIMSFIKAS",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 2592,
+        "height": 1944,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q12885104.webp"
+    },
+    {
+      "id": "Q52886668",
+      "name": "Rome Cavalieri, A Waldorf Astoria Hotel",
+      "latitude": 41.91884768,
+      "longitude": 12.446450121,
+      "dataSource": "https://www.wikidata.org/wiki/Q52886668",
+      "photo": {
+        "file": "File:Hilton cavalieri roma, piscina.JPG",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Hilton_cavalieri_roma%2C_piscina.JPG/960px-Hilton_cavalieri_roma%2C_piscina.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hilton_cavalieri_roma,_piscina.JPG",
+        "author": "sailko",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 2592,
+        "height": 1944,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q52886668.webp"
+    },
+    {
+      "id": "Q17985469",
+      "name": "Aldrovandi Villa Borghese",
+      "latitude": 41.91879,
+      "longitude": 12.484781,
+      "dataSource": "https://www.wikidata.org/wiki/Q17985469",
+      "photo": {
+        "file": "File:Aldrovandi Entrance 2014.PNG",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Aldrovandi_Entrance_2014.PNG/960px-Aldrovandi_Entrance_2014.PNG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aldrovandi_Entrance_2014.PNG",
+        "author": "Ciccicharles",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 2908,
+        "height": 1927,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q17985469.webp"
+    },
+    {
+      "id": "Q16844927",
+      "name": "Palazzo Naiadi Rome",
+      "latitude": 41.90199,
+      "longitude": 12.49608,
+      "dataSource": "https://www.wikidata.org/wiki/Q16844927",
+      "photo": {
+        "file": "File:Piazza della repubblica hdr.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Piazza_della_repubblica_hdr.jpg/960px-Piazza_della_repubblica_hdr.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Piazza_della_repubblica_hdr.jpg",
+        "author": "Pasgabriele",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 3872,
+        "height": 2592,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q16844927.webp"
+    },
+    {
+      "id": "Q111412442",
+      "name": "FH55 Grand Hotel Palatino",
+      "latitude": 41.894516,
+      "longitude": 12.49228,
+      "dataSource": "https://www.wikidata.org/wiki/Q111412442",
+      "photo": {
+        "file": "File:FH55 Grand Hotel Palatino.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/FH55_Grand_Hotel_Palatino.jpg/960px-FH55_Grand_Hotel_Palatino.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:FH55_Grand_Hotel_Palatino.jpg",
+        "author": "PatriaDeTodos",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 4128,
+        "height": 2322,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111412442.webp"
+    },
+    {
+      "id": "Q111412404",
+      "name": "Palazzo Montemartini Rome, A Radisson Collection Hotel",
+      "latitude": 41.90348,
+      "longitude": 12.50032,
+      "dataSource": "https://www.wikidata.org/wiki/Q111412404",
+      "photo": {
+        "file": "File:Palazzo Montemartini.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Palazzo_Montemartini.jpg/960px-Palazzo_Montemartini.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Palazzo_Montemartini.jpg",
+        "author": "Carlo Dani",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 2448,
+        "height": 1536,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111412404.webp"
+    }
+  ],
+  "Barcelona, Spain": [
+    {
+      "id": "Q30276245",
+      "name": "Alexandra Barcelona Hotel, Curio Collection by Hilton",
+      "latitude": 41.3931,
+      "longitude": 2.16153,
+      "dataSource": "https://www.wikidata.org/wiki/Q30276245",
+      "photo": {
+        "file": "File:Alexandra Barcelona Hotel, Curio Collection by Hilton.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Alexandra_Barcelona_Hotel%2C_Curio_Collection_by_Hilton.jpg/960px-Alexandra_Barcelona_Hotel%2C_Curio_Collection_by_Hilton.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alexandra_Barcelona_Hotel,_Curio_Collection_by_Hilton.jpg",
+        "author": "Pere prlpz",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 4128,
+        "height": 3096,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q30276245.webp"
+    },
+    {
+      "id": "Q111662161",
+      "name": "Iberostar Selection Paseo de Gracia",
+      "latitude": 41.38785,
+      "longitude": 2.16938,
+      "dataSource": "https://www.wikidata.org/wiki/Q111662161",
+      "photo": {
+        "file": "File:Iberostar Selection Paseo de Gracia.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Iberostar_Selection_Paseo_de_Gracia.jpg/960px-Iberostar_Selection_Paseo_de_Gracia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Iberostar_Selection_Paseo_de_Gracia.jpg",
+        "author": "Pere prlpz",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 4128,
+        "height": 3096,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111662161.webp"
+    },
+    {
+      "id": "Q111872185",
+      "name": "BcnStop Parc Güell",
+      "latitude": 41.4095,
+      "longitude": 2.14726,
+      "dataSource": "https://www.wikidata.org/wiki/Q111872185",
+      "photo": {
+        "file": "File:BcnStop Parc Güell.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/BcnStop_Parc_G%C3%BCell.jpg/960px-BcnStop_Parc_G%C3%BCell.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:BcnStop_Parc_G%C3%BCell.jpg",
+        "author": "Pere prlpz",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 4128,
+        "height": 2322,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111872185.webp"
+    },
+    {
+      "id": "Q111872181",
+      "name": "Guitart Grand Passage",
+      "latitude": 41.39357,
+      "longitude": 2.15034,
+      "dataSource": "https://www.wikidata.org/wiki/Q111872181",
+      "photo": {
+        "file": "File:Hotel Guitart - 20221230 112916.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Hotel_Guitart_-_20221230_112916.jpg/960px-Hotel_Guitart_-_20221230_112916.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Guitart_-_20221230_112916.jpg",
+        "author": "Pere López Brosa",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 4128,
+        "height": 2322,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111872181.webp"
+    },
+    {
+      "id": "Q111389427",
+      "name": "B Hotel",
+      "latitude": 41.3765,
+      "longitude": 2.15042,
+      "dataSource": "https://www.wikidata.org/wiki/Q111389427",
+      "photo": {
+        "file": "File:B Hotel, Barcelona.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/B_Hotel%2C_Barcelona.jpg/960px-B_Hotel%2C_Barcelona.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:B_Hotel,_Barcelona.jpg",
+        "author": "Pere prlpz",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 4000,
+        "height": 2250,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111389427.webp"
+    },
+    {
+      "id": "Q55347999",
+      "name": "Hilton Barcelona",
+      "latitude": 41.38878,
+      "longitude": 2.13098,
+      "dataSource": "https://www.wikidata.org/wiki/Q55347999",
+      "photo": {
+        "file": "File:Hilton Barcelona (Avinguda Diagonal 589) 2017.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Hilton_Barcelona_%28Avinguda_Diagonal_589%29_2017.jpg/960px-Hilton_Barcelona_%28Avinguda_Diagonal_589%29_2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hilton_Barcelona_(Avinguda_Diagonal_589)_2017.jpg",
+        "author": "Jordiferrer",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 2592,
+        "height": 1944,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q55347999.webp"
+    }
+  ],
+  "Madrid, Spain": [
+    {
+      "id": "Q111388875",
+      "name": "Hotel Opera",
+      "latitude": 40.41893,
+      "longitude": -3.71012,
+      "dataSource": "https://www.wikidata.org/wiki/Q111388875",
+      "photo": {
+        "file": "File:Hotel Opera.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Hotel_Opera.jpg/960px-Hotel_Opera.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Opera.jpg",
+        "author": "Vanbasten 23",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 4000,
+        "height": 3000,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111388875.webp"
+    },
+    {
+      "id": "Q5390470",
+      "name": "Hotel Puerta América",
+      "latitude": 40.4407,
+      "longitude": -3.67006,
+      "dataSource": "https://www.wikidata.org/wiki/Q5390470",
+      "photo": {
+        "file": "File:Hotel Puerta América (Madrid) 10.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Hotel_Puerta_Am%C3%A9rica_%28Madrid%29_10.jpg/960px-Hotel_Puerta_Am%C3%A9rica_%28Madrid%29_10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Puerta_Am%C3%A9rica_(Madrid)_10.jpg",
+        "author": "Luis García ( Zaqarbal )",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 3345,
+        "height": 2657,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q5390470.webp"
+    },
+    {
+      "id": "Q111872203",
+      "name": "Novotel Madrid Campo de las Naciones",
+      "latitude": 40.46224,
+      "longitude": -3.61517,
+      "dataSource": "https://www.wikidata.org/wiki/Q111872203",
+      "photo": {
+        "file": "File:Novotel Madrid Campo de las Naciones.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Novotel_Madrid_Campo_de_las_Naciones.jpg/960px-Novotel_Madrid_Campo_de_las_Naciones.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Novotel_Madrid_Campo_de_las_Naciones.jpg",
+        "author": "Vanbasten 23",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 4000,
+        "height": 3000,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111872203.webp"
+    },
+    {
+      "id": "Q3145654",
+      "name": "Mandarin Oriental Ritz, Madrid",
+      "latitude": 40.4156,
+      "longitude": -3.69281,
+      "dataSource": "https://www.wikidata.org/wiki/Q3145654",
+      "photo": {
+        "file": "File:Hotel Ritz (Madrid) 03.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Hotel_Ritz_%28Madrid%29_03.jpg/960px-Hotel_Ritz_%28Madrid%29_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Ritz_(Madrid)_03.jpg",
+        "author": "Luis García ( Zaqarbal )",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 4232,
+        "height": 3240,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q3145654.webp"
+    },
+    {
+      "id": "Q111388630",
+      "name": "NH Madrid Nacional",
+      "latitude": 40.409912,
+      "longitude": -3.69264,
+      "dataSource": "https://www.wikidata.org/wiki/Q111388630",
+      "photo": {
+        "file": "File:NH Madrid Nacional.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/NH_Madrid_Nacional.jpg/960px-NH_Madrid_Nacional.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:NH_Madrid_Nacional.jpg",
+        "author": "Mentxuwiki",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 3280,
+        "height": 2464,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111388630.webp"
+    },
+    {
+      "id": "Q111389513",
+      "name": "Pullman Madrid Airport & Feria",
+      "latitude": 40.4622,
+      "longitude": -3.61583,
+      "dataSource": "https://www.wikidata.org/wiki/Q111389513",
+      "photo": {
+        "file": "File:Pullman Madrid Airport & Feria.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Pullman_Madrid_Airport_%26_Feria.jpg/960px-Pullman_Madrid_Airport_%26_Feria.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pullman_Madrid_Airport_%26_Feria.jpg",
+        "author": "Vanbasten 23",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 4000,
+        "height": 3000,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111389513.webp"
+    },
+    {
+      "id": "Q26702361",
+      "name": "Hotel Fénix, Madrid",
+      "latitude": 40.426337,
+      "longitude": -3.689627,
+      "dataSource": "https://www.wikidata.org/wiki/Q26702361",
+      "photo": {
+        "file": "File:Hotel Fénix (Madrid) 01.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Hotel_F%C3%A9nix_%28Madrid%29_01.jpg/960px-Hotel_F%C3%A9nix_%28Madrid%29_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_F%C3%A9nix_(Madrid)_01.jpg",
+        "author": "Luis García ( Zaqarbal )",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 2497,
+        "height": 1974,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q26702361.webp"
+    },
+    {
+      "id": "Q111662160",
+      "name": "Hotel Villamadrid",
+      "latitude": 40.48964,
+      "longitude": -3.68772,
+      "dataSource": "https://www.wikidata.org/wiki/Q111662160",
+      "photo": {
+        "file": "File:Hotel Villamadrid.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Hotel_Villamadrid.jpg/960px-Hotel_Villamadrid.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Villamadrid.jpg",
+        "author": "Urci dream",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 4080,
+        "height": 3072,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111662160.webp"
+    }
+  ],
+  "Berlin, Germany": [
+    {
+      "id": "Q111388457",
+      "name": "NH Berlin Kurfürstendamm",
+      "latitude": 52.504063,
+      "longitude": 13.323989,
+      "dataSource": "https://www.wikidata.org/wiki/Q111388457",
+      "photo": {
+        "file": "File:20251006 xl 1650-NH Berlin Kurfürstendamm.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/20251006_xl_1650-NH_Berlin_Kurf%C3%BCrstendamm.jpg/960px-20251006_xl_1650-NH_Berlin_Kurf%C3%BCrstendamm.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:20251006_xl_1650-NH_Berlin_Kurf%C3%BCrstendamm.jpg",
+        "author": "Molgreen",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 4080,
+        "height": 1999,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111388457.webp"
+    },
+    {
+      "id": "Q111390172",
+      "name": "Hotel Berlin Central District",
+      "latitude": 52.5074,
+      "longitude": 13.36362,
+      "dataSource": "https://www.wikidata.org/wiki/Q111390172",
+      "photo": {
+        "file": "File:Maritim Berlin Eingang 2017.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Maritim_Berlin_Eingang_2017.jpg/960px-Maritim_Berlin_Eingang_2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maritim_Berlin_Eingang_2017.jpg",
+        "author": "GFHund",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 2747,
+        "height": 2060,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111390172.webp"
+    },
+    {
+      "id": "Q111118535",
+      "name": "Central Inn",
+      "latitude": 52.5231508,
+      "longitude": 13.3584772,
+      "dataSource": "https://www.wikidata.org/wiki/Q111118535",
+      "photo": {
+        "file": "File:Central Inn.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Central_Inn.jpg/960px-Central_Inn.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Central_Inn.jpg",
+        "author": "Shisma",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 4032,
+        "height": 3024,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111118535.webp"
+    },
+    {
+      "id": "Q18020955",
+      "name": "Hotel am Zoo",
+      "latitude": 52.5036,
+      "longitude": 13.32895,
+      "dataSource": "https://www.wikidata.org/wiki/Q18020955",
+      "photo": {
+        "file": "File:Berlin-Kurfuerstendamm-118-Nr 26-Hotel Zoo-2016-gje.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Berlin-Kurfuerstendamm-118-Nr_26-Hotel_Zoo-2016-gje.jpg/960px-Berlin-Kurfuerstendamm-118-Nr_26-Hotel_Zoo-2016-gje.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Berlin-Kurfuerstendamm-118-Nr_26-Hotel_Zoo-2016-gje.jpg",
+        "author": "Gerd Eichmann",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 5184,
+        "height": 2661,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q18020955.webp"
+    },
+    {
+      "id": "Q17353664",
+      "name": "Hotel Albrechtshof",
+      "latitude": 52.522087,
+      "longitude": 13.384418,
+      "dataSource": "https://www.wikidata.org/wiki/Q17353664",
+      "photo": {
+        "file": "File:20230630 xl 0823-Hotel Albrechtshof.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/20230630_xl_0823-Hotel_Albrechtshof.jpg/960px-20230630_xl_0823-Hotel_Albrechtshof.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:20230630_xl_0823-Hotel_Albrechtshof.jpg",
+        "author": "Molgreen",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 2446,
+        "height": 1880,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q17353664.webp"
+    },
+    {
+      "id": "Q111388470",
+      "name": "Pestana Berlin Tiergarten",
+      "latitude": 52.50833,
+      "longitude": 13.349,
+      "dataSource": "https://www.wikidata.org/wiki/Q111388470",
+      "photo": {
+        "file": "File:Pestana, Berlin (P1031451).jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Pestana%2C_Berlin_%28P1031451%29.jpg/960px-Pestana%2C_Berlin_%28P1031451%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pestana,_Berlin_(P1031451).jpg",
+        "author": "Matti Blume",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "width": 4727,
+        "height": 3545,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111388470.webp"
+    },
+    {
+      "id": "Q2413914",
+      "name": "The Ritz-Carlton Berlin",
+      "latitude": 52.5103,
+      "longitude": 13.3753,
+      "dataSource": "https://www.wikidata.org/wiki/Q2413914",
+      "photo": {
+        "file": "File:Hotel Eingangsbereich\"The Ritz Carlton\".jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Hotel_Eingangsbereich%22The_Ritz_Carlton%22.jpg/960px-Hotel_Eingangsbereich%22The_Ritz_Carlton%22.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Eingangsbereich%22The_Ritz_Carlton%22.jpg",
+        "author": "NoRud",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 4225,
+        "height": 2380,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q2413914.webp"
+    }
+  ],
+  "Amsterdam, Netherlands": [
+    {
+      "id": "Q16466033",
+      "name": "Faralda Crane Hotel",
+      "latitude": 52.4002,
+      "longitude": 4.89454,
+      "dataSource": "https://www.wikidata.org/wiki/Q16466033",
+      "photo": {
+        "file": "File:Faralda NDSM Crane.JPG",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Faralda_NDSM_Crane.JPG/960px-Faralda_NDSM_Crane.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Faralda_NDSM_Crane.JPG",
+        "author": "Marion Golsteijn",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 3264,
+        "height": 2448,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q16466033.webp"
+    },
+    {
+      "id": "Q21707574",
+      "name": "Marriott Hotel, Amsterdam",
+      "latitude": 52.36266,
+      "longitude": 4.87966,
+      "dataSource": "https://www.wikidata.org/wiki/Q21707574",
+      "photo": {
+        "file": "File:MarriottAmsterdam01a.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/MarriottAmsterdam01a.jpg/960px-MarriottAmsterdam01a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:MarriottAmsterdam01a.jpg",
+        "author": "Milliped",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 3957,
+        "height": 2547,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q21707574.webp"
+    },
+    {
+      "id": "Q2433903",
+      "name": "Park Plaza Victoria Amsterdam",
+      "latitude": 52.377094,
+      "longitude": 4.8979764,
+      "dataSource": "https://www.wikidata.org/wiki/Q2433903",
+      "photo": {
+        "file": "File:Victoriahotel.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Victoriahotel.jpg/960px-Victoriahotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Victoriahotel.jpg",
+        "author": "Marion Golsteijn",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "width": 1800,
+        "height": 1200,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q2433903.webp"
+    },
+    {
+      "id": "Q24038638",
+      "name": "Volkshotel",
+      "latitude": 52.353777,
+      "longitude": 4.9116007,
+      "dataSource": "https://www.wikidata.org/wiki/Q24038638",
+      "photo": {
+        "file": "File:Volkshotel, Ex-Volkskrant Volkshotel Amsterdam.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Volkshotel%2C_Ex-Volkskrant_Volkshotel_Amsterdam.jpg/960px-Volkshotel%2C_Ex-Volkskrant_Volkshotel_Amsterdam.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Volkshotel,_Ex-Volkskrant_Volkshotel_Amsterdam.jpg",
+        "author": "Konrad Lischka",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "width": 1600,
+        "height": 1067,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q24038638.webp"
+    },
+    {
+      "id": "Q111410338",
+      "name": "DoubleTree by Hilton Hotel Amsterdam - Ndsm Wharf",
+      "latitude": 52.40072,
+      "longitude": 4.893714,
+      "dataSource": "https://www.wikidata.org/wiki/Q111410338",
+      "photo": {
+        "file": "File:Amsterdam - DoubleTree by Hilton Hotel - NDSM Wharf (30300680945).jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Amsterdam_-_DoubleTree_by_Hilton_Hotel_-_NDSM_Wharf_%2830300680945%29.jpg/960px-Amsterdam_-_DoubleTree_by_Hilton_Hotel_-_NDSM_Wharf_%2830300680945%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Amsterdam_-_DoubleTree_by_Hilton_Hotel_-_NDSM_Wharf_(30300680945).jpg",
+        "author": "Fred Romero from Paris, France",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "width": 5184,
+        "height": 3456,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111410338.webp"
+    },
+    {
+      "id": "Q478198",
+      "name": "InterContinental Amstel Amsterdam",
+      "latitude": 52.3600068,
+      "longitude": 4.9051643,
+      "dataSource": "https://www.wikidata.org/wiki/Q478198",
+      "photo": {
+        "file": "File:Amstel Hotel 2034.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Amstel_Hotel_2034.jpg/960px-Amstel_Hotel_2034.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Amstel_Hotel_2034.jpg",
+        "author": "C messier",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 4362,
+        "height": 3064,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q478198.webp"
+    },
+    {
+      "id": "Q15876464",
+      "name": "XO Hotels Infinity",
+      "latitude": 52.3810311,
+      "longitude": 4.8209673,
+      "dataSource": "https://www.wikidata.org/wiki/Q15876464",
+      "photo": {
+        "file": "File:Slotania01b.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Slotania01b.jpg/960px-Slotania01b.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Slotania01b.jpg",
+        "author": "Milliped",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 3819,
+        "height": 2491,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q15876464.webp"
+    },
+    {
+      "id": "Q17302661",
+      "name": "Hotel / café / restaurant Krasnapolsky",
+      "latitude": 52.37284,
+      "longitude": 4.89507,
+      "dataSource": "https://www.wikidata.org/wiki/Q17302661",
+      "photo": {
+        "file": "File:Амстердам - panoramio (9).jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/%D0%90%D0%BC%D1%81%D1%82%D0%B5%D1%80%D0%B4%D0%B0%D0%BC_-_panoramio_%289%29.jpg/960px-%D0%90%D0%BC%D1%81%D1%82%D0%B5%D1%80%D0%B4%D0%B0%D0%BC_-_panoramio_%289%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%90%D0%BC%D1%81%D1%82%D0%B5%D1%80%D0%B4%D0%B0%D0%BC_-_panoramio_(9).jpg",
+        "author": "Андрей Бобровский",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "width": 6016,
+        "height": 4016,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q17302661.webp"
+    }
+  ],
+  "Vienna, Austria": [
+    {
+      "id": "Q279260",
+      "name": "Hotel Sacher Vienna",
+      "latitude": 48.203888888,
+      "longitude": 16.369444444,
+      "dataSource": "https://www.wikidata.org/wiki/Q279260",
+      "photo": {
+        "file": "File:Cafe Sacher Wien.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Cafe_Sacher_Wien.jpg/960px-Cafe_Sacher_Wien.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cafe_Sacher_Wien.jpg",
+        "author": "Thomas Ledl",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 4923,
+        "height": 4208,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q279260.webp"
+    },
+    {
+      "id": "Q93751378",
+      "name": "Hotel Altwienerhof",
+      "latitude": 48.19046,
+      "longitude": 16.33638,
+      "dataSource": "https://www.wikidata.org/wiki/Q93751378",
+      "photo": {
+        "file": "File:2020-05-09 Hotel Altwienerhof.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/2020-05-09_Hotel_Altwienerhof.jpg/960px-2020-05-09_Hotel_Altwienerhof.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2020-05-09_Hotel_Altwienerhof.jpg",
+        "author": "Rosso Robot",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 4608,
+        "height": 3456,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q93751378.webp"
+    },
+    {
+      "id": "Q131993812",
+      "name": "Heuriger und Pension Fuchs",
+      "latitude": 48.28246,
+      "longitude": 16.4091,
+      "dataSource": "https://www.wikidata.org/wiki/Q131993812",
+      "photo": {
+        "file": "File:Heuriger und Pension Fuchs Großjedlersdorf 01.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Heuriger_und_Pension_Fuchs_Gro%C3%9Fjedlersdorf_01.jpg/960px-Heuriger_und_Pension_Fuchs_Gro%C3%9Fjedlersdorf_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Heuriger_und_Pension_Fuchs_Gro%C3%9Fjedlersdorf_01.jpg",
+        "author": "Funke",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 3204,
+        "height": 2403,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q131993812.webp"
+    },
+    {
+      "id": "Q38169938",
+      "name": "Le Méridien Vienna",
+      "latitude": 48.202631,
+      "longitude": 16.366142,
+      "dataSource": "https://www.wikidata.org/wiki/Q38169938",
+      "photo": {
+        "file": "File:Meridien hotel Vienna June 2006 595.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Meridien_hotel_Vienna_June_2006_595.jpg/960px-Meridien_hotel_Vienna_June_2006_595.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Meridien_hotel_Vienna_June_2006_595.jpg",
+        "author": "Gryffindor",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+        "width": 2560,
+        "height": 1920,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q38169938.webp"
+    },
+    {
+      "id": "Q112015256",
+      "name": "IntercityHotel Wien",
+      "latitude": 48.196518,
+      "longitude": 16.341501,
+      "dataSource": "https://www.wikidata.org/wiki/Q112015256",
+      "photo": {
+        "file": "File:Hotel Intercity, Vienna.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Hotel_Intercity%2C_Vienna.jpg/960px-Hotel_Intercity%2C_Vienna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Intercity,_Vienna.jpg",
+        "author": "Thomas Ledl",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "width": 5846,
+        "height": 3899,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q112015256.webp"
+    }
+  ],
+  "Prague, Czechia": [
+    {
+      "id": "Q111412313",
+      "name": "Ibis Praha Mala Strana",
+      "latitude": 50.07228,
+      "longitude": 14.40048,
+      "dataSource": "https://www.wikidata.org/wiki/Q111412313",
+      "photo": {
+        "file": "File:Andel Ibis.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Andel_Ibis.jpg/960px-Andel_Ibis.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Andel_Ibis.jpg",
+        "author": "che",
+        "license": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+        "width": 3072,
+        "height": 2271,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111412313.webp"
+    },
+    {
+      "id": "Q111412274",
+      "name": "MOOo Downtown",
+      "latitude": 50.07776,
+      "longitude": 14.41782,
+      "dataSource": "https://www.wikidata.org/wiki/Q111412274",
+      "photo": {
+        "file": "File:Praha Nove Mesto Odboru 2 a.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Praha_Nove_Mesto_Odboru_2_a.jpg/960px-Praha_Nove_Mesto_Odboru_2_a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praha_Nove_Mesto_Odboru_2_a.jpg",
+        "author": "JiriMatejicek",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 3264,
+        "height": 2448,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111412274.webp"
+    },
+    {
+      "id": "Q111412228",
+      "name": "Rezidence Vyšehrad",
+      "latitude": 50.06226,
+      "longitude": 14.42513,
+      "dataSource": "https://www.wikidata.org/wiki/Q111412228",
+      "photo": {
+        "file": "File:Praha Nusle Lumirova 33 Rezidence Vysehrad.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Praha_Nusle_Lumirova_33_Rezidence_Vysehrad.jpg/960px-Praha_Nusle_Lumirova_33_Rezidence_Vysehrad.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praha_Nusle_Lumirova_33_Rezidence_Vysehrad.jpg",
+        "author": "JiriMatejicek",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 3264,
+        "height": 2448,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111412228.webp"
+    },
+    {
+      "id": "Q111412337",
+      "name": "Orea Hotel Pyramida Praha",
+      "latitude": 50.08558,
+      "longitude": 14.37999,
+      "dataSource": "https://www.wikidata.org/wiki/Q111412337",
+      "photo": {
+        "file": "File:Hotel Pyramida (043).jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Hotel_Pyramida_%28043%29.jpg/960px-Hotel_Pyramida_%28043%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Pyramida_(043).jpg",
+        "author": "Juandev",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 4000,
+        "height": 3000,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111412337.webp"
+    },
+    {
+      "id": "Q104153432",
+      "name": "Hotel Kampa Garden",
+      "latitude": 50.0856208,
+      "longitude": 14.4078931,
+      "dataSource": "https://www.wikidata.org/wiki/Q104153432",
+      "photo": {
+        "file": "File:Praha Mala Strana U Sovovych mlynu 9 hotel.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Praha_Mala_Strana_U_Sovovych_mlynu_9_hotel.jpg/960px-Praha_Mala_Strana_U_Sovovych_mlynu_9_hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praha_Mala_Strana_U_Sovovych_mlynu_9_hotel.jpg",
+        "author": "JiriMatejicek",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 4160,
+        "height": 3120,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q104153432.webp"
+    },
+    {
+      "id": "Q104153444",
+      "name": "Hotel At the Charles Bridge",
+      "latitude": 50.08591,
+      "longitude": 14.4086,
+      "dataSource": "https://www.wikidata.org/wiki/Q104153444",
+      "photo": {
+        "file": "File:Praha Mala Strana Na Kampe 15.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Praha_Mala_Strana_Na_Kampe_15.jpg/960px-Praha_Mala_Strana_Na_Kampe_15.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praha_Mala_Strana_Na_Kampe_15.jpg",
+        "author": "JiriMatejicek",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 4160,
+        "height": 3120,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q104153444.webp"
+    },
+    {
+      "id": "Q95732893",
+      "name": "Hotel Golf",
+      "latitude": 50.06742,
+      "longitude": 14.34361,
+      "dataSource": "https://www.wikidata.org/wiki/Q95732893",
+      "photo": {
+        "file": "File:Praha Motol Hotel Golf.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Praha_Motol_Hotel_Golf.jpg/960px-Praha_Motol_Hotel_Golf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praha_Motol_Hotel_Golf.jpg",
+        "author": "JiriMatejicek",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 3264,
+        "height": 2448,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q95732893.webp"
+    },
+    {
+      "id": "Q107462473",
+      "name": "Hotel Peko",
+      "latitude": 50.05792,
+      "longitude": 14.46965,
+      "dataSource": "https://www.wikidata.org/wiki/Q107462473",
+      "photo": {
+        "file": "File:Praha Michle Brtnicka 1 Hotel Peko.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Praha_Michle_Brtnicka_1_Hotel_Peko.jpg/960px-Praha_Michle_Brtnicka_1_Hotel_Peko.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praha_Michle_Brtnicka_1_Hotel_Peko.jpg",
+        "author": "JiriMatejicek",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 3264,
+        "height": 2448,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q107462473.webp"
+    }
+  ],
+  "Budapest, Hungary": [
+    {
+      "id": "Q111858349",
+      "name": "Hotel Zugló",
+      "latitude": 47.52179,
+      "longitude": 19.10373,
+      "dataSource": "https://www.wikidata.org/wiki/Q111858349",
+      "photo": {
+        "file": "File:Hotel Zugló2.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Hotel_Zugl%C3%B32.jpg/960px-Hotel_Zugl%C3%B32.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Zugl%C3%B32.jpg",
+        "author": "Pallor",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "width": 4080,
+        "height": 2288,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111858349.webp"
+    },
+    {
+      "id": "Q854317",
+      "name": "Gresham Palace",
+      "latitude": 47.49974722,
+      "longitude": 19.04798056,
+      "dataSource": "https://www.wikidata.org/wiki/Q854317",
+      "photo": {
+        "file": "File:Gresham palota.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Gresham_palota.jpg/960px-Gresham_palota.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gresham_palota.jpg",
+        "author": "michael clarke stuff",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "width": 2048,
+        "height": 1376,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q854317.webp"
+    },
+    {
+      "id": "Q15228738",
+      "name": "InterContinental Budapest",
+      "latitude": 47.497222222,
+      "longitude": 19.047777777,
+      "dataSource": "https://www.wikidata.org/wiki/Q15228738",
+      "photo": {
+        "file": "File:20130613 Budapest 62.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/20130613_Budapest_62.jpg/960px-20130613_Budapest_62.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:20130613_Budapest_62.jpg",
+        "author": "Mark Ahsmann",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 3968,
+        "height": 2976,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q15228738.webp"
+    },
+    {
+      "id": "Q21515054",
+      "name": "Klebelsberg Kastély",
+      "latitude": 47.566056,
+      "longitude": 18.961056,
+      "dataSource": "https://www.wikidata.org/wiki/Q21515054",
+      "photo": {
+        "file": "File:Budapest-Pesthidegkút, Klebelsberg-kastély 2021 05.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Budapest-Pesthidegk%C3%BAt%2C_Klebelsberg-kast%C3%A9ly_2021_05.jpg/960px-Budapest-Pesthidegk%C3%BAt%2C_Klebelsberg-kast%C3%A9ly_2021_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Budapest-Pesthidegk%C3%BAt,_Klebelsberg-kast%C3%A9ly_2021_05.jpg",
+        "author": "Pasztilla aka Attila Terbócs",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 2400,
+        "height": 1600,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q21515054.webp"
+    },
+    {
+      "id": "Q111400920",
+      "name": "Ensana Thermal Margaret Island",
+      "latitude": 47.533276934,
+      "longitude": 19.052363634,
+      "dataSource": "https://www.wikidata.org/wiki/Q111400920",
+      "photo": {
+        "file": "File:Ensana Thermal Margaret Island.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Ensana_Thermal_Margaret_Island.jpg/960px-Ensana_Thermal_Margaret_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ensana_Thermal_Margaret_Island.jpg",
+        "author": "Mugli",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 4128,
+        "height": 2322,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111400920.webp"
+    }
+  ],
+  "Lisbon, Portugal": [
+    {
+      "id": "Q10343981",
+      "name": "Pestana Palace Lisboa",
+      "latitude": 38.70378056,
+      "longitude": -9.18682778,
+      "dataSource": "https://www.wikidata.org/wiki/Q10343981",
+      "photo": {
+        "file": "File:Pestana Palace Hotel IMG 2004.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Pestana_Palace_Hotel_IMG_2004.jpg/960px-Pestana_Palace_Hotel_IMG_2004.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pestana_Palace_Hotel_IMG_2004.jpg",
+        "author": "sohrabah",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "width": 3648,
+        "height": 2048,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q10343981.webp"
+    },
+    {
+      "id": "Q111870792",
+      "name": "The Lift Boutique Hotel",
+      "latitude": 38.7119,
+      "longitude": -9.13914,
+      "dataSource": "https://www.wikidata.org/wiki/Q111870792",
+      "photo": {
+        "file": "File:The lift hotel ale hop.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/The_lift_hotel_ale_hop.jpg/960px-The_lift_hotel_ale_hop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_lift_hotel_ale_hop.jpg",
+        "author": "Panek",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 4316,
+        "height": 3388,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111870792.webp"
+    },
+    {
+      "id": "Q112010730",
+      "name": "Epic Sana Marquês Hotel",
+      "latitude": 38.72742,
+      "longitude": -9.14856,
+      "dataSource": "https://www.wikidata.org/wiki/Q112010730",
+      "photo": {
+        "file": "File:Sana Lisboa Hotel - panoramio.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Sana_Lisboa_Hotel_-_panoramio.jpg/960px-Sana_Lisboa_Hotel_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sana_Lisboa_Hotel_-_panoramio.jpg",
+        "author": "Mister No",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "width": 3600,
+        "height": 2700,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q112010730.webp"
+    },
+    {
+      "id": "Q111408567",
+      "name": "Altis Belém Hotel & Spa",
+      "latitude": 38.69382,
+      "longitude": -9.21088,
+      "dataSource": "https://www.wikidata.org/wiki/Q111408567",
+      "photo": {
+        "file": "File:Doca do Bom Sucesso, Belém, Lisboa 07.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Doca_do_Bom_Sucesso%2C_Bel%C3%A9m%2C_Lisboa_07.jpg/960px-Doca_do_Bom_Sucesso%2C_Bel%C3%A9m%2C_Lisboa_07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Doca_do_Bom_Sucesso,_Bel%C3%A9m,_Lisboa_07.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 2068,
+        "height": 1551,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111408567.webp"
+    },
+    {
+      "id": "Q111408459",
+      "name": "HF Fenix Music",
+      "latitude": 38.725098,
+      "longitude": -9.151784,
+      "dataSource": "https://www.wikidata.org/wiki/Q111408459",
+      "photo": {
+        "file": "File:Lisboa (35652108306).jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Lisboa_%2835652108306%29.jpg/960px-Lisboa_%2835652108306%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lisboa_(35652108306).jpg",
+        "author": "Stas",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "width": 2000,
+        "height": 1325,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111408459.webp"
+    },
+    {
+      "id": "Q111408388",
+      "name": "Myriad by Sana Hotels",
+      "latitude": 38.77484,
+      "longitude": -9.09159,
+      "dataSource": "https://www.wikidata.org/wiki/Q111408388",
+      "photo": {
+        "file": "File:Hotel Myriad (9921720383).jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Hotel_Myriad_%289921720383%29.jpg/960px-Hotel_Myriad_%289921720383%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Myriad_(9921720383).jpg",
+        "author": "Paulo Valdivieso from Lisboa, Portugal",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "width": 5760,
+        "height": 3840,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111408388.webp"
+    },
+    {
+      "id": "Q111408521",
+      "name": "Pensao Londres",
+      "latitude": 38.71559,
+      "longitude": -9.14596,
+      "dataSource": "https://www.wikidata.org/wiki/Q111408521",
+      "photo": {
+        "file": "File:Pensao Londres.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Pensao_Londres.jpg/960px-Pensao_Londres.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pensao_Londres.jpg",
+        "author": "Ijon",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 3968,
+        "height": 2976,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111408521.webp"
+    }
+  ],
+  "Athens, Greece": [
+    {
+      "id": "Q1630906",
+      "name": "Hotel Grande Bretagne",
+      "latitude": 37.976263,
+      "longitude": 23.735409,
+      "dataSource": "https://www.wikidata.org/wiki/Q1630906",
+      "photo": {
+        "file": "File:Athina Hotel Grande Bretagne.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Athina_Hotel_Grande_Bretagne.jpg/960px-Athina_Hotel_Grande_Bretagne.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Athina_Hotel_Grande_Bretagne.jpg",
+        "author": "Andrzej Otrębski",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 2816,
+        "height": 2112,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q1630906.webp"
+    },
+    {
+      "id": "Q111400852",
+      "name": "King George, a Luxury Collection Hotel",
+      "latitude": 37.976413249,
+      "longitude": 23.734959887,
+      "dataSource": "https://www.wikidata.org/wiki/Q111400852",
+      "photo": {
+        "file": "File:The hotels Grande Bretagne, King George and Athens Plaza on January 27, 2021.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/The_hotels_Grande_Bretagne%2C_King_George_and_Athens_Plaza_on_January_27%2C_2021.jpg/960px-The_hotels_Grande_Bretagne%2C_King_George_and_Athens_Plaza_on_January_27%2C_2021.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_hotels_Grande_Bretagne,_King_George_and_Athens_Plaza_on_January_27,_2021.jpg",
+        "author": "George E. Koronaios",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 5792,
+        "height": 3861,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111400852.webp"
+    },
+    {
+      "id": "Q139578605",
+      "name": "Conrad Athens The Ilisian",
+      "latitude": 37.976466954,
+      "longitude": 23.750290244,
+      "dataSource": "https://www.wikidata.org/wiki/Q139578605",
+      "photo": {
+        "file": "File:Hiltton Hotel in Athens on February 3, 2021.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Hiltton_Hotel_in_Athens_on_February_3%2C_2021.jpg/960px-Hiltton_Hotel_in_Athens_on_February_3%2C_2021.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hiltton_Hotel_in_Athens_on_February_3,_2021.jpg",
+        "author": "George E. Koronaios",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 5500,
+        "height": 3929,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q139578605.webp"
+    },
+    {
+      "id": "Q2344001",
+      "name": "Titania Hotel Athens",
+      "latitude": 37.9828,
+      "longitude": 23.7312,
+      "dataSource": "https://www.wikidata.org/wiki/Q2344001",
+      "photo": {
+        "file": "File:Titania hotel.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Titania_hotel.jpg/960px-Titania_hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Titania_hotel.jpg",
+        "author": "Erud",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "width": 1000,
+        "height": 664,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q2344001.webp"
+    },
+    {
+      "id": "Q111858267",
+      "name": "Ariston Hotel",
+      "latitude": 37.99071,
+      "longitude": 23.72064,
+      "dataSource": "https://www.wikidata.org/wiki/Q111858267",
+      "photo": {
+        "file": "File:Ariston Hotel.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Ariston_Hotel.jpg/960px-Ariston_Hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ariston_Hotel.jpg",
+        "author": "Kostaslives",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 1800,
+        "height": 4000,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111858267.webp"
+    },
+    {
+      "id": "Q111858278",
+      "name": "Brown Acropol a Member of Brown Hotels",
+      "latitude": 37.98342,
+      "longitude": 23.727034,
+      "dataSource": "https://www.wikidata.org/wiki/Q111858278",
+      "photo": {
+        "file": "File:Brown Acropol a Member of Brown Hotels.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Brown_Acropol_a_Member_of_Brown_Hotels.jpg/960px-Brown_Acropol_a_Member_of_Brown_Hotels.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brown_Acropol_a_Member_of_Brown_Hotels.jpg",
+        "author": "Fuzheado",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 3024,
+        "height": 4032,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111858278.webp"
+    }
+  ],
+  "Istanbul, Turkey": [
+    {
+      "id": "Q111856920",
+      "name": "Askoc Hotel",
+      "latitude": 41.01462,
+      "longitude": 28.97794,
+      "dataSource": "https://www.wikidata.org/wiki/Q111856920",
+      "photo": {
+        "file": "File:Askoc Hotel.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Askoc_Hotel.jpg/960px-Askoc_Hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Askoc_Hotel.jpg",
+        "author": "Cemredemircioglu",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 3840,
+        "height": 2160,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111856920.webp"
+    },
+    {
+      "id": "Q111856899",
+      "name": "Arden City Hotel",
+      "latitude": 41.009933,
+      "longitude": 28.976429,
+      "dataSource": "https://www.wikidata.org/wiki/Q111856899",
+      "photo": {
+        "file": "File:Arden City Hotel.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Arden_City_Hotel.jpg/960px-Arden_City_Hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arden_City_Hotel.jpg",
+        "author": "Yasin isa yildirim",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 3000,
+        "height": 4000,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111856899.webp"
+    },
+    {
+      "id": "Q111856912",
+      "name": "Anthemis Hotel",
+      "latitude": 41.00857,
+      "longitude": 28.97526,
+      "dataSource": "https://www.wikidata.org/wiki/Q111856912",
+      "photo": {
+        "file": "File:Anthemis Hotel.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Anthemis_Hotel.jpg/960px-Anthemis_Hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anthemis_Hotel.jpg",
+        "author": "Yasin isa yildirim",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 3000,
+        "height": 4000,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111856912.webp"
+    },
+    {
+      "id": "Q111856909",
+      "name": "Barbera Hotel",
+      "latitude": 41.01444,
+      "longitude": 28.97831,
+      "dataSource": "https://www.wikidata.org/wiki/Q111856909",
+      "photo": {
+        "file": "File:Barbera Hotel.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Barbera_Hotel.jpg/960px-Barbera_Hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Barbera_Hotel.jpg",
+        "author": "Cemredemircioglu",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 2160,
+        "height": 3840,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111856909.webp"
+    },
+    {
+      "id": "Q111856921",
+      "name": "Ayasultan Hotel",
+      "latitude": 41.0088,
+      "longitude": 28.97495,
+      "dataSource": "https://www.wikidata.org/wiki/Q111856921",
+      "photo": {
+        "file": "File:Ayasultan Hotel.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Ayasultan_Hotel.jpg/960px-Ayasultan_Hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ayasultan_Hotel.jpg",
+        "author": "Yasin isa yildirim",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 3000,
+        "height": 4000,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111856921.webp"
+    },
+    {
+      "id": "Q111856936",
+      "name": "Asur Hotel",
+      "latitude": 41.01324,
+      "longitude": 28.97667,
+      "dataSource": "https://www.wikidata.org/wiki/Q111856936",
+      "photo": {
+        "file": "File:Asur Hotel.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Asur_Hotel.jpg/960px-Asur_Hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Asur_Hotel.jpg",
+        "author": "Hamdigumus",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 3024,
+        "height": 4032,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111856936.webp"
+    },
+    {
+      "id": "Q111856889",
+      "name": "Dream Bosphorus Hotel",
+      "latitude": 41.01466,
+      "longitude": 28.97912,
+      "dataSource": "https://www.wikidata.org/wiki/Q111856889",
+      "photo": {
+        "file": "File:Dream Bosphorus Hotel.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Dream_Bosphorus_Hotel.jpg/960px-Dream_Bosphorus_Hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dream_Bosphorus_Hotel.jpg",
+        "author": "Cemredemircioglu",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 2160,
+        "height": 3840,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111856889.webp"
+    },
+    {
+      "id": "Q111856894",
+      "name": "Golden Horn Istanbul Hotel",
+      "latitude": 41.01475,
+      "longitude": 28.97894,
+      "dataSource": "https://www.wikidata.org/wiki/Q111856894",
+      "photo": {
+        "file": "File:Golden Horn Istanbul Hotel.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Golden_Horn_Istanbul_Hotel.jpg/960px-Golden_Horn_Istanbul_Hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Golden_Horn_Istanbul_Hotel.jpg",
+        "author": "Cemredemircioglu",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 2160,
+        "height": 3840,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111856894.webp"
+    }
+  ],
+  "Dubai, United Arab Emirates": [
+    {
+      "id": "Q111150456",
+      "name": "XVA Art Hotel",
+      "latitude": 25.264175,
+      "longitude": 55.299908,
+      "dataSource": "https://www.wikidata.org/wiki/Q111150456",
+      "photo": {
+        "file": "File:XVA Art Hotel.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/XVA_Art_Hotel.jpg/960px-XVA_Art_Hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:XVA_Art_Hotel.jpg",
+        "author": "Parastoo.Atrsaei",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 2362,
+        "height": 1575,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111150456.webp"
+    },
+    {
+      "id": "Q62939",
+      "name": "Jumeirah Burj Al Arab",
+      "latitude": 25.141388888,
+      "longitude": 55.185277777,
+      "dataSource": "https://www.wikidata.org/wiki/Q62939",
+      "photo": {
+        "file": "File:Burj Al-Arab (13996844503).jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Burj_Al-Arab_%2813996844503%29.jpg/960px-Burj_Al-Arab_%2813996844503%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Burj_Al-Arab_(13996844503).jpg",
+        "author": "Marco Becerra from Lewisville, TX, USA",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "width": 4283,
+        "height": 2845,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q62939.webp"
+    },
+    {
+      "id": "Q7712376",
+      "name": "Address Boulevard",
+      "latitude": 25.200909,
+      "longitude": 55.27623,
+      "dataSource": "https://www.wikidata.org/wiki/Q7712376",
+      "photo": {
+        "file": "File:View from Burj Khalifah, Dubai (4).jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/View_from_Burj_Khalifah%2C_Dubai_%284%29.jpg/960px-View_from_Burj_Khalifah%2C_Dubai_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:View_from_Burj_Khalifah,_Dubai_(4).jpg",
+        "author": "Heba Hashem",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 3264,
+        "height": 2448,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q7712376.webp"
+    },
+    {
+      "id": "Q115152710",
+      "name": "Dusit Thani Dubai",
+      "latitude": 25.206111111,
+      "longitude": 55.272777777,
+      "dataSource": "https://www.wikidata.org/wiki/Q115152710",
+      "photo": {
+        "file": "File:Dusit Thani Dubai - panoramio.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Dusit_Thani_Dubai_-_panoramio.jpg/960px-Dusit_Thani_Dubai_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dusit_Thani_Dubai_-_panoramio.jpg",
+        "author": "Aidas U.",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "width": 2448,
+        "height": 3264,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q115152710.webp"
+    },
+    {
+      "id": "Q4263811",
+      "name": "Four Points by Sheraton Sheikh Zayed Road Dubai",
+      "latitude": 25.213977777,
+      "longitude": 55.275983333,
+      "dataSource": "https://www.wikidata.org/wiki/Q4263811",
+      "photo": {
+        "file": "File:Dubai - Downtown Dubai - Sheikh Zayed Road - Union Tower - Four Points by Sheraton - Saeed Tower 2 - وسط مدينة دبي - شارع الشيخ زايد - برج الاتحاد - فور بوينتس باي ش - panoramio.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Dubai_-_Downtown_Dubai_-_Sheikh_Zayed_Road_-_Union_Tower_-_Four_Points_by_Sheraton_-_Saeed_Tower_2_-_%D9%88%D8%B3%D8%B7_%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%AF%D8%A8%D9%8A_-_%D8%B4%D8%A7%D8%B1%D8%B9_%D8%A7%D9%84%D8%B4%D9%8A%D8%AE_%D8%B2%D8%A7%D9%8A%D8%AF_-_%D8%A8%D8%B1%D8%AC_%D8%A7%D9%84%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF_-_%D9%81%D9%88%D8%B1_%D8%A8%D9%88%D9%8A%D9%86%D8%AA%D8%B3_%D8%A8%D8%A7%D9%8A_%D8%B4_-_panoramio.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dubai_-_Downtown_Dubai_-_Sheikh_Zayed_Road_-_Union_Tower_-_Four_Points_by_Sheraton_-_Saeed_Tower_2_-_%D9%88%D8%B3%D8%B7_%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%AF%D8%A8%D9%8A_-_%D8%B4%D8%A7%D8%B1%D8%B9_%D8%A7%D9%84%D8%B4%D9%8A%D8%AE_%D8%B2%D8%A7%D9%8A%D8%AF_-_%D8%A8%D8%B1%D8%AC_%D8%A7%D9%84%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF_-_%D9%81%D9%88%D8%B1_%D8%A8%D9%88%D9%8A%D9%86%D8%AA%D8%B3_%D8%A8%D8%A7%D9%8A_%D8%B4_-_panoramio.jpg",
+        "author": "giggel",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "width": 2564,
+        "height": 3540,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q4263811.webp"
+    },
+    {
+      "id": "Q401098",
+      "name": "Gevora Hotel",
+      "latitude": 25.21252,
+      "longitude": 55.276812,
+      "dataSource": "https://www.wikidata.org/wiki/Q401098",
+      "photo": {
+        "file": "File:Ahmed Abdul Rahim Al Attar Tower Under Construction on 7 March 2008.jpg",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/22/Ahmed_Abdul_Rahim_Al_Attar_Tower_Under_Construction_on_7_March_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ahmed_Abdul_Rahim_Al_Attar_Tower_Under_Construction_on_7_March_2008.jpg",
+        "author": "Imre Solt",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "width": 922,
+        "height": 1150,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q401098.webp"
+    },
+    {
+      "id": "Q1244144",
+      "name": "JW Marriott Marquis Dubai",
+      "latitude": 25.185719,
+      "longitude": 55.258125,
+      "dataSource": "https://www.wikidata.org/wiki/Q1244144",
+      "photo": {
+        "file": "File:Зимний Дубаи - panoramio.jpg",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/%D0%97%D0%B8%D0%BC%D0%BD%D0%B8%D0%B9_%D0%94%D1%83%D0%B1%D0%B0%D0%B8_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%97%D0%B8%D0%BC%D0%BD%D0%B8%D0%B9_%D0%94%D1%83%D0%B1%D0%B0%D0%B8_-_panoramio.jpg",
+        "author": "Валерий Дед",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "width": 732,
+        "height": 1100,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q1244144.webp"
+    }
+  ],
+  "Singapore, Singapore": [
+    {
+      "id": "Q1343055",
+      "name": "Swissôtel The Stamford",
+      "latitude": 1.29354,
+      "longitude": 103.853,
+      "dataSource": "https://www.wikidata.org/wiki/Q1343055",
+      "photo": {
+        "file": "File:Swissôtel The Stamford, Singapur, 2023-08-18, DD 18.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Swiss%C3%B4tel_The_Stamford%2C_Singapur%2C_2023-08-18%2C_DD_18.jpg/960px-Swiss%C3%B4tel_The_Stamford%2C_Singapur%2C_2023-08-18%2C_DD_18.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Swiss%C3%B4tel_The_Stamford,_Singapur,_2023-08-18,_DD_18.jpg",
+        "author": "Diego Delso",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 6776,
+        "height": 5666,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q1343055.webp"
+    },
+    {
+      "id": "Q548679",
+      "name": "Marina Bay Sands",
+      "latitude": 1.2825,
+      "longitude": 103.86,
+      "dataSource": "https://www.wikidata.org/wiki/Q548679",
+      "photo": {
+        "file": "File:Marina Bay Sands Hotel 3 (31345110894).jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Marina_Bay_Sands_Hotel_3_%2831345110894%29.jpg/960px-Marina_Bay_Sands_Hotel_3_%2831345110894%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marina_Bay_Sands_Hotel_3_(31345110894).jpg",
+        "author": "Tony Hisgett from Birmingham, UK",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "width": 4536,
+        "height": 2816,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q548679.webp"
+    },
+    {
+      "id": "Q48734531",
+      "name": "InterContinental Singapore Robertson Quay",
+      "latitude": 1.29017,
+      "longitude": 103.83876,
+      "dataSource": "https://www.wikidata.org/wiki/Q48734531",
+      "photo": {
+        "file": "File:InterContinental Singapore Robertson Quay Facade Day.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/InterContinental_Singapore_Robertson_Quay_Facade_Day.jpg/960px-InterContinental_Singapore_Robertson_Quay_Facade_Day.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:InterContinental_Singapore_Robertson_Quay_Facade_Day.jpg",
+        "author": "Twoduy",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 2000,
+        "height": 1499,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q48734531.webp"
+    },
+    {
+      "id": "Q6146488",
+      "name": "Shangri-La Hotel Singapore",
+      "latitude": 1.311043,
+      "longitude": 103.82659,
+      "dataSource": "https://www.wikidata.org/wiki/Q6146488",
+      "photo": {
+        "file": "File:Breakfast time by the pool, Shangri-La Hotel Singapore - 20120826.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Breakfast_time_by_the_pool%2C_Shangri-La_Hotel_Singapore_-_20120826.jpg/960px-Breakfast_time_by_the_pool%2C_Shangri-La_Hotel_Singapore_-_20120826.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Breakfast_time_by_the_pool,_Shangri-La_Hotel_Singapore_-_20120826.jpg",
+        "author": "Andrew Thomas from Shrewsbury, UK.",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "width": 3888,
+        "height": 2592,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q6146488.webp"
+    },
+    {
+      "id": "Q490244",
+      "name": "Mandarin Oriental Singapore",
+      "latitude": 1.290833,
+      "longitude": 103.858056,
+      "dataSource": "https://www.wikidata.org/wiki/Q490244",
+      "photo": {
+        "file": "File:Singapore Mandarin-Oriental-01.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Singapore_Mandarin-Oriental-01.jpg/960px-Singapore_Mandarin-Oriental-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Singapore_Mandarin-Oriental-01.jpg",
+        "author": "CEphoto, Uwe Aranas",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 4544,
+        "height": 3511,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q490244.webp"
+    },
+    {
+      "id": "Q111429504",
+      "name": "Hotel 81 Kovan Singapore",
+      "latitude": 1.3542553,
+      "longitude": 103.87885,
+      "dataSource": "https://www.wikidata.org/wiki/Q111429504",
+      "photo": {
+        "file": "File:Hotel 81 Kovan Singapore and Fragrance Hotel Kovan along Upper Serangoon Road, Nov 2026.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Hotel_81_Kovan_Singapore_and_Fragrance_Hotel_Kovan_along_Upper_Serangoon_Road%2C_Nov_2026.jpg/960px-Hotel_81_Kovan_Singapore_and_Fragrance_Hotel_Kovan_along_Upper_Serangoon_Road%2C_Nov_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_81_Kovan_Singapore_and_Fragrance_Hotel_Kovan_along_Upper_Serangoon_Road,_Nov_2026.jpg",
+        "author": "ZKang123",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 4000,
+        "height": 3000,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111429504.webp"
+    },
+    {
+      "id": "Q112009550",
+      "name": "Harbour Ville Hotel Hamilton @Lavender Singapore",
+      "latitude": 1.31156,
+      "longitude": 103.86153,
+      "dataSource": "https://www.wikidata.org/wiki/Q112009550",
+      "photo": {
+        "file": "File:Harbour Ville Hotel, Hamilton - 20231209 RSKY 02.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Harbour_Ville_Hotel%2C_Hamilton_-_20231209_RSKY_02.jpg/960px-Harbour_Ville_Hotel%2C_Hamilton_-_20231209_RSKY_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harbour_Ville_Hotel,_Hamilton_-_20231209_RSKY_02.jpg",
+        "author": "Robert Sim",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 4624,
+        "height": 3472,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q112009550.webp"
+    },
+    {
+      "id": "Q4409125",
+      "name": "The Fullerton Hotel Singapore",
+      "latitude": 1.2855902,
+      "longitude": 103.85306,
+      "dataSource": "https://www.wikidata.org/wiki/Q4409125",
+      "photo": {
+        "file": "File:Aerial photographs of The Fullerton Hotel of Singapore at night.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Aerial_photographs_of_The_Fullerton_Hotel_of_Singapore_at_night.jpg/960px-Aerial_photographs_of_The_Fullerton_Hotel_of_Singapore_at_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aerial_photographs_of_The_Fullerton_Hotel_of_Singapore_at_night.jpg",
+        "author": "Basile Morin",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 6107,
+        "height": 3435,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q4409125.webp"
+    }
+  ],
+  "Hong Kong, Hong Kong": [
+    {
+      "id": "Q7065080",
+      "name": "Novotel Century Hong Kong",
+      "latitude": 22.279,
+      "longitude": 114.177,
+      "dataSource": "https://www.wikidata.org/wiki/Q7065080",
+      "photo": {
+        "file": "File:Lobby - Novotel Century Hong Kong Hotel.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Lobby_-_Novotel_Century_Hong_Kong_Hotel.jpg/960px-Lobby_-_Novotel_Century_Hong_Kong_Hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lobby_-_Novotel_Century_Hong_Kong_Hotel.jpg",
+        "author": "Novotel Century Hong Kong Hotel",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "width": 1616,
+        "height": 945,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q7065080.webp"
+    },
+    {
+      "id": "Q11060105",
+      "name": "Royal View Hotel",
+      "latitude": 22.3687,
+      "longitude": 114.07776,
+      "dataSource": "https://www.wikidata.org/wiki/Q11060105",
+      "photo": {
+        "file": "File:Royal View Hotel 201308.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Royal_View_Hotel_201308.jpg/960px-Royal_View_Hotel_201308.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Royal_View_Hotel_201308.jpg",
+        "author": "Wing1990hk",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "width": 2272,
+        "height": 1704,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q11060105.webp"
+    },
+    {
+      "id": "Q15931089",
+      "name": "Harbour Plaza Metropolis",
+      "latitude": 22.301096,
+      "longitude": 114.183418,
+      "dataSource": "https://www.wikidata.org/wiki/Q15931089",
+      "photo": {
+        "file": "File:Harbour Plaza Metropolis.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Harbour_Plaza_Metropolis.jpg/960px-Harbour_Plaza_Metropolis.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harbour_Plaza_Metropolis.jpg",
+        "author": "Baycrest",
+        "license": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+        "width": 1600,
+        "height": 1200,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q15931089.webp"
+    },
+    {
+      "id": "Q6435059",
+      "name": "Kowloon Shangri-La",
+      "latitude": 22.2972,
+      "longitude": 114.177,
+      "dataSource": "https://www.wikidata.org/wiki/Q6435059",
+      "photo": {
+        "file": "File:Harbour view from the hotel.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Harbour_view_from_the_hotel.jpg/960px-Harbour_view_from_the_hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harbour_view_from_the_hotel.jpg",
+        "author": "Ksl.communications",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 2244,
+        "height": 1720,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q6435059.webp"
+    },
+    {
+      "id": "Q11287466",
+      "name": "Regent Hong Kong",
+      "latitude": 22.2935,
+      "longitude": 114.174,
+      "dataSource": "https://www.wikidata.org/wiki/Q11287466",
+      "photo": {
+        "file": "File:InterContinental Hong Kong 201108.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/InterContinental_Hong_Kong_201108.jpg/960px-InterContinental_Hong_Kong_201108.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:InterContinental_Hong_Kong_201108.jpg",
+        "author": "WiNG",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "width": 2272,
+        "height": 1704,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q11287466.webp"
+    },
+    {
+      "id": "Q7751617",
+      "name": "The Mira Hong Kong",
+      "latitude": 22.3008,
+      "longitude": 114.172,
+      "dataSource": "https://www.wikidata.org/wiki/Q7751617",
+      "photo": {
+        "file": "File:The Mira.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/The_Mira.jpg/960px-The_Mira.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Mira.jpg",
+        "author": "WiNG",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 2816,
+        "height": 2112,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q7751617.webp"
+    },
+    {
+      "id": "Q10875872",
+      "name": "Travelodge Central, Hollywood Road",
+      "latitude": 22.285513,
+      "longitude": 114.14784,
+      "dataSource": "https://www.wikidata.org/wiki/Q10875872",
+      "photo": {
+        "file": "File:HK Sheung Wan Hollywood Road Shops Rainy Day.JPG",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/HK_Sheung_Wan_Hollywood_Road_Shops_Rainy_Day.JPG/960px-HK_Sheung_Wan_Hollywood_Road_Shops_Rainy_Day.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:HK_Sheung_Wan_Hollywood_Road_Shops_Rainy_Day.JPG",
+        "author": "Gaonuastm",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "width": 1600,
+        "height": 1200,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q10875872.webp"
+    }
+  ],
+  "Bangkok, Thailand": [
+    {
+      "id": "Q111403265",
+      "name": "Ramada Plaza by Wyndham Bangkok Menam Riverside",
+      "latitude": 13.707482,
+      "longitude": 100.50611,
+      "dataSource": "https://www.wikidata.org/wiki/Q111403265",
+      "photo": {
+        "file": "File:Ramada Plaza by Wyndham Bangkok Menam Riverside, Bangkok 02.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Ramada_Plaza_by_Wyndham_Bangkok_Menam_Riverside%2C_Bangkok_02.jpg/960px-Ramada_Plaza_by_Wyndham_Bangkok_Menam_Riverside%2C_Bangkok_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ramada_Plaza_by_Wyndham_Bangkok_Menam_Riverside,_Bangkok_02.jpg",
+        "author": "Medelam",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 4000,
+        "height": 3000,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111403265.webp"
+    },
+    {
+      "id": "Q111403230",
+      "name": "Crowne Plaza Bangkok Lumpini Park",
+      "latitude": 13.729742,
+      "longitude": 100.534968,
+      "dataSource": "https://www.wikidata.org/wiki/Q111403230",
+      "photo": {
+        "file": "File:Crowne Plaza Lumpini Park Exterior Night Shot.png",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Crowne_Plaza_Lumpini_Park_Exterior_Night_Shot.png/960px-Crowne_Plaza_Lumpini_Park_Exterior_Night_Shot.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Crowne_Plaza_Lumpini_Park_Exterior_Night_Shot.png",
+        "author": "Crowne Plaza Bangkok Lumpini Park",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 1024,
+        "height": 683,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111403230.webp"
+    },
+    {
+      "id": "Q141899510",
+      "name": "Dusit Thani Bangkok",
+      "latitude": 13.7282,
+      "longitude": 100.5383,
+      "dataSource": "https://www.wikidata.org/wiki/Q141899510",
+      "photo": {
+        "file": "File:Dusit Central Park as of October 2024 - img 08.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Dusit_Central_Park_as_of_October_2024_-_img_08.jpg/960px-Dusit_Central_Park_as_of_October_2024_-_img_08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dusit_Central_Park_as_of_October_2024_-_img_08.jpg",
+        "author": "Chainwit.",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "width": 3024,
+        "height": 4032,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q141899510.webp"
+    },
+    {
+      "id": "Q7756548",
+      "name": "The Peninsula Bangkok",
+      "latitude": 13.722908,
+      "longitude": 100.51094,
+      "dataSource": "https://www.wikidata.org/wiki/Q7756548",
+      "photo": {
+        "file": "File:The Peninsula Bangkok.JPG",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/The_Peninsula_Bangkok.JPG/960px-The_Peninsula_Bangkok.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Peninsula_Bangkok.JPG",
+        "author": "Terence Ong",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+        "width": 1075,
+        "height": 1406,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q7756548.webp"
+    },
+    {
+      "id": "Q1631000",
+      "name": "Mandarin Oriental, Bangkok",
+      "latitude": 13.723611,
+      "longitude": 100.514444,
+      "dataSource": "https://www.wikidata.org/wiki/Q1631000",
+      "photo": {
+        "file": "File:MO Bangkok exterior.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/MO_Bangkok_exterior.jpg/960px-MO_Bangkok_exterior.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:MO_Bangkok_exterior.jpg",
+        "author": "Mandarin Oriental Hotel Group",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 1000,
+        "height": 1313,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q1631000.webp"
+    },
+    {
+      "id": "Q11300359",
+      "name": "Grand Hyatt Erawan Bangkok",
+      "latitude": 13.743333333,
+      "longitude": 100.540555555,
+      "dataSource": "https://www.wikidata.org/wiki/Q11300359",
+      "photo": {
+        "file": "File:Grand Hyatt Erawan, Bangkok.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Grand_Hyatt_Erawan%2C_Bangkok.jpg/960px-Grand_Hyatt_Erawan%2C_Bangkok.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grand_Hyatt_Erawan,_Bangkok.jpg",
+        "author": "Supanut Arunoprayote",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 6000,
+        "height": 4000,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q11300359.webp"
+    },
+    {
+      "id": "Q15228592",
+      "name": "Bangkok Marriott Marquis Queen’s Park",
+      "latitude": 13.72722222,
+      "longitude": 100.565,
+      "dataSource": "https://www.wikidata.org/wiki/Q15228592",
+      "photo": {
+        "file": "File:Bangkok Marriott Marquis Queen's Park December 2020.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Bangkok_Marriott_Marquis_Queen%27s_Park_December_2020.jpg/960px-Bangkok_Marriott_Marquis_Queen%27s_Park_December_2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bangkok_Marriott_Marquis_Queen%27s_Park_December_2020.jpg",
+        "author": "Chainwit.",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 1756,
+        "height": 2342,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q15228592.webp"
+    }
+  ],
+  "Seoul, South Korea": [
+    {
+      "id": "Q111406499",
+      "name": "New Seoul Hotel",
+      "latitude": 37.56788,
+      "longitude": 126.97805,
+      "dataSource": "https://www.wikidata.org/wiki/Q111406499",
+      "photo": {
+        "file": "File:New Seoul Hotel.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/New_Seoul_Hotel.jpg/960px-New_Seoul_Hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:New_Seoul_Hotel.jpg",
+        "author": "Vanbasten 23",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 3000,
+        "height": 4000,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111406499.webp"
+    },
+    {
+      "id": "Q111406488",
+      "name": "Ramada Hotel and Suites Seoul Namdaemun",
+      "latitude": 37.56031,
+      "longitude": 126.971954,
+      "dataSource": "https://www.wikidata.org/wiki/Q111406488",
+      "photo": {
+        "file": "File:Ramada Hotel and Suites Seoul Namdaemun.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Ramada_Hotel_and_Suites_Seoul_Namdaemun.jpg/960px-Ramada_Hotel_and_Suites_Seoul_Namdaemun.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ramada_Hotel_and_Suites_Seoul_Namdaemun.jpg",
+        "author": "Vanbasten 23",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 3000,
+        "height": 4000,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111406488.webp"
+    },
+    {
+      "id": "Q111406485",
+      "name": "Royal Hotel Seoul",
+      "latitude": 37.56403,
+      "longitude": 126.98565,
+      "dataSource": "https://www.wikidata.org/wiki/Q111406485",
+      "photo": {
+        "file": "File:Royal Hotel Seoul.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Royal_Hotel_Seoul.jpg/960px-Royal_Hotel_Seoul.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Royal_Hotel_Seoul.jpg",
+        "author": "Vanbasten 23",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 3000,
+        "height": 4000,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111406485.webp"
+    },
+    {
+      "id": "Q7286703",
+      "name": "Rakkojae",
+      "latitude": 37.5802,
+      "longitude": 126.9858,
+      "dataSource": "https://www.wikidata.org/wiki/Q7286703",
+      "photo": {
+        "file": "File:Rakkojae - travel oriented.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Rakkojae_-_travel_oriented.jpg/960px-Rakkojae_-_travel_oriented.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rakkojae_-_travel_oriented.jpg",
+        "author": "travel oriented from Seoul, South Korea",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "width": 3776,
+        "height": 2520,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q7286703.webp"
+    },
+    {
+      "id": "Q20946045",
+      "name": "Lotte Hotel Seoul",
+      "latitude": 37.56521,
+      "longitude": 126.98073,
+      "dataSource": "https://www.wikidata.org/wiki/Q20946045",
+      "photo": {
+        "file": "File:Night view of Euljiro 1-ga intersection and the Sogong-dong Lotte town.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Night_view_of_Euljiro_1-ga_intersection_and_the_Sogong-dong_Lotte_town.jpg/960px-Night_view_of_Euljiro_1-ga_intersection_and_the_Sogong-dong_Lotte_town.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Night_view_of_Euljiro_1-ga_intersection_and_the_Sogong-dong_Lotte_town.jpg",
+        "author": "서울연구원",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "width": 1600,
+        "height": 1067,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q20946045.webp"
+    },
+    {
+      "id": "Q5594665",
+      "name": "Grand Hyatt Seoul",
+      "latitude": 37.53962,
+      "longitude": 126.99653,
+      "dataSource": "https://www.wikidata.org/wiki/Q5594665",
+      "photo": {
+        "file": "File:Grand Hyatt Seoul.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Grand_Hyatt_Seoul.jpg/960px-Grand_Hyatt_Seoul.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grand_Hyatt_Seoul.jpg",
+        "author": "Gary Bembridge",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "width": 2048,
+        "height": 1536,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q5594665.webp"
+    },
+    {
+      "id": "Q6432048",
+      "name": "Hotel Koreana",
+      "latitude": 37.56833333,
+      "longitude": 126.97638889,
+      "dataSource": "https://www.wikidata.org/wiki/Q6432048",
+      "photo": {
+        "file": "File:Seoul Metropolitan Council and Koreana Hotel.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Seoul_Metropolitan_Council_and_Koreana_Hotel.jpg/960px-Seoul_Metropolitan_Council_and_Koreana_Hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Seoul_Metropolitan_Council_and_Koreana_Hotel.jpg",
+        "author": "Wei-Te Wong from Taipei City, Taiwan, Republic of China",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "width": 6000,
+        "height": 4000,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q6432048.webp"
+    }
+  ],
+  "Sydney, Australia": [
+    {
+      "id": "Q111407652",
+      "name": "Sydney Darling Harbour Hotel",
+      "latitude": -33.87212,
+      "longitude": 151.19756,
+      "dataSource": "https://www.wikidata.org/wiki/Q111407652",
+      "photo": {
+        "file": "File:Darling Harbour, Novotel Hotel - panoramio.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Darling_Harbour%2C_Novotel_Hotel_-_panoramio.jpg/960px-Darling_Harbour%2C_Novotel_Hotel_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Darling_Harbour,_Novotel_Hotel_-_panoramio.jpg",
+        "author": "Maksym Kozlenko",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 1800,
+        "height": 1350,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111407652.webp"
+    },
+    {
+      "id": "Q58205243",
+      "name": "Australian Hotel",
+      "latitude": -33.8597,
+      "longitude": 151.207,
+      "dataSource": "https://www.wikidata.org/wiki/Q58205243",
+      "photo": {
+        "file": "File:Australian Hotel - The Rocks NSW (12865950154).jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Australian_Hotel_-_The_Rocks_NSW_%2812865950154%29.jpg/960px-Australian_Hotel_-_The_Rocks_NSW_%2812865950154%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Australian_Hotel_-_The_Rocks_NSW_(12865950154).jpg",
+        "author": "sv1ambo",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "width": 1920,
+        "height": 1440,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q58205243.webp"
+    },
+    {
+      "id": "Q111868746",
+      "name": "Four Points by Sheraton Sydney, Central Park",
+      "latitude": -33.88441,
+      "longitude": 151.1991,
+      "dataSource": "https://www.wikidata.org/wiki/Q111868746",
+      "photo": {
+        "file": "File:Four Points by Sheraton Sydney, Central Park.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Four_Points_by_Sheraton_Sydney%2C_Central_Park.jpg/960px-Four_Points_by_Sheraton_Sydney%2C_Central_Park.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Four_Points_by_Sheraton_Sydney,_Central_Park.jpg",
+        "author": "Giantflightlessbirds",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 4032,
+        "height": 3024,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111868746.webp"
+    },
+    {
+      "id": "Q111868899",
+      "name": "Bondi 38 Serviced Apartments",
+      "latitude": -33.893316456,
+      "longitude": 151.272830665,
+      "dataSource": "https://www.wikidata.org/wiki/Q111868899",
+      "photo": {
+        "file": "File:Bondi 38 Serviced Apartments.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Bondi_38_Serviced_Apartments.jpg/960px-Bondi_38_Serviced_Apartments.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bondi_38_Serviced_Apartments.jpg",
+        "author": "Vanbasten 23",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 4000,
+        "height": 3000,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111868899.webp"
+    },
+    {
+      "id": "Q14934819",
+      "name": "Harbour Rocks Hotel",
+      "latitude": -33.85975,
+      "longitude": 151.20802778,
+      "dataSource": "https://www.wikidata.org/wiki/Q14934819",
+      "photo": {
+        "file": "File:Harbour Rocks Hotel - 1.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Harbour_Rocks_Hotel_-_1.jpg/960px-Harbour_Rocks_Hotel_-_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harbour_Rocks_Hotel_-_1.jpg",
+        "author": "Collywolly",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 2816,
+        "height": 2112,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q14934819.webp"
+    }
+  ],
+  "Melbourne, Australia": [
+    {
+      "id": "Q111145863",
+      "name": "InterContinental Melbourne the Rialto",
+      "latitude": -37.81816,
+      "longitude": 144.95795,
+      "dataSource": "https://www.wikidata.org/wiki/Q111145863",
+      "photo": {
+        "file": "File:Hotel-Exterior-Intercontinental-Melbourne.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Hotel-Exterior-Intercontinental-Melbourne.jpg/960px-Hotel-Exterior-Intercontinental-Melbourne.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel-Exterior-Intercontinental-Melbourne.jpg",
+        "author": "IHG",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 1280,
+        "height": 853,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111145863.webp"
+    },
+    {
+      "id": "Q111146767",
+      "name": "Crowne Plaza Melbourne",
+      "latitude": -37.822384,
+      "longitude": 144.95557,
+      "dataSource": "https://www.wikidata.org/wiki/Q111146767",
+      "photo": {
+        "file": "File:CrownePlaza Exterior Melbourne.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/CrownePlaza_Exterior_Melbourne.jpg/960px-CrownePlaza_Exterior_Melbourne.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:CrownePlaza_Exterior_Melbourne.jpg",
+        "author": "IHG",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 1920,
+        "height": 1249,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111146767.webp"
+    },
+    {
+      "id": "Q28224275",
+      "name": "Crown Towers",
+      "latitude": -37.82362,
+      "longitude": 144.95995,
+      "dataSource": "https://www.wikidata.org/wiki/Q28224275",
+      "photo": {
+        "file": "File:Crown Towers, Melbourne Australia in 2010.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Crown_Towers%2C_Melbourne_Australia_in_2010.jpg/960px-Crown_Towers%2C_Melbourne_Australia_in_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Crown_Towers,_Melbourne_Australia_in_2010.jpg",
+        "author": "Rexness from Melbourne, Australia",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "width": 1200,
+        "height": 1800,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q28224275.webp"
+    },
+    {
+      "id": "Q20085675",
+      "name": "Adelphi Hotel, Melbourne",
+      "latitude": -37.816321,
+      "longitude": 144.968361,
+      "dataSource": "https://www.wikidata.org/wiki/Q20085675",
+      "photo": {
+        "file": "File:Adelphi front.JPG",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Adelphi_front.JPG/960px-Adelphi_front.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Adelphi_front.JPG",
+        "author": "Isabelle Jooste",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 2236,
+        "height": 2936,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q20085675.webp"
+    },
+    {
+      "id": "Q111868123",
+      "name": "Flinders Landing Apartments",
+      "latitude": -37.815907,
+      "longitude": 144.96906,
+      "dataSource": "https://www.wikidata.org/wiki/Q111868123",
+      "photo": {
+        "file": "File:Flinders Landing Apartments.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Flinders_Landing_Apartments.jpg/960px-Flinders_Landing_Apartments.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flinders_Landing_Apartments.jpg",
+        "author": "Vanbasten 23",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 4000,
+        "height": 3000,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111868123.webp"
+    },
+    {
+      "id": "Q12060553",
+      "name": "Hotel Windsor",
+      "latitude": -37.81207,
+      "longitude": 144.9732,
+      "dataSource": "https://www.wikidata.org/wiki/Q12060553",
+      "photo": {
+        "file": "File:The Windsor.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/The_Windsor.jpg/960px-The_Windsor.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Windsor.jpg",
+        "author": "Paul Stewart",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "width": 2560,
+        "height": 1536,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q12060553.webp"
+    }
+  ],
+  "Los Angeles, United States": [
+    {
+      "id": "Q112026611",
+      "name": "E-Central Downtown Los Angeles Hotel",
+      "latitude": 34.04437,
+      "longitude": -118.26429,
+      "dataSource": "https://www.wikidata.org/wiki/Q112026611",
+      "photo": {
+        "file": "File:E-Central Downtown Los Angeles Hotel.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/E-Central_Downtown_Los_Angeles_Hotel.jpg/960px-E-Central_Downtown_Los_Angeles_Hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:E-Central_Downtown_Los_Angeles_Hotel.jpg",
+        "author": "Superraptor123",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 3024,
+        "height": 4032,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q112026611.webp"
+    },
+    {
+      "id": "Q371058",
+      "name": "Westin Bonaventure Hotel",
+      "latitude": 34.05279,
+      "longitude": -118.25646,
+      "dataSource": "https://www.wikidata.org/wiki/Q371058",
+      "photo": {
+        "file": "File:Westin Bonaventure Hotel.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Westin_Bonaventure_Hotel.jpg/960px-Westin_Bonaventure_Hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Westin_Bonaventure_Hotel.jpg",
+        "author": "Geographer at English Wikipedia",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+        "width": 2304,
+        "height": 3072,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q371058.webp"
+    },
+    {
+      "id": "Q124408579",
+      "name": "Hotel Figueroa",
+      "latitude": 34.04548,
+      "longitude": -118.26393,
+      "dataSource": "https://www.wikidata.org/wiki/Q124408579",
+      "photo": {
+        "file": "File:Los Angeles, California (September 9, 2022) - 380.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Los_Angeles%2C_California_%28September_9%2C_2022%29_-_380.jpg/960px-Los_Angeles%2C_California_%28September_9%2C_2022%29_-_380.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Los_Angeles,_California_(September_9,_2022)_-_380.jpg",
+        "author": "Another Believer",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 4032,
+        "height": 3024,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q124408579.webp"
+    }
+  ],
+  "San Francisco, United States": [
+    {
+      "id": "Q81772191",
+      "name": "Parc 55 Hilton Hotel",
+      "latitude": 37.784867,
+      "longitude": -122.408802,
+      "dataSource": "https://www.wikidata.org/wiki/Q81772191",
+      "photo": {
+        "file": "File:Parc 55.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Parc_55.jpg/960px-Parc_55.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parc_55.jpg",
+        "author": "Dead.rabbit",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 2268,
+        "height": 4032,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q81772191.webp"
+    },
+    {
+      "id": "Q24886057",
+      "name": "Hotel Nikko San Francisco",
+      "latitude": 37.7858,
+      "longitude": -122.4093,
+      "dataSource": "https://www.wikidata.org/wiki/Q24886057",
+      "photo": {
+        "file": "File:Hotel Nikko Exterior.jpg",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/64/Hotel_Nikko_Exterior.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Nikko_Exterior.jpg",
+        "author": "TDFritz6",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 846,
+        "height": 1150,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q24886057.webp"
+    },
+    {
+      "id": "Q65923212",
+      "name": "San Francisco Marriott Fisherman's Wharf",
+      "latitude": 37.80561,
+      "longitude": -122.41769,
+      "dataSource": "https://www.wikidata.org/wiki/Q65923212",
+      "photo": {
+        "file": "File:Marriott Fisherman's Wharf, San Francisco, California, US.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Marriott_Fisherman%27s_Wharf%2C_San_Francisco%2C_California%2C_US.jpg/960px-Marriott_Fisherman%27s_Wharf%2C_San_Francisco%2C_California%2C_US.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marriott_Fisherman%27s_Wharf,_San_Francisco,_California,_US.jpg",
+        "author": "Clyde Charles Brown",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 4032,
+        "height": 2688,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q65923212.webp"
+    },
+    {
+      "id": "Q7598736",
+      "name": "Stanford Court Hotel",
+      "latitude": 37.7915,
+      "longitude": -122.41,
+      "dataSource": "https://www.wikidata.org/wiki/Q7598736",
+      "photo": {
+        "file": "File:Stanford Court Hotel San Francisco (3207364357).jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Stanford_Court_Hotel_San_Francisco_%283207364357%29.jpg/960px-Stanford_Court_Hotel_San_Francisco_%283207364357%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stanford_Court_Hotel_San_Francisco_(3207364357).jpg",
+        "author": "ShashiBellamkonda from Potomac, USA",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "width": 2048,
+        "height": 1536,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q7598736.webp"
+    },
+    {
+      "id": "Q14682267",
+      "name": "Hilton San Francisco Financial District",
+      "latitude": 37.7951,
+      "longitude": -122.405,
+      "dataSource": "https://www.wikidata.org/wiki/Q14682267",
+      "photo": {
+        "file": "File:Hilton San Francisco Financial District.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Hilton_San_Francisco_Financial_District.jpg/960px-Hilton_San_Francisco_Financial_District.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hilton_San_Francisco_Financial_District.jpg",
+        "author": "Dead.rabbit",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 2268,
+        "height": 4032,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q14682267.webp"
+    },
+    {
+      "id": "Q22077758",
+      "name": "Fairmont Heritage Place, Ghirardelli Square",
+      "latitude": 37.8056229,
+      "longitude": -122.4227434,
+      "dataSource": "https://www.wikidata.org/wiki/Q22077758",
+      "photo": {
+        "file": "File:San Francisco Ghirardelli square.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/San_Francisco_Ghirardelli_square.jpg/960px-San_Francisco_Ghirardelli_square.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:San_Francisco_Ghirardelli_square.jpg",
+        "author": "PictorialEvidence",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 2592,
+        "height": 1944,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q22077758.webp"
+    }
+  ],
+  "Toronto, Canada": [
+    {
+      "id": "Q2278240",
+      "name": "Sheraton Centre Toronto Hotel",
+      "latitude": 43.651111111,
+      "longitude": -79.384166666,
+      "dataSource": "https://www.wikidata.org/wiki/Q2278240",
+      "photo": {
+        "file": "File:Downtown toronto.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Downtown_toronto.jpg/960px-Downtown_toronto.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Downtown_toronto.jpg",
+        "author": "Aral Balkan",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "width": 1944,
+        "height": 2592,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q2278240.webp"
+    },
+    {
+      "id": "Q1393350",
+      "name": "Fairmont Royal York",
+      "latitude": 43.64551,
+      "longitude": -79.38164,
+      "dataSource": "https://www.wikidata.org/wiki/Q1393350",
+      "photo": {
+        "file": "File:Fairmont Royal York from CIBC Square Park, May 13 2026 (01).jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Fairmont_Royal_York_from_CIBC_Square_Park%2C_May_13_2026_%2801%29.jpg/960px-Fairmont_Royal_York_from_CIBC_Square_Park%2C_May_13_2026_%2801%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fairmont_Royal_York_from_CIBC_Square_Park,_May_13_2026_(01).jpg",
+        "author": "Dillan Payne",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 6522,
+        "height": 4348,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q1393350.webp"
+    },
+    {
+      "id": "Q14875339",
+      "name": "New Broadview House Hotel",
+      "latitude": 43.659,
+      "longitude": -79.3501,
+      "dataSource": "https://www.wikidata.org/wiki/Q14875339",
+      "photo": {
+        "file": "File:New Broadview Hotel.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/New_Broadview_Hotel.jpg/960px-New_Broadview_Hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:New_Broadview_Hotel.jpg",
+        "author": "SimonP",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "width": 1392,
+        "height": 1792,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q14875339.webp"
+    },
+    {
+      "id": "Q24521631",
+      "name": "Hotel X Toronto",
+      "latitude": 43.6331,
+      "longitude": -79.4121,
+      "dataSource": "https://www.wikidata.org/wiki/Q24521631",
+      "photo": {
+        "file": "File:Hotel X Toronto, December 17 2025.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Hotel_X_Toronto%2C_December_17_2025.jpg/960px-Hotel_X_Toronto%2C_December_17_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_X_Toronto,_December_17_2025.jpg",
+        "author": "Dillan Payne",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 4479,
+        "height": 6719,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q24521631.webp"
+    },
+    {
+      "id": "Q7137802",
+      "name": "Park Hyatt Toronto",
+      "latitude": 43.669,
+      "longitude": -79.3946,
+      "dataSource": "https://www.wikidata.org/wiki/Q7137802",
+      "photo": {
+        "file": "File:Park Plaza Hotel.JPG",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Park_Plaza_Hotel.JPG/960px-Park_Plaza_Hotel.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Park_Plaza_Hotel.JPG",
+        "author": "SimonP",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 2007,
+        "height": 3072,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q7137802.webp"
+    },
+    {
+      "id": "Q5254591",
+      "name": "Chelsea Hotel, Toronto",
+      "latitude": 43.6583,
+      "longitude": -79.3831,
+      "dataSource": "https://www.wikidata.org/wiki/Q5254591",
+      "photo": {
+        "file": "File:Chelsea Hotel Toronto, August 26 2025 (02).jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Chelsea_Hotel_Toronto%2C_August_26_2025_%2802%29.jpg/960px-Chelsea_Hotel_Toronto%2C_August_26_2025_%2802%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chelsea_Hotel_Toronto,_August_26_2025_(02).jpg",
+        "author": "Dillan Payne",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 6960,
+        "height": 4640,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q5254591.webp"
+    },
+    {
+      "id": "Q111392354",
+      "name": "Courtyard by Marriott Downtown Toronto",
+      "latitude": 43.662335,
+      "longitude": -79.383056,
+      "dataSource": "https://www.wikidata.org/wiki/Q111392354",
+      "photo": {
+        "file": "File:Courtyard by Marriott Downtown Toronto.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Courtyard_by_Marriott_Downtown_Toronto.jpg/960px-Courtyard_by_Marriott_Downtown_Toronto.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Courtyard_by_Marriott_Downtown_Toronto.jpg",
+        "author": "Edelweiss303",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 5202,
+        "height": 3464,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111392354.webp"
+    }
+  ],
+  "Mexico City, Mexico": [
+    {
+      "id": "Q123243624",
+      "name": "Gran Hotel Ciudad de México",
+      "latitude": 19.43221,
+      "longitude": -99.13465,
+      "dataSource": "https://www.wikidata.org/wiki/Q123243624",
+      "photo": {
+        "file": "File:16 de Septiembre facade - Gran Hotel Ciudad de México - Mexico 2024 (3).jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/16_de_Septiembre_facade_-_Gran_Hotel_Ciudad_de_M%C3%A9xico_-_Mexico_2024_%283%29.jpg/960px-16_de_Septiembre_facade_-_Gran_Hotel_Ciudad_de_M%C3%A9xico_-_Mexico_2024_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:16_de_Septiembre_facade_-_Gran_Hotel_Ciudad_de_M%C3%A9xico_-_Mexico_2024_(3).jpg",
+        "author": "José Luiz",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 4032,
+        "height": 1908,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q123243624.webp"
+    },
+    {
+      "id": "Q2350185",
+      "name": "Sheraton Maria Isabel Hotel and Towers",
+      "latitude": 19.42784,
+      "longitude": -99.16719,
+      "dataSource": "https://www.wikidata.org/wiki/Q2350185",
+      "photo": {
+        "file": "File:Hotel Sheraton Mexico DF Diciembre 2010.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Hotel_Sheraton_Mexico_DF_Diciembre_2010.jpg/960px-Hotel_Sheraton_Mexico_DF_Diciembre_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Sheraton_Mexico_DF_Diciembre_2010.jpg",
+        "author": "Balderai",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 1400,
+        "height": 1050,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q2350185.webp"
+    },
+    {
+      "id": "Q20679735",
+      "name": "Hilton Mexico City Reforma",
+      "latitude": 19.43445,
+      "longitude": -99.14651944,
+      "dataSource": "https://www.wikidata.org/wiki/Q20679735",
+      "photo": {
+        "file": "File:Hilton Mexico City Reforma - 2.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Hilton_Mexico_City_Reforma_-_2.jpg/960px-Hilton_Mexico_City_Reforma_-_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hilton_Mexico_City_Reforma_-_2.jpg",
+        "author": "Jarek Tuszyński",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 1722,
+        "height": 4178,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q20679735.webp"
+    },
+    {
+      "id": "Q60000164",
+      "name": "Hotel Geneve Mexico City",
+      "latitude": 19.425138888,
+      "longitude": -99.164166666,
+      "dataSource": "https://www.wikidata.org/wiki/Q60000164",
+      "photo": {
+        "file": "File:Hotel Geneve, Mexico D.F. - panoramio (1).jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Hotel_Geneve%2C_Mexico_D.F._-_panoramio_%281%29.jpg/960px-Hotel_Geneve%2C_Mexico_D.F._-_panoramio_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Geneve,_Mexico_D.F._-_panoramio_(1).jpg",
+        "author": "Horacio_Fernandez",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "width": 2048,
+        "height": 1536,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q60000164.webp"
+    },
+    {
+      "id": "Q111886654",
+      "name": "Hotel Templo Mayor",
+      "latitude": 19.43616,
+      "longitude": -99.12956,
+      "dataSource": "https://www.wikidata.org/wiki/Q111886654",
+      "photo": {
+        "file": "File:Ciudad de México - Hotel Templo Mayor 6994.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Ciudad_de_M%C3%A9xico_-_Hotel_Templo_Mayor_6994.jpg/960px-Ciudad_de_M%C3%A9xico_-_Hotel_Templo_Mayor_6994.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ciudad_de_M%C3%A9xico_-_Hotel_Templo_Mayor_6994.jpg",
+        "author": "Phyrexian",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 3574,
+        "height": 2393,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111886654.webp"
+    },
+    {
+      "id": "Q111886623",
+      "name": "Reforma Imperial Hotel",
+      "latitude": 19.43324,
+      "longitude": -99.1538,
+      "dataSource": "https://www.wikidata.org/wiki/Q111886623",
+      "photo": {
+        "file": "File:Hotel Imperial (128075047).jpeg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Hotel_Imperial_%28128075047%29.jpeg/960px-Hotel_Imperial_%28128075047%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Imperial_(128075047).jpeg",
+        "author": "Octavio Alonso Maya Castro",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 1363,
+        "height": 2048,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111886623.webp"
+    },
+    {
+      "id": "Q26401577",
+      "name": "The St. Regis Hotel, Mexico",
+      "latitude": 19.4255003,
+      "longitude": -99.172267,
+      "dataSource": "https://www.wikidata.org/wiki/Q26401577",
+      "photo": {
+        "file": "File:S.t Regis México D.F 2011.jpg",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9e/S.t_Regis_M%C3%A9xico_D.F_2011.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:S.t_Regis_M%C3%A9xico_D.F_2011.jpg",
+        "author": "Felipe Alfonso Castillo Vázquez",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 480,
+        "height": 640,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q26401577.webp"
+    }
+  ],
+  "Rio de Janeiro, Brazil": [
+    {
+      "id": "Q2637352",
+      "name": "Copacabana Palace",
+      "latitude": -22.96726,
+      "longitude": -43.17874,
+      "dataSource": "https://www.wikidata.org/wiki/Q2637352",
+      "photo": {
+        "file": "File:Copacabana Palace - Rio de Janeiro - 20240709110621.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Copacabana_Palace_-_Rio_de_Janeiro_-_20240709110621.jpg/960px-Copacabana_Palace_-_Rio_de_Janeiro_-_20240709110621.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Copacabana_Palace_-_Rio_de_Janeiro_-_20240709110621.jpg",
+        "author": "Joalpe",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 2992,
+        "height": 2992,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q2637352.webp"
+    },
+    {
+      "id": "Q8024571",
+      "name": "Hotel Hilton Copacabana",
+      "latitude": -22.96454722,
+      "longitude": -43.17325833,
+      "dataSource": "https://www.wikidata.org/wiki/Q8024571",
+      "photo": {
+        "file": "File:Hotel Windsor Atlântica.jpg",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Hotel_Windsor_Atl%C3%A2ntica.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Windsor_Atl%C3%A2ntica.jpg",
+        "author": "Eduardo P",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 480,
+        "height": 640,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q8024571.webp"
+    },
+    {
+      "id": "Q111884458",
+      "name": "Diamond Hotel",
+      "latitude": -22.917456,
+      "longitude": -43.177179,
+      "dataSource": "https://www.wikidata.org/wiki/Q111884458",
+      "photo": {
+        "file": "File:At Rio de Janeiro 2019 030.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/At_Rio_de_Janeiro_2019_030.jpg/960px-At_Rio_de_Janeiro_2019_030.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:At_Rio_de_Janeiro_2019_030.jpg",
+        "author": "Photograph by Mike Peel ( www.mikepeel.net ).",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 3456,
+        "height": 5184,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111884458.webp"
+    },
+    {
+      "id": "Q111414504",
+      "name": "Yoo2 Rio de Janeiro by Intercity",
+      "latitude": -22.94288,
+      "longitude": -43.18142,
+      "dataSource": "https://www.wikidata.org/wiki/Q111414504",
+      "photo": {
+        "file": "File:Yoo2 Rio de Janeiro by Intercity.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Yoo2_Rio_de_Janeiro_by_Intercity.jpg/960px-Yoo2_Rio_de_Janeiro_by_Intercity.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yoo2_Rio_de_Janeiro_by_Intercity.jpg",
+        "author": "Boaventuravinicius",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "width": 3000,
+        "height": 4000,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111414504.webp"
+    }
+  ],
+  "Buenos Aires, Argentina": [
+    {
+      "id": "Q448626",
+      "name": "Alvear Palace Hotel",
+      "latitude": -34.58769444,
+      "longitude": -58.38880556,
+      "dataSource": "https://www.wikidata.org/wiki/Q448626",
+      "photo": {
+        "file": "File:Buenos Aires - Avenida Alvear - 20090104-r.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Buenos_Aires_-_Avenida_Alvear_-_20090104-r.jpg/960px-Buenos_Aires_-_Avenida_Alvear_-_20090104-r.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Buenos_Aires_-_Avenida_Alvear_-_20090104-r.jpg",
+        "author": "Taken by the uploader, w:es:Usuario:Barcex",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 3568,
+        "height": 2380,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q448626.webp"
+    },
+    {
+      "id": "Q513613",
+      "name": "Hilton Buenos Aires",
+      "latitude": -34.605833,
+      "longitude": -58.363611,
+      "dataSource": "https://www.wikidata.org/wiki/Q513613",
+      "photo": {
+        "file": "File:Buenos Aires - Puerto Madero - Hilton Hotel - 20071208.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Buenos_Aires_-_Puerto_Madero_-_Hilton_Hotel_-_20071208.jpg/960px-Buenos_Aires_-_Puerto_Madero_-_Hilton_Hotel_-_20071208.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Buenos_Aires_-_Puerto_Madero_-_Hilton_Hotel_-_20071208.jpg",
+        "author": "Mandy from Buenos Aires, Argentina",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "width": 3328,
+        "height": 1512,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q513613.webp"
+    },
+    {
+      "id": "Q7494679",
+      "name": "Sheraton Buenos Aires Hotel & Convention Center",
+      "latitude": -34.59305556,
+      "longitude": -58.3725,
+      "dataSource": "https://www.wikidata.org/wiki/Q7494679",
+      "photo": {
+        "file": "File:Plaza-san-martin.JPG",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Plaza-san-martin.JPG/960px-Plaza-san-martin.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plaza-san-martin.JPG",
+        "author": "Leandro Kibisz ( Loco085 )",
+        "license": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+        "width": 2304,
+        "height": 1536,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q7494679.webp"
+    },
+    {
+      "id": "Q111120697",
+      "name": "Suipacha Suites",
+      "latitude": -34.5936499,
+      "longitude": -58.3797484,
+      "dataSource": "https://www.wikidata.org/wiki/Q111120697",
+      "photo": {
+        "file": "File:Suipacha Suites.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Suipacha_Suites.jpg/960px-Suipacha_Suites.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Suipacha_Suites.jpg",
+        "author": "Gobonobo",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "width": 3456,
+        "height": 4608,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q111120697.webp"
+    },
+    {
+      "id": "Q5475494",
+      "name": "Four Seasons Hotel Buenos Aires",
+      "latitude": -34.59083333,
+      "longitude": -58.38277778,
+      "dataSource": "https://www.wikidata.org/wiki/Q5475494",
+      "photo": {
+        "file": "File:Le Mansion Four Seasons Hotel.jpg",
+        "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Le_Mansion_Four_Seasons_Hotel.jpg/960px-Le_Mansion_Four_Seasons_Hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Le_Mansion_Four_Seasons_Hotel.jpg",
+        "author": "Richie Diesterheft",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "width": 1600,
+        "height": 1200,
+        "modifications": "Resized and converted to WebP"
+      },
+      "localImage": "images/Q5475494.webp"
+    }
+  ]
+}
