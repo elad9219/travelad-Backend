@@ -2,94 +2,132 @@ package com.example.travelad.utils;
 
 import com.example.travelad.dto.HotelDto;
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
+import java.util.UUID;
 
 public class MockHotelUtils {
 
-    private static final Random random = new Random();
+    private static final int HOTEL_COUNT = 25;
 
-    // Images used by the existing hotel demo.
-    private static final List<String> HOTEL_IMAGES = Arrays.asList(
-            "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/262048/pexels-photo-262048.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/2034335/pexels-photo-2034335.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/594077/pexels-photo-594077.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/2869215/pexels-photo-2869215.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/261388/pexels-photo-261388.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/2736388/pexels-photo-2736388.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/1001965/pexels-photo-1001965.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/271643/pexels-photo-271643.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/2506988/pexels-photo-2506988.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/3201761/pexels-photo-3201761.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80",
-            "https://images.pexels.com/photos/1579253/pexels-photo-1579253.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.unsplash.com/photo-1535827841776-24afc1e255ac?auto=format&fit=crop&w=800&q=80",
-            "https://images.pexels.com/photos/2507010/pexels-photo-2507010.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80"
-    );
+    private static final List<String> HOTEL_IMAGES = createImages();
 
-    private static final String[] HOTEL_PREFIXES = {
+    private static final List<String> PREFIXES = List.of(
             "Grand", "Royal", "The", "Central", "Luxury",
             "Boutique", "Downtown", "Premium", "Oasis", "Urban"
-    };
+    );
 
-    private static final String[] HOTEL_SUFFIXES = {
+    private static final List<String> SUFFIXES = List.of(
             "Resort", "Plaza", "Hotel", "Suites", "Lodge",
             "Inn", "Spa & Resort", "Palace", "Gardens"
-    };
+    );
+
+    private static List<String> createImages() {
+        List<String> images = new ArrayList<>();
+
+        for (int id : new int[]{
+                164595, 258154, 271624, 1134176, 262048,
+                2034335, 271618, 189296, 594077, 271619,
+                1743229, 2869215, 261388, 2736388, 1001965,
+                338504, 271643, 2506988, 3201761, 1579253,
+                2507010
+        }) {
+            images.add(
+                    "https://images.pexels.com/photos/" + id
+                            + "/pexels-photo-" + id
+                            + ".jpeg?auto=compress&cs=tinysrgb&w=800"
+            );
+        }
+
+        for (String id : List.of(
+                "1590490360182-c33d57733427",
+                "1535827841776-24afc1e255ac",
+                "1584132967334-10e028bd69f7",
+                "1520250497591-112f2f40a3f4"
+        )) {
+            images.add(
+                    "https://images.unsplash.com/photo-" + id
+                            + "?auto=format&fit=crop&w=800&q=80"
+            );
+        }
+
+        return List.copyOf(images);
+    }
 
     public static List<HotelDto> generateMockHotels(
             String city,
             double lat,
             double lon) {
-        List<HotelDto> hotels = new ArrayList<>();
-        String decodedCity = city;
 
-        for (int i = 0; i < 25; i++) {
-            double hLat = lat + (random.nextDouble() - 0.5) * 0.04;
-            double hLon = lon + (random.nextDouble() - 0.5) * 0.04;
+        String cityKey = city.strip().toLowerCase(Locale.ROOT);
+
+        UUID cityId = UUID.nameUUIDFromBytes(
+                cityKey.getBytes(StandardCharsets.UTF_8)
+        );
+
+        Random random = new Random(
+                cityId.getMostSignificantBits()
+                        ^ cityId.getLeastSignificantBits()
+        );
+
+        List<String> names = new ArrayList<>();
+
+        for (String prefix : PREFIXES) {
+            for (String suffix : SUFFIXES) {
+                names.add(
+                        prefix + " " + city.strip() + " " + suffix
+                );
+            }
+        }
+
+        List<String> images = new ArrayList<>(HOTEL_IMAGES);
+
+        Collections.shuffle(names, random);
+        Collections.shuffle(images, random);
+
+        List<HotelDto> hotels = new ArrayList<>(HOTEL_COUNT);
+
+        for (int i = 0; i < HOTEL_COUNT; i++) {
+            double hotelLat = Math.max(
+                    -90,
+                    Math.min(
+                            90,
+                            lat + (random.nextDouble() - 0.5) * 0.04
+                    )
+            );
+
+            double hotelLon =
+                    lon + (random.nextDouble() - 0.5) * 0.04;
+
+            if (hotelLon > 180) {
+                hotelLon -= 360;
+            }
+
+            if (hotelLon < -180) {
+                hotelLon += 360;
+            }
+
             double price = 80 + random.nextInt(350);
 
-            String prefix = HOTEL_PREFIXES[random.nextInt(HOTEL_PREFIXES.length)];
-            String suffix = HOTEL_SUFFIXES[random.nextInt(HOTEL_SUFFIXES.length)];
-            String dynamicName = prefix + " " + decodedCity + " " + suffix;
+            double rating = Math.round(
+                    (6.0 + random.nextDouble() * 3.5) * 10.0
+            ) / 10.0;
 
-            String imageUrl = HOTEL_IMAGES.get(random.nextInt(HOTEL_IMAGES.size()));
-
-            // Generate demo ratings between 6.0 and 9.5.
-            double rawRating = 6.0 + (random.nextDouble() * 3.5);
-            double roundedRating = Math.round(rawRating * 10.0) / 10.0;
-
-            HotelDto hotel = new HotelDto(
-                    dynamicName,
-                    "MOCK_" + i,
+            hotels.add(new HotelDto(
+                    names.get(i),
+                    "MOCK_" + cityId + "_" + i,
                     "XX",
                     "XX",
-                    hLat,
-                    hLon,
+                    hotelLat,
+                    hotelLon,
                     price,
-                    imageUrl,
-                    roundedRating
-            );
-
-            hotel.setIataCode(
-                    decodedCity.length() >= 3
-                            ? decodedCity.substring(0, 3).toUpperCase()
-                            : "XXX"
-            );
-            hotels.add(hotel);
+                    images.get(i),
+                    rating
+            ));
         }
 
         return hotels;
