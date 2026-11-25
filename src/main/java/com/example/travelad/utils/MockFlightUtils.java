@@ -3,80 +3,200 @@ package com.example.travelad.utils;
 import com.example.travelad.dto.FlightOfferDto;
 import com.example.travelad.dto.FlightSegmentDto;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.time.Duration;
+import java.time.Instant;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.Random;
+import java.util.Set;
 
-public class MockFlightUtils {
-
-    private static final Random random = new Random();
-
-    // Airline Logos Base URL
+/**
+ * Offline illustrative flight offers. The network and aircraft assignments are
+ * modeling assumptions, not published airline routes, schedules or availability.
+ */
+public final class MockFlightUtils {
     private static final String LOGO_BASE_URL = "https://pics.avs.io/200/200/";
+    private static final DateTimeFormatter LOCAL_TIMESTAMP =
+            DateTimeFormatter.ofPattern("uuuu-MM-dd'T'HH:mm:ss");
+    private static final int OFFER_COUNT = 12;
+    private static final double MIN_LEG_KM = 140;
+    private static final Catalog CATALOG = loadCatalog();
 
-    // --- CARRIERS LISTS ---
-    private static final List<String> ISRAEL_CARRIERS = Arrays.asList("LY", "IZ", "6H");
-    private static final List<String> UK_CARRIERS = Arrays.asList("BA", "U2", "VS", "W6");
-    private static final List<String> FRANCE_CARRIERS = Arrays.asList("AF", "TO", "U2");
-    private static final List<String> GERMANY_CARRIERS = Arrays.asList("LH", "EW");
-    private static final List<String> ITALY_CARRIERS = Arrays.asList("AZ", "FR", "W6");
-    private static final List<String> GREECE_CYPRUS_CARRIERS = Arrays.asList("A3", "CY", "FR", "IZ", "6H");
-    private static final List<String> LOW_COST_EUROPE = Arrays.asList("FR", "W6", "U2");
-    private static final List<String> US_CARRIERS = Arrays.asList("DL", "UA", "AA");
-    private static final List<String> ASIA_CARRIERS = Arrays.asList("EK", "TK", "ET", "AI", "CX");
-
-    // --- HUBS FOR CONNECTIONS ---
-    private static final List<String> EUROPE_HUBS = Arrays.asList("LHR", "CDG", "FRA", "MUC", "FCO", "ZRH", "IST");
-    private static final List<String> ASIA_HUBS = Arrays.asList("DXB", "IST", "BKK");
-
-    private enum Region {
-        EUROPE, US_EAST, US_WEST, ASIA, NEAR_EAST, UNKNOWN
+    private record Airport(String code, double latitude, double longitude,
+                           String country, String continent, String size, ZoneId zone) {}
+    private record Catalog(Map<String, Airport> airports, Map<String, List<String>> metros) {}
+    private record Aircraft(String code, String name, int rangeKm, int cruiseKmh) {}
+    private record Carrier(String code, Set<String> hubs, List<Aircraft> fleet, double fareFactor) {}
+    private record Hop(Airport from, Airport to, Carrier carrier, double km) {}
+    private record Route(List<Hop> hops, double km) {}
+    private record Leg(List<FlightSegmentDto> segments, Instant departure, Instant arrival) {
+        String duration() {
+            return Duration.between(departure, arrival).toString();
+        }
     }
 
-    private static Region getRegionByCode(String code) {
-        if (code == null) return Region.UNKNOWN;
-        code = code.toUpperCase();
+    private static final Aircraft A320 = new Aircraft("320", "Airbus A320", 4800, 810);
+    private static final Aircraft A321 = new Aircraft("32Q", "Airbus A321neo", 5800, 815);
+    private static final Aircraft B738 = new Aircraft("738", "Boeing 737-800", 4800, 810);
+    private static final Aircraft B7M8 = new Aircraft("7M8", "Boeing 737 MAX 8", 5100, 815);
+    private static final Aircraft B789 = new Aircraft("789", "Boeing 787-9", 13500, 880);
+    private static final Aircraft B78X = new Aircraft("78X", "Boeing 787-10", 11000, 880);
+    private static final Aircraft B77W = new Aircraft("77W", "Boeing 777-300ER", 13200, 870);
+    private static final Aircraft A359 = new Aircraft("359", "Airbus A350-900", 14500, 880);
+    private static final Aircraft A339 = new Aircraft("339", "Airbus A330-900", 11500, 870);
+    private static final Aircraft E195 = new Aircraft("E95", "Embraer 195", 3000, 780);
+    private static final Set<String> REGIONAL_CARRIERS = Set.of("U2", "W6", "FR", "IZ", "6H", "A3");
+    private static final Set<String> NEAR_EUROPE = Set.of("IL", "CY", "TR", "EG", "MA", "TN", "JO", "GE", "AM");
 
-        if (Arrays.asList("LCA", "PFO", "ATH", "HER", "RHO", "ETM", "VDA").contains(code)) return Region.NEAR_EAST;
-        if (Arrays.asList("LON", "LHR", "LGW", "LTN", "PAR", "CDG", "ORY", "FRA", "MUC", "BER", "ROM", "FCO", "MIL", "MXP", "MAD", "BCN", "AMS", "ZRH", "VIE", "PRG", "BUD").contains(code)) return Region.EUROPE;
-        if (Arrays.asList("NYC", "JFK", "EWR", "BOS", "IAD", "MIA", "YYZ").contains(code)) return Region.US_EAST;
-        if (Arrays.asList("LAX", "SFO", "LAS", "SEA", "ORD", "DFW").contains(code)) return Region.US_WEST;
-        if (Arrays.asList("BKK", "HKG", "TYO", "NRT", "HND", "DXB", "DEL", "BOM").contains(code)) return Region.ASIA;
+    // Representative long-haul markets of the demo network, not a live route database.
+    private static final Set<String> LY_LONG_HAUL = Set.of(
+            "JFK", "EWR", "BOS", "MIA", "FLL", "LAX", "SFO", "BKK", "HKT", "NRT", "DEL", "BOM");
 
-        return Region.UNKNOWN;
-    }
+    private static final List<Carrier> CARRIERS = List.of(
+            carrier("LY", 1.10, "TLV", B738, B789),
+            carrier("IZ", 0.90, "TLV", A320),
+            carrier("6H", 0.85, "TLV", A320),
+            carrier("BA", 1.10, "LHR,LGW", A320, A321, B789, B77W),
+            carrier("U2", 0.72, "LGW,LTN,BER,GVA,CDG,MXP", A320, A321),
+            carrier("W6", 0.70, "BUD,WAW,LTN", A320, A321),
+            carrier("FR", 0.68, "DUB,STN,BGY,MAD,BCN", B738),
+            carrier("AF", 1.10, "CDG,ORY", A320, A359, B77W),
+            carrier("LH", 1.10, "FRA,MUC", A320, A321, A359, B789),
+            carrier("KL", 1.05, "AMS", B738, B789, B77W),
+            carrier("LX", 1.10, "ZRH", A320, A321, B77W),
+            carrier("OS", 1.00, "VIE", A320, E195, B789),
+            carrier("IB", 1.00, "MAD", A320, A321, A359),
+            carrier("TP", 0.95, "LIS", A320, A321, A339),
+            carrier("AZ", 1.00, "FCO,LIN", A320, A321, A359),
+            carrier("A3", 0.90, "ATH", A320, A321),
+            carrier("TK", 0.95, "IST", A321, B738, B789, B77W, A359),
+            carrier("EK", 1.10, "DXB", B77W, A359),
+            carrier("QR", 1.10, "DOH", A320, B789, B77W, A359),
+            carrier("ET", 0.95, "ADD", B738, B789, A359),
+            carrier("AI", 0.95, "DEL,BOM", A320, A321, B789, B77W, A359),
+            carrier("SQ", 1.15, "SIN", B78X, B77W, A359),
+            carrier("CX", 1.10, "HKG", A321, B77W, A359),
+            carrier("TG", 1.00, "BKK", A320, B77W, A359),
+            carrier("JL", 1.10, "HND,NRT", B738, B789, A359),
+            carrier("NH", 1.10, "HND,NRT", B738, B789, B77W),
+            carrier("KE", 1.05, "ICN", B738, B789, B77W),
+            carrier("CA", 0.95, "PEK", A320, B738, B789, A359),
+            carrier("UA", 1.05, "EWR,IAD,ORD,SFO,IAH,DEN", B738, A320, B789, B77W),
+            carrier("DL", 1.05, "ATL,JFK,DTW,MSP,SLC,SEA", B738, A321, A359),
+            carrier("AA", 1.00, "DFW,CLT,MIA,JFK,ORD", B738, A321, B789, B77W),
+            carrier("AC", 1.00, "YYZ,YUL,YVR", A320, B7M8, B789, B77W),
+            carrier("QF", 1.10, "SYD,MEL,PER,BNE", B738, B789),
+            carrier("NZ", 1.05, "AKL", A320, A321, B789, B77W),
+            carrier("LA", 0.95, "SCL,LIM,GRU", A320, A321, B789)
+    );
 
-    public static List<FlightOfferDto> generateMockFlights(String origin, String destination, String departDate, String returnDate, String adults) {
-        try { Thread.sleep(800 + random.nextInt(600)); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+    private static final Carrier REGIONAL_DEMO =
+            carrier("DEMO", 0.90, "", E195, A320, B738);
 
-        List<FlightOfferDto> offers = new ArrayList<>();
-        int count = 10 + random.nextInt(5);
-        Region region = getRegionByCode(destination);
+    private static final List<Airport> HUBS = CARRIERS.stream()
+            .flatMap(c -> c.hubs.stream()).distinct().sorted()
+            .map(CATALOG.airports::get).filter(Objects::nonNull).toList();
+
+    private MockFlightUtils() {}
+
+    public static List<FlightOfferDto> generateMockFlights(
+            String origin, String destination, String departDate,
+            String returnDate, String adults) {
+        LocalDate departure = LocalDate.parse(departDate);
+        LocalDate returning = returnDate == null || returnDate.isBlank()
+                ? null : LocalDate.parse(returnDate);
         int passengers = Integer.parseInt(adults);
+        List<Airport> origins = resolve(origin);
+        List<Airport> destinations = resolve(destination);
+        if (origins.isEmpty() || destinations.isEmpty()) return List.of();
+        if (origins.stream().anyMatch(destinations::contains)) return List.of();
 
-        for (int i = 0; i < count; i++) {
-            FlightOfferDto offer = new FlightOfferDto();
-            boolean isDirect = shouldBeDirect(region);
-
-            List<FlightSegmentDto> outboundSegments = generateSmartSegments(origin, destination, departDate, isDirect, region);
-            offer.setOutboundSegments(outboundSegments);
-            offer.setOutboundDuration(calculateTotalDuration(outboundSegments));
-            offer.setSegments(outboundSegments);
-
-            if (returnDate != null && !returnDate.isEmpty()) {
-                List<FlightSegmentDto> returnSegments = generateSmartSegments(destination, origin, returnDate, isDirect, region);
-                offer.setReturnSegments(returnSegments);
-                offer.setReturnDuration(calculateTotalDuration(returnSegments));
+        List<Route> direct = new ArrayList<>();
+        List<Route> connecting = new ArrayList<>();
+        for (Airport from : origins) {
+            for (Airport to : destinations) {
+                double distance = distance(from, to);
+                if (distance < MIN_LEG_KM) continue;
+                for (Carrier c : carriersFor(from, to, distance)) {
+                    direct.add(new Route(List.of(new Hop(from, to, c, distance)), distance));
+                }
+                for (Airport hub : HUBS) {
+                    if (origins.contains(hub) || destinations.contains(hub)) continue;
+                    double first = distance(from, hub);
+                    double second = distance(hub, to);
+                    double total = first + second;
+                    if (first < MIN_LEG_KM || second < MIN_LEG_KM
+                            || total > Math.min(distance * 1.65, distance + 4000)) continue;
+                    List<Carrier> a = carriersFor(from, hub, first);
+                    List<Carrier> b = carriersFor(hub, to, second);
+                    boolean throughCarrier = a.stream().anyMatch(b::contains);
+                    for (Carrier c : a) {
+                        for (Carrier d : b) {
+                            if (throughCarrier && !c.equals(d)) continue;
+                            connecting.add(new Route(List.of(
+                                    new Hop(from, hub, c, first),
+                                    new Hop(hub, to, d, second)), total));
+                        }
+                    }
+                }
             }
+        }
 
-            double price = calculatePrice(region, isDirect, passengers);
-            offer.setPrice(price);
+        // Prefer reasonable connections instead of sampling very long detours.
+        connecting.sort(Comparator.comparingDouble(Route::km));
+        if (connecting.size() > 120) connecting = new ArrayList<>(connecting.subList(0, 120));
+        if (direct.isEmpty() && connecting.isEmpty()) return List.of();
 
+        long seed = Objects.hash("travelad-flight-v2", origin, destination, departure, returning);
+        Random random = new Random(seed);
+        List<FlightOfferDto> offers = new ArrayList<>();
+        Set<String> identities = new HashSet<>();
+
+        for (int attempt = 0; attempt < 96 && offers.size() < OFFER_COUNT; attempt++) {
+            List<Route> pool = !direct.isEmpty() && (connecting.isEmpty() || attempt % 3 != 2)
+                    ? direct : connecting;
+            Route route = pool.get(random.nextInt(pool.size()));
+            Leg outbound = schedule(route, departure, null, random);
+            if (outbound == null) continue;
+
+            Leg inbound = null;
+            if (returning != null) {
+                inbound = schedule(reverse(route), returning,
+                        outbound.arrival.plus(Duration.ofHours(3)), random);
+                if (inbound == null) continue;
+            }
+            String key = identity(outbound) + "|" + (inbound == null ? "" : identity(inbound));
+            if (!identities.add(key)) continue;
+
+            double base = fare(route, departure, random);
+            if (inbound != null) base += fare(reverse(route), returning, random);
+            FlightOfferDto offer = new FlightOfferDto();
+            offer.setId("MOCK-" + Long.toUnsignedString(seed, 36) + "-" + offers.size());
+            offer.setSource("MOCK");
+            offer.setSegments(outbound.segments);
+            offer.setOutboundSegments(outbound.segments);
+            offer.setOutboundDuration(outbound.duration());
+            if (inbound != null) {
+                offer.setReturnSegments(inbound.segments);
+                offer.setReturnDuration(inbound.duration());
+            }
+            // Round once per person so different passenger counts scale exactly.
+            offer.setPrice(Math.round(base) * (double) passengers);
             offers.add(offer);
         }
 
@@ -84,154 +204,189 @@ public class MockFlightUtils {
         return offers;
     }
 
-    private static boolean shouldBeDirect(Region region) {
-        double rand = random.nextDouble();
-        switch (region) {
-            case NEAR_EAST: return rand > 0.05;
-            case EUROPE: return rand > 0.2;
-            case US_EAST: return rand > 0.5;
-            case US_WEST: return false;
-            case ASIA: return rand > 0.7;
-            default: return rand > 0.5;
-        }
-    }
+    private static List<Carrier> carriersFor(Airport from, Airport to, double km) {
+        List<Carrier> carriers = new ArrayList<>();
+        if (km < MIN_LEG_KM) return carriers;
 
-    private static double calculatePrice(Region region, boolean isDirect, int passengers) {
-        double basePrice;
-        switch (region) {
-            case NEAR_EAST: basePrice = 100 + random.nextInt(150); break;
-            case EUROPE: basePrice = 250 + random.nextInt(350); break;
-            case US_EAST: basePrice = 800 + random.nextInt(500); break;
-            case US_WEST: basePrice = 1100 + random.nextInt(400); break;
-            case ASIA: basePrice = 700 + random.nextInt(400); break;
-            default: basePrice = 400 + random.nextInt(400);
-        }
-        if (isDirect) basePrice *= 1.15;
-        return Math.floor(basePrice * passengers);
-    }
+        for (Carrier carrier : CARRIERS) {
+            if (!carrier.hubs.contains(from.code) && !carrier.hubs.contains(to.code)) continue;
+            if (from.size.equals("S") || to.size.equals("S")) continue;
+            if (REGIONAL_CARRIERS.contains(carrier.code)
+                    && (km > 4500 || !nearEurope(from) || !nearEurope(to))) continue;
 
-    private static String pickRelevantCarrier(String destination, Region region) {
-        List<String> options = new ArrayList<>();
-        options.add("LY");
+            Airport other = carrier.hubs.contains(from.code) ? to : from;
+            if ("LY".equals(carrier.code) && !nearEurope(other)
+                    && !LY_LONG_HAUL.contains(other.code)) continue;
 
-        String dest = destination.toUpperCase();
-
-        if (dest.contains("LON") || dest.contains("LHR") || dest.contains("LTN") || dest.contains("LGW")) {
-            options.addAll(UK_CARRIERS);
-        } else if (dest.contains("PAR") || dest.contains("CDG") || dest.contains("ORY")) {
-            options.addAll(FRANCE_CARRIERS);
-        } else if (dest.contains("FRA") || dest.contains("MUC") || dest.contains("BER")) {
-            options.addAll(GERMANY_CARRIERS);
-        } else if (dest.contains("ROM") || dest.contains("FCO") || dest.contains("MIL")) {
-            options.addAll(ITALY_CARRIERS);
-        } else if (dest.contains("LCA") || dest.contains("PFO") || dest.contains("ATH")) {
-            options.addAll(GREECE_CYPRUS_CARRIERS);
-        } else {
-            switch (region) {
-                case EUROPE:
-                    options.addAll(LOW_COST_EUROPE);
-                    options.add("LH");
-                    break;
-                case US_EAST:
-                case US_WEST:
-                    options.addAll(US_CARRIERS);
-                    break;
-                case ASIA:
-                    options.addAll(ASIA_CARRIERS);
-                    break;
-                default:
-                    options.addAll(LOW_COST_EUROPE);
+            if (carrier.fleet.stream().anyMatch(aircraft -> aircraftFits(aircraft, from, to, km))) {
+                carriers.add(carrier);
             }
         }
 
-        return options.get(random.nextInt(options.size()));
+        // No real route is asserted for unsupported regional combinations.
+        if (carriers.isEmpty() && km <= 2600
+                && (!from.size.equals("S") && !to.size.equals("S") || km <= 1200)
+                && (from.country.equals(to.country) || from.continent.equals(to.continent)
+                || km <= 1200)) {
+            carriers.add(REGIONAL_DEMO);
+        }
+
+        return carriers;
     }
 
-    private static List<FlightSegmentDto> generateSmartSegments(String from, String to, String dateStr, boolean isDirect, Region region) {
+    private static boolean nearEurope(Airport airport) {
+        return "EU".equals(airport.continent) || NEAR_EUROPE.contains(airport.country);
+    }
+
+    private static boolean aircraftFits(Aircraft aircraft, Airport from, Airport to, double km) {
+        return km <= aircraft.rangeKm && (aircraft.rangeKm < 6000
+                || from.size.equals("L") && to.size.equals("L"));
+    }
+
+    private static Leg schedule(Route route, LocalDate date, Instant earliest, Random random) {
+        Airport first = route.hops.getFirst().from;
+        ZonedDateTime departure = null;
+        int start = 5 * 60 + random.nextInt(19 * 12) * 5;
+
+        // Try every five-minute slot in the requested local date.
+        for (int i = 0; i < 19 * 12; i++) {
+            int minute = 300 + (start - 300 + i * 5) % (19 * 60);
+            ZonedDateTime candidate = ZonedDateTime.of(date, LocalTime.of(minute / 60, minute % 60), first.zone);
+            if (!candidate.toLocalDate().equals(date)) continue;
+            if (earliest == null || !candidate.toInstant().isBefore(earliest)) {
+                departure = candidate;
+                break;
+            }
+        }
+
+        if (departure == null) return null;
+        Instant startInstant = departure.toInstant();
+        Instant nextDeparture = startInstant;
         List<FlightSegmentDto> segments = new ArrayList<>();
+        Instant arrival = startInstant;
 
-        String targetForCarrier = from.equals("TLV") ? to : from;
-        String carrier = pickRelevantCarrier(targetForCarrier, region);
+        for (Hop hop : route.hops) {
+            List<Aircraft> fleet = hop.carrier.fleet.stream()
+                    .filter(aircraft -> aircraftFits(aircraft, hop.from, hop.to, hop.km))
+                    .filter(aircraft -> hop.km >= 3000 || aircraft.rangeKm < 6000
+                            || hop.carrier.fleet.stream().noneMatch(a -> a.rangeKm < 6000))
+                    .toList();
 
-        int hour = 5 + random.nextInt(19);
-        int minute = random.nextInt(12) * 5;
-        LocalDateTime depTime = LocalDate.parse(dateStr).atTime(hour, minute);
+            Aircraft aircraft = fleet.get(random.nextInt(fleet.size()));
+            long minutes = Math.max(40, Math.round(30 + hop.km / aircraft.cruiseKmh * 60
+                    * (0.97 + random.nextDouble() * 0.12)));
 
-        if (isDirect) {
-            int flightMinutes = getBaseFlightMinutes(region) + (random.nextInt(60) - 30);
-            LocalDateTime arrTime = depTime.plusMinutes(flightMinutes);
-            segments.add(createSegment(from, to, depTime, arrTime, carrier));
-        } else {
-            String hub = pickHub(region);
+            arrival = nextDeparture.plus(Duration.ofMinutes(minutes));
 
-            if (hub.equals("IST")) carrier = "TK";
-            if (hub.equals("DXB")) carrier = "EK";
+            ZonedDateTime localDeparture = nextDeparture.atZone(hop.from.zone);
+            ZonedDateTime localArrival = arrival.atZone(hop.to.zone);
 
-            int leg1Min = 240 + random.nextInt(60);
-            LocalDateTime arr1 = depTime.plusMinutes(leg1Min);
-            segments.add(createSegment(from, hub, depTime, arr1, carrier));
+            // The existing DTO uses offset-free local timestamps. Do not emit ambiguous times.
+            if (hop.from.zone.getRules().getValidOffsets(localDeparture.toLocalDateTime()).size() != 1
+                    || hop.to.zone.getRules().getValidOffsets(localArrival.toLocalDateTime()).size() != 1) {
+                return null;
+            }
 
-            int layoverMin = 90 + random.nextInt(210);
-            LocalDateTime dep2 = arr1.plusMinutes(layoverMin);
-
-            int leg2Min = getBaseFlightMinutes(region) - leg1Min + 60;
-            if (leg2Min < 60) leg2Min = 60 + random.nextInt(60);
-
-            LocalDateTime arr2 = dep2.plusMinutes(leg2Min);
-            segments.add(createSegment(hub, to, dep2, arr2, carrier));
-        }
-        return segments;
-    }
-
-    private static String pickHub(Region region) {
-        List<String> list;
-        switch (region) {
-            case US_EAST:
-            case US_WEST:
-            case EUROPE: list = EUROPE_HUBS; break;
-            case ASIA: list = ASIA_HUBS; break;
-            default: list = EUROPE_HUBS;
-        }
-        return list.get(random.nextInt(list.size()));
-    }
-
-    private static int getBaseFlightMinutes(Region region) {
-        switch (region) {
-            case NEAR_EAST: return 60 + random.nextInt(30);
-            case EUROPE: return 240 + random.nextInt(60);
-            case US_EAST: return 660 + random.nextInt(60);
-            case US_WEST: return 900 + random.nextInt(60);
-            case ASIA: return 600 + random.nextInt(120);
-            default: return 180 + random.nextInt(120);
-        }
-    }
-
-    private static FlightSegmentDto createSegment(String from, String to, LocalDateTime dep, LocalDateTime arr, String carrier) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
-        long diff = java.time.Duration.between(dep, arr).toMinutes();
-        String durationStr = String.format("PT%dH%dM", diff / 60, diff % 60);
-        String flightNumber = String.valueOf(100 + random.nextInt(899));
-
-        String[] aircrafts = {"Boeing 737-800", "Airbus A320", "Boeing 787 Dreamliner", "Airbus A321neo", "Boeing 777"};
-        String aircraft = aircrafts[random.nextInt(aircrafts.length)];
-        if (carrier.equals("IZ") || carrier.equals("6H")) {
-            aircraft = "Airbus A320";
+            String carrier = hop.carrier.code;
+            segments.add(new FlightSegmentDto(
+                    hop.from.code, hop.to.code,
+                    localDeparture.format(LOCAL_TIMESTAMP),
+                    localArrival.format(LOCAL_TIMESTAMP),
+                    Duration.ofMinutes(minutes).toString(), carrier,
+                    String.valueOf(100 + random.nextInt(8900)),
+                    aircraft.code, aircraft.name, null, null,
+                    carrier.equals("DEMO") ? null : LOGO_BASE_URL + carrier + ".png"
+            ));
+            nextDeparture = arrival.plus(Duration.ofMinutes(90 + random.nextInt(25) * 5));
         }
 
-        String aircraftCode = aircraft.split(" ")[1].substring(0, 3);
-
-        return new FlightSegmentDto(
-                from, to, dep.format(formatter), arr.format(formatter), durationStr,
-                carrier, carrier + flightNumber, aircraftCode, aircraft,
-                "1", "1", LOGO_BASE_URL + carrier + ".png"
-        );
+        return new Leg(List.copyOf(segments), startInstant, arrival);
     }
 
-    private static String calculateTotalDuration(List<FlightSegmentDto> segments) {
-        if (segments.isEmpty()) return "PT0H0M";
-        LocalDateTime start = LocalDateTime.parse(segments.get(0).getDepartureDate());
-        LocalDateTime end = LocalDateTime.parse(segments.get(segments.size() - 1).getArrivalDate());
-        long diff = java.time.Duration.between(start, end).toMinutes();
-        return String.format("PT%dH%dM", diff / 60, diff % 60);
+    private static Route reverse(Route route) {
+        List<Hop> reversed = new ArrayList<>();
+        for (Hop hop : route.hops.reversed()) {
+            reversed.add(new Hop(hop.to, hop.from, hop.carrier, hop.km));
+        }
+        return new Route(List.copyOf(reversed), route.km);
+    }
+
+    private static double fare(Route route, LocalDate date, Random random) {
+        double price = 0;
+        for (Hop hop : route.hops) price += (35 + hop.km * 0.055) * hop.carrier.fareFactor;
+
+        double season = switch (date.getMonth()) {
+            case JULY, AUGUST, DECEMBER -> 1.16;
+            default -> 1.0;
+        };
+
+        double weekend = switch (date.getDayOfWeek()) {
+            case FRIDAY, SUNDAY -> 1.08;
+            default -> 1.0;
+        };
+
+        double connection = route.hops.size() > 1 ? 0.85 : 1;
+        return price * season * weekend * connection * (0.85 + random.nextDouble() * 0.65);
+    }
+
+    private static String identity(Leg leg) {
+        return leg.segments.stream()
+                .map(s -> s.getOrigin() + "-" + s.getDestination() + "-" +
+                        s.getDepartureDate() + "-" + s.getCarrierCode())
+                .reduce("", (a, b) -> a + "|" + b);
+    }
+
+    private static Carrier carrier(String code, double factor, String hubs, Aircraft... fleet) {
+        return new Carrier(code, hubs.isEmpty() ? Set.of() : Set.of(hubs.split(",")), List.of(fleet), factor);
+    }
+
+    private static List<Airport> resolve(String code) {
+        Airport airport = CATALOG.airports.get(code);
+        if (airport != null) return List.of(airport);
+        return CATALOG.metros.getOrDefault(code, List.of()).stream()
+                .map(CATALOG.airports::get).filter(Objects::nonNull).toList();
+    }
+
+    private static double distance(Airport a, Airport b) {
+        double latA = Math.toRadians(a.latitude), latB = Math.toRadians(b.latitude);
+        double dLat = latB - latA;
+        double dLon = Math.toRadians(b.longitude - a.longitude);
+        double h = Math.pow(Math.sin(dLat / 2), 2)
+                + Math.cos(latA) * Math.cos(latB) * Math.pow(Math.sin(dLon / 2), 2);
+        return 6371 * 2 * Math.asin(Math.sqrt(Math.min(1, h)));
+    }
+
+    private static Catalog loadCatalog() {
+        Map<String, Airport> airports = new HashMap<>();
+        Map<String, List<String>> metros = new HashMap<>();
+
+        try (InputStream input = MockFlightUtils.class.getResourceAsStream("/mock_flight_airports.tsv")) {
+            if (input == null) throw new IOException("Missing mock flight airport catalog");
+
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(input, StandardCharsets.UTF_8))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    if (line.startsWith("#") || line.isBlank()) continue;
+                    String[] f = line.split("\t");
+
+                    if (f.length == 8 && f[0].equals("A")) {
+                        airports.put(f[1], new Airport(f[1], Double.parseDouble(f[2]),
+                                Double.parseDouble(f[3]), f[4], f[5], f[6], ZoneId.of(f[7])));
+                    } else if (f.length == 3 && f[0].equals("M")) {
+                        metros.put(f[1], List.of(f[2].split(",")));
+                    } else {
+                        throw new IOException("Invalid mock flight airport row");
+                    }
+                }
+            }
+        } catch (IOException | RuntimeException e) {
+            throw new IllegalStateException("Could not load mock flight airport catalog", e);
+        }
+
+        if (airports.size() < 1000 || !airports.containsKey("TLV")) {
+            throw new IllegalStateException("Incomplete mock flight airport catalog");
+        }
+
+        return new Catalog(Map.copyOf(airports), Map.copyOf(metros));
     }
 }

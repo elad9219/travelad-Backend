@@ -8,6 +8,7 @@ import tools.jackson.databind.json.JsonMapper;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.hamcrest.Matchers.greaterThan;
+import static org.hamcrest.Matchers.isOneOf;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -37,7 +38,9 @@ class MigrationCompatibilityTest {
     void defaultHttpJsonMapperPreservesNullExclusion() throws Exception {
         var hotel = new com.example.travelad.dto.HotelDto(
                 "Demo Hotel", "MOCK_1", "PAR", "FR", null, null);
+
         var result = httpJson.readTree(httpJson.writeValueAsString(hotel));
+
         assertFalse(result.has("latitude"));
         assertFalse(result.has("longitude"));
         assertEquals("Demo Hotel", result.path("name").asText());
@@ -68,8 +71,14 @@ class MigrationCompatibilityTest {
     void demoFlightJsonKeepsItsExistingShape() throws Exception {
         mvc.perform(get("/flights").param("city", "Paris"))
                 .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0].source").value("MOCK"))
+                .andExpect(jsonPath("$[0].segments").isArray())
                 .andExpect(jsonPath("$[0].outboundSegments[0].origin").value("TLV"))
-                .andExpect(jsonPath("$[0].returnSegments[0].origin").value("PAR"))
+                .andExpect(jsonPath("$[0].outboundSegments[-1].destination")
+                        .value(isOneOf("CDG", "ORY")))
+                .andExpect(jsonPath("$[0].returnSegments[0].origin")
+                        .value(isOneOf("CDG", "ORY")))
+                .andExpect(jsonPath("$[0].returnSegments[-1].destination").value("TLV"))
                 .andExpect(jsonPath("$[0].price", greaterThan(0.0)));
     }
 }

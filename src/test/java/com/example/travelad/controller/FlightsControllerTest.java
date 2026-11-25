@@ -16,6 +16,7 @@ import java.time.LocalDate;
 import java.util.stream.Stream;
 
 import static org.hamcrest.Matchers.greaterThan;
+import static org.hamcrest.Matchers.isOneOf;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -58,8 +59,16 @@ class FlightsControllerTest {
                                 .value("TLV")
                 )
                 .andExpect(
+                        jsonPath("$[0].outboundSegments[-1].destination")
+                                .value(isOneOf("CDG", "ORY"))
+                )
+                .andExpect(
                         jsonPath("$[0].returnSegments[0].origin")
-                                .value("PAR")
+                                .value(isOneOf("CDG", "ORY"))
+                )
+                .andExpect(
+                        jsonPath("$[0].returnSegments[-1].destination")
+                                .value("TLV")
                 )
                 .andExpect(jsonPath("$[0].price", greaterThan(0.0)));
     }
@@ -95,7 +104,8 @@ class FlightsControllerTest {
                         jsonPath("$[0].segments[0].origin").value("TLV")
                 )
                 .andExpect(
-                        jsonPath("$[0].segments[-1].destination").value("PAR")
+                        jsonPath("$[0].segments[-1].destination")
+                                .value(isOneOf("CDG", "ORY"))
                 )
                 .andExpect(jsonPath("$[0].returnSegments").isEmpty());
     }
