@@ -26,6 +26,13 @@ class HotelCatalogIntegrationTest {
             "Paris, Île-de-France, France",
             "New York, New York, United States",
             "Cape Town, Western Cape, South Africa",
+            "London, UK",
+            "London, England, UK",
+            "New York City, USA",
+            "Dubai, UAE",
+            "Prague, Czech Republic",
+            "Seoul, Republic of Korea",
+            "Istanbul, Türkiye",
             "Reykjavik, Capital Region, Iceland",
             "Tokyo, Japan",
             "Roma, Lazio, Italy",
@@ -112,6 +119,32 @@ class HotelCatalogIntegrationTest {
         assertTrue(hotels.stream().allMatch(hotel ->
                 hotel.getHotelId().startsWith("MOCK_")
         ));
+    }
+
+    @Test
+    void countryAliasesKeepTheSameHotelsWithoutMatchingOtherCities() {
+        List<String> canonicalIds = HotelCatalog
+                .hotelsFor("London, United Kingdom")
+                .stream()
+                .map(HotelDto::getHotelId)
+                .toList();
+
+        List<String> aliasIds = HotelCatalog
+                .hotelsFor("London, UK")
+                .stream()
+                .map(HotelDto::getHotelId)
+                .toList();
+
+        assertEquals(canonicalIds, aliasIds);
+        assertEquals(9, aliasIds.size());
+
+        assertTrue(
+                HotelCatalog.hotelsFor("Paris, Texas, US").isEmpty()
+        );
+
+        assertTrue(
+                HotelCatalog.hotelsFor("London, Ontario, Canada").isEmpty()
+        );
     }
 
     @Test

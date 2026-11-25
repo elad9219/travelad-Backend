@@ -194,11 +194,37 @@ public final class HotelCatalog {
     }
 
     private static String normalize(String value) {
-        return Normalizer.normalize(value, Normalizer.Form.NFD)
+        String normalized = Normalizer.normalize(
+                        value, Normalizer.Form.NFD
+                )
                 .replaceAll("\\p{M}+", "")
                 .replaceAll("(?U)\\s+", " ")
                 .replaceAll("\\s*,\\s*", ", ")
                 .strip()
                 .toLowerCase(Locale.ROOT);
+
+        int separator = normalized.lastIndexOf(',');
+
+        if (separator < 0) {
+            return normalized;
+        }
+
+        // Normalize only the country component.
+        // Preserve the city and any administrative region.
+        String country = normalized.substring(separator + 1).strip();
+
+        String canonical = switch (country) {
+            case "uk", "u.k.", "great britain" -> "united kingdom";
+            case "us", "u.s.", "usa", "u.s.a.",
+                 "united states of america" -> "united states";
+            case "uae", "u.a.e." -> "united arab emirates";
+            case "czech republic" -> "czechia";
+            case "republic of korea" -> "south korea";
+            case "turkiye" -> "turkey";
+            default -> country;
+        };
+
+        return normalized.substring(0, separator)
+                + ", " + canonical;
     }
 }
