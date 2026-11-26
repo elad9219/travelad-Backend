@@ -10,12 +10,17 @@ import org.springframework.core.io.ClassPathResource;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.text.Normalizer;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Locale;
 import java.util.Objects;
+import java.util.TreeMap;
 import java.util.function.Function;
 import java.util.regex.Pattern;
 
@@ -35,6 +40,12 @@ public class IataCodeUtils {
     private static final Map<String, String> qualifiedCodes =
             loadQualifiedCodes();
 
+    private static final Map<String, String> airportNames =
+            loadAirportNames();
+
+    private static final List<IataCodeEntry> displayEntries =
+            buildDisplayEntries();
+
     private static List<IataCodeEntry> loadEntries() {
         try (InputStream input =
                      new ClassPathResource("iata_codes.json").getInputStream()) {
@@ -51,7 +62,87 @@ public class IataCodeUtils {
     }
 
     public static List<IataCodeEntry> getIataCodeEntries() {
-        return entries;
+        return displayEntries;
+    }
+
+    private static Map<String, String> loadAirportNames() {
+        Map<String, String> names = new TreeMap<>();
+
+        try (InputStream input =
+                     IataCodeUtils.class.getResourceAsStream("/flight_airport_names.tsv")) {
+
+            if (input == null) {
+                throw new IOException("Missing flight airport names");
+            }
+
+            try (BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(input, StandardCharsets.UTF_8))) {
+
+                for (String line; (line = reader.readLine()) != null;) {
+                    if (line.isBlank() || line.startsWith("#")) continue;
+
+                    String[] fields = line.split("\t", -1);
+
+                    if (fields.length != 2
+                            || !IATA_CODE.matcher(fields[0]).matches()
+                            || fields[1].isBlank()
+                            || names.putIfAbsent(fields[0], fields[1]) != null) {
+
+                        throw new IOException(
+                                "Invalid or duplicate flight airport name"
+                        );
+                    }
+                }
+            }
+
+        } catch (IOException e) {
+            throw new IllegalStateException(
+                    "Could not load flight airport names", e
+            );
+        }
+
+        if (names.isEmpty()) {
+            throw new IllegalStateException("Empty flight airport names");
+        }
+
+        return Map.copyOf(names);
+    }
+
+    private static List<IataCodeEntry> buildDisplayEntries() {
+        List<IataCodeEntry> result = new ArrayList<>();
+        Map<String, List<IataCodeEntry>> legacyByAirport = new HashMap<>();
+
+        for (IataCodeEntry entry : entries) {
+            String code = validCode(entry.getAirportCode());
+
+            if (code != null && airportNames.containsKey(code)) {
+                legacyByAirport
+                        .computeIfAbsent(code, ignored -> new ArrayList<>())
+                        .add(entry);
+            } else {
+                result.add(entry);
+            }
+        }
+
+        // Keep city resolution separate from the physical airport display catalog.
+        for (var airport : new TreeMap<>(airportNames).entrySet()) {
+            IataCodeEntry entry = new IataCodeEntry();
+
+            entry.setAirportCode(airport.getKey());
+            entry.setFullName(airport.getValue());
+
+            entry.setCityCode(uniqueCode(
+                    legacyByAirport.getOrDefault(
+                            airport.getKey(),
+                            List.of()
+                    ),
+                    IataCodeEntry::getCityCode
+            ));
+
+            result.add(entry);
+        }
+
+        return List.copyOf(result);
     }
 
     private static Map<String, String> loadQualifiedCodes() {
@@ -155,7 +246,20 @@ public class IataCodeUtils {
                 })
                 .toList();
 
-        return uniqueCode(cityMatches, IataCodeEntry::getCityCode);
+        if (!cityMatches.isEmpty()) {
+            return uniqueCode(cityMatches, IataCodeEntry::getCityCode);
+        }
+
+        List<String> airportMatches = airportNames.entrySet().stream()
+                .filter(entry ->
+                        normalizeName(entry.getValue()).equals(lookupName))
+                .map(Map.Entry::getKey)
+                .limit(2)
+                .toList();
+
+        return airportMatches.size() == 1
+                ? airportMatches.getFirst()
+                : null;
     }
 
     private static String uniqueCode(
@@ -180,7 +284,8 @@ public class IataCodeUtils {
             return null;
         }
 
-        return entries.stream().anyMatch(entry ->
+        return airportNames.containsKey(code)
+                || entries.stream().anyMatch(entry ->
                 code.equals(validCode(entry.getCityCode()))
                         || code.equals(validCode(entry.getAirportCode())))
                 ? code
